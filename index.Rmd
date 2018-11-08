@@ -1,0 +1,48 @@
+--- 
+title: "NPS Workshop on Interactive Reporting with R"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [style/zotero_nps.bib, style/packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: ecoquants/nps-r-workshop
+description: "These materials are for a 2-day workshop on Interactive Reporting with R for the National Park Service (NPS). The output format is using `bookdown::gitbook()`."
+---
+
+```{r include=FALSE, eval=F}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'style/packages.bib')
+```
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(leaflet)
+library(sf)
+opts_chunk$set(echo = F)
+```
+
+Location: [401 W Hillcrest Dr, Thousand Oaks, CA 91360](https://goo.gl/maps/tJ7YHFwwoyq)<br>
+Dates: November 13-14, 2018
+
+# Overview
+
+This is the landing site for our workshop materials. Google Drive (folders, docs, slides, sheets, etc.) allows us to be agile with adapting content on the fly. The rest of the content in this site is generated using the techniques taught: R + markdown = Rmarkdown, git, Github, etc.
+
+## Google Drive Content
+
+- [**workshop/**](https://drive.google.com/drive/u/1/folders/19mPz-w4AHHn0X3Jje5XvC3n5c1SnMlJC)
+    - [**agenda**](https://docs.google.com/document/d/1mS_DcEoCZDN8-O4h7DeBdHzsk-5FkailM58Hm56jp6c/edit#)
+    - [**notes**](https://docs.google.com/document/d/1bVvVOZISIT9ZyEsOGmqr0LccQaHl9gcl-EoraJBg7Gw/edit#)
+    - [**presentations/**](https://drive.google.com/drive/u/1/folders/1MNolN6cPbbf1k33Qg1L4YLAvVdv7cBuR)
+    - [**data/**](https://drive.google.com/drive/u/1/folders/1ge660eD5b7OinQSKSLjrCSKyFk3bJE2L)
+
+## Resources
+
+- [R for Data Science](http://r4ds.had.co.nz/)
+- [Spatial Data Analysis and Modeling with R](http://rspatial.org)
+- [Introduction to GIS - slides](https://docs.google.com/presentation/d/1P3ITbMxVsYcxbzUXLbDo8DLBs7d4nC_20eilIuaB0X0/present)
+

@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style/style.css
+  config:
+    toc:
+      collapse: section
+      scroll_highlight: yes
+      before: |
+        <li><a href="./">NPS R Workshop</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/ecoquants/nps-r-workshop/blob/master/%s
+    download: ["pdf"]
+bookdown::pdf_book:
+  includes:
+    in_header: style/preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: no

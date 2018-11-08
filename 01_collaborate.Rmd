@@ -1,0 +1,198 @@
+# Collaborate: git, github
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(htmltools)
+```
+
+This section is paired with:
+
+- [Data Wrangling in the R Tidyverse - Google Slides](http://bit.ly/r-wrangle-for-ioos)
+
+The two main tools you'll learn about to start are:
+
+- [**Git**](https://git-scm.com/) is a version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). You can rollback changes made by you, or others. This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).
+
+- [**Github**](https://github.com/) is a website for storing your git versioned files remotely. It has many nice features to be able visualize differences between [images](https://help.github.com/articles/rendering-and-diffing-images/), [rendering](https://help.github.com/articles/mapping-geojson-files-on-github/) & [diffing](https://github.com/blog/1772-diffable-more-customizable-maps) map data files, [render text data files](https://help.github.com/articles/rendering-csv-and-tsv-data/), and [track changes in text](https://help.github.com/articles/rendering-differences-in-prose-documents/).
+
+Steps:
+
+1. Create Github login
+1. Create project website with Github Pages
+1. Edit README.md in Markdown
+1. Create HTML website content with R Markdown
+
+## Setup Github & Git
+
+1. Create **Github** account at <http://github.com>, if you don't already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in `.edu`, you can request free private repositories via [GitHub Education](https://education.github.com/) discount.
+
+1. Configure **git** with global commands. Open up the Bash version of Git and type the following:
+
+```bash
+# display your version of git
+git --version
+
+# replace USER with your Github user account
+git config –-global user.name USER
+
+# replace USER@SOMEWHERE.EDU with the email you used to register with Github
+git config –-global user.email USER@SOMEWHERE.EDU
+
+# list your config to confirm user.* variables set
+git config --list
+```
+
+## Github Workflows
+
+The two most common workflow models for working Github repositories is based on your permissions:
+
+1. **writable**: Push & Pull (simplest)
+
+1. **read only**: Fork & Pull Request (extra steps)
+
+We will only go over the first writable mode. For more on the second mode, see [Forking Projects · GitHub Guides](https://guides.github.com/activities/forking/).
+
+### Push & Pull
+
+repo location | initialize <i class="fa fa-arrow-down"></i> | edit <i class="fa fa-arrow-up"></i> | update <i class="fa fa-arrow-down"></i>
+-----------|:-----------:|:-----------:|:-----------:|:-----------:
+<i class="fa fa-cloud"></i> `github.com/OWNER/REPO` |  [**create**](https://help.github.com/articles/create-a-repo/) <span class="octicon octicon-plus"></span> |   |
+<i class="fa fa-desktop"></i> `~/github/REPO`      |  [**clone**](https://help.github.com/articles/fetching-a-remote) <span class="octicon octicon-desktop-download"></span> | [**commit**](http://git-scm.com/docs/git-commit) <span class="octicon octicon-git-commit"></span>,  [**push**](https://help.github.com/articles/pushing-to-a-remote/) <span class="octicon octicon-cloud-upload"></span> | [**pull**](https://help.github.com/articles/fetching-a-remote/#pull) <span class="octicon octicon-cloud-download"></span>
+
+Note that OWNER could be either an individual USER or group ORGANIZATION, which has member USERs.
+
+## Create Repository `nps-demo`
+
+Now you will create a Github repository for a project.
+
+1. [Create a repository](https://help.github.com/articles/create-a-repo/) called `my-project`.
+
+    `r img(src='figs/github_repo-create.png', width=200)`
+    
+    Please be sure to tick the box to **Initialize this repository with a README**. Otherwise defaults are fine.
+    
+    `r img(src='figs/github_create-my-project.png', width=600)`
+
+1. [Create a branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) called `gh-pages`.
+
+    `r img(src='figs/github_create-branch_gh-pages.png', width=200)`
+    
+    Per [pages.github.com](https://pages.github.com), since this will be a project site only web files in the `gh-pages` branch will show up at `http://USER.github.io/REPO`. For a user (or organization) site, the REPO must be named `USER.github.io` (or `ORG.github.io`) and then the default `master` branch will contain the web files for the website `http://USER.github.io` (or `http://ORG.github.io`). See also [User, Organization, and Project Pages - Github Help](https://help.github.com/articles/user-organization-and-project-pages/).
+    
+1. [Set the default branch](https://help.github.com/articles/setting-the-default-branch/) to `gh-pages`, NOT the default `master`.
+
+    `r img(src='figs/github_default-branch_gh-pages.png', width=600)`
+    
+1. [Delete the branch](https://help.github.com/articles/viewing-branches-in-your-repository/#deleting-branches) `master`, which will not be used.
+
+### Edit `README.md` in Markdown
+
+[Commit your first change](https://help.github.com/articles/create-a-repo/#commit-your-first-change) by editing the `README.md` which is in **markdown**, simple syntax for conversion to HTML. Now update the contents of the `README.md` with the following, having a link and a numbered list:
+  
+```
+# nps-demo
+
+Wrangling data with R.
+
+## Introduction
+
+This repository demonstrates **software** and _formats_:
+
+1. **Git**
+1. **Github**
+1. _Markdown_
+1. _Rmarkdown_
+
+## Conclusion
+
+![](https://octodex.github.com/images/labtocat.png)
+```
+    
+Now click on the <span class="octicon octicon-eye"></span> Preview changes to see the markdown rendered as HTML:
+    
+`r img(src='figs/github_preview_README-md.png', width=500)`
+    
+Notice the syntax for:
+
+- **numbered list** gets automatically sequenced: `1.`, `1.`
+- **headers** get rendered at multiple levels: `#`, `##`
+- **link**: `[](http://...)`
+- **image**: `![](http://...)`
+- _italics_: `_word_` 
+- **bold**: `**word**`
+
+See [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/) and add some more personalized content to the README of your own, like a bulleted list or blockquote.
+
+## Create `index.html`
+
+By default `index.html` is served up. Go ahead and create a new file named `index.html` with the following [basic HTML](http://www.w3schools.com/html/html_basic.asp):
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+</body>
+</html>
+```
+
+You'll be prompted to clone this repository into a folder on your local machine.
+  
+See [GitHub Desktop User Guides](https://help.github.com/desktop/guides/) for more. You could also do this from the Bash Shell for Git with the command `git clone https://github.com/USER/REPO.git`, replacing USER with your Github username and REPO with my_project. Or you can use the Github Desktop App menu File -> Clone Repository...
+
+## Create RStudio Project with Git Repository
+
+Next, you will [clone the repository](https://help.github.com/articles/fetching-a-remote) onto your local machine using RStudio. I recommend creating it in a folder `github` under your user or Documents folder.
+
+Open RStudio and under the menu File -> New Project... -> Version Control -> git and enter the URL with the `.git` extension (also available from the repository's Clone button):
+
+`r img(src='figs/rstudio_new-project-git.png', width=300)`
+
+If it all works correctly then you should see the files downloaded and showing up in the Files pane of RStudio. If RStudio is configured correctly to work with Git, then you should also see a Git pane.
+
+## Create `index.Rmd` in Rmarkdown
+
+Back in RStudio, let's create a new Rmarkdown file, which allows us to weave markdown text with chunks of R code to be evaluated and output content like tables and plots.
+
+File -> New File -> Rmarkdown... -> Document of output format HTML, OK.
+
+`r img(src='figs/rstudio_new-rmd-doc-html.png', width=300)`
+
+You can give it a Title of "My Project". After you click OK, most importantly File -> Save as `index` (which will get named with the filename extension `index.Rmd`).
+
+Some initial text is already provided for you. Let's go ahead and "Knit HTML".
+
+Notice how the markdown is rendered similar to as before + **R code chunks** are surrounded by 3 backticks and `{r LABEL}`. These are evaluated and return the output text in the case of `summary(cars)` and the output plot in the case of `plot(pressure)`.
+
+Notice how the code `plot(pressure)` is not shown in the HTML output because of the R code chunk option `echo=FALSE`.
+
+Before we continue exploring Rmarkdown, visit the Git pane, check all modified (M) or untracked (?) files, click Commit, enter a message like "added index" and click the "Commit" button. Then Push (up green arrow) to push the locally committed changes on your lapto up to the Github repository online. This will update <https://github.com/USER/nps-demo>, and now you can also see your project website with a default `index.html` viewable at <http://USER.github.io/nps-demo>
+
+For more on Rmarkdown:
+
+- [rmarkdown cheatsheet.pdf](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [rmarkdown.rstudio.com](http://rmarkdown.rstudio.com)
+- [knitr in a knutshell - Karl Broman](http://kbroman.org/knitr_knutshell/)
+
+A more advanced topic worth mentioning is dealing [merge conflicts](http://r-pkgs.had.co.nz/git.html#git-pull)
+
+## Exercise: Intertidal Sites Dataset
+
+Gil Rilov shared the following dataset for us to play with:
+
+- [Israel sites fall 2015-16.xlsx](
+https://drive.google.com/open?id=0Bw_eQvipWCW_NkxHVk9sZ0ZPTU85QkRjRDdvT0FoSHZvUldR)
+
+Please download and open this dataset. Your task is to investigate this dataset and prepare it for submission to OBIS.
+
+### Task: Provide Excel cell ranges for how you would divide data into tables?
+
+For reading and wrangling data in R, please see cheat sheets and resources mentioned in:
+
+- [Data Wrangling in the R Tidyverse - Google Slides](http://bit.ly/r-wrangle-for-ioos)
+
+

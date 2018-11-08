@@ -1,0 +1,232 @@
+# Visualize: `ggplot2`, `plotly`, `tmap`
+
+```{r include=FALSE}
+library(htmltools)
+```
+
+## Plot
+
+Inspiring people:
+
+- [**Hadley Wickham**](http://hadley.nz): grammar of graphics
+
+    `r img(src='https://avatars1.githubusercontent.com/u/4196', width=200)`
+
+- [**Hans Rosling**](https://www.ted.com/speakers/hans_rosling): Gapminder
+
+    ![](figs/hans-rosling_sexy-stats.jpeg)
+
+    [Gapminder World](http://www.gapminder.org/world) - Wealth & Health of Nations
+
+    [![](figs/gapminder-world_motion-chart.png)](http://www.gapminder.org/world)
+
+
+### Static: `ggplot`
+
+* [Creating publication quality graphics - Software Carpentry](http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2.html)
+
+#### Scatterplot
+
+```{r, message=F, warning=F, results='hide'}
+library(dplyr)
+library(ggplot2)
+library(gapminder)
+
+# preview data
+gapminder
+
+# get range of available data
+summary(gapminder)
+```
+
+```{r, message=F, warning=F}
+# setup dataframe
+g = gapminder %>%
+  filter(year==2007) %>%   # most recent year 
+  mutate(pop_m = pop/1e6)  # population, millions
+
+# plot scatterplot of most recent year 
+s = ggplot(g, aes(x=gdpPercap, y=lifeExp)) +
+  geom_point()
+s
+
+# add aesthetic of size by population
+s = s + 
+  aes(size=pop_m)
+s
+
+# add aesthetic of color by continent
+s = s + 
+  aes(color=continent)
+s
+
+# add title, update axes labels
+s = s + 
+  ggtitle('Health & Wealth of Nations for 2007') +
+  xlab('GDP per capita ($/year)') +
+  ylab('Life expectancy (years)')
+s
+
+# label legend
+s = s + 
+  scale_colour_discrete(name='Continent') +
+  scale_size_continuous(name='Population (M)')
+s
+```
+
+**Your Turn**
+
+Now with country emissions datasets...
+
+- [CO2 Emissions from Fossil Fuels since 1751, By Nation - Dataset - Frictionless Open Data](http://data.okfn.org/data/kiliakis/co2-fossil-by-nation)
+- [datasets/gdp](https://github.com/datasets/gdp/blob/master/data/gdp.csv)
+
+```{r}
+
+```
+
+#### Boxplot
+
+```{r}
+# boxplot by continent
+b = ggplot(g, aes(x=continent, y=lifeExp)) +
+  geom_boxplot()
+b
+
+# match color to continents, like scatterplot
+b = b +
+  aes(fill=continent)
+b
+
+# drop legend, add title, update axes labels
+b = b +
+  theme(legend.position='none') +
+  ggtitle('Life Expectancy by Continent for 2007') +
+  xlab('Continent') +
+  ylab('Life expectancy (years)')
+b
+```
+
+**Your Turn**: Make a similar plot but for `gdpPercap`. Be sure to update the plot's aesthetic, axis label and title accordingly.
+
+### Interactive: `plotly`
+
+[ggplot2 | plotly](https://plot.ly/ggplot2/)
+
+```{r, message=F, warning=F}
+library(plotly) # install.packages('plotly')
+
+# scatterplot (Note: key=country shows up on rollover)
+s = ggplot(g, aes(x=gdpPercap, y=lifeExp, key=country)) +
+  geom_point()
+ggplotly(s)
+
+# boxplot
+ggplotly(b)
+```
+
+**Your Turn**: Expand the interactive scatterplot to include all the other bells and whistles of the previous plot in one continuous set of code (no in between setting of s).
+
+### Interactive: Exploding Boxplot
+
+```{r}
+library(explodingboxplotR) # devtools::install_github('timelyportfolio/explodingboxplotR')
+
+exploding_boxplot(g,
+  y = 'lifeExp',
+  group = 'continent',
+  color = 'continent',
+  label = 'country')
+```
+
+
+### Interactive: Motion Plot
+
+The `googleVis` package ports most of the [Google charts](https://developers.google.com/chart/interactive/docs/gallery) functionality.
+
+For every R chunk must set option `results='asis'`, and once before any googleVis plots, set `op <- options(gvis.plot.tag='chart')`.
+
+- [Rmarkdown and googleVis](https://cran.r-project.org/web/packages/googleVis/vignettes/Using_googleVis_with_knitr.html)
+
+- [googleVis examples](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html)
+
+```{r, results='asis', tidy=F}
+suppressPackageStartupMessages({
+  library(googleVis) # install.packages('googleVis')
+})
+op <- options(gvis.plot.tag='chart')
+
+m = gvisMotionChart(
+  gapminder %>%
+    mutate(
+      pop_m = pop / 1e6,
+      log_gdpPercap = log(gdpPercap)), 
+  idvar='country', 
+  timevar='year', 
+  xvar='log_gdpPercap', 
+  yvar='lifeExp', 
+  colorvar='continent',
+  sizevar='pop_m')
+plot(m)
+```
+
+**Your Turn**: Repeat the motion chart with the country having the highest `gdpPercap` filtered out.
+
+## Map
+
+Thematic maps [**`tmap`**](https://github.com/mtennekes/tmap):
+
+- [tmap in a nutshell](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-nutshell.html)
+- [tmap modes: plot and interactive view](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-modes.html)
+
+### Static
+
+```{r, results='hide', message=FALSE, warning=FALSE}
+library(sf)
+library(tmap) # install.packages('tmap')
+
+# load world spatial polygons
+data(World)
+
+# inspect values in World
+World %>% st_set_geometry(NULL)
+
+# gapminder countries not in World. skipping for now
+g %>% 
+  anti_join(World, by=c('country'='name')) %>% 
+  arrange(desc(pop))
+
+# World countries not in gapminder. skipping for now
+World %>% 
+  anti_join(g, by=c('name'='country')) %>% 
+  arrange(desc(pop_est)) %>%
+  select(iso_a3, name, pop_est)
+
+# join gapminder data to World
+World = World %>%
+  left_join(g, by=c('name'='country'))
+```
+
+```{r}
+# make map
+m = tm_shape(World) +
+    tm_polygons('lifeExp', palette='RdYlGn', id='name', title='Life expectancy (years)', auto.palette.mapping=F) +
+    tm_style_gray() + tm_format_World()
+m
+```
+
+### Interactive
+
+```{r}
+# show interactive map
+tmap_leaflet(m)
+```
+
+
+## References
+
+- [ggplot2-cheatsheet-2.0.pdf](../cheatsheets/ggplot2-cheatsheet-2.0.pdf)
+- [Interactive Plots and Maps - Environmental Informatics](http://ucsb-bren.github.io/env-info/wk06_widgets.html)
+- [Graphs with ggplot2 - Cookbook for R](http://www.cookbook-r.com/Graphs/#graphs-with-ggplot2)
+- [ggplot2 Essentials - STHDA](http://www.sthda.com/english/wiki/ggplot2-essentials)
+- [NEON Working with Geospatial Data](http://neon-workwithdata.github.io/NEON-R-Spatio-Temporal-Data-and-Management-Intro/)
