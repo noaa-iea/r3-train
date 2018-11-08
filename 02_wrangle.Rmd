@@ -30,7 +30,8 @@ You don't need to go to CRAN's website to install packages, we can do it from wi
 ## from CRAN:
 #install.packages("dplyr") ## do this once only to install the package on your computer.
 
-library(dplyr) ## do this every time you restart R and need it 
+library(dplyr) ## do this every time you restart R and need it
+select <- dplyr::select # overwrite raster::select
 ```
 What's the difference between `install.packages()` and `library()`? Here's my analogy: 
 

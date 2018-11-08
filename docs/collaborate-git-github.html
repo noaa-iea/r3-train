@@ -66,6 +66,10 @@
 <script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
+<script src="libs/HomeButton-0.0.1/home-button.js"></script>
+<script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
+<link href="libs/PopupTable-0.0.1/popup.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -134,7 +138,9 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<link rel="stylesheet" href="style/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="style/style.css" type="text/css" />
+<link rel="stylesheet" href="style/lesson.css" type="text/css" />
 </head>
 
 <body>
@@ -201,6 +207,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#references"><i class="fa fa-check"></i><b>4.3</b> References</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html"><i class="fa fa-check"></i><b>5</b> Analyze Spatial: <code>sf</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#overview-1"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#prerequisites"><i class="fa fa-check"></i><b>5.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="5.3" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#states-read-and-plot"><i class="fa fa-check"></i><b>5.3</b> States: read and plot</a></li>
+<li class="chapter" data-level="5.4" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-analytical-steps"><i class="fa fa-check"></i><b>5.4</b> Challenge: analytical steps?</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers"><i class="fa fa-check"></i><b>5.4.1</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-calculate-water"><i class="fa fa-check"></i><b>5.5</b> Regions: calculate % water</a></li>
+<li class="chapter" data-level="5.6" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-plot"><i class="fa fa-check"></i><b>5.6</b> Regions: plot</a></li>
+<li class="chapter" data-level="5.7" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-ggplot"><i class="fa fa-check"></i><b>5.7</b> Regions: ggplot</a></li>
+<li class="chapter" data-level="5.8" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-recalculate-area"><i class="fa fa-check"></i><b>5.8</b> Regions: recalculate area</a></li>
+<li class="chapter" data-level="5.9" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-project-recalculate-area"><i class="fa fa-check"></i><b>5.9</b> Challenge: project &amp; recalculate area</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers-1"><i class="fa fa-check"></i><b>5.9.1</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#key-points"><i class="fa fa-check"></i><b>5.10</b> Key Points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html"><i class="fa fa-check"></i><b>6</b> Interactive Map: <code>leaflet</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#things-youll-need-to-complete-this-tutorial"><i class="fa fa-check"></i><b>6.2</b> Things You’ll Need to Complete this Tutorial</a></li>
+<li class="chapter" data-level="6.3" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-ggplot2"><i class="fa fa-check"></i><b>6.3</b> States: ggplot2</a></li>
+<li class="chapter" data-level="6.4" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-plotly"><i class="fa fa-check"></i><b>6.4</b> States: plotly</a></li>
+<li class="chapter" data-level="6.5" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-mapview"><i class="fa fa-check"></i><b>6.5</b> States: mapview</a></li>
+<li class="chapter" data-level="6.6" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-leaflet"><i class="fa fa-check"></i><b>6.6</b> States: leaflet</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#choropleth"><i class="fa fa-check"></i><b>6.6.1</b> Choropleth</a></li>
+<li class="chapter" data-level="6.6.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#popups-and-legend"><i class="fa fa-check"></i><b>6.6.2</b> Popups and Legend</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#challenge-leaflet-for-regions"><i class="fa fa-check"></i><b>6.7</b> Challenge: leaflet for regions</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#answers-2"><i class="fa fa-check"></i><b>6.7.1</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>6.8</b> Raster: leaflet</a></li>
+<li class="chapter" data-level="6.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>6.9</b> Key Points</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -222,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="collaborate-git-github" class="section level1">
-<h1><span class="header-section-number">2</span> Collaborate: git, github</h1>
+<h1><span class="header-section-number">Lesson 2</span> Collaborate: git, github</h1>
 <p>This section is paired with:</p>
 <ul>
 <li><a href="http://bit.ly/r-wrangle-for-ioos">Data Wrangling in the R Tidyverse - Google Slides</a></li>
@@ -400,6 +438,9 @@ This repository demonstrates **software** and _formats_:
 </div>
 </div>
 </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/lesson.js"></script>
             </section>
 
           </div>

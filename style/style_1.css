@@ -12,3 +12,9 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/*
+.book .book-body .page-wrapper .page-inner {
+  max-width: 1200px;
+}
+*/
