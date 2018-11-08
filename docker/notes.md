@@ -6,7 +6,7 @@ console: https://us-west-1.console.aws.amazon.com/ec2
 
 - t2.medium "Amazon Linux 2 AMI"
 - download private key to `~/private/nps-ec2.pem`
-
+- Security Groups -> Create: Inbound for Anywhere: SSH TCP 22, HTTP TCP 80, Custom TCP 8787. Match with instance in Network Interfaces.
 ## Log into machine
 
 ```
@@ -37,9 +37,12 @@ sudo service docker start
 
 # Add the ec2-user to the docker group so you can execute Docker commands without using sudo.
 sudo usermod -a -G docker ec2-user
+
+# logout and login again
+exit
 ```
 
-## Setup RStudio / Shiny Server
+## docker build
 
 ```
 sudo yum install -y git
@@ -49,24 +52,43 @@ git clone https://github.com/ecoquants/nps-r-workshop.git
 
 ```
 cd nps-r-workshop/docker
-
+docker build -t "bdbest/rstudio-shiny:2018-11-08" .
+docker images
 ```
 
-- [Docker Desktop for Mac and Windows](https://embed.vidyard.com/share/txhmiXXLzoQqDKKnZeo5nj?)
-    - [dockersamples/node-bulletin-board at v5](https://github.com/dockersamples/node-bulletin-board/tree/v5)
+## TODO: push image
+
+```
+docker login # registered as bdbest (bdbest@gmail.com)
+docker push "bdbest/rstudio-shiny:2018-11-08"
+```
+
+## docker run
+
+```
+cd # /home/ec2-user
+mkdir data
+```
 
 ```
 # set password as environment variable
 NPS_PASSWD=******
 
 # run docker, downloading image if needed
-docker run --name "nrel-uses-app" \
+docker run --name "rstudio-shiny" \
   --restart unless-stopped \
   -p 8787:8787 -p 80:3838 \
+  -v /home/ec2-user/data:/data \
   -e ROOT=TRUE \
-  -e USER=nps -e PASSWORD=$NPS_PASSWD \
-  -d -t "bdbest/nrel-uses-app"
+  -e USER=rstudio -e PASSWORD=$NPS_PASSWD \
+  -d -t "bdbest/rstudio-shiny:2018-11-08"
 ```
+
+## Other: docker-compose
+
+- [Docker Desktop for Mac and Windows](https://embed.vidyard.com/share/txhmiXXLzoQqDKKnZeo5nj?)
+    - [dockersamples/node-bulletin-board at v5](https://github.com/dockersamples/node-bulletin-board/tree/v5)
+
 
 ## Adding Users
 [Adding users in Docker container running RStudio that can use RStudio Addins · Issue #206 · rocker-org/rocker](https://github.com/rocker-org/rocker/issues/206)
