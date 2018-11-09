@@ -1,3 +1,13 @@
+
+## Background
+
+- [Running R on AWS | AWS Big Data Blog](https://aws.amazon.com/blogs/big-data/running-r-on-aws/)
+
+
+nrel-docker:
+* [load server software, a la MBON in a Box, using docker, RStudio Server, Shiny... · Issue #4 · marinebon/sdg14](https://github.com/marinebon/sdg14/issues/4)
+* [add users to mbon server · Issue #12 · marinebon/sdg14](https://github.com/marinebon/sdg14/issues/12)
+
 ## Launch AWS EC2
 
 console: https://us-west-1.console.aws.amazon.com/ec2
@@ -15,7 +25,7 @@ chmod 400 nps-ec2.pem
 
 USR=ec2-user # ubuntu
 PEM=nps-ec2.pem
-DNS=ec2-13-57-194-144.us-west-1.compute.amazonaws.com
+DNS=ec2-13-52-36-158.us-west-1.compute.amazonaws.com
 
 echo ssh -i "$PEM" $USR@$DNS
 ssh -i "$PEM" $USR@$DNS
@@ -84,16 +94,28 @@ docker run --name "rstudio-shiny" \
   -d -t "bdbest/rstudio-shiny:2018-11-08"
 ```
 
-## Other: docker-compose
-
-- [Docker Desktop for Mac and Windows](https://embed.vidyard.com/share/txhmiXXLzoQqDKKnZeo5nj?)
-    - [dockersamples/node-bulletin-board at v5](https://github.com/dockersamples/node-bulletin-board/tree/v5)
-
-
 ## Adding Users
-[Adding users in Docker container running RStudio that can use RStudio Addins · Issue #206 · rocker-org/rocker](https://github.com/rocker-org/rocker/issues/206)
+- [Adding users in Docker container running RStudio that can use RStudio Addins · Issue #206 · rocker-org/rocker](https://github.com/rocker-org/rocker/issues/206)
 
 ```
 docker exec -it <container-id> bash
 adduser <username>
 ```
+
+- see [docker/add_users.R](https://github.com/ecoquants/nps-r-workshop/blob/87add42251ca6cd4dcefbd1901aeaa8753e4ecf1/docker/add_users.R)
+
+## Check bills
+
+https://console.aws.amazon.com/billing/home?#/bills?year=2018&month=11
+
+## Next Step: SSL for https
+
+- [Setup encrypted Rstudio and Shiny dashboard solution in 3 minutes | R-bloggers](https://www.r-bloggers.com/setup-encrypted-rstudio-and-shiny-dashboard-solution-in-3-minutes/)
+  - https://github.com/mikkelkrogsholm/encrypted_dashboard
+
+- [How to Deploy RStudio Server Using an NGINX Reverse Proxy](https://linode.com/docs/development/r/how-to-deploy-rstudio-server-using-an-nginx-reverse-proxy/)
+
+
+1. [AWS Certificate Manager](https://us-west-1.console.aws.amazon.com/acm/home?region=us-west-1#/wizard/)
+2. [Google Domains](https://domains.google.com/registrar#z=a&d=4740056,ecoquants.com&chp=z,d)
+3. [AWS Certificate Manager](https://us-west-1.console.aws.amazon.com/acm/home?region=us-west-1#/?id=arn:aws:acm:us-west-1:814665782451:certificate%2F912513d1-dbc3-4cae-8c86-2fd60d98bb72)
