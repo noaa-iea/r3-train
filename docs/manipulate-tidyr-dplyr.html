@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>NPS Workshop on Interactive Reporting with R</title>
-  <meta name="description" content="These materials are for a 2-day workshop on Interactive Reporting with R for the National Park Service (NPS). The output format is using <code>bookdown::gitbook()</code>.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lesson 3 Manipulate: tidyr, dplyr | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
+  <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="NPS Workshop on Interactive Reporting with R" />
+  <meta property="og:title" content="Lesson 3 Manipulate: tidyr, dplyr | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="These materials are for a 2-day workshop on Interactive Reporting with R for the National Park Service (NPS). The output format is using <code>bookdown::gitbook()</code>." />
+  <meta property="og:description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
   <meta name="github-repo" content="ecoquants/nps-r-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="NPS Workshop on Interactive Reporting with R" />
+  <meta name="twitter:title" content="Lesson 3 Manipulate: tidyr, dplyr | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   
-  <meta name="twitter:description" content="These materials are for a 2-day workshop on Interactive Reporting with R for the National Park Service (NPS). The output format is using <code>bookdown::gitbook()</code>." />
+  <meta name="twitter:description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
   
 
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="collaborate-git-github.html">
-<link rel="next" href="visualize-ggplot2-plotly-tmap.html">
+<link rel="prev" href="collaborate-git-github.html"/>
+<link rel="next" href="visualize-ggplot2-plotly-tmap.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -45,13 +46,15 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.8.0/plotly.js"></script>
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
 <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
 <script src="libs/d3-3.5.5/d3.min.js"></script>
 <script src="libs/d3-tip-0.6.7/d3-tip.js"></script>
 <link href="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.css" rel="stylesheet" />
@@ -63,9 +66,9 @@
 <script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
 <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
 <link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
 <script src="libs/HomeButton-0.0.1/home-button.js"></script>
 <script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
@@ -75,10 +78,9 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -88,13 +90,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -251,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">NPS Workshop on Interactive Reporting with R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducible Reporting with R (R³) for marine ecosystem indicators</a>
           </h1>
         </div>
 
@@ -284,10 +284,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Packages are bundles of functions, along with help pages and other goodies that make them easier for others to use, (ie. vignettes).</p>
 <p>So far we’ve been using packages included in ‘base R’; they are ‘out-of-the-box’ functions. You can also install packages from online. The most traditional is <a href="https://cran.r-project.org/">CRAN, the Comprehensive R Archive Network</a>. This is where you went to download R originally, and will go again to look for updates.</p>
 <p>You don’t need to go to CRAN’s website to install packages, we can do it from within R with the command <code>install.packages(&quot;package-name-in-quotes&quot;)</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">## from CRAN:</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">## from CRAN:</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#install.packages(&quot;dplyr&quot;) ## do this once only to install the package on your computer.</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">library</span>(dplyr) ## do this every time you restart R and need it</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">library</span>(dplyr) <span class="co">## do this every time you restart R and need it</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5">select &lt;-<span class="st"> </span>dplyr<span class="op">::</span>select <span class="co"># overwrite raster::select</span></a></code></pre></div>
 <p>What’s the difference between <code>install.packages()</code> and <code>library()</code>? Here’s my analogy:</p>
 <ul>
@@ -314,8 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">filter</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>)</a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">filter</span>(gapminder, country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rwanda&quot;</span>, <span class="st">&quot;Afghanistan&quot;</span>))</a></code></pre></div>
 <p>Compare with some base R code to accomplish the same things</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">gapminder[gapminder<span class="op">$</span>lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>, ] ## repeat `gapminder`, [i, j] indexing is distracting</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>) ## almost same as filter ... but wait ...</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">gapminder[gapminder<span class="op">$</span>lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>, ] <span class="co">## repeat `gapminder`, [i, j] indexing is distracting</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>) <span class="co">## almost same as filter ... but wait ...</span></a></code></pre></div>
 </div>
 <div id="meet-the-new-pipe-operator" class="section level2">
 <h2><span class="header-section-number">3.3</span> Meet the new pipe operator</h2>
@@ -510,11 +510,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -522,12 +524,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -537,6 +538,14 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/ecoquants/nps-r-workshop/blob/master/02_wrangle.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
 },
 "download": ["nps-r-workshop.pdf"],
 "toc": {
