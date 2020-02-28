@@ -1,3 +1,3 @@
-# nps-r-workshop
-NPS Workshop for R and Vegetation Monitoring Data Tools
+# r3-workshop
+Reproducible Reporting with R (R^3) for marine ecosystem indicators
 
