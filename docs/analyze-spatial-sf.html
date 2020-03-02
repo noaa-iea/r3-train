@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lesson 5 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
+  <title>Lesson 4 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
   <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
   <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lesson 5 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
+  <meta property="og:title" content="Lesson 4 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="ecoquants/nps-r-workshop" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lesson 5 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
+  <meta name="twitter:title" content="Lesson 4 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   
   <meta name="twitter:description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
   
@@ -153,91 +153,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">NPS R Workshop</a></li>
+<li><a href="./">R3 Workshop</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#google-drive-content"><i class="fa fa-check"></i><b>1.1</b> Google Drive Content</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i><b>1.2</b> Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#github"><i class="fa fa-check"></i>Github</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#google-drive"><i class="fa fa-check"></i>Google Drive</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>2</b> Collaborate: git, github</a><ul>
-<li class="chapter" data-level="2.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>2.1</b> Setup Github &amp; Git</a></li>
-<li class="chapter" data-level="2.2" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#github-workflows"><i class="fa fa-check"></i><b>2.2</b> Github Workflows</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#push-pull"><i class="fa fa-check"></i><b>2.2.1</b> Push &amp; Pull</a></li>
+<li class="chapter" data-level="1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>1</b> Collaborate: git, github</a><ul>
+<li class="chapter" data-level="1.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>1.1</b> Setup Github &amp; Git</a></li>
+<li class="chapter" data-level="1.2" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#github-workflows"><i class="fa fa-check"></i><b>1.2</b> Github Workflows</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#push-pull"><i class="fa fa-check"></i><b>1.2.1</b> Push &amp; Pull</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-repository-nps-demo"><i class="fa fa-check"></i><b>2.3</b> Create Repository <code>nps-demo</code></a><ul>
-<li class="chapter" data-level="2.3.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#edit-readme.md-in-markdown"><i class="fa fa-check"></i><b>2.3.1</b> Edit <code>README.md</code> in Markdown</a></li>
+<li class="chapter" data-level="1.3" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-repository-nps-demo"><i class="fa fa-check"></i><b>1.3</b> Create Repository <code>nps-demo</code></a><ul>
+<li class="chapter" data-level="1.3.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#edit-readme.md-in-markdown"><i class="fa fa-check"></i><b>1.3.1</b> Edit <code>README.md</code> in Markdown</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-index.html"><i class="fa fa-check"></i><b>2.4</b> Create <code>index.html</code></a></li>
-<li class="chapter" data-level="2.5" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-rstudio-project-with-git-repository"><i class="fa fa-check"></i><b>2.5</b> Create RStudio Project with Git Repository</a></li>
-<li class="chapter" data-level="2.6" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-index.rmd-in-rmarkdown"><i class="fa fa-check"></i><b>2.6</b> Create <code>index.Rmd</code> in Rmarkdown</a></li>
-<li class="chapter" data-level="2.7" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#exercise-intertidal-sites-dataset"><i class="fa fa-check"></i><b>2.7</b> Exercise: Intertidal Sites Dataset</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#task-provide-excel-cell-ranges-for-how-you-would-divide-data-into-tables"><i class="fa fa-check"></i><b>2.7.1</b> Task: Provide Excel cell ranges for how you would divide data into tables?</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html"><i class="fa fa-check"></i><b>3</b> Manipulate: <code>tidyr</code>, <code>dplyr</code></a><ul>
-<li class="chapter" data-level="3.1" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#install-our-first-package-dplyr"><i class="fa fa-check"></i><b>3.1</b> install our first package: <code>dplyr</code></a></li>
-<li class="chapter" data-level="3.2" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-dplyrfilter-to-subset-data-row-wise."><i class="fa fa-check"></i><b>3.2</b> Use <code>dplyr::filter()</code> to subset data row-wise.</a></li>
-<li class="chapter" data-level="3.3" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#meet-the-new-pipe-operator"><i class="fa fa-check"></i><b>3.3</b> Meet the new pipe operator</a></li>
-<li class="chapter" data-level="3.4" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-dplyrselect-to-subset-the-data-on-variables-or-columns."><i class="fa fa-check"></i><b>3.4</b> Use <code>dplyr::select()</code> to subset the data on variables or columns.</a></li>
-<li class="chapter" data-level="3.5" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#revel-in-the-convenience"><i class="fa fa-check"></i><b>3.5</b> Revel in the convenience</a></li>
-<li class="chapter" data-level="3.6" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>3.6</b> Use <code>mutate()</code> to add new variables</a></li>
-<li class="chapter" data-level="3.7" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#group_by-and-summarize"><i class="fa fa-check"></i><b>3.7</b> <code>group_by</code> and <code>summarize</code></a></li>
-<li class="chapter" data-level="3.8" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#remember-our-for-loop"><i class="fa fa-check"></i><b>3.8</b> Remember our for loop?</a></li>
-<li class="chapter" data-level="3.9" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#summary"><i class="fa fa-check"></i><b>3.9</b> Summary</a></li>
-<li class="chapter" data-level="3.10" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#further-materials-as-reference"><i class="fa fa-check"></i><b>3.10</b> Further materials as reference…</a><ul>
-<li class="chapter" data-level="3.10.1" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#rationale"><i class="fa fa-check"></i><b>3.10.1</b> Rationale</a></li>
-<li class="chapter" data-level="3.10.2" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#pseudocode"><i class="fa fa-check"></i><b>3.10.2</b> Pseudocode</a></li>
-<li class="chapter" data-level="3.10.3" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#summary-1"><i class="fa fa-check"></i><b>3.10.3</b> Summary</a></li>
-<li class="chapter" data-level="3.10.4" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#dplyr"><i class="fa fa-check"></i><b>3.10.4</b> <code>dplyr</code></a></li>
-<li class="chapter" data-level="3.10.5" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#tidyr"><i class="fa fa-check"></i><b>3.10.5</b> <code>tidyr</code></a></li>
-<li class="chapter" data-level="3.10.6" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#other-links"><i class="fa fa-check"></i><b>3.10.6</b> Other links</a></li>
+<li class="chapter" data-level="1.4" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-index.html"><i class="fa fa-check"></i><b>1.4</b> Create <code>index.html</code></a></li>
+<li class="chapter" data-level="1.5" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-rstudio-project-with-git-repository"><i class="fa fa-check"></i><b>1.5</b> Create RStudio Project with Git Repository</a></li>
+<li class="chapter" data-level="1.6" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#create-index.rmd-in-rmarkdown"><i class="fa fa-check"></i><b>1.6</b> Create <code>index.Rmd</code> in Rmarkdown</a></li>
+<li class="chapter" data-level="1.7" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#exercise-intertidal-sites-dataset"><i class="fa fa-check"></i><b>1.7</b> Exercise: Intertidal Sites Dataset</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#task-provide-excel-cell-ranges-for-how-you-would-divide-data-into-tables"><i class="fa fa-check"></i><b>1.7.1</b> Task: Provide Excel cell ranges for how you would divide data into tables?</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html"><i class="fa fa-check"></i><b>4</b> Visualize: <code>ggplot2</code>, <code>plotly</code>, <code>tmap</code></a><ul>
-<li class="chapter" data-level="4.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#plot"><i class="fa fa-check"></i><b>4.1</b> Plot</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#static-ggplot"><i class="fa fa-check"></i><b>4.1.1</b> Static: <code>ggplot</code></a></li>
-<li class="chapter" data-level="4.1.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-plotly"><i class="fa fa-check"></i><b>4.1.2</b> Interactive: <code>plotly</code></a></li>
-<li class="chapter" data-level="4.1.3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-exploding-boxplot"><i class="fa fa-check"></i><b>4.1.3</b> Interactive: Exploding Boxplot</a></li>
-<li class="chapter" data-level="4.1.4" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-motion-plot"><i class="fa fa-check"></i><b>4.1.4</b> Interactive: Motion Plot</a></li>
+<li class="chapter" data-level="2" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html"><i class="fa fa-check"></i><b>2</b> Manipulate: <code>tidyr</code>, <code>dplyr</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#install-our-first-package-dplyr"><i class="fa fa-check"></i><b>2.1</b> install our first package: <code>dplyr</code></a></li>
+<li class="chapter" data-level="2.2" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-dplyrfilter-to-subset-data-row-wise."><i class="fa fa-check"></i><b>2.2</b> Use <code>dplyr::filter()</code> to subset data row-wise.</a></li>
+<li class="chapter" data-level="2.3" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#meet-the-new-pipe-operator"><i class="fa fa-check"></i><b>2.3</b> Meet the new pipe operator</a></li>
+<li class="chapter" data-level="2.4" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-dplyrselect-to-subset-the-data-on-variables-or-columns."><i class="fa fa-check"></i><b>2.4</b> Use <code>dplyr::select()</code> to subset the data on variables or columns.</a></li>
+<li class="chapter" data-level="2.5" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#revel-in-the-convenience"><i class="fa fa-check"></i><b>2.5</b> Revel in the convenience</a></li>
+<li class="chapter" data-level="2.6" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>2.6</b> Use <code>mutate()</code> to add new variables</a></li>
+<li class="chapter" data-level="2.7" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#group_by-and-summarize"><i class="fa fa-check"></i><b>2.7</b> <code>group_by</code> and <code>summarize</code></a></li>
+<li class="chapter" data-level="2.8" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#remember-our-for-loop"><i class="fa fa-check"></i><b>2.8</b> Remember our for loop?</a></li>
+<li class="chapter" data-level="2.9" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#summary"><i class="fa fa-check"></i><b>2.9</b> Summary</a></li>
+<li class="chapter" data-level="2.10" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#further-materials-as-reference"><i class="fa fa-check"></i><b>2.10</b> Further materials as reference…</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#rationale"><i class="fa fa-check"></i><b>2.10.1</b> Rationale</a></li>
+<li class="chapter" data-level="2.10.2" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#pseudocode"><i class="fa fa-check"></i><b>2.10.2</b> Pseudocode</a></li>
+<li class="chapter" data-level="2.10.3" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#summary-1"><i class="fa fa-check"></i><b>2.10.3</b> Summary</a></li>
+<li class="chapter" data-level="2.10.4" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#dplyr"><i class="fa fa-check"></i><b>2.10.4</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="2.10.5" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#tidyr"><i class="fa fa-check"></i><b>2.10.5</b> <code>tidyr</code></a></li>
+<li class="chapter" data-level="2.10.6" data-path="manipulate-tidyr-dplyr.html"><a href="manipulate-tidyr-dplyr.html#other-links"><i class="fa fa-check"></i><b>2.10.6</b> Other links</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#map"><i class="fa fa-check"></i><b>4.2</b> Map</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#static"><i class="fa fa-check"></i><b>4.2.1</b> Static</a></li>
-<li class="chapter" data-level="4.2.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive"><i class="fa fa-check"></i><b>4.2.2</b> Interactive</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#references"><i class="fa fa-check"></i><b>4.3</b> References</a></li>
+<li class="chapter" data-level="3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html"><i class="fa fa-check"></i><b>3</b> Visualize: <code>ggplot2</code>, <code>plotly</code>, <code>tmap</code></a><ul>
+<li class="chapter" data-level="3.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#plot"><i class="fa fa-check"></i><b>3.1</b> Plot</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#static-ggplot"><i class="fa fa-check"></i><b>3.1.1</b> Static: <code>ggplot</code></a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-plotly"><i class="fa fa-check"></i><b>3.1.2</b> Interactive: <code>plotly</code></a></li>
+<li class="chapter" data-level="3.1.3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-exploding-boxplot"><i class="fa fa-check"></i><b>3.1.3</b> Interactive: Exploding Boxplot</a></li>
+<li class="chapter" data-level="3.1.4" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive-motion-plot"><i class="fa fa-check"></i><b>3.1.4</b> Interactive: Motion Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html"><i class="fa fa-check"></i><b>5</b> Analyze Spatial: <code>sf</code></a><ul>
-<li class="chapter" data-level="5.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#overview-1"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#prerequisites"><i class="fa fa-check"></i><b>5.2</b> Prerequisites</a></li>
-<li class="chapter" data-level="5.3" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#states-read-and-plot"><i class="fa fa-check"></i><b>5.3</b> States: read and plot</a></li>
-<li class="chapter" data-level="5.4" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-analytical-steps"><i class="fa fa-check"></i><b>5.4</b> Challenge: analytical steps?</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers"><i class="fa fa-check"></i><b>5.4.1</b> Answers</a></li>
+<li class="chapter" data-level="3.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#map"><i class="fa fa-check"></i><b>3.2</b> Map</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#static"><i class="fa fa-check"></i><b>3.2.1</b> Static</a></li>
+<li class="chapter" data-level="3.2.2" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#interactive"><i class="fa fa-check"></i><b>3.2.2</b> Interactive</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-calculate-water"><i class="fa fa-check"></i><b>5.5</b> Regions: calculate % water</a></li>
-<li class="chapter" data-level="5.6" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-plot"><i class="fa fa-check"></i><b>5.6</b> Regions: plot</a></li>
-<li class="chapter" data-level="5.7" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-ggplot"><i class="fa fa-check"></i><b>5.7</b> Regions: ggplot</a></li>
-<li class="chapter" data-level="5.8" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-recalculate-area"><i class="fa fa-check"></i><b>5.8</b> Regions: recalculate area</a></li>
-<li class="chapter" data-level="5.9" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-project-recalculate-area"><i class="fa fa-check"></i><b>5.9</b> Challenge: project &amp; recalculate area</a><ul>
-<li class="chapter" data-level="5.9.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers-1"><i class="fa fa-check"></i><b>5.9.1</b> Answers</a></li>
+<li class="chapter" data-level="3.3" data-path="visualize-ggplot2-plotly-tmap.html"><a href="visualize-ggplot2-plotly-tmap.html#references"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="5.10" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#key-points"><i class="fa fa-check"></i><b>5.10</b> Key Points</a></li>
+<li class="chapter" data-level="4" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html"><i class="fa fa-check"></i><b>4</b> Analyze Spatial: <code>sf</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#overview-1"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#prerequisites"><i class="fa fa-check"></i><b>4.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.3" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#states-read-and-plot"><i class="fa fa-check"></i><b>4.3</b> States: read and plot</a></li>
+<li class="chapter" data-level="4.4" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-analytical-steps"><i class="fa fa-check"></i><b>4.4</b> Challenge: analytical steps?</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers"><i class="fa fa-check"></i><b>4.4.1</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html"><i class="fa fa-check"></i><b>6</b> Interactive Map: <code>leaflet</code></a><ul>
-<li class="chapter" data-level="6.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#overview-2"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#things-youll-need-to-complete-this-tutorial"><i class="fa fa-check"></i><b>6.2</b> Things You’ll Need to Complete this Tutorial</a></li>
-<li class="chapter" data-level="6.3" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-ggplot2"><i class="fa fa-check"></i><b>6.3</b> States: ggplot2</a></li>
-<li class="chapter" data-level="6.4" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-plotly"><i class="fa fa-check"></i><b>6.4</b> States: plotly</a></li>
-<li class="chapter" data-level="6.5" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-mapview"><i class="fa fa-check"></i><b>6.5</b> States: mapview</a></li>
-<li class="chapter" data-level="6.6" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-leaflet"><i class="fa fa-check"></i><b>6.6</b> States: leaflet</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#choropleth"><i class="fa fa-check"></i><b>6.6.1</b> Choropleth</a></li>
-<li class="chapter" data-level="6.6.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#popups-and-legend"><i class="fa fa-check"></i><b>6.6.2</b> Popups and Legend</a></li>
+<li class="chapter" data-level="4.5" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-calculate-water"><i class="fa fa-check"></i><b>4.5</b> Regions: calculate % water</a></li>
+<li class="chapter" data-level="4.6" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-plot"><i class="fa fa-check"></i><b>4.6</b> Regions: plot</a></li>
+<li class="chapter" data-level="4.7" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-ggplot"><i class="fa fa-check"></i><b>4.7</b> Regions: ggplot</a></li>
+<li class="chapter" data-level="4.8" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#regions-recalculate-area"><i class="fa fa-check"></i><b>4.8</b> Regions: recalculate area</a></li>
+<li class="chapter" data-level="4.9" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#challenge-project-recalculate-area"><i class="fa fa-check"></i><b>4.9</b> Challenge: project &amp; recalculate area</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#answers-1"><i class="fa fa-check"></i><b>4.9.1</b> Answers</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#challenge-leaflet-for-regions"><i class="fa fa-check"></i><b>6.7</b> Challenge: leaflet for regions</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#answers-2"><i class="fa fa-check"></i><b>6.7.1</b> Answers</a></li>
+<li class="chapter" data-level="4.10" data-path="analyze-spatial-sf.html"><a href="analyze-spatial-sf.html#key-points"><i class="fa fa-check"></i><b>4.10</b> Key Points</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>6.8</b> Raster: leaflet</a></li>
-<li class="chapter" data-level="6.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>6.9</b> Key Points</a></li>
+<li class="chapter" data-level="5" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html"><i class="fa fa-check"></i><b>5</b> Interactive Map: <code>leaflet</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#overview-2"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#things-youll-need-to-complete-this-tutorial"><i class="fa fa-check"></i><b>5.2</b> Things You’ll Need to Complete this Tutorial</a></li>
+<li class="chapter" data-level="5.3" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-ggplot2"><i class="fa fa-check"></i><b>5.3</b> States: ggplot2</a></li>
+<li class="chapter" data-level="5.4" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-plotly"><i class="fa fa-check"></i><b>5.4</b> States: plotly</a></li>
+<li class="chapter" data-level="5.5" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-mapview"><i class="fa fa-check"></i><b>5.5</b> States: mapview</a></li>
+<li class="chapter" data-level="5.6" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#states-leaflet"><i class="fa fa-check"></i><b>5.6</b> States: leaflet</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#choropleth"><i class="fa fa-check"></i><b>5.6.1</b> Choropleth</a></li>
+<li class="chapter" data-level="5.6.2" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#popups-and-legend"><i class="fa fa-check"></i><b>5.6.2</b> Popups and Legend</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#challenge-leaflet-for-regions"><i class="fa fa-check"></i><b>5.7</b> Challenge: leaflet for regions</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#answers-2"><i class="fa fa-check"></i><b>5.7.1</b> Answers</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>5.8</b> Raster: leaflet</a></li>
+<li class="chapter" data-level="5.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -260,9 +261,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="analyze-spatial-sf" class="section level1">
-<h1><span class="header-section-number">Lesson 5</span> Analyze Spatial: <code>sf</code></h1>
+<h1><span class="header-section-number">Lesson 4</span> Analyze Spatial: <code>sf</code></h1>
 <div id="overview-1" class="section level2 objectives">
-<h2><span class="header-section-number">5.1</span> Overview</h2>
+<h2><span class="header-section-number">4.1</span> Overview</h2>
 <p><strong>Questions</strong></p>
 <ul>
 <li>How to elegantly conduct complex spatial analysis by chaining operations?</li>
@@ -277,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="prerequisites" class="section level2 prereq">
-<h2><span class="header-section-number">5.2</span> Prerequisites</h2>
+<h2><span class="header-section-number">4.2</span> Prerequisites</h2>
 <p><strong>R Skill Level</strong>: Intermediate - you’ve got basics of R down.</p>
 <p>You will use the <code>sf</code> package for vector data along with the <code>dplyr</code> package for calculating and manipulating attribute data.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="co"># load packages</span></a>
@@ -288,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb49-6" data-line-number="6"><span class="co"># setwd(&quot;pathToDirHere&quot;)</span></a></code></pre></div>
 </div>
 <div id="states-read-and-plot" class="section level2">
-<h2><span class="header-section-number">5.3</span> States: read and plot</h2>
+<h2><span class="header-section-number">4.3</span> States: read and plot</h2>
 <p>Similar to <a href="https://jsta.github.io/R-spatial-raster-vector-lesson/09-vector-when-data-dont-line-up-crs/">Lesson 9: Handling Spatial Projection &amp; CRS in R</a>, we’ll start by reading in a polygon shapefile using the <code>sf</code> package. Then use the default <code>plot()</code> function to see what it looks like.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">library</span>(here)</a></code></pre></div>
 <pre><code>## here() starts at /Users/bbest/github/r3-workshop</code></pre>
@@ -301,11 +302,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb52-7" data-line-number="7"><span class="kw">plot</span>(states)</a></code></pre></div>
 <pre><code>## Warning: plotting the first 9 out of 10 attributes; use max.plot = 10 to plot
 ## all</code></pre>
-<p><img src="nps-r-workshop_files/figure-html/plot-states-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/plot-states-1.png" width="672" /></p>
 <p>Notice the default plot on <code>sf</code> objects outputs colorized values of the first 9 of 10 columns. Use the suggestion from the warning to plot the 10th column.</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="co"># plot 10th column</span></a>
 <a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">plot</span>(states, <span class="dt">max.plot =</span> <span class="dv">10</span>)</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/plot-states-10-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/plot-states-10-1.png" width="672" /></p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="co"># show columns of the data frame</span></a>
 <a class="sourceLine" id="cb55-2" data-line-number="2"><span class="kw">names</span>(states)</a></code></pre></div>
 <pre><code>##  [1] &quot;STATEFP&quot;  &quot;STATENS&quot;  &quot;AFFGEOID&quot; &quot;GEOID&quot;    &quot;STUSPS&quot;   &quot;NAME&quot;    
@@ -350,14 +351,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The class of the <code>states</code> object is both a simple feature (<code>sf</code>) as well as a data frame, which means the many useful functions available to a data frame (or “tibble”) can be applied.</p>
 <p>To plot the column of interest, feed the “slice” of that column to the <code>plot()</code> function.</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">plot</span>(states[<span class="st">&#39;region&#39;</span>])</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/plot-states-region-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/plot-states-region-1.png" width="672" /></p>
 <p><strong>Question</strong>: To motivate the spatial analysis for the rest of this lesson, you will answer this question: “<em><strong>What is the percent water by region?</strong></em>”</p>
 </div>
 <div id="challenge-analytical-steps" class="section level2 challenge">
-<h2><span class="header-section-number">5.4</span> Challenge: analytical steps?</h2>
+<h2><span class="header-section-number">4.4</span> Challenge: analytical steps?</h2>
 <p>Outline a sequence of analytical steps needed to arrive at the answer.</p>
 <div id="answers" class="section level3 solution">
-<h3><span class="header-section-number">5.4.1</span> Answers</h3>
+<h3><span class="header-section-number">4.4.1</span> Answers</h3>
 <ol style="list-style-type: decimal">
 <li><strong>Sum</strong> the area of water (<code>AWATER</code>) and land (<code>ALAND</code>) per region.</li>
 <li><strong>Divide</strong> the area of water (<code>AWATER</code>) by the area of land (<code>ALAND</code>) per region to arrive at percent water.</li>
@@ -367,7 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="regions-calculate-water" class="section level2">
-<h2><span class="header-section-number">5.5</span> Regions: calculate % water</h2>
+<h2><span class="header-section-number">4.5</span> Regions: calculate % water</h2>
 <ul>
 <li>Use the <code>%&gt;%</code> operator (aka “then” or “pipe”) to pass output from one function into input of the next.
 <ul>
@@ -418,14 +419,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 Southwest  24217682268 1462631530997      1.66</code></pre>
 </div>
 <div id="regions-plot" class="section level2">
-<h2><span class="header-section-number">5.6</span> Regions: plot</h2>
+<h2><span class="header-section-number">4.6</span> Regions: plot</h2>
 <p>Now plot the regions.</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># plot, default</span></a>
 <a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">plot</span>(regions[<span class="st">&#39;pct_water&#39;</span>])</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/plot-regions-pctwater-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/plot-regions-pctwater-1.png" width="672" /></p>
 </div>
 <div id="regions-ggplot" class="section level2">
-<h2><span class="header-section-number">5.7</span> Regions: ggplot</h2>
+<h2><span class="header-section-number">4.7</span> Regions: ggplot</h2>
 <p>The <code>ggplot2</code> library can <a href="http://ggplot2.tidyverse.org/reference/ggsf.html">visualise sf objects</a>.</p>
 <ul>
 <li>In RStudio, see menu Help &gt; Cheatsheets &gt; <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/ggplot2-cheatsheet-2.1.pdf">Data Visualization with ggplot2</a>.</li>
@@ -438,10 +439,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb71-6" data-line-number="6">    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb71-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb71-8" data-line-number="8"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/ggplot-regions-pctwater-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/ggplot-regions-pctwater-1.png" width="672" /></p>
 </div>
 <div id="regions-recalculate-area" class="section level2">
-<h2><span class="header-section-number">5.8</span> Regions: recalculate area</h2>
+<h2><span class="header-section-number">4.8</span> Regions: recalculate area</h2>
 <p>So far you’ve used the <code>ALAND</code> column for area of the state. But what if you were not provided the area and needed to calculate it? Because the <code>states</code> are in geographic coordinates, you’ll need to either transform to an equal area projection and calculate area, or use geodesic calculations. Thankfully, the <code>sf</code> library provides area calculations with the <code>st_area()</code> and uses the <code>geosphere::distGeo()</code> to perform geodesic calculations (ie trigonometric calculation accounting for the spheroid nature of the earth). Since the <code>states</code> data has the unusual aspect of a z dimension, you’ll need to first remove that with the <code>st_zm()</code> function.</p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">library</span>(geosphere)</a>
 <a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">library</span>(units)</a>
@@ -477,13 +478,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb74-6" data-line-number="6">    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb74-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb74-8" data-line-number="8"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/plot-regions-area-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/plot-regions-area-1.png" width="672" /></p>
 </div>
 <div id="challenge-project-recalculate-area" class="section level2 challenge">
-<h2><span class="header-section-number">5.9</span> Challenge: project &amp; recalculate area</h2>
+<h2><span class="header-section-number">4.9</span> Challenge: project &amp; recalculate area</h2>
 <p>Use <code>st_transform()</code> with a <a href="http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/">USA Contiguous Albers Equal Area Conic Projection</a> that minimizes distoration, and then calculate area using the <code>st_area()</code> function.</p>
 <div id="answers-1" class="section level3 solution">
-<h3><span class="header-section-number">5.9.1</span> Answers</h3>
+<h3><span class="header-section-number">4.9.1</span> Answers</h3>
 <div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">library</span>(geosphere)</a>
 <a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">library</span>(units)</a>
 <a class="sourceLine" id="cb75-3" data-line-number="3"></a>
@@ -520,11 +521,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb77-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_distiller</span>(<span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb77-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb77-6" data-line-number="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water (geodesic) by US Region&quot;</span>)</a></code></pre></div>
-<p><img src="nps-r-workshop_files/figure-html/recalc-regions-transform-1.png" width="672" /></p>
+<p><img src="r3-workshop_files/figure-html/recalc-regions-transform-1.png" width="672" /></p>
 </div>
 </div>
 <div id="key-points" class="section level2 keypoints">
-<h2><span class="header-section-number">5.10</span> Key Points</h2>
+<h2><span class="header-section-number">4.10</span> Key Points</h2>
 <ul>
 <li>The <code>sf</code> package can take advantage of chaining spatial operations using the <code>%&gt;%</code> operator.</li>
 <li>Data manipulation functions in <code>dplyr</code> such as <code>group_by()</code>, <code>summarize()</code> and <code>mutate()</code> work on <code>sf</code> objects.</li>
@@ -573,7 +574,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ecoquants/nps-r-workshop/blob/master/04_spatial.Rmd",
+"link": "https://github.com/ecoquants/r3-workshop/blob/master/04_spatial.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -584,7 +585,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["nps-r-workshop.pdf"],
+"download": ["r3-workshop.pdf"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

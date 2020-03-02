@@ -33,9 +33,17 @@ These materials are for a 1-day workshop on Reproducible Reporting with R for th
 [706 S Rodney French Blvd, New Bedford, MA 02744](https://goo.gl/maps/LWMUfGmGsYdcAVo58)<br>
 - _**Date**_: Monday, March 16, 2020
 
+Marine ecosystem indicators are ideally developed in an efficient, transparent, time sensitive manner so as to consistently and effectively support decision-making by managers and inform on ecosystem status for the general public. In this workshop we will demonstrate the use of the R scripting language for automating the ingestion and wrangling of data, calculation of indicators, visualization of maps or time series and online communication with interactive or static reports. We will also use Github to version and collaboratively develop code, communicate technically and host free websites. Finally, development of interactive user applications using Shiny and interactive infographics using a custom library will be briefly reviewed. Please check back here for the latest online materials.
+
 This is the landing site for our workshop materials. Google Drive (folders, docs, slides, sheets, etc.) allows us to be agile with adapting content on the fly. The rest of the content in this site is generated using the techniques taught: R + markdown = Rmarkdown, git, Github, etc.
 
-## Google Drive Content {-}
+## Github {-}
+
+Here is the Github repository of the source files for this website:
+
+- [github.com/ecoquants/r3-workshop](https://github.com/ecoquants/r3-workshop)
+
+## Google Drive {-}
 
 - [**workshop/**](https://drive.google.com/drive/u/1/folders/19mPz-w4AHHn0X3Jje5XvC3n5c1SnMlJC)
     - [**agenda**](https://docs.google.com/document/d/1mS_DcEoCZDN8-O4h7DeBdHzsk-5FkailM58Hm56jp6c/edit#)
