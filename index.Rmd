@@ -45,15 +45,15 @@ Here is the Github repository of the source files for this website:
 
 ## Google Drive {-}
 
-- [**workshop/**](https://drive.google.com/drive/u/1/folders/19mPz-w4AHHn0X3Jje5XvC3n5c1SnMlJC)
-    - [**agenda**](https://docs.google.com/document/d/1mS_DcEoCZDN8-O4h7DeBdHzsk-5FkailM58Hm56jp6c/edit#)
-    - [**notes**](https://docs.google.com/document/d/1bVvVOZISIT9ZyEsOGmqr0LccQaHl9gcl-EoraJBg7Gw/edit#)
-    - [**presentations/**](https://drive.google.com/drive/u/1/folders/1MNolN6cPbbf1k33Qg1L4YLAvVdv7cBuR)
-    - [**data/**](https://drive.google.com/drive/u/1/folders/1ge660eD5b7OinQSKSLjrCSKyFk3bJE2L)
+- [**workshop/**](https://drive.google.com/drive/u/1/folders/1l5ESwDXPdotgNypDRhZzvEmDhFd6NH3y)
+    - [**agenda**](https://docs.google.com/document/d/1oxx5d1YOp5vlb5wiQw76HZtvbOTzhYED0xFlhLSJ-ok/edit#)
+    - [**notes**](https://docs.google.com/document/d/13Ua3Wnwur59GiDNMxFc2uJRREEY0D3Vvpp__LWFMCuw/edit#)
+    - [**presentations/**](https://drive.google.com/drive/u/1/folders/1lIBCl9xbjrbRtuQqtedlNQYDJvjORUzM)
+    - [**data/**](https://drive.google.com/drive/u/1/folders/1ChK39e3oJtVYrfx4rYjzdifW-v8xA8bK)
 
 ## Resources {-}
 
+Online books:
 - [R for Data Science](http://r4ds.had.co.nz/)
 - [Spatial Data Analysis and Modeling with R](http://rspatial.org)
-- [Introduction to GIS - slides](https://docs.google.com/presentation/d/1P3ITbMxVsYcxbzUXLbDo8DLBs7d4nC_20eilIuaB0X0/present)
 
