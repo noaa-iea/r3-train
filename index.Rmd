@@ -57,3 +57,79 @@ Online books:
 - [R for Data Science](http://r4ds.had.co.nz/)
 - [Spatial Data Analysis and Modeling with R](http://rspatial.org)
 
+## Software Setup {-}
+
+## Install software
+
+This workshop will require the following software installed on your machine:
+
+- [R](http://cran.cnr.berkeley.edu/) scientific programming language
+- [RStudio](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
+- [Git](https://git-scm.com/) version control
+
+Please download the appropriate stable release for your operating system.
+
+## Launch RStudio
+
+RStudio is an integrated development environment (IDE) for editing text in the code editor, running commands in the R console, viewing defined objects in the workspace and past commands in the history, and viewing plots, files and help. Here's a layout of the panes in RStudio, each of which can have several tabs for alternate functionality:
+
+![](figs/rstudio.png)
+
+Check out the Help > Cheatsheets > [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf).
+
+## Fork and Clone the Github Repository
+
+If you'd like to play with these materials directly and keep track of differences, please visit:
+
+https://github.com/bbest/meds-demo
+
+While signed into Github, [fork the repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) into your own writable user space so you can [clone it in RStudio](https://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio).
+
+Then you can follow along in RStudio by evaluating the chunks of R code, while referencing this website:
+
+http://benbestphd.com/meds-demo
+
+## Install R Packages
+
+Here's a bit of code to ensure you have all the necessary packages installed. Please copy and paste this code into your R Console.
+
+```{r, message=F, warning=F}
+# use librarian to load libraries, installing if needed
+if (!require("librarian")) install.packages("librarian")
+library("librarian")
+
+pkgs <- c(
+  # utility
+  "here","glue",
+  "readr","dplyr","tidyr","purrr","scales",
+  "lubridate","stringr","units",
+  # api
+  "jsonlite",
+  # plotting
+  "ggplot2","plotly",
+  # spatial
+  "sf",
+  # text
+  "rtweet","tidytext","textdata",
+  # tensorflow
+  "tensorflow","keras")
+shelf(pkgs)
+
+# TODO: cranometer https://gist.github.com/hadley/5420147
+
+# report on versions of software & packages
+sessionInfo()
+```
+
+## Create Rmarkdown file
+
+Rmarkdown is a dynamic document format that allows you to knit chunks of R code with formatted text (aka markdown). We recommend that you use this format for keeping a reproducible research document as you work through the lessons To get started, File > New File > Rmarkdown... and go with default HTML document and give any title you like (default "Untitled" or "test" or "First Rmd" is fine).
+
+Check out the Help > Markdown Quick Reference and Help > Cheatsheets > [R Markdown Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf).
+
+Here's a 1 minute video on the awesomeness of Rmarkdown:
+
+```{r, echo=F}
+vembedr::embed_url("https://vimeo.com/178485416")
+```
+

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lesson 2 Manipulate: tidyr, dplyr | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
   <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lesson 2 Manipulate: tidyr, dplyr | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
@@ -48,13 +48,16 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="libs/d3-3.5.5/d3.min.js"></script>
 <script src="libs/d3-tip-0.6.7/d3-tip.js"></script>
 <link href="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.css" rel="stylesheet" />
@@ -69,16 +72,71 @@
 <script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/fgb.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+<script src="libs/chromajs-2.1.0/chroma.min.js"></script>
+<link id="states-1-attachment" rel="attachment" href="libs/states-0.0.1/states_layer.fgb"/>
 <link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
 <script src="libs/HomeButton-0.0.1/home-button.js"></script>
 <script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
-<link href="libs/PopupTable-0.0.1/popup.css" rel="stylesheet" />
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+<link href="libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+<link href="libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+<link id="AL-1-attachment" rel="attachment" href="libs/AL-0.0.1/AL_layer.fgb"/>
+<link id="AR-1-attachment" rel="attachment" href="libs/AR-0.0.1/AR_layer.fgb"/>
+<link id="AZ-1-attachment" rel="attachment" href="libs/AZ-0.0.1/AZ_layer.fgb"/>
+<link id="CA-1-attachment" rel="attachment" href="libs/CA-0.0.1/CA_layer.fgb"/>
+<link id="CO-1-attachment" rel="attachment" href="libs/CO-0.0.1/CO_layer.fgb"/>
+<link id="CT-1-attachment" rel="attachment" href="libs/CT-0.0.1/CT_layer.fgb"/>
+<link id="DC-1-attachment" rel="attachment" href="libs/DC-0.0.1/DC_layer.fgb"/>
+<link id="DE-1-attachment" rel="attachment" href="libs/DE-0.0.1/DE_layer.fgb"/>
+<link id="FL-1-attachment" rel="attachment" href="libs/FL-0.0.1/FL_layer.fgb"/>
+<link id="GA-1-attachment" rel="attachment" href="libs/GA-0.0.1/GA_layer.fgb"/>
+<link id="IA-1-attachment" rel="attachment" href="libs/IA-0.0.1/IA_layer.fgb"/>
+<link id="ID-1-attachment" rel="attachment" href="libs/ID-0.0.1/ID_layer.fgb"/>
+<link id="IL-1-attachment" rel="attachment" href="libs/IL-0.0.1/IL_layer.fgb"/>
+<link id="IN-1-attachment" rel="attachment" href="libs/IN-0.0.1/IN_layer.fgb"/>
+<link id="KS-1-attachment" rel="attachment" href="libs/KS-0.0.1/KS_layer.fgb"/>
+<link id="KY-1-attachment" rel="attachment" href="libs/KY-0.0.1/KY_layer.fgb"/>
+<link id="LA-1-attachment" rel="attachment" href="libs/LA-0.0.1/LA_layer.fgb"/>
+<link id="MA-1-attachment" rel="attachment" href="libs/MA-0.0.1/MA_layer.fgb"/>
+<link id="MD-1-attachment" rel="attachment" href="libs/MD-0.0.1/MD_layer.fgb"/>
+<link id="ME-1-attachment" rel="attachment" href="libs/ME-0.0.1/ME_layer.fgb"/>
+<link id="MI-1-attachment" rel="attachment" href="libs/MI-0.0.1/MI_layer.fgb"/>
+<link id="MN-1-attachment" rel="attachment" href="libs/MN-0.0.1/MN_layer.fgb"/>
+<link id="MO-1-attachment" rel="attachment" href="libs/MO-0.0.1/MO_layer.fgb"/>
+<link id="MS-1-attachment" rel="attachment" href="libs/MS-0.0.1/MS_layer.fgb"/>
+<link id="MT-1-attachment" rel="attachment" href="libs/MT-0.0.1/MT_layer.fgb"/>
+<link id="NC-1-attachment" rel="attachment" href="libs/NC-0.0.1/NC_layer.fgb"/>
+<link id="ND-1-attachment" rel="attachment" href="libs/ND-0.0.1/ND_layer.fgb"/>
+<link id="NE-1-attachment" rel="attachment" href="libs/NE-0.0.1/NE_layer.fgb"/>
+<link id="NH-1-attachment" rel="attachment" href="libs/NH-0.0.1/NH_layer.fgb"/>
+<link id="NJ-1-attachment" rel="attachment" href="libs/NJ-0.0.1/NJ_layer.fgb"/>
+<link id="NM-1-attachment" rel="attachment" href="libs/NM-0.0.1/NM_layer.fgb"/>
+<link id="NV-1-attachment" rel="attachment" href="libs/NV-0.0.1/NV_layer.fgb"/>
+<link id="NY-1-attachment" rel="attachment" href="libs/NY-0.0.1/NY_layer.fgb"/>
+<link id="OH-1-attachment" rel="attachment" href="libs/OH-0.0.1/OH_layer.fgb"/>
+<link id="OK-1-attachment" rel="attachment" href="libs/OK-0.0.1/OK_layer.fgb"/>
+<link id="OR-1-attachment" rel="attachment" href="libs/OR-0.0.1/OR_layer.fgb"/>
+<link id="PA-1-attachment" rel="attachment" href="libs/PA-0.0.1/PA_layer.fgb"/>
+<link id="RI-1-attachment" rel="attachment" href="libs/RI-0.0.1/RI_layer.fgb"/>
+<link id="SC-1-attachment" rel="attachment" href="libs/SC-0.0.1/SC_layer.fgb"/>
+<link id="SD-1-attachment" rel="attachment" href="libs/SD-0.0.1/SD_layer.fgb"/>
+<link id="TN-1-attachment" rel="attachment" href="libs/TN-0.0.1/TN_layer.fgb"/>
+<link id="TX-1-attachment" rel="attachment" href="libs/TX-0.0.1/TX_layer.fgb"/>
+<link id="UT-1-attachment" rel="attachment" href="libs/UT-0.0.1/UT_layer.fgb"/>
+<link id="VA-1-attachment" rel="attachment" href="libs/VA-0.0.1/VA_layer.fgb"/>
+<link id="VT-1-attachment" rel="attachment" href="libs/VT-0.0.1/VT_layer.fgb"/>
+<link id="WA-1-attachment" rel="attachment" href="libs/WA-0.0.1/WA_layer.fgb"/>
+<link id="WI-1-attachment" rel="attachment" href="libs/WI-0.0.1/WI_layer.fgb"/>
+<link id="WV-1-attachment" rel="attachment" href="libs/WV-0.0.1/WV_layer.fgb"/>
+<link id="WY-1-attachment" rel="attachment" href="libs/WY-0.0.1/WY_layer.fgb"/>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -87,14 +145,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,9 +163,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -160,6 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#github"><i class="fa fa-check"></i>Github</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#google-drive"><i class="fa fa-check"></i>Google Drive</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-setup"><i class="fa fa-check"></i>Software Setup</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#install-software"><i class="fa fa-check"></i><b>0.1</b> Install software</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#launch-rstudio"><i class="fa fa-check"></i><b>0.2</b> Launch RStudio</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#fork-and-clone-the-github-repository"><i class="fa fa-check"></i><b>0.3</b> Fork and Clone the Github Repository</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>0.4</b> Install R Packages</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#create-rmarkdown-file"><i class="fa fa-check"></i><b>0.5</b> Create Rmarkdown file</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>1</b> Collaborate: git, github</a><ul>
 <li class="chapter" data-level="1.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>1.1</b> Setup Github &amp; Git</a></li>
@@ -240,6 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>5.8</b> Raster: leaflet</a></li>
 <li class="chapter" data-level="5.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-shiny-google-auth.html"><a href="appendix-shiny-google-auth.html"><i class="fa fa-check"></i><b>A</b> Appendix Shiny Google Auth</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -284,12 +352,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> install our first package: <code>dplyr</code></h2>
 <p>Packages are bundles of functions, along with help pages and other goodies that make them easier for others to use, (ie. vignettes).</p>
 <p>So far we’ve been using packages included in ‘base R’; they are ‘out-of-the-box’ functions. You can also install packages from online. The most traditional is <a href="https://cran.r-project.org/">CRAN, the Comprehensive R Archive Network</a>. This is where you went to download R originally, and will go again to look for updates.</p>
-<p>You don’t need to go to CRAN’s website to install packages, we can do it from within R with the command <code>install.packages(&quot;package-name-in-quotes&quot;)</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">## from CRAN:</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#install.packages(&quot;dplyr&quot;) ## do this once only to install the package on your computer.</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">library</span>(dplyr) <span class="co">## do this every time you restart R and need it</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">select &lt;-<span class="st"> </span>dplyr<span class="op">::</span>select <span class="co"># overwrite raster::select</span></a></code></pre></div>
+<p>You don’t need to go to CRAN’s website to install packages, we can do it from within R with the command <code>install.packages("package-name-in-quotes")</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="manipulate-tidyr-dplyr.html#cb5-1"></a><span class="co">## from CRAN:</span></span>
+<span id="cb5-2"><a href="manipulate-tidyr-dplyr.html#cb5-2"></a><span class="co">#install.packages(&quot;dplyr&quot;) ## do this once only to install the package on your computer.</span></span>
+<span id="cb5-3"><a href="manipulate-tidyr-dplyr.html#cb5-3"></a></span>
+<span id="cb5-4"><a href="manipulate-tidyr-dplyr.html#cb5-4"></a><span class="kw">library</span>(dplyr) <span class="co">## do this every time you restart R and need it</span></span>
+<span id="cb5-5"><a href="manipulate-tidyr-dplyr.html#cb5-5"></a>select &lt;-<span class="st"> </span>dplyr<span class="op">::</span>select <span class="co"># overwrite raster::select</span></span></code></pre></div>
 <p>What’s the difference between <code>install.packages()</code> and <code>library()</code>? Here’s my analogy:</p>
 <ul>
 <li><code>install.packages()</code> is setting up electricity for your house. Just need to do this once (let’s ignore monthly bills).</li>
@@ -299,34 +367,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="use-dplyrfilter-to-subset-data-row-wise." class="section level2">
 <h2><span class="header-section-number">2.2</span> Use <code>dplyr::filter()</code> to subset data row-wise.</h2>
 <p>First let’s read in the gapminder data.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># install.packages(&#39;gapminder&#39;) # instead of reading in the csv</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(gapminder) <span class="co"># this is the package name</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">str</span>(gapminder) <span class="co"># and it&#39;s also the data.frame name, just like yesterday</span></a></code></pre></div>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    1704 obs. of  6 variables:
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="manipulate-tidyr-dplyr.html#cb6-1"></a><span class="co"># install.packages(&#39;gapminder&#39;) # instead of reading in the csv</span></span>
+<span id="cb6-2"><a href="manipulate-tidyr-dplyr.html#cb6-2"></a><span class="kw">library</span>(gapminder) <span class="co"># this is the package name</span></span>
+<span id="cb6-3"><a href="manipulate-tidyr-dplyr.html#cb6-3"></a><span class="kw">str</span>(gapminder) <span class="co"># and it&#39;s also the data.frame name, just like yesterday</span></span></code></pre></div>
+<pre><code>## tibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)
 ##  $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
-##  $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
-##  $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
-##  $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
-##  $ gdpPercap: num  779 821 853 836 740 ...</code></pre>
+##  $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+##  $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...
+##  $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+##  $ gdpPercap: num [1:1704] 779 821 853 836 740 ...</code></pre>
 <p><code>filter()</code> takes logical expressions and returns the rows for which all are <code>TRUE</code>. Visually, we are doing this (thanks RStudio for your <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>):</p>
 <p><img src="figs/rstudio-cheatsheet-filter.png" /></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">filter</span>(gapminder, lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">filter</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">filter</span>(gapminder, country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rwanda&quot;</span>, <span class="st">&quot;Afghanistan&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="manipulate-tidyr-dplyr.html#cb8-1"></a><span class="kw">filter</span>(gapminder, lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>)</span>
+<span id="cb8-2"><a href="manipulate-tidyr-dplyr.html#cb8-2"></a><span class="kw">filter</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>)</span>
+<span id="cb8-3"><a href="manipulate-tidyr-dplyr.html#cb8-3"></a><span class="kw">filter</span>(gapminder, country <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Rwanda&quot;</span>, <span class="st">&quot;Afghanistan&quot;</span>))</span></code></pre></div>
 <p>Compare with some base R code to accomplish the same things</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">gapminder[gapminder<span class="op">$</span>lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>, ] <span class="co">## repeat `gapminder`, [i, j] indexing is distracting</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>) <span class="co">## almost same as filter ... but wait ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="manipulate-tidyr-dplyr.html#cb9-1"></a>gapminder[gapminder<span class="op">$</span>lifeExp <span class="op">&lt;</span><span class="st"> </span><span class="dv">29</span>, ] <span class="co">## repeat `gapminder`, [i, j] indexing is distracting</span></span>
+<span id="cb9-2"><a href="manipulate-tidyr-dplyr.html#cb9-2"></a><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Rwanda&quot;</span>) <span class="co">## almost same as filter ... but wait ...</span></span></code></pre></div>
 </div>
 <div id="meet-the-new-pipe-operator" class="section level2">
 <h2><span class="header-section-number">2.3</span> Meet the new pipe operator</h2>
 <p>Before we go any further, we should exploit the new pipe operator that <code>dplyr</code> imports from the <a href="https://github.com/smbache/magrittr"><code>magrittr</code></a> package by Stefan Bache. <strong>This is going to change your data analytical life</strong>. You no longer need to enact multi-operation commands by nesting them inside each other. This new syntax leads to code that is much easier to write and to read.</p>
 <p>Here’s what it looks like: <code>%&gt;%</code>. The RStudio keyboard shortcut: Ctrl + Shift + M (Windows), Cmd + Shift + M (Mac).</p>
 <p>Let’s demo then I’ll explain:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">gapminder <span class="op">%&gt;%</span><span class="st"> </span>head</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="manipulate-tidyr-dplyr.html#cb10-1"></a>gapminder <span class="op">%&gt;%</span><span class="st"> </span>head</span></code></pre></div>
 <p>This is equivalent to <code>head(gapminder)</code>. This pipe operator takes the thing on the left-hand-side and <strong>pipes</strong> it into the function call on the right-hand-side – literally, drops it in as the first argument.</p>
 <p>Never fear, you can still specify other arguments to this function! To see the first 3 rows of Gapminder, we could say <code>head(gapminder, 3)</code> or this:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">gapminder <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipulate-tidyr-dplyr.html#cb11-1"></a>gapminder <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">head</span>(<span class="dv">3</span>)</span></code></pre></div>
 <p><strong>I’ve advised you to think “gets” whenever you see the assignment operator, <code>&lt;-</code>. Similary, you should think “then” whenever you see the pipe operator, <code>%&gt;%</code>.</strong></p>
 <p>You are probably not impressed yet, but the magic will soon happen.</p>
 </div>
@@ -336,13 +404,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Use <code>select()</code> to subset the data on variables or columns. Visually, we are doing this (thanks RStudio for your <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>):</p>
 <p><img src="figs/rstudio-cheatsheet-select.png" /></p>
 <p>Here’s a conventional call:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">select</span>(gapminder, year, lifeExp) </a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="manipulate-tidyr-dplyr.html#cb12-1"></a><span class="kw">select</span>(gapminder, year, lifeExp) </span></code></pre></div>
 <p>But using what we just learned, with a pipe, we can do this:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">gapminder <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(year, lifeExp)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipulate-tidyr-dplyr.html#cb13-1"></a>gapminder <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(year, lifeExp)</span></code></pre></div>
 <p>Let’s write it again but using multiple lines so it’s nicer to read. And let’s add a second pipe operator to pipe through <code>head</code>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(year, lifeExp) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">head</span>(<span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="manipulate-tidyr-dplyr.html#cb14-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb14-2"><a href="manipulate-tidyr-dplyr.html#cb14-2"></a><span class="st">  </span><span class="kw">select</span>(year, lifeExp) <span class="op">%&gt;%</span></span>
+<span id="cb14-3"><a href="manipulate-tidyr-dplyr.html#cb14-3"></a><span class="st">  </span><span class="kw">head</span>(<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 2
 ##    year lifeExp
 ##   &lt;int&gt;   &lt;dbl&gt;
@@ -356,12 +424,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.5</span> Revel in the convenience</h2>
 <p>Let’s do a little analysis where we calculate the mean gdp for Cambodia.</p>
 <p>Here’s the gapminder data for Cambodia, but only certain variables:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="co"># select(country, year, pop, gdpPercap) ## entering 4 of the 6 columns is tedious</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="co"># you can use - to deselect columns</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="manipulate-tidyr-dplyr.html#cb16-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb16-2"><a href="manipulate-tidyr-dplyr.html#cb16-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb16-3"><a href="manipulate-tidyr-dplyr.html#cb16-3"></a><span class="st">  </span><span class="co"># select(country, year, pop, gdpPercap) ## entering 4 of the 6 columns is tedious</span></span>
+<span id="cb16-4"><a href="manipulate-tidyr-dplyr.html#cb16-4"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="co"># you can use - to deselect columns</span></span></code></pre></div>
 <p>and what a typical base R call would look like:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">gapminder[gapminder<span class="op">$</span>country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;country&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;pop&quot;</span>, <span class="st">&quot;gdpPercap&quot;</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="manipulate-tidyr-dplyr.html#cb17-1"></a>gapminder[gapminder<span class="op">$</span>country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;country&quot;</span>, <span class="st">&quot;year&quot;</span>, <span class="st">&quot;pop&quot;</span>, <span class="st">&quot;gdpPercap&quot;</span>)]</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 4
 ##    country   year      pop gdpPercap
 ##    &lt;fct&gt;    &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;
@@ -378,7 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 11 Cambodia  2002 12926707      896.
 ## 12 Cambodia  2007 14131858     1714.</code></pre>
 <p>or, possibly?, a nicer look using base R’s <code>subset()</code> function:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>, <span class="dt">select =</span> <span class="kw">c</span>(country, year, pop, gdpPercap))</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="manipulate-tidyr-dplyr.html#cb19-1"></a><span class="kw">subset</span>(gapminder, country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>, <span class="dt">select =</span> <span class="kw">c</span>(country, year, pop, gdpPercap))</span></code></pre></div>
 <pre><code>## # A tibble: 12 x 4
 ##    country   year      pop gdpPercap
 ##    &lt;fct&gt;    &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;
@@ -400,54 +468,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Imagine we wanted to recover each country’s GDP. After all, the Gapminder data has a variable for population and GDP per capita. Let’s add a new column and multiply them together.</p>
 <p>Visually, we are doing this (thanks RStudio for your <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>):</p>
 <p><img src="figs/rstudio-cheatsheet-mutate.png" /></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="manipulate-tidyr-dplyr.html#cb21-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb21-2"><a href="manipulate-tidyr-dplyr.html#cb21-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap)</span></code></pre></div>
 <blockquote>
 <p>Exercise: how would you add that to the previous <code>filter</code> and <code>select</code> commands we did with Cambodia:</p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="manipulate-tidyr-dplyr.html#cb22-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb22-2"><a href="manipulate-tidyr-dplyr.html#cb22-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb22-3"><a href="manipulate-tidyr-dplyr.html#cb22-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp)</span></code></pre></div>
 <p>Answer:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="manipulate-tidyr-dplyr.html#cb23-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb23-2"><a href="manipulate-tidyr-dplyr.html#cb23-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb23-3"><a href="manipulate-tidyr-dplyr.html#cb23-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></span>
+<span id="cb23-4"><a href="manipulate-tidyr-dplyr.html#cb23-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap)</span></code></pre></div>
 </div>
 <div id="group_by-and-summarize" class="section level2">
 <h2><span class="header-section-number">2.7</span> <code>group_by</code> and <code>summarize</code></h2>
 <p>Great! And now we want to calculate the mean gdp across all years (Let’s pretend that’s a good idea statistically)</p>
 <p>Visually, we are doing this (thanks RStudio for your <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>):</p>
 <p><img src="figs/rstudio-cheatsheet-summarise.png" /></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb23-7" data-line-number="7"><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="manipulate-tidyr-dplyr.html#cb24-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb24-2"><a href="manipulate-tidyr-dplyr.html#cb24-2"></a><span class="st">  </span><span class="kw">filter</span>(country <span class="op">==</span><span class="st"> &quot;Cambodia&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb24-3"><a href="manipulate-tidyr-dplyr.html#cb24-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></span>
+<span id="cb24-4"><a href="manipulate-tidyr-dplyr.html#cb24-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></span>
+<span id="cb24-5"><a href="manipulate-tidyr-dplyr.html#cb24-5"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></span>
+<span id="cb24-6"><a href="manipulate-tidyr-dplyr.html#cb24-6"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></span>
+<span id="cb24-7"><a href="manipulate-tidyr-dplyr.html#cb24-7"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></span></code></pre></div>
 </div>
 <div id="remember-our-for-loop" class="section level2">
 <h2><span class="header-section-number">2.8</span> Remember our for loop?</h2>
 <p>And how would you then do this for every country, not just Cambodia? Well, yesterday we would have been thinking about putting this whole analysis inside a for loop, replacing “Cambodia” with a new name each time we iterated through the loop. But today, we have it already, just need to <em>delete</em> one line from our analysis–we don’t need to filter out Cambodia anymore!!</p>
 <p>Visually, we are doing this (thanks RStudio for your <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>):</p>
 <p><img src="figs/rstudio-cheatsheet-group_by.png" /></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">gapminder <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb24-6" data-line-number="6"><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="manipulate-tidyr-dplyr.html#cb25-1"></a>gapminder <span class="op">%&gt;%</span></span>
+<span id="cb25-2"><a href="manipulate-tidyr-dplyr.html#cb25-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></span>
+<span id="cb25-3"><a href="manipulate-tidyr-dplyr.html#cb25-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></span>
+<span id="cb25-4"><a href="manipulate-tidyr-dplyr.html#cb25-4"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></span>
+<span id="cb25-5"><a href="manipulate-tidyr-dplyr.html#cb25-5"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></span>
+<span id="cb25-6"><a href="manipulate-tidyr-dplyr.html#cb25-6"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></span></code></pre></div>
 <p>So we have done a pretty incredible amount of work in a few lines. Our whole analysis is this. Imagine the possibilities from here.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb25-3" data-line-number="3">gapminder <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb25-4" data-line-number="4"><span class="st">  </span><span class="kw">read.csv</span>(<span class="st">&#39;data/gapminder-FiveYearData.csv&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb25-5" data-line-number="5"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-7" data-line-number="7"><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-8" data-line-number="8"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-9" data-line-number="9"><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="manipulate-tidyr-dplyr.html#cb26-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb26-2"><a href="manipulate-tidyr-dplyr.html#cb26-2"></a></span>
+<span id="cb26-3"><a href="manipulate-tidyr-dplyr.html#cb26-3"></a>gapminder <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-4"><a href="manipulate-tidyr-dplyr.html#cb26-4"></a><span class="st">  </span><span class="kw">read.csv</span>(<span class="st">&#39;data/gapminder-FiveYearData.csv&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb26-5"><a href="manipulate-tidyr-dplyr.html#cb26-5"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>continent, <span class="op">-</span>lifeExp) <span class="op">%&gt;%</span></span>
+<span id="cb26-6"><a href="manipulate-tidyr-dplyr.html#cb26-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp =</span> pop <span class="op">*</span><span class="st"> </span>gdpPercap) <span class="op">%&gt;%</span></span>
+<span id="cb26-7"><a href="manipulate-tidyr-dplyr.html#cb26-7"></a><span class="st">  </span><span class="kw">group_by</span>(country) <span class="op">%&gt;%</span></span>
+<span id="cb26-8"><a href="manipulate-tidyr-dplyr.html#cb26-8"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mean_gdp =</span> <span class="kw">mean</span>(gdp)) <span class="op">%&gt;%</span></span>
+<span id="cb26-9"><a href="manipulate-tidyr-dplyr.html#cb26-9"></a><span class="st">  </span><span class="kw">ungroup</span>() <span class="co"># if you use group_by, also use ungroup() to save heartache later</span></span></code></pre></div>
 </div>
 <div id="summary" class="section level2">
 <h2><span class="header-section-number">2.9</span> Summary</h2>
@@ -467,12 +535,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pseudocode" class="section level3">
 <h3><span class="header-section-number">2.10.2</span> Pseudocode</h3>
 <p>You can write the logic out as <strong>pseudocode</strong> which can become later comments for the actual code:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># read in csv</span></a>
-<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="co"># view data</span></a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="co"># limit columns to species and year</span></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="co"># limit rows to just species &quot;NL&quot;</span></a>
-<a class="sourceLine" id="cb26-5" data-line-number="5"><span class="co"># get count per year</span></a>
-<a class="sourceLine" id="cb26-6" data-line-number="6"><span class="co"># write out csv</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="manipulate-tidyr-dplyr.html#cb27-1"></a><span class="co"># read in csv</span></span>
+<span id="cb27-2"><a href="manipulate-tidyr-dplyr.html#cb27-2"></a><span class="co"># view data</span></span>
+<span id="cb27-3"><a href="manipulate-tidyr-dplyr.html#cb27-3"></a><span class="co"># limit columns to species and year</span></span>
+<span id="cb27-4"><a href="manipulate-tidyr-dplyr.html#cb27-4"></a><span class="co"># limit rows to just species &quot;NL&quot;</span></span>
+<span id="cb27-5"><a href="manipulate-tidyr-dplyr.html#cb27-5"></a><span class="co"># get count per year</span></span>
+<span id="cb27-6"><a href="manipulate-tidyr-dplyr.html#cb27-6"></a><span class="co"># write out csv</span></span></code></pre></div>
 </div>
 <div id="summary-1" class="section level3">
 <h3><span class="header-section-number">2.10.3</span> Summary</h3>

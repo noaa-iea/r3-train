@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
   <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
@@ -48,8 +48,155 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script src="libs/d3-3.5.5/d3.min.js"></script>
+<script src="libs/d3-tip-0.6.7/d3-tip.js"></script>
+<link href="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.css" rel="stylesheet" />
+<script src="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.js"></script>
+<script src="libs/exploding-boxplot-binding-0.0.1/exploding-boxplot.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/fgb.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+<script src="libs/chromajs-2.1.0/chroma.min.js"></script>
+<link id="states-1-attachment" rel="attachment" href="libs/states-0.0.1/states_layer.fgb"/>
+<link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
+<script src="libs/HomeButton-0.0.1/home-button.js"></script>
+<script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+<link href="libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+<link href="libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+<link id="AL-1-attachment" rel="attachment" href="libs/AL-0.0.1/AL_layer.fgb"/>
+<link id="AR-1-attachment" rel="attachment" href="libs/AR-0.0.1/AR_layer.fgb"/>
+<link id="AZ-1-attachment" rel="attachment" href="libs/AZ-0.0.1/AZ_layer.fgb"/>
+<link id="CA-1-attachment" rel="attachment" href="libs/CA-0.0.1/CA_layer.fgb"/>
+<link id="CO-1-attachment" rel="attachment" href="libs/CO-0.0.1/CO_layer.fgb"/>
+<link id="CT-1-attachment" rel="attachment" href="libs/CT-0.0.1/CT_layer.fgb"/>
+<link id="DC-1-attachment" rel="attachment" href="libs/DC-0.0.1/DC_layer.fgb"/>
+<link id="DE-1-attachment" rel="attachment" href="libs/DE-0.0.1/DE_layer.fgb"/>
+<link id="FL-1-attachment" rel="attachment" href="libs/FL-0.0.1/FL_layer.fgb"/>
+<link id="GA-1-attachment" rel="attachment" href="libs/GA-0.0.1/GA_layer.fgb"/>
+<link id="IA-1-attachment" rel="attachment" href="libs/IA-0.0.1/IA_layer.fgb"/>
+<link id="ID-1-attachment" rel="attachment" href="libs/ID-0.0.1/ID_layer.fgb"/>
+<link id="IL-1-attachment" rel="attachment" href="libs/IL-0.0.1/IL_layer.fgb"/>
+<link id="IN-1-attachment" rel="attachment" href="libs/IN-0.0.1/IN_layer.fgb"/>
+<link id="KS-1-attachment" rel="attachment" href="libs/KS-0.0.1/KS_layer.fgb"/>
+<link id="KY-1-attachment" rel="attachment" href="libs/KY-0.0.1/KY_layer.fgb"/>
+<link id="LA-1-attachment" rel="attachment" href="libs/LA-0.0.1/LA_layer.fgb"/>
+<link id="MA-1-attachment" rel="attachment" href="libs/MA-0.0.1/MA_layer.fgb"/>
+<link id="MD-1-attachment" rel="attachment" href="libs/MD-0.0.1/MD_layer.fgb"/>
+<link id="ME-1-attachment" rel="attachment" href="libs/ME-0.0.1/ME_layer.fgb"/>
+<link id="MI-1-attachment" rel="attachment" href="libs/MI-0.0.1/MI_layer.fgb"/>
+<link id="MN-1-attachment" rel="attachment" href="libs/MN-0.0.1/MN_layer.fgb"/>
+<link id="MO-1-attachment" rel="attachment" href="libs/MO-0.0.1/MO_layer.fgb"/>
+<link id="MS-1-attachment" rel="attachment" href="libs/MS-0.0.1/MS_layer.fgb"/>
+<link id="MT-1-attachment" rel="attachment" href="libs/MT-0.0.1/MT_layer.fgb"/>
+<link id="NC-1-attachment" rel="attachment" href="libs/NC-0.0.1/NC_layer.fgb"/>
+<link id="ND-1-attachment" rel="attachment" href="libs/ND-0.0.1/ND_layer.fgb"/>
+<link id="NE-1-attachment" rel="attachment" href="libs/NE-0.0.1/NE_layer.fgb"/>
+<link id="NH-1-attachment" rel="attachment" href="libs/NH-0.0.1/NH_layer.fgb"/>
+<link id="NJ-1-attachment" rel="attachment" href="libs/NJ-0.0.1/NJ_layer.fgb"/>
+<link id="NM-1-attachment" rel="attachment" href="libs/NM-0.0.1/NM_layer.fgb"/>
+<link id="NV-1-attachment" rel="attachment" href="libs/NV-0.0.1/NV_layer.fgb"/>
+<link id="NY-1-attachment" rel="attachment" href="libs/NY-0.0.1/NY_layer.fgb"/>
+<link id="OH-1-attachment" rel="attachment" href="libs/OH-0.0.1/OH_layer.fgb"/>
+<link id="OK-1-attachment" rel="attachment" href="libs/OK-0.0.1/OK_layer.fgb"/>
+<link id="OR-1-attachment" rel="attachment" href="libs/OR-0.0.1/OR_layer.fgb"/>
+<link id="PA-1-attachment" rel="attachment" href="libs/PA-0.0.1/PA_layer.fgb"/>
+<link id="RI-1-attachment" rel="attachment" href="libs/RI-0.0.1/RI_layer.fgb"/>
+<link id="SC-1-attachment" rel="attachment" href="libs/SC-0.0.1/SC_layer.fgb"/>
+<link id="SD-1-attachment" rel="attachment" href="libs/SD-0.0.1/SD_layer.fgb"/>
+<link id="TN-1-attachment" rel="attachment" href="libs/TN-0.0.1/TN_layer.fgb"/>
+<link id="TX-1-attachment" rel="attachment" href="libs/TX-0.0.1/TX_layer.fgb"/>
+<link id="UT-1-attachment" rel="attachment" href="libs/UT-0.0.1/UT_layer.fgb"/>
+<link id="VA-1-attachment" rel="attachment" href="libs/VA-0.0.1/VA_layer.fgb"/>
+<link id="VT-1-attachment" rel="attachment" href="libs/VT-0.0.1/VT_layer.fgb"/>
+<link id="WA-1-attachment" rel="attachment" href="libs/WA-0.0.1/WA_layer.fgb"/>
+<link id="WI-1-attachment" rel="attachment" href="libs/WI-0.0.1/WI_layer.fgb"/>
+<link id="WV-1-attachment" rel="attachment" href="libs/WV-0.0.1/WV_layer.fgb"/>
+<link id="WY-1-attachment" rel="attachment" href="libs/WY-0.0.1/WY_layer.fgb"/>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style/bootstrap.min.css" type="text/css" />
 <link rel="stylesheet" href="style/style.css" type="text/css" />
@@ -73,6 +220,12 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#github"><i class="fa fa-check"></i>Github</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#google-drive"><i class="fa fa-check"></i>Google Drive</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-setup"><i class="fa fa-check"></i>Software Setup</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#install-software"><i class="fa fa-check"></i><b>0.1</b> Install software</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#launch-rstudio"><i class="fa fa-check"></i><b>0.2</b> Launch RStudio</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#fork-and-clone-the-github-repository"><i class="fa fa-check"></i><b>0.3</b> Fork and Clone the Github Repository</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>0.4</b> Install R Packages</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#create-rmarkdown-file"><i class="fa fa-check"></i><b>0.5</b> Create Rmarkdown file</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>1</b> Collaborate: git, github</a><ul>
 <li class="chapter" data-level="1.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>1.1</b> Setup Github &amp; Git</a></li>
@@ -153,6 +306,8 @@
 <li class="chapter" data-level="5.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>5.8</b> Raster: leaflet</a></li>
 <li class="chapter" data-level="5.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-shiny-google-auth.html"><a href="appendix-shiny-google-auth.html"><i class="fa fa-check"></i><b>A</b> Appendix Shiny Google Auth</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -210,6 +365,85 @@
 <p>Online books:
 - <a href="http://r4ds.had.co.nz/">R for Data Science</a>
 - <a href="http://rspatial.org">Spatial Data Analysis and Modeling with R</a></p>
+</div>
+<div id="software-setup" class="section level2 unnumbered">
+<h2>Software Setup</h2>
+</div>
+<div id="install-software" class="section level2">
+<h2><span class="header-section-number">0.1</span> Install software</h2>
+<p>This workshop will require the following software installed on your machine:</p>
+<ul>
+<li><a href="http://cran.cnr.berkeley.edu/">R</a> scientific programming language</li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a> integrated development environment</li>
+<li><a href="https://git-scm.com/">Git</a> version control</li>
+</ul>
+<p>Please download the appropriate stable release for your operating system.</p>
+</div>
+<div id="launch-rstudio" class="section level2">
+<h2><span class="header-section-number">0.2</span> Launch RStudio</h2>
+<p>RStudio is an integrated development environment (IDE) for editing text in the code editor, running commands in the R console, viewing defined objects in the workspace and past commands in the history, and viewing plots, files and help. Here’s a layout of the panes in RStudio, each of which can have several tabs for alternate functionality:</p>
+<p><img src="figs/rstudio.png" /></p>
+<p>Check out the Help &gt; Cheatsheets &gt; <a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio IDE Cheat Sheet</a>.</p>
+</div>
+<div id="fork-and-clone-the-github-repository" class="section level2">
+<h2><span class="header-section-number">0.3</span> Fork and Clone the Github Repository</h2>
+<p>If you’d like to play with these materials directly and keep track of differences, please visit:</p>
+<p><a href="https://github.com/bbest/meds-demo" class="uri">https://github.com/bbest/meds-demo</a></p>
+<p>While signed into Github, <a href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">fork the repo</a> into your own writable user space so you can <a href="https://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio">clone it in RStudio</a>.</p>
+<p>Then you can follow along in RStudio by evaluating the chunks of R code, while referencing this website:</p>
+<p><a href="http://benbestphd.com/meds-demo" class="uri">http://benbestphd.com/meds-demo</a></p>
+</div>
+<div id="install-r-packages" class="section level2">
+<h2><span class="header-section-number">0.4</span> Install R Packages</h2>
+<p>Here’s a bit of code to ensure you have all the necessary packages installed. Please copy and paste this code into your R Console.</p>
+<pre><code>## R version 4.0.2 (2020-06-22)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Catalina 10.15.7
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] keras_2.3.0.0     tensorflow_2.2.0  textdata_0.4.1    tidytext_0.2.5   
+##  [5] rtweet_0.7.0      plotly_4.9.2.1    jsonlite_1.7.1    units_0.6-7      
+##  [9] lubridate_1.7.9.2 scales_1.1.1      glue_1.4.2        here_0.1         
+## [13] librarian_1.7.0   sf_0.9-6          leaflet_2.0.3     knitr_1.30       
+## [17] forcats_0.5.0     stringr_1.4.0     dplyr_1.0.2       purrr_0.3.4      
+## [21] readr_1.4.0       tidyr_1.1.2       tibble_3.0.4      ggplot2_3.3.2    
+## [25] tidyverse_1.3.0  
+## 
+## loaded via a namespace (and not attached):
+##  [1] fs_1.5.0           httr_1.4.2         rprojroot_2.0.2    SnowballC_0.7.0   
+##  [5] tools_4.0.2        backports_1.2.0    R6_2.5.0           KernSmooth_2.23-17
+##  [9] DBI_1.1.0          lazyeval_0.2.2     colorspace_2.0-0   withr_2.3.0       
+## [13] tidyselect_1.1.0   compiler_4.0.2     cli_2.2.0          rvest_0.3.6       
+## [17] xml2_1.3.2         bookdown_0.21.2    classInt_0.4-3     tfruns_1.4        
+## [21] digest_0.6.27      rmarkdown_2.5      base64enc_0.1-3    pkgconfig_2.0.3   
+## [25] htmltools_0.5.0    dbplyr_1.4.4       htmlwidgets_1.5.2  rlang_0.4.9       
+## [29] readxl_1.3.1       rstudioapi_0.13    generics_0.1.0     crosstalk_1.1.0.1 
+## [33] tokenizers_0.2.1   magrittr_2.0.1     Matrix_1.2-18      Rcpp_1.0.5        
+## [37] munsell_0.5.0      fansi_0.4.1        reticulate_1.16    lifecycle_0.2.0   
+## [41] whisker_0.4        stringi_1.5.3      yaml_2.2.1         grid_4.0.2        
+## [45] blob_1.2.1         crayon_1.3.4       lattice_0.20-41    haven_2.3.1       
+## [49] hms_0.5.3          zeallot_0.1.0      pillar_1.4.7       reprex_0.3.0      
+## [53] evaluate_0.14      data.table_1.13.2  modelr_0.1.8       vctrs_0.3.5       
+## [57] cellranger_1.1.0   gtable_0.3.0       assertthat_0.2.1   xfun_0.19         
+## [61] broom_0.7.2        e1071_1.7-4        janeaustenr_0.1.5  class_7.3-17      
+## [65] viridisLite_0.3.0  ellipsis_0.3.1</code></pre>
+</div>
+<div id="create-rmarkdown-file" class="section level2">
+<h2><span class="header-section-number">0.5</span> Create Rmarkdown file</h2>
+<p>Rmarkdown is a dynamic document format that allows you to knit chunks of R code with formatted text (aka markdown). We recommend that you use this format for keeping a reproducible research document as you work through the lessons To get started, File &gt; New File &gt; Rmarkdown… and go with default HTML document and give any title you like (default “Untitled” or “test” or “First Rmd” is fine).</p>
+<p>Check out the Help &gt; Markdown Quick Reference and Help &gt; Cheatsheets &gt; <a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheat Sheet</a>.</p>
+<p>Here’s a 1 minute video on the awesomeness of Rmarkdown:</p>
+<iframe class="vimeo-embed" src="https://player.vimeo.com/video/178485416" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 
 </div>
 </div>

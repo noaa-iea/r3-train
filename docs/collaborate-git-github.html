@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lesson 1 Collaborate: git, github | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
   <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lesson 1 Collaborate: git, github | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
@@ -48,13 +48,16 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="libs/d3-3.5.5/d3.min.js"></script>
 <script src="libs/d3-tip-0.6.7/d3-tip.js"></script>
 <link href="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.css" rel="stylesheet" />
@@ -69,16 +72,71 @@
 <script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/fgb.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+<script src="libs/chromajs-2.1.0/chroma.min.js"></script>
+<link id="states-1-attachment" rel="attachment" href="libs/states-0.0.1/states_layer.fgb"/>
 <link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
 <script src="libs/HomeButton-0.0.1/home-button.js"></script>
 <script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
-<link href="libs/PopupTable-0.0.1/popup.css" rel="stylesheet" />
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+<link href="libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+<link href="libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+<link id="AL-1-attachment" rel="attachment" href="libs/AL-0.0.1/AL_layer.fgb"/>
+<link id="AR-1-attachment" rel="attachment" href="libs/AR-0.0.1/AR_layer.fgb"/>
+<link id="AZ-1-attachment" rel="attachment" href="libs/AZ-0.0.1/AZ_layer.fgb"/>
+<link id="CA-1-attachment" rel="attachment" href="libs/CA-0.0.1/CA_layer.fgb"/>
+<link id="CO-1-attachment" rel="attachment" href="libs/CO-0.0.1/CO_layer.fgb"/>
+<link id="CT-1-attachment" rel="attachment" href="libs/CT-0.0.1/CT_layer.fgb"/>
+<link id="DC-1-attachment" rel="attachment" href="libs/DC-0.0.1/DC_layer.fgb"/>
+<link id="DE-1-attachment" rel="attachment" href="libs/DE-0.0.1/DE_layer.fgb"/>
+<link id="FL-1-attachment" rel="attachment" href="libs/FL-0.0.1/FL_layer.fgb"/>
+<link id="GA-1-attachment" rel="attachment" href="libs/GA-0.0.1/GA_layer.fgb"/>
+<link id="IA-1-attachment" rel="attachment" href="libs/IA-0.0.1/IA_layer.fgb"/>
+<link id="ID-1-attachment" rel="attachment" href="libs/ID-0.0.1/ID_layer.fgb"/>
+<link id="IL-1-attachment" rel="attachment" href="libs/IL-0.0.1/IL_layer.fgb"/>
+<link id="IN-1-attachment" rel="attachment" href="libs/IN-0.0.1/IN_layer.fgb"/>
+<link id="KS-1-attachment" rel="attachment" href="libs/KS-0.0.1/KS_layer.fgb"/>
+<link id="KY-1-attachment" rel="attachment" href="libs/KY-0.0.1/KY_layer.fgb"/>
+<link id="LA-1-attachment" rel="attachment" href="libs/LA-0.0.1/LA_layer.fgb"/>
+<link id="MA-1-attachment" rel="attachment" href="libs/MA-0.0.1/MA_layer.fgb"/>
+<link id="MD-1-attachment" rel="attachment" href="libs/MD-0.0.1/MD_layer.fgb"/>
+<link id="ME-1-attachment" rel="attachment" href="libs/ME-0.0.1/ME_layer.fgb"/>
+<link id="MI-1-attachment" rel="attachment" href="libs/MI-0.0.1/MI_layer.fgb"/>
+<link id="MN-1-attachment" rel="attachment" href="libs/MN-0.0.1/MN_layer.fgb"/>
+<link id="MO-1-attachment" rel="attachment" href="libs/MO-0.0.1/MO_layer.fgb"/>
+<link id="MS-1-attachment" rel="attachment" href="libs/MS-0.0.1/MS_layer.fgb"/>
+<link id="MT-1-attachment" rel="attachment" href="libs/MT-0.0.1/MT_layer.fgb"/>
+<link id="NC-1-attachment" rel="attachment" href="libs/NC-0.0.1/NC_layer.fgb"/>
+<link id="ND-1-attachment" rel="attachment" href="libs/ND-0.0.1/ND_layer.fgb"/>
+<link id="NE-1-attachment" rel="attachment" href="libs/NE-0.0.1/NE_layer.fgb"/>
+<link id="NH-1-attachment" rel="attachment" href="libs/NH-0.0.1/NH_layer.fgb"/>
+<link id="NJ-1-attachment" rel="attachment" href="libs/NJ-0.0.1/NJ_layer.fgb"/>
+<link id="NM-1-attachment" rel="attachment" href="libs/NM-0.0.1/NM_layer.fgb"/>
+<link id="NV-1-attachment" rel="attachment" href="libs/NV-0.0.1/NV_layer.fgb"/>
+<link id="NY-1-attachment" rel="attachment" href="libs/NY-0.0.1/NY_layer.fgb"/>
+<link id="OH-1-attachment" rel="attachment" href="libs/OH-0.0.1/OH_layer.fgb"/>
+<link id="OK-1-attachment" rel="attachment" href="libs/OK-0.0.1/OK_layer.fgb"/>
+<link id="OR-1-attachment" rel="attachment" href="libs/OR-0.0.1/OR_layer.fgb"/>
+<link id="PA-1-attachment" rel="attachment" href="libs/PA-0.0.1/PA_layer.fgb"/>
+<link id="RI-1-attachment" rel="attachment" href="libs/RI-0.0.1/RI_layer.fgb"/>
+<link id="SC-1-attachment" rel="attachment" href="libs/SC-0.0.1/SC_layer.fgb"/>
+<link id="SD-1-attachment" rel="attachment" href="libs/SD-0.0.1/SD_layer.fgb"/>
+<link id="TN-1-attachment" rel="attachment" href="libs/TN-0.0.1/TN_layer.fgb"/>
+<link id="TX-1-attachment" rel="attachment" href="libs/TX-0.0.1/TX_layer.fgb"/>
+<link id="UT-1-attachment" rel="attachment" href="libs/UT-0.0.1/UT_layer.fgb"/>
+<link id="VA-1-attachment" rel="attachment" href="libs/VA-0.0.1/VA_layer.fgb"/>
+<link id="VT-1-attachment" rel="attachment" href="libs/VT-0.0.1/VT_layer.fgb"/>
+<link id="WA-1-attachment" rel="attachment" href="libs/WA-0.0.1/WA_layer.fgb"/>
+<link id="WI-1-attachment" rel="attachment" href="libs/WI-0.0.1/WI_layer.fgb"/>
+<link id="WV-1-attachment" rel="attachment" href="libs/WV-0.0.1/WV_layer.fgb"/>
+<link id="WY-1-attachment" rel="attachment" href="libs/WY-0.0.1/WY_layer.fgb"/>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -87,14 +145,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,9 +163,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -160,6 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#github"><i class="fa fa-check"></i>Github</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#google-drive"><i class="fa fa-check"></i>Google Drive</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-setup"><i class="fa fa-check"></i>Software Setup</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#install-software"><i class="fa fa-check"></i><b>0.1</b> Install software</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#launch-rstudio"><i class="fa fa-check"></i><b>0.2</b> Launch RStudio</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#fork-and-clone-the-github-repository"><i class="fa fa-check"></i><b>0.3</b> Fork and Clone the Github Repository</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>0.4</b> Install R Packages</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#create-rmarkdown-file"><i class="fa fa-check"></i><b>0.5</b> Create Rmarkdown file</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>1</b> Collaborate: git, github</a><ul>
 <li class="chapter" data-level="1.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>1.1</b> Setup Github &amp; Git</a></li>
@@ -240,6 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>5.8</b> Raster: leaflet</a></li>
 <li class="chapter" data-level="5.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-shiny-google-auth.html"><a href="appendix-shiny-google-auth.html"><i class="fa fa-check"></i><b>A</b> Appendix Shiny Google Auth</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -284,17 +352,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Create <strong>Github</strong> account at <a href="http://github.com" class="uri">http://github.com</a>, if you don’t already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in <code>.edu</code>, you can request free private repositories via <a href="https://education.github.com/">GitHub Education</a> discount.</p></li>
 <li><p>Configure <strong>git</strong> with global commands. Open up the Bash version of Git and type the following:</p></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># display your version of git</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">git</span> --version</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># replace USER with your Github user account</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="fu">git</span> config –-global user.name USER</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co"># replace USER@SOMEWHERE.EDU with the email you used to register with Github</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="fu">git</span> config –-global user.email USER@SOMEWHERE.EDU</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co"># list your config to confirm user.* variables set</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="fu">git</span> config --list</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="collaborate-git-github.html#cb2-1"></a><span class="co"># display your version of git</span></span>
+<span id="cb2-2"><a href="collaborate-git-github.html#cb2-2"></a><span class="fu">git</span> --version</span>
+<span id="cb2-3"><a href="collaborate-git-github.html#cb2-3"></a></span>
+<span id="cb2-4"><a href="collaborate-git-github.html#cb2-4"></a><span class="co"># replace USER with your Github user account</span></span>
+<span id="cb2-5"><a href="collaborate-git-github.html#cb2-5"></a><span class="fu">git</span> config –-global user.name USER</span>
+<span id="cb2-6"><a href="collaborate-git-github.html#cb2-6"></a></span>
+<span id="cb2-7"><a href="collaborate-git-github.html#cb2-7"></a><span class="co"># replace USER@SOMEWHERE.EDU with the email you used to register with Github</span></span>
+<span id="cb2-8"><a href="collaborate-git-github.html#cb2-8"></a><span class="fu">git</span> config –-global user.email USER@SOMEWHERE.EDU</span>
+<span id="cb2-9"><a href="collaborate-git-github.html#cb2-9"></a></span>
+<span id="cb2-10"><a href="collaborate-git-github.html#cb2-10"></a><span class="co"># list your config to confirm user.* variables set</span></span>
+<span id="cb2-11"><a href="collaborate-git-github.html#cb2-11"></a><span class="fu">git</span> config --list</span></code></pre></div>
 </div>
 <div id="github-workflows" class="section level2">
 <h2><span class="header-section-number">1.2</span> Github Workflows</h2>
@@ -387,16 +455,16 @@ This repository demonstrates **software** and _formats_:
 <div id="create-index.html" class="section level2">
 <h2><span class="header-section-number">1.4</span> Create <code>index.html</code></h2>
 <p>By default <code>index.html</code> is served up. Go ahead and create a new file named <code>index.html</code> with the following <a href="http://www.w3schools.com/html/html_basic.asp">basic HTML</a>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">&lt;html&gt;</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">&lt;body&gt;</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw">&lt;h1&gt;</span>My First Heading<span class="kw">&lt;/h1&gt;</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="kw">&lt;p&gt;</span>My first paragraph.<span class="kw">&lt;/p&gt;</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw">&lt;/body&gt;</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="kw">&lt;/html&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="collaborate-git-github.html#cb4-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="collaborate-git-github.html#cb4-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb4-3"><a href="collaborate-git-github.html#cb4-3"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-4"><a href="collaborate-git-github.html#cb4-4"></a></span>
+<span id="cb4-5"><a href="collaborate-git-github.html#cb4-5"></a><span class="kw">&lt;h1&gt;</span>My First Heading<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb4-6"><a href="collaborate-git-github.html#cb4-6"></a></span>
+<span id="cb4-7"><a href="collaborate-git-github.html#cb4-7"></a><span class="kw">&lt;p&gt;</span>My first paragraph.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-8"><a href="collaborate-git-github.html#cb4-8"></a></span>
+<span id="cb4-9"><a href="collaborate-git-github.html#cb4-9"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb4-10"><a href="collaborate-git-github.html#cb4-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 <p>You’ll be prompted to clone this repository into a folder on your local machine.</p>
 <p>See <a href="https://help.github.com/desktop/guides/">GitHub Desktop User Guides</a> for more. You could also do this from the Bash Shell for Git with the command <code>git clone https://github.com/USER/REPO.git</code>, replacing USER with your Github username and REPO with my_project. Or you can use the Github Desktop App menu File -&gt; Clone Repository…</p>
 </div>

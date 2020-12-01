@@ -1,0 +1,22 @@
+# (APPENDIX) Appendix {-} 
+
+# Appendix Shiny Google Auth
+
+
+* [dkulp2/Google-Sign-In: Simple Example of Shiny App Using Google Sign-In API](https://github.com/dkulp2/Google-Sign-In)
+
+- You'll need to change from http://127.0.0.1:7445/ to http://localhost:7445, otherwise you'll get:
+
+  ```
+  Authorization Error
+  Error 400: invalid_request
+  Permission denied to generate login hint for target domain.
+  ```
+
+- You'll need to run the app on a specific port using `shiny::runApp(port=7445)`, otherwise you'll get something like:
+
+  ```
+  Authorization Error
+  Error 400: redirect_uri_mismatch
+  The JavaScript origin in the request, http://localhost:5779, does not match the ones authorized for the OAuth client. Visit https://console.developers.google.com/apis/credentials/oauthclient/${your_client_id}?project=${your_project_number} to update the authorized JavaScript origins.
+  ```

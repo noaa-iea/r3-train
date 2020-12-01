@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lesson 4 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators</title>
   <meta name="description" content="These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using bookdown::gitbook()." />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lesson 4 Analyze Spatial: sf | Reproducible Reporting with R (R³) for marine ecosystem indicators" />
   <meta property="og:type" content="book" />
@@ -48,13 +48,16 @@
 
 
 
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.1/plotly.js"></script>
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.49.4/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.49.4/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script src="libs/d3-3.5.5/d3.min.js"></script>
 <script src="libs/d3-tip-0.6.7/d3-tip.js"></script>
 <link href="libs/d3_exploding_boxplot-0.1/d3_exploding_boxplot.css" rel="stylesheet" />
@@ -69,16 +72,71 @@
 <script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
 <script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
 <script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/fgb.js"></script>
+<script src="libs/FlatGeoBuf-3.3.3/flatgeobuf-geojson.min.js"></script>
+<script src="libs/chromajs-2.1.0/chroma.min.js"></script>
+<link id="states-1-attachment" rel="attachment" href="libs/states-0.0.1/states_layer.fgb"/>
 <link href="libs/HomeButton-0.0.1/home-button.css" rel="stylesheet" />
 <script src="libs/HomeButton-0.0.1/home-button.js"></script>
 <script src="libs/HomeButton-0.0.1/easy-button-src.min.js"></script>
-<link href="libs/PopupTable-0.0.1/popup.css" rel="stylesheet" />
+<script src="libs/clipboard-0.0.1/setClipboardText.js"></script>
+<link href="libs/mapviewCSS-0.0.1/mapview-popup.css" rel="stylesheet" />
+<link href="libs/mapviewCSS-0.0.1/mapview.css" rel="stylesheet" />
+<link id="AL-1-attachment" rel="attachment" href="libs/AL-0.0.1/AL_layer.fgb"/>
+<link id="AR-1-attachment" rel="attachment" href="libs/AR-0.0.1/AR_layer.fgb"/>
+<link id="AZ-1-attachment" rel="attachment" href="libs/AZ-0.0.1/AZ_layer.fgb"/>
+<link id="CA-1-attachment" rel="attachment" href="libs/CA-0.0.1/CA_layer.fgb"/>
+<link id="CO-1-attachment" rel="attachment" href="libs/CO-0.0.1/CO_layer.fgb"/>
+<link id="CT-1-attachment" rel="attachment" href="libs/CT-0.0.1/CT_layer.fgb"/>
+<link id="DC-1-attachment" rel="attachment" href="libs/DC-0.0.1/DC_layer.fgb"/>
+<link id="DE-1-attachment" rel="attachment" href="libs/DE-0.0.1/DE_layer.fgb"/>
+<link id="FL-1-attachment" rel="attachment" href="libs/FL-0.0.1/FL_layer.fgb"/>
+<link id="GA-1-attachment" rel="attachment" href="libs/GA-0.0.1/GA_layer.fgb"/>
+<link id="IA-1-attachment" rel="attachment" href="libs/IA-0.0.1/IA_layer.fgb"/>
+<link id="ID-1-attachment" rel="attachment" href="libs/ID-0.0.1/ID_layer.fgb"/>
+<link id="IL-1-attachment" rel="attachment" href="libs/IL-0.0.1/IL_layer.fgb"/>
+<link id="IN-1-attachment" rel="attachment" href="libs/IN-0.0.1/IN_layer.fgb"/>
+<link id="KS-1-attachment" rel="attachment" href="libs/KS-0.0.1/KS_layer.fgb"/>
+<link id="KY-1-attachment" rel="attachment" href="libs/KY-0.0.1/KY_layer.fgb"/>
+<link id="LA-1-attachment" rel="attachment" href="libs/LA-0.0.1/LA_layer.fgb"/>
+<link id="MA-1-attachment" rel="attachment" href="libs/MA-0.0.1/MA_layer.fgb"/>
+<link id="MD-1-attachment" rel="attachment" href="libs/MD-0.0.1/MD_layer.fgb"/>
+<link id="ME-1-attachment" rel="attachment" href="libs/ME-0.0.1/ME_layer.fgb"/>
+<link id="MI-1-attachment" rel="attachment" href="libs/MI-0.0.1/MI_layer.fgb"/>
+<link id="MN-1-attachment" rel="attachment" href="libs/MN-0.0.1/MN_layer.fgb"/>
+<link id="MO-1-attachment" rel="attachment" href="libs/MO-0.0.1/MO_layer.fgb"/>
+<link id="MS-1-attachment" rel="attachment" href="libs/MS-0.0.1/MS_layer.fgb"/>
+<link id="MT-1-attachment" rel="attachment" href="libs/MT-0.0.1/MT_layer.fgb"/>
+<link id="NC-1-attachment" rel="attachment" href="libs/NC-0.0.1/NC_layer.fgb"/>
+<link id="ND-1-attachment" rel="attachment" href="libs/ND-0.0.1/ND_layer.fgb"/>
+<link id="NE-1-attachment" rel="attachment" href="libs/NE-0.0.1/NE_layer.fgb"/>
+<link id="NH-1-attachment" rel="attachment" href="libs/NH-0.0.1/NH_layer.fgb"/>
+<link id="NJ-1-attachment" rel="attachment" href="libs/NJ-0.0.1/NJ_layer.fgb"/>
+<link id="NM-1-attachment" rel="attachment" href="libs/NM-0.0.1/NM_layer.fgb"/>
+<link id="NV-1-attachment" rel="attachment" href="libs/NV-0.0.1/NV_layer.fgb"/>
+<link id="NY-1-attachment" rel="attachment" href="libs/NY-0.0.1/NY_layer.fgb"/>
+<link id="OH-1-attachment" rel="attachment" href="libs/OH-0.0.1/OH_layer.fgb"/>
+<link id="OK-1-attachment" rel="attachment" href="libs/OK-0.0.1/OK_layer.fgb"/>
+<link id="OR-1-attachment" rel="attachment" href="libs/OR-0.0.1/OR_layer.fgb"/>
+<link id="PA-1-attachment" rel="attachment" href="libs/PA-0.0.1/PA_layer.fgb"/>
+<link id="RI-1-attachment" rel="attachment" href="libs/RI-0.0.1/RI_layer.fgb"/>
+<link id="SC-1-attachment" rel="attachment" href="libs/SC-0.0.1/SC_layer.fgb"/>
+<link id="SD-1-attachment" rel="attachment" href="libs/SD-0.0.1/SD_layer.fgb"/>
+<link id="TN-1-attachment" rel="attachment" href="libs/TN-0.0.1/TN_layer.fgb"/>
+<link id="TX-1-attachment" rel="attachment" href="libs/TX-0.0.1/TX_layer.fgb"/>
+<link id="UT-1-attachment" rel="attachment" href="libs/UT-0.0.1/UT_layer.fgb"/>
+<link id="VA-1-attachment" rel="attachment" href="libs/VA-0.0.1/VA_layer.fgb"/>
+<link id="VT-1-attachment" rel="attachment" href="libs/VT-0.0.1/VT_layer.fgb"/>
+<link id="WA-1-attachment" rel="attachment" href="libs/WA-0.0.1/WA_layer.fgb"/>
+<link id="WI-1-attachment" rel="attachment" href="libs/WI-0.0.1/WI_layer.fgb"/>
+<link id="WV-1-attachment" rel="attachment" href="libs/WV-0.0.1/WV_layer.fgb"/>
+<link id="WY-1-attachment" rel="attachment" href="libs/WY-0.0.1/WY_layer.fgb"/>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -87,14 +145,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -103,9 +163,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -160,6 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#github"><i class="fa fa-check"></i>Github</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#google-drive"><i class="fa fa-check"></i>Google Drive</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-setup"><i class="fa fa-check"></i>Software Setup</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#install-software"><i class="fa fa-check"></i><b>0.1</b> Install software</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#launch-rstudio"><i class="fa fa-check"></i><b>0.2</b> Launch RStudio</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#fork-and-clone-the-github-repository"><i class="fa fa-check"></i><b>0.3</b> Fork and Clone the Github Repository</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#install-r-packages"><i class="fa fa-check"></i><b>0.4</b> Install R Packages</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#create-rmarkdown-file"><i class="fa fa-check"></i><b>0.5</b> Create Rmarkdown file</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html"><i class="fa fa-check"></i><b>1</b> Collaborate: git, github</a><ul>
 <li class="chapter" data-level="1.1" data-path="collaborate-git-github.html"><a href="collaborate-git-github.html#setup-github-git"><i class="fa fa-check"></i><b>1.1</b> Setup Github &amp; Git</a></li>
@@ -240,6 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#raster-leaflet"><i class="fa fa-check"></i><b>5.8</b> Raster: leaflet</a></li>
 <li class="chapter" data-level="5.9" data-path="interactive-map-leaflet.html"><a href="interactive-map-leaflet.html#key-points-1"><i class="fa fa-check"></i><b>5.9</b> Key Points</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-shiny-google-auth.html"><a href="appendix-shiny-google-auth.html"><i class="fa fa-check"></i><b>A</b> Appendix Shiny Google Auth</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -281,40 +349,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.2</span> Prerequisites</h2>
 <p><strong>R Skill Level</strong>: Intermediate - you’ve got basics of R down.</p>
 <p>You will use the <code>sf</code> package for vector data along with the <code>dplyr</code> package for calculating and manipulating attribute data.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="co"># load packages</span></a>
-<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="kw">library</span>(tidyverse)  <span class="co"># load dplyr, tidyr, ggplot2 packages</span></a>
-<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="kw">library</span>(sf)         <span class="co"># vector reading &amp; analysis</span></a>
-<a class="sourceLine" id="cb49-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb49-5" data-line-number="5"><span class="co"># set working directory to data folder</span></a>
-<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="co"># setwd(&quot;pathToDirHere&quot;)</span></a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="analyze-spatial-sf.html#cb48-1"></a><span class="co"># load packages</span></span>
+<span id="cb48-2"><a href="analyze-spatial-sf.html#cb48-2"></a><span class="kw">library</span>(tidyverse)  <span class="co"># load dplyr, tidyr, ggplot2 packages</span></span>
+<span id="cb48-3"><a href="analyze-spatial-sf.html#cb48-3"></a><span class="kw">library</span>(sf)         <span class="co"># vector reading &amp; analysis</span></span>
+<span id="cb48-4"><a href="analyze-spatial-sf.html#cb48-4"></a></span>
+<span id="cb48-5"><a href="analyze-spatial-sf.html#cb48-5"></a><span class="co"># set working directory to data folder</span></span>
+<span id="cb48-6"><a href="analyze-spatial-sf.html#cb48-6"></a><span class="co"># setwd(&quot;pathToDirHere&quot;)</span></span></code></pre></div>
 </div>
 <div id="states-read-and-plot" class="section level2">
 <h2><span class="header-section-number">4.3</span> States: read and plot</h2>
 <p>Similar to <a href="https://jsta.github.io/R-spatial-raster-vector-lesson/09-vector-when-data-dont-line-up-crs/">Lesson 9: Handling Spatial Projection &amp; CRS in R</a>, we’ll start by reading in a polygon shapefile using the <code>sf</code> package. Then use the default <code>plot()</code> function to see what it looks like.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">library</span>(here)</a></code></pre></div>
-<pre><code>## here() starts at /Users/bbest/github/r3-workshop</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1">states_shp &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/neon-us-boundary/US-State-Boundaries-Census-2014.shp&quot;</span>)</a>
-<a class="sourceLine" id="cb52-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="co"># read in states</span></a>
-<a class="sourceLine" id="cb52-4" data-line-number="4">states &lt;-<span class="st"> </span><span class="kw">read_sf</span>(states_shp)</a>
-<a class="sourceLine" id="cb52-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="co"># plot the states</span></a>
-<a class="sourceLine" id="cb52-7" data-line-number="7"><span class="kw">plot</span>(states)</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="analyze-spatial-sf.html#cb49-1"></a><span class="kw">library</span>(here)</span>
+<span id="cb49-2"><a href="analyze-spatial-sf.html#cb49-2"></a></span>
+<span id="cb49-3"><a href="analyze-spatial-sf.html#cb49-3"></a>states_shp &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/neon-us-boundary/US-State-Boundaries-Census-2014.shp&quot;</span>)</span>
+<span id="cb49-4"><a href="analyze-spatial-sf.html#cb49-4"></a></span>
+<span id="cb49-5"><a href="analyze-spatial-sf.html#cb49-5"></a><span class="co"># read in states</span></span>
+<span id="cb49-6"><a href="analyze-spatial-sf.html#cb49-6"></a>states &lt;-<span class="st"> </span><span class="kw">read_sf</span>(states_shp)</span>
+<span id="cb49-7"><a href="analyze-spatial-sf.html#cb49-7"></a></span>
+<span id="cb49-8"><a href="analyze-spatial-sf.html#cb49-8"></a><span class="co"># plot the states</span></span>
+<span id="cb49-9"><a href="analyze-spatial-sf.html#cb49-9"></a><span class="kw">plot</span>(states)</span></code></pre></div>
 <pre><code>## Warning: plotting the first 9 out of 10 attributes; use max.plot = 10 to plot
 ## all</code></pre>
 <p><img src="r3-workshop_files/figure-html/plot-states-1.png" width="672" /></p>
 <p>Notice the default plot on <code>sf</code> objects outputs colorized values of the first 9 of 10 columns. Use the suggestion from the warning to plot the 10th column.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="co"># plot 10th column</span></a>
-<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="kw">plot</span>(states, <span class="dt">max.plot =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="analyze-spatial-sf.html#cb51-1"></a><span class="co"># plot 10th column</span></span>
+<span id="cb51-2"><a href="analyze-spatial-sf.html#cb51-2"></a><span class="kw">plot</span>(states, <span class="dt">max.plot =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/plot-states-10-1.png" width="672" /></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="co"># show columns of the data frame</span></a>
-<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="kw">names</span>(states)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="analyze-spatial-sf.html#cb52-1"></a><span class="co"># show columns of the data frame</span></span>
+<span id="cb52-2"><a href="analyze-spatial-sf.html#cb52-2"></a><span class="kw">names</span>(states)</span></code></pre></div>
 <pre><code>##  [1] &quot;STATEFP&quot;  &quot;STATENS&quot;  &quot;AFFGEOID&quot; &quot;GEOID&quot;    &quot;STUSPS&quot;   &quot;NAME&quot;    
 ##  [7] &quot;LSAD&quot;     &quot;ALAND&quot;    &quot;AWATER&quot;   &quot;region&quot;   &quot;geometry&quot;</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="co"># look at table</span></a>
-<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="kw">glimpse</span>(states)</a></code></pre></div>
-<pre><code>## Observations: 58
-## Variables: 11
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analyze-spatial-sf.html#cb54-1"></a><span class="co"># look at table</span></span>
+<span id="cb54-2"><a href="analyze-spatial-sf.html#cb54-2"></a><span class="kw">glimpse</span>(states)</span></code></pre></div>
+<pre><code>## Rows: 58
+## Columns: 11
 ## $ STATEFP  &lt;chr&gt; &quot;06&quot;, &quot;11&quot;, &quot;12&quot;, &quot;13&quot;, &quot;16&quot;, &quot;17&quot;, &quot;19&quot;, &quot;21&quot;, &quot;22&quot;, &quot;24&quot;, …
 ## $ STATENS  &lt;chr&gt; &quot;01779778&quot;, &quot;01702382&quot;, &quot;00294478&quot;, &quot;01705317&quot;, &quot;01779783&quot;, …
 ## $ AFFGEOID &lt;chr&gt; &quot;0400000US06&quot;, &quot;0400000US11&quot;, &quot;0400000US12&quot;, &quot;0400000US13&quot;, …
@@ -326,8 +394,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ AWATER   &lt;dbl&gt; 20483271881, 18633500, 31407883551, 4947080103, 2397728105, …
 ## $ region   &lt;chr&gt; &quot;West&quot;, &quot;Northeast&quot;, &quot;Southeast&quot;, &quot;Southeast&quot;, &quot;West&quot;, &quot;Midw…
 ## $ geometry &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON Z (((-118.594 ..., MULTIPOLYGON Z …</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="co"># convert to tibble for nicer printing</span></a>
-<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="kw">as_tibble</span>(states)</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="analyze-spatial-sf.html#cb56-1"></a><span class="co"># convert to tibble for nicer printing</span></span>
+<span id="cb56-2"><a href="analyze-spatial-sf.html#cb56-2"></a><span class="kw">as_tibble</span>(states)</span></code></pre></div>
 <pre><code>## # A tibble: 58 x 11
 ##    STATEFP STATENS AFFGEOID GEOID STUSPS NAME  LSAD    ALAND  AWATER region
 ##    &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; 
@@ -342,15 +410,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 22      016295… 0400000… 22    LA     Loui… 00    1.12e11 2.38e10 South…
 ## 10 24      017149… 0400000… 24    MD     Mary… 00    2.51e10 6.98e 9 North…
 ## # … with 48 more rows, and 1 more variable: geometry &lt;MULTIPOLYGON [°]&gt;</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">names</span>(states)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="analyze-spatial-sf.html#cb58-1"></a><span class="kw">names</span>(states)</span></code></pre></div>
 <pre><code>##  [1] &quot;STATEFP&quot;  &quot;STATENS&quot;  &quot;AFFGEOID&quot; &quot;GEOID&quot;    &quot;STUSPS&quot;   &quot;NAME&quot;    
 ##  [7] &quot;LSAD&quot;     &quot;ALAND&quot;    &quot;AWATER&quot;   &quot;region&quot;   &quot;geometry&quot;</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="co"># inspect the class(es) of the states object</span></a>
-<a class="sourceLine" id="cb63-2" data-line-number="2"><span class="kw">class</span>(states)</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="analyze-spatial-sf.html#cb60-1"></a><span class="co"># inspect the class(es) of the states object</span></span>
+<span id="cb60-2"><a href="analyze-spatial-sf.html#cb60-2"></a><span class="kw">class</span>(states)</span></code></pre></div>
 <pre><code>## [1] &quot;sf&quot;         &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
 <p>The class of the <code>states</code> object is both a simple feature (<code>sf</code>) as well as a data frame, which means the many useful functions available to a data frame (or “tibble”) can be applied.</p>
 <p>To plot the column of interest, feed the “slice” of that column to the <code>plot()</code> function.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">plot</span>(states[<span class="st">&#39;region&#39;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="analyze-spatial-sf.html#cb62-1"></a><span class="kw">plot</span>(states[<span class="st">&#39;region&#39;</span>])</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/plot-states-region-1.png" width="672" /></p>
 <p><strong>Question</strong>: To motivate the spatial analysis for the rest of this lesson, you will answer this question: “<em><strong>What is the percent water by region?</strong></em>”</p>
 </div>
@@ -380,35 +448,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li>Aggregate spatial data with metrics.</li>
 </ul>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">regions =<span class="st"> </span>states <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb66-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(</a>
-<a class="sourceLine" id="cb66-4" data-line-number="4">    <span class="dt">water =</span> <span class="kw">sum</span>(AWATER),</a>
-<a class="sourceLine" id="cb66-5" data-line-number="5">    <span class="dt">land  =</span> <span class="kw">sum</span>(ALAND)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb66-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb66-7" data-line-number="7">    <span class="dt">pct_water =</span> water <span class="op">/</span><span class="st"> </span>land <span class="op">*</span><span class="st"> </span><span class="dv">100</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>(<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb66-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb66-9" data-line-number="9"><span class="co"># object</span></a>
-<a class="sourceLine" id="cb66-10" data-line-number="10">regions</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="analyze-spatial-sf.html#cb63-1"></a>regions =<span class="st"> </span>states <span class="op">%&gt;%</span></span>
+<span id="cb63-2"><a href="analyze-spatial-sf.html#cb63-2"></a><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></span>
+<span id="cb63-3"><a href="analyze-spatial-sf.html#cb63-3"></a><span class="st">  </span><span class="kw">summarize</span>(</span>
+<span id="cb63-4"><a href="analyze-spatial-sf.html#cb63-4"></a>    <span class="dt">water =</span> <span class="kw">sum</span>(AWATER),</span>
+<span id="cb63-5"><a href="analyze-spatial-sf.html#cb63-5"></a>    <span class="dt">land  =</span> <span class="kw">sum</span>(ALAND)) <span class="op">%&gt;%</span></span>
+<span id="cb63-6"><a href="analyze-spatial-sf.html#cb63-6"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb63-7"><a href="analyze-spatial-sf.html#cb63-7"></a>    <span class="dt">pct_water =</span> water <span class="op">/</span><span class="st"> </span>land <span class="op">*</span><span class="st"> </span><span class="dv">100</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">round</span>(<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="analyze-spatial-sf.html#cb65-1"></a><span class="co"># object</span></span>
+<span id="cb65-2"><a href="analyze-spatial-sf.html#cb65-2"></a>regions</span></code></pre></div>
 <pre><code>## Simple feature collection with 5 features and 4 fields
 ## geometry type:  GEOMETRY
 ## dimension:      XYZ
 ## bbox:           xmin: -124.7258 ymin: 24.49813 xmax: -66.9499 ymax: 49.38436
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs
+## z_range:        zmin: 0 zmax: 0
+## geographic CRS: WGS 84
 ## # A tibble: 5 x 5
 ##   region      water      land                                 geometry pct_water
 ## * &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;                           &lt;GEOMETRY [°]&gt;     &lt;dbl&gt;
-## 1 Midwest   1.84e11   1.94e12 MULTIPOLYGON Z (((-82.86334 41.69369 0,…      9.49
+## 1 Midwest   1.84e11   1.94e12 MULTIPOLYGON Z (((-87.80048 42.49192 0,…      9.49
 ## 2 Northe…   1.09e11   8.69e11 MULTIPOLYGON Z (((-76.04621 38.02553 0,…     12.5 
 ## 3 Southe…   1.04e11   1.36e12 MULTIPOLYGON Z (((-81.81169 24.56874 0,…      7.61
 ## 4 Southw…   2.42e10   1.46e12 POLYGON Z ((-94.48587 33.63787 0, -94.4…      1.66
-## 5 West      5.76e10   2.43e12 MULTIPOLYGON Z (((-118.594 33.03595 0, …      2.37</code></pre>
+## 5 West      5.76e10   2.43e12 MULTIPOLYGON Z (((-104.0532 41.00141 0,…      2.37</code></pre>
 <p>Notice the geometry in the column. To remove the geometry column pipe to <code>st_set_geometry(NULL)</code>. To arrange in descending order use <code>arrange(desc(pct_water))</code>.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="co"># table</span></a>
-<a class="sourceLine" id="cb68-2" data-line-number="2">regions <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb68-3" data-line-number="3"><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb68-4" data-line-number="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="analyze-spatial-sf.html#cb67-1"></a><span class="co"># table</span></span>
+<span id="cb67-2"><a href="analyze-spatial-sf.html#cb67-2"></a>regions <span class="op">%&gt;%</span></span>
+<span id="cb67-3"><a href="analyze-spatial-sf.html#cb67-3"></a><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></span>
+<span id="cb67-4"><a href="analyze-spatial-sf.html#cb67-4"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 4
 ##   region           water          land pct_water
 ##   &lt;chr&gt;            &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;
@@ -421,8 +489,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="regions-plot" class="section level2">
 <h2><span class="header-section-number">4.6</span> Regions: plot</h2>
 <p>Now plot the regions.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1"><span class="co"># plot, default</span></a>
-<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">plot</span>(regions[<span class="st">&#39;pct_water&#39;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="analyze-spatial-sf.html#cb69-1"></a><span class="co"># plot, default</span></span>
+<span id="cb69-2"><a href="analyze-spatial-sf.html#cb69-2"></a><span class="kw">plot</span>(regions[<span class="st">&#39;pct_water&#39;</span>])</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/plot-regions-pctwater-1.png" width="672" /></p>
 </div>
 <div id="regions-ggplot" class="section level2">
@@ -431,37 +499,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>In RStudio, see menu Help &gt; Cheatsheets &gt; <a href="https://github.com/rstudio/cheatsheets/raw/master/source/pdfs/ggplot2-cheatsheet-2.1.pdf">Data Visualization with ggplot2</a>.</li>
 </ul>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="co"># plot, ggplot</span></a>
-<a class="sourceLine" id="cb71-2" data-line-number="2"><span class="kw">ggplot</span>(regions) <span class="op">+</span></a>
-<a class="sourceLine" id="cb71-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pct_water)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb71-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_distiller</span>(</a>
-<a class="sourceLine" id="cb71-5" data-line-number="5">    <span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>, <span class="dt">direction=</span><span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb71-6" data-line-number="6">    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb71-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb71-8" data-line-number="8"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="analyze-spatial-sf.html#cb70-1"></a><span class="co"># plot, ggplot</span></span>
+<span id="cb70-2"><a href="analyze-spatial-sf.html#cb70-2"></a><span class="kw">ggplot</span>(regions) <span class="op">+</span></span>
+<span id="cb70-3"><a href="analyze-spatial-sf.html#cb70-3"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> pct_water)) <span class="op">+</span></span>
+<span id="cb70-4"><a href="analyze-spatial-sf.html#cb70-4"></a><span class="st">  </span><span class="kw">scale_fill_distiller</span>(</span>
+<span id="cb70-5"><a href="analyze-spatial-sf.html#cb70-5"></a>    <span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>, <span class="dt">direction=</span><span class="dv">1</span>,</span>
+<span id="cb70-6"><a href="analyze-spatial-sf.html#cb70-6"></a>    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></span>
+<span id="cb70-7"><a href="analyze-spatial-sf.html#cb70-7"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb70-8"><a href="analyze-spatial-sf.html#cb70-8"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/ggplot-regions-pctwater-1.png" width="672" /></p>
 </div>
 <div id="regions-recalculate-area" class="section level2">
 <h2><span class="header-section-number">4.8</span> Regions: recalculate area</h2>
 <p>So far you’ve used the <code>ALAND</code> column for area of the state. But what if you were not provided the area and needed to calculate it? Because the <code>states</code> are in geographic coordinates, you’ll need to either transform to an equal area projection and calculate area, or use geodesic calculations. Thankfully, the <code>sf</code> library provides area calculations with the <code>st_area()</code> and uses the <code>geosphere::distGeo()</code> to perform geodesic calculations (ie trigonometric calculation accounting for the spheroid nature of the earth). Since the <code>states</code> data has the unusual aspect of a z dimension, you’ll need to first remove that with the <code>st_zm()</code> function.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" data-line-number="1"><span class="kw">library</span>(geosphere)</a>
-<a class="sourceLine" id="cb72-2" data-line-number="2"><span class="kw">library</span>(units)</a>
-<a class="sourceLine" id="cb72-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb72-4" data-line-number="4">regions =<span class="st"> </span>states <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb72-6" data-line-number="6">    <span class="dt">water_m2 =</span> AWATER <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">set_units</span>(m<span class="op">^</span><span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb72-7" data-line-number="7">    <span class="dt">land_m2  =</span> geometry <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_zm</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_area</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-8" data-line-number="8"><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-9" data-line-number="9"><span class="st">  </span><span class="kw">summarize</span>(</a>
-<a class="sourceLine" id="cb72-10" data-line-number="10">    <span class="dt">water_m2 =</span> <span class="kw">sum</span>(water_m2),</a>
-<a class="sourceLine" id="cb72-11" data-line-number="11">    <span class="dt">land_m2  =</span> <span class="kw">sum</span>(land_m2)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-12" data-line-number="12"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb72-13" data-line-number="13">    <span class="dt">pct_water =</span> water_m2 <span class="op">/</span><span class="st"> </span>land_m2)</a>
-<a class="sourceLine" id="cb72-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb72-15" data-line-number="15"><span class="co"># table</span></a>
-<a class="sourceLine" id="cb72-16" data-line-number="16">regions <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-17" data-line-number="17"><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb72-18" data-line-number="18"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="analyze-spatial-sf.html#cb71-1"></a><span class="kw">library</span>(geosphere)</span>
+<span id="cb71-2"><a href="analyze-spatial-sf.html#cb71-2"></a><span class="kw">library</span>(units)</span>
+<span id="cb71-3"><a href="analyze-spatial-sf.html#cb71-3"></a></span>
+<span id="cb71-4"><a href="analyze-spatial-sf.html#cb71-4"></a>regions =<span class="st"> </span>states <span class="op">%&gt;%</span></span>
+<span id="cb71-5"><a href="analyze-spatial-sf.html#cb71-5"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb71-6"><a href="analyze-spatial-sf.html#cb71-6"></a>    <span class="dt">water_m2 =</span> AWATER <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">set_units</span>(m<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb71-7"><a href="analyze-spatial-sf.html#cb71-7"></a>    <span class="dt">land_m2  =</span> geometry <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_zm</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_area</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb71-8"><a href="analyze-spatial-sf.html#cb71-8"></a><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></span>
+<span id="cb71-9"><a href="analyze-spatial-sf.html#cb71-9"></a><span class="st">  </span><span class="kw">summarize</span>(</span>
+<span id="cb71-10"><a href="analyze-spatial-sf.html#cb71-10"></a>    <span class="dt">water_m2 =</span> <span class="kw">sum</span>(water_m2),</span>
+<span id="cb71-11"><a href="analyze-spatial-sf.html#cb71-11"></a>    <span class="dt">land_m2  =</span> <span class="kw">sum</span>(land_m2)) <span class="op">%&gt;%</span></span>
+<span id="cb71-12"><a href="analyze-spatial-sf.html#cb71-12"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb71-13"><a href="analyze-spatial-sf.html#cb71-13"></a>    <span class="dt">pct_water =</span> water_m2 <span class="op">/</span><span class="st"> </span>land_m2)</span>
+<span id="cb71-14"><a href="analyze-spatial-sf.html#cb71-14"></a></span>
+<span id="cb71-15"><a href="analyze-spatial-sf.html#cb71-15"></a><span class="co"># table</span></span>
+<span id="cb71-16"><a href="analyze-spatial-sf.html#cb71-16"></a>regions <span class="op">%&gt;%</span></span>
+<span id="cb71-17"><a href="analyze-spatial-sf.html#cb71-17"></a><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></span>
+<span id="cb71-18"><a href="analyze-spatial-sf.html#cb71-18"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 4
 ##   region        water_m2      land_m2  pct_water
 ##   &lt;chr&gt;            [m^2]        [m^2]        [1]
@@ -470,14 +538,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Southeast 103876652998 1.427079e+12 0.07278971
 ## 4 West       57568049509 2.467170e+12 0.02333363
 ## 5 Southwest  24217682268 1.483765e+12 0.01632178</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="co"># plot, ggplot</span></a>
-<a class="sourceLine" id="cb74-2" data-line-number="2"><span class="kw">ggplot</span>(regions) <span class="op">+</span></a>
-<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> <span class="kw">as.numeric</span>(pct_water))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_distiller</span>(</a>
-<a class="sourceLine" id="cb74-5" data-line-number="5">    <span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>, <span class="dt">direction=</span><span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb74-6" data-line-number="6">    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb74-7" data-line-number="7"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb74-8" data-line-number="8"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="analyze-spatial-sf.html#cb73-1"></a><span class="co"># plot, ggplot</span></span>
+<span id="cb73-2"><a href="analyze-spatial-sf.html#cb73-2"></a><span class="kw">ggplot</span>(regions) <span class="op">+</span></span>
+<span id="cb73-3"><a href="analyze-spatial-sf.html#cb73-3"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> <span class="kw">as.numeric</span>(pct_water))) <span class="op">+</span></span>
+<span id="cb73-4"><a href="analyze-spatial-sf.html#cb73-4"></a><span class="st">  </span><span class="kw">scale_fill_distiller</span>(</span>
+<span id="cb73-5"><a href="analyze-spatial-sf.html#cb73-5"></a>    <span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>, <span class="dt">direction=</span><span class="dv">1</span>,</span>
+<span id="cb73-6"><a href="analyze-spatial-sf.html#cb73-6"></a>    <span class="dt">guide =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="st">&quot;% water&quot;</span>, <span class="dt">reverse=</span>T)) <span class="op">+</span></span>
+<span id="cb73-7"><a href="analyze-spatial-sf.html#cb73-7"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb73-8"><a href="analyze-spatial-sf.html#cb73-8"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water by US Region&quot;</span>)</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/plot-regions-area-1.png" width="672" /></p>
 </div>
 <div id="challenge-project-recalculate-area" class="section level2 challenge">
@@ -485,28 +553,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Use <code>st_transform()</code> with a <a href="http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/">USA Contiguous Albers Equal Area Conic Projection</a> that minimizes distoration, and then calculate area using the <code>st_area()</code> function.</p>
 <div id="answers-1" class="section level3 solution">
 <h3><span class="header-section-number">4.9.1</span> Answers</h3>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">library</span>(geosphere)</a>
-<a class="sourceLine" id="cb75-2" data-line-number="2"><span class="kw">library</span>(units)</a>
-<a class="sourceLine" id="cb75-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb75-4" data-line-number="4"><span class="co"># Proj4 of http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/</span></a>
-<a class="sourceLine" id="cb75-5" data-line-number="5">crs_usa =<span class="st"> &#39;+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs&#39;</span></a>
-<a class="sourceLine" id="cb75-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb75-7" data-line-number="7">regions =<span class="st"> </span>states <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-8" data-line-number="8"><span class="st">  </span><span class="kw">st_transform</span>(crs_usa) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-9" data-line-number="9"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb75-10" data-line-number="10">    <span class="dt">water_m2 =</span> AWATER <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">set_units</span>(m<span class="op">^</span><span class="dv">2</span>),</a>
-<a class="sourceLine" id="cb75-11" data-line-number="11">    <span class="dt">land_m2  =</span> geometry <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_zm</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_area</span>()) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-12" data-line-number="12"><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-13" data-line-number="13"><span class="st">  </span><span class="kw">summarize</span>(</a>
-<a class="sourceLine" id="cb75-14" data-line-number="14">    <span class="dt">water_m2 =</span> <span class="kw">sum</span>(water_m2),</a>
-<a class="sourceLine" id="cb75-15" data-line-number="15">    <span class="dt">land_m2  =</span> <span class="kw">sum</span>(land_m2)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-16" data-line-number="16"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb75-17" data-line-number="17">    <span class="dt">pct_water =</span> water_m2 <span class="op">/</span><span class="st"> </span>land_m2)</a>
-<a class="sourceLine" id="cb75-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb75-19" data-line-number="19"><span class="co"># table</span></a>
-<a class="sourceLine" id="cb75-20" data-line-number="20">regions <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-21" data-line-number="21"><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb75-22" data-line-number="22"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="analyze-spatial-sf.html#cb74-1"></a><span class="kw">library</span>(geosphere)</span>
+<span id="cb74-2"><a href="analyze-spatial-sf.html#cb74-2"></a><span class="kw">library</span>(units)</span>
+<span id="cb74-3"><a href="analyze-spatial-sf.html#cb74-3"></a></span>
+<span id="cb74-4"><a href="analyze-spatial-sf.html#cb74-4"></a><span class="co"># Proj4 of http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/</span></span>
+<span id="cb74-5"><a href="analyze-spatial-sf.html#cb74-5"></a>crs_usa =<span class="st"> &#39;+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs&#39;</span></span>
+<span id="cb74-6"><a href="analyze-spatial-sf.html#cb74-6"></a></span>
+<span id="cb74-7"><a href="analyze-spatial-sf.html#cb74-7"></a>regions =<span class="st"> </span>states <span class="op">%&gt;%</span></span>
+<span id="cb74-8"><a href="analyze-spatial-sf.html#cb74-8"></a><span class="st">  </span><span class="kw">st_transform</span>(crs_usa) <span class="op">%&gt;%</span></span>
+<span id="cb74-9"><a href="analyze-spatial-sf.html#cb74-9"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb74-10"><a href="analyze-spatial-sf.html#cb74-10"></a>    <span class="dt">water_m2 =</span> AWATER <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">set_units</span>(m<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb74-11"><a href="analyze-spatial-sf.html#cb74-11"></a>    <span class="dt">land_m2  =</span> geometry <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_zm</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">st_area</span>()) <span class="op">%&gt;%</span></span>
+<span id="cb74-12"><a href="analyze-spatial-sf.html#cb74-12"></a><span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></span>
+<span id="cb74-13"><a href="analyze-spatial-sf.html#cb74-13"></a><span class="st">  </span><span class="kw">summarize</span>(</span>
+<span id="cb74-14"><a href="analyze-spatial-sf.html#cb74-14"></a>    <span class="dt">water_m2 =</span> <span class="kw">sum</span>(water_m2),</span>
+<span id="cb74-15"><a href="analyze-spatial-sf.html#cb74-15"></a>    <span class="dt">land_m2  =</span> <span class="kw">sum</span>(land_m2)) <span class="op">%&gt;%</span></span>
+<span id="cb74-16"><a href="analyze-spatial-sf.html#cb74-16"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb74-17"><a href="analyze-spatial-sf.html#cb74-17"></a>    <span class="dt">pct_water =</span> water_m2 <span class="op">/</span><span class="st"> </span>land_m2)</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="analyze-spatial-sf.html#cb76-1"></a><span class="co"># table</span></span>
+<span id="cb76-2"><a href="analyze-spatial-sf.html#cb76-2"></a>regions <span class="op">%&gt;%</span></span>
+<span id="cb76-3"><a href="analyze-spatial-sf.html#cb76-3"></a><span class="st">  </span><span class="kw">st_set_geometry</span>(<span class="ot">NULL</span>) <span class="op">%&gt;%</span></span>
+<span id="cb76-4"><a href="analyze-spatial-sf.html#cb76-4"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pct_water))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 4
 ##   region        water_m2      land_m2  pct_water
 ##   &lt;chr&gt;            [m^2]        [m^2]        [1]
@@ -515,12 +583,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Southeast 103876652998 1.427078e+12 0.07278973
 ## 4 West       57568049509 2.467167e+12 0.02333367
 ## 5 Southwest  24217682268 1.483758e+12 0.01632185</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="co"># plot, ggplot</span></a>
-<a class="sourceLine" id="cb77-2" data-line-number="2"><span class="kw">ggplot</span>(regions) <span class="op">+</span></a>
-<a class="sourceLine" id="cb77-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> <span class="kw">as.numeric</span>(pct_water))) <span class="op">+</span></a>
-<a class="sourceLine" id="cb77-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_fill_distiller</span>(<span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb77-5" data-line-number="5"><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb77-6" data-line-number="6"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water (geodesic) by US Region&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="analyze-spatial-sf.html#cb78-1"></a><span class="co"># plot, ggplot</span></span>
+<span id="cb78-2"><a href="analyze-spatial-sf.html#cb78-2"></a><span class="kw">ggplot</span>(regions) <span class="op">+</span></span>
+<span id="cb78-3"><a href="analyze-spatial-sf.html#cb78-3"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> <span class="kw">as.numeric</span>(pct_water))) <span class="op">+</span></span>
+<span id="cb78-4"><a href="analyze-spatial-sf.html#cb78-4"></a><span class="st">  </span><span class="kw">scale_fill_distiller</span>(<span class="st">&quot;pct_water&quot;</span>, <span class="dt">palette =</span> <span class="st">&quot;Spectral&quot;</span>) <span class="op">+</span></span>
+<span id="cb78-5"><a href="analyze-spatial-sf.html#cb78-5"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb78-6"><a href="analyze-spatial-sf.html#cb78-6"></a><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;% Water (geodesic) by US Region&quot;</span>)</span></code></pre></div>
 <p><img src="r3-workshop_files/figure-html/recalc-regions-transform-1.png" width="672" /></p>
 </div>
 </div>

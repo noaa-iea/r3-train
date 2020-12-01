@@ -211,7 +211,7 @@ World = World %>%
 # make map
 m = tm_shape(World) +
     tm_polygons('lifeExp', palette='RdYlGn', id='name', title='Life expectancy (years)', auto.palette.mapping=F) +
-    tm_style_gray() + tm_format_World()
+    tm_style('gray') + tm_format('World')
 m
 ```
 
