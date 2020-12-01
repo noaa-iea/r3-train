@@ -22,7 +22,7 @@ library(tidyverse)
 library(knitr)
 library(leaflet)
 library(sf)
-opts_chunk$set(echo = F)
+opts_chunk$set(echo = F, cache = T)
 ```
 
 # Overview {-}

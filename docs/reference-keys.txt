@@ -69,4 +69,8 @@ challenge-leaflet-for-regions
 answers-2
 raster-leaflet
 key-points-1
-appendix-shiny-google-auth
+shiny-google-authentication
+quick-sign-in-google-sign-in
+errors
+setting-up-for-server
+complex-sign-in-googleauthr
