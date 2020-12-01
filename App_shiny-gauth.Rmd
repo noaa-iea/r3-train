@@ -7,7 +7,7 @@
 
 * [dkulp2/Google-Sign-In: Simple Example of Shiny App Using Google Sign-In API](https://github.com/dkulp2/Google-Sign-In)
 
-Presuming you have the shiny package installed (if not: `install.packages("shiny")`), run this app like so from the Console in RStudio:
+Presuming you have the shiny package installed (if not: `install.packages(c("shiny","shinyjs"))`), run this app like so from the Console in RStudio:
 
 ```r
 shiny::runGitHub("dkulp2/Google-Sign-In", port=7445)
