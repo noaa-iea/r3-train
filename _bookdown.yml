@@ -1,6 +1,0 @@
-book_filename: "r3-workshop"
-language:
-  ui:
-    chapter_name: "Lesson "
-delete_merged_file: true
-output_dir: "docs"

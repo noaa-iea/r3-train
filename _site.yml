@@ -1,0 +1,10 @@
+name: "R3"
+navbar:
+  title: "R<sup>3</sup>"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Setup"
+      href: setup.html
+output_dir: "docs"
+exclude: ["_old-bookdown"]

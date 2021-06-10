@@ -1,135 +1,68 @@
---- 
-title: "Reproducible Reporting with R (R³) for marine ecosystem indicators"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [style/zotero_nps.bib, style/packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: ecoquants/nps-r-workshop
-description: "These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020. The output format is using `bookdown::gitbook()`."
+---
+pagetitle: "Home | R3"
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-```{r include=FALSE, eval=F}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'style/packages.bib')
-```
-
 ```{r setup, include=FALSE}
-library(tidyverse)
-library(knitr)
-library(leaflet)
-library(sf)
-opts_chunk$set(echo = F, cache = T)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Overview {-}
+# Overview {.unnumbered}
 
-These materials are for a 1-day workshop on Reproducible Reporting with R for the Working Group on the Northwest Atlantic Regional Sea (WGNARS) at Dartmouth SMAST on March 16, 2020.
+This website is the starting point for the free 8-week webinar training
+series on Reproducible Reporting with R (R^3^) for the Working Group on
+the Northwest Atlantic Regional Sea (WGNARS).
 
-- _**Location**_: [School for Marine Science & Technology (SMAST), UMass Dartmouth](https://www.umassd.edu/smast/)<br>
-[706 S Rodney French Blvd, New Bedford, MA 02744](https://goo.gl/maps/LWMUfGmGsYdcAVo58)<br>
-- _**Date**_: Monday, March 16, 2020
+Materials will be populated into the Schedule below and menu above.
 
-Marine ecosystem indicators are ideally developed in an efficient, transparent, time sensitive manner so as to consistently and effectively support decision-making by managers and inform on ecosystem status for the general public. In this workshop we will demonstrate the use of the R scripting language for automating the ingestion and wrangling of data, calculation of indicators, visualization of maps or time series and online communication with interactive or static reports. We will also use Github to version and collaboratively develop code, communicate technically and host free websites. Finally, development of interactive user applications using Shiny and interactive infographics using a custom library will be briefly reviewed. Please check back here for the latest online materials.
+## Webinar
 
-This is the landing site for our workshop materials. Google Drive (folders, docs, slides, sheets, etc.) allows us to be agile with adapting content on the fly. The rest of the content in this site is generated using the techniques taught: R + markdown = Rmarkdown, git, Github, etc.
+Please join the WebEx meeting here Mondays 2-3:30 pm Eastern time:
 
-## Github {-}
+[<https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID=m48bc0a9e0d4ff76970e2ba6df1a1a574>](https://www.google.com/url?q=https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID%3Dm48bc0a9e0d4ff76970e2ba6df1a1a574&sa=D&source=calendar&ust=1618773990861000&usg=AOvVaw0109YGRilR4DPmha9CHMQG)
 
-Here is the Github repository of the source files for this website:
+## Schedule
 
-- [github.com/ecoquants/r3-workshop](https://github.com/ecoquants/r3-workshop)
-
-## Google Drive {-}
-
-- [**workshop/**](https://drive.google.com/drive/u/1/folders/1l5ESwDXPdotgNypDRhZzvEmDhFd6NH3y)
-    - [**agenda**](https://docs.google.com/document/d/1oxx5d1YOp5vlb5wiQw76HZtvbOTzhYED0xFlhLSJ-ok/edit#)
-    - [**notes**](https://docs.google.com/document/d/13Ua3Wnwur59GiDNMxFc2uJRREEY0D3Vvpp__LWFMCuw/edit#)
-    - [**presentations/**](https://drive.google.com/drive/u/1/folders/1lIBCl9xbjrbRtuQqtedlNQYDJvjORUzM)
-    - [**data/**](https://drive.google.com/drive/u/1/folders/1ChK39e3oJtVYrfx4rYjzdifW-v8xA8bK)
-
-## Resources {-}
-
-Online books:
-- [R for Data Science](http://r4ds.had.co.nz/)
-- [Spatial Data Analysis and Modeling with R](http://rspatial.org)
-
-## Software Setup {-}
-
-## Install software
-
-This workshop will require the following software installed on your machine:
-
-- [R](http://cran.cnr.berkeley.edu/) scientific programming language
-- [RStudio](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
-- [Git](https://git-scm.com/) version control
-
-Please download the appropriate stable release for your operating system.
-
-## Launch RStudio
-
-RStudio is an integrated development environment (IDE) for editing text in the code editor, running commands in the R console, viewing defined objects in the workspace and past commands in the history, and viewing plots, files and help. Here's a layout of the panes in RStudio, each of which can have several tabs for alternate functionality:
-
-![](figs/rstudio.png)
-
-Check out the Help > Cheatsheets > [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf).
-
-## Fork and Clone the Github Repository
-
-If you'd like to play with these materials directly and keep track of differences, please visit:
-
-https://github.com/bbest/meds-demo
-
-While signed into Github, [fork the repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) into your own writable user space so you can [clone it in RStudio](https://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio).
-
-Then you can follow along in RStudio by evaluating the chunks of R code, while referencing this website:
-
-http://benbestphd.com/meds-demo
-
-## Install R Packages
-
-Here's a bit of code to ensure you have all the necessary packages installed. Please copy and paste this code into your R Console.
-
-```{r, message=F, warning=F}
-# use librarian to load libraries, installing if needed
-if (!require("librarian")) install.packages("librarian")
-library("librarian")
-
-pkgs <- c(
-  # utility
-  "here","glue",
-  "readr","dplyr","tidyr","purrr","scales",
-  "lubridate","stringr","units",
-  # api
-  "jsonlite",
-  # plotting
-  "ggplot2","plotly",
-  # spatial
-  "sf",
-  # text
-  "rtweet","tidytext","textdata",
-  # tensorflow
-  "tensorflow","keras")
-shelf(pkgs)
-
-# TODO: cranometer https://gist.github.com/hadley/5420147
-
-# report on versions of software & packages
-sessionInfo()
-```
-
-## Create Rmarkdown file
-
-Rmarkdown is a dynamic document format that allows you to knit chunks of R code with formatted text (aka markdown). We recommend that you use this format for keeping a reproducible research document as you work through the lessons To get started, File > New File > Rmarkdown... and go with default HTML document and give any title you like (default "Untitled" or "test" or "First Rmd" is fine).
-
-Check out the Help > Markdown Quick Reference and Help > Cheatsheets > [R Markdown Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf).
-
-Here's a 1 minute video on the awesomeness of Rmarkdown:
-
-```{r, echo=F}
-vembedr::embed_url("https://vimeo.com/178485416")
-```
-
+1.  June 14: **Collaborate**\
+    Use Github to share and version code, as well as handle basic
+    project management with issues and project boards. The RStudio
+    development environment will be introduced to interface with git and
+    Github. Use of Github Pages to host knitted Rmarkdown documents will
+    enable sharing of online reports.\
+2.  June 21: **Manipulate**\
+    Use the latest "tidyverse" of R packages (readr, dplyr, tidyr,
+    stringr, lubridate) for wrangling data and sequencing operations
+    with the pipe (%\>%) operator.\
+3.  June 28: **Visualize**\
+    Use principles of the "grammar of graphics" to develop static plots
+    in the R package ggplot2. Make these interactive with plotly.
+    Develop dedicated time series plots with dygraphs.\
+4.  July 12: **Map**\
+    Read and write vector data (points, lines, polygons) using the
+    spatial features sf R package in conjuction with dplyr to wrangle
+    and summarize. Use the raster R package for gridded data. Generate
+    interactive maps with leaflet.\
+5.  July 19: **Report**\
+    Dive into Rmarkdown for for knitting formatted text (markdown) with
+    chunks of evaluated R code into html, pdf and docx formats. Use
+    Rmarkdown for single page reports, bookdown for reports with
+    chapters, flexdashboard for dashboards and Rmarkdown websites for
+    simple websites with shared navigation. Automatically render with
+    Github Actions.\
+6.  July 26: **Infographics**\
+    Use a custom infographiq Javascript library to intelligently link
+    icons of ecosystems to pop-up windows containing data figures, which
+    could be static images or interactive visualizations.\
+7.  August 2: **Applications**\
+    Use the Shiny framework to develop online interactive applications
+    accepting user input to render outputs from arbitrary R functions.
+    Server requirements differentiating from simpler Rmarkdown
+    renderings will be reviewed as well as use of Crosstalk to gain
+    similar functionality with Rmarkdown with simple data.\
+8.  August 9: **Packages**\
+    An R package is a documented set of functions that can act as
+    building blocks for data ingestion, analysis, visualization and
+    reporting. We'll go over the basics of creating an R package and
+    documenting functions within.

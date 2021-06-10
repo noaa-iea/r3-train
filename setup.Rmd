@@ -1,0 +1,25 @@
+---
+pagetitle: "Setup | R3"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup Accounts
+
+You will need a couple accounts to perform the exercises. They're very easy to setup:
+
+1.  [**Github**](https://github.com/) for collaborating with versioned code repositories and use to serve websites.
+2.  [**Google**](https://support.google.com/accounts/answer/27441?hl=en) to contribute towards notes in Google Docs and use Google Sheets. You don't need a gmail account and can even use your existing email to setup a Google account.
+
+## Install Software
+
+This training will require the following software installed on your machine:
+
+1. [**Webex**](https://www.webex.com/downloads.html) for connecting to the live webinar.
+1. [**R**](https://cran.r-project.org) scientific programming language
+1. [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
+1. [**Git**](https://git-scm.com/) version control
+
+Please download the appropriate stable release for your operating system. I highly recommend getting the latest versions for all the features.
