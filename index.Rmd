@@ -41,19 +41,23 @@ discussion and exercise completion time. All webinars will be
     development environment will be introduced to interface with git and
     Github. Use of Github Pages to host knitted Rmarkdown documents will
     enable sharing of online reports.\
+    \
 2.  June 21: **Manipulate**\
     Use the latest "tidyverse" of R packages (readr, dplyr, tidyr,
     stringr, lubridate) for wrangling data and sequencing operations
     with the pipe (%\>%) operator.\
+    \
 3.  June 28: **Visualize**\
     Use principles of the "grammar of graphics" to develop static plots
     in the R package ggplot2. Make these interactive with plotly.
     Develop dedicated time series plots with dygraphs.\
+    \
 4.  July 12: **Map**\
     Read and write vector data (points, lines, polygons) using the
     spatial features sf R package in conjuction with dplyr to wrangle
     and summarize. Use the raster R package for gridded data. Generate
     interactive maps with leaflet.\
+    \
 5.  July 19: **Report**\
     Dive into Rmarkdown for for knitting formatted text (markdown) with
     chunks of evaluated R code into html, pdf and docx formats. Use
@@ -61,18 +65,22 @@ discussion and exercise completion time. All webinars will be
     chapters, flexdashboard for dashboards and Rmarkdown websites for
     simple websites with shared navigation. Automatically render with
     Github Actions.\
+    \
 6.  July 26: **Infographics**\
     Use a custom infographiq Javascript library to intelligently link
     icons of ecosystems to pop-up windows containing data figures, which
     could be static images or interactive visualizations.\
+    \
 7.  August 2: **Applications**\
     Use the Shiny framework to develop online interactive applications
     accepting user input to render outputs from arbitrary R functions.
     Server requirements differentiating from simpler Rmarkdown
     renderings will be reviewed as well as use of Crosstalk to gain
     similar functionality with Rmarkdown with simple data.\
+    \
 8.  August 9: **Packages**\
     An R package is a documented set of functions that can act as
     building blocks for data ingestion, analysis, visualization and
     reporting. We'll go over the basics of creating an R package and
     documenting functions within.
+    \
