@@ -24,4 +24,4 @@ This training will require the following software installed on your machine:
 
 Please download the appropriate stable release for your operating system. I highly recommend getting the newest versions for all the latest features.
 
-**Option**. For those of you without install privileges on your machine, e.g. a government issued laptop, you can use [rstudio.cloud](https://rstudio.cloud) for free, which provides you with R + RStudio + git through your web browser.
+**Option**. For those of you without install privileges on your machine, e.g. a government issued laptop, you can use [**rstudio.cloud**](https://rstudio.cloud) for free (up to 15 hours per month; see [pricing](https://rstudio.cloud/plans/compare) for more), which provides you with R + RStudio + git through your web browser.
