@@ -17,9 +17,11 @@ You will need a couple accounts to perform the exercises. They're very easy to s
 
 This training will require the following software installed on your machine:
 
-1. [**Webex**](https://www.webex.com/downloads.html) for connecting to the live webinar.
-1. [**R**](https://cran.r-project.org) scientific programming language
-1. [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
-1. [**Git**](https://git-scm.com/) version control
+1.  [**Webex**](https://www.webex.com/downloads.html) for connecting to the live webinar.
+2.  [**R**](https://cran.r-project.org) scientific programming language
+3.  [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
+4.  [**Git**](https://git-scm.com/) version control
 
-Please download the appropriate stable release for your operating system. I highly recommend getting the latest versions for all the features.
+Please download the appropriate stable release for your operating system. I highly recommend getting the newest versions for all the latest features.
+
+**Option**. For those of you without install privileges on your machine, e.g. a government issued laptop, you can use [rstudio.cloud](https://rstudio.cloud) for free, which provides you with R + RStudio + git through your web browser.
