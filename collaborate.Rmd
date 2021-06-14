@@ -24,23 +24,20 @@ shelf(
 
 ## Learning Objectives {- .objectives}
 
-
-1. Version files locally
-1. Synchronize files with a Github repo
-1. Use RStudio Git pane: rev
-1. Handle conflicts: use Terminal 
-1. Branching
-1. Write markdown to format text, yaml to write configurations
-1. starting with README.md
-1. Use the 3 components of an Rmarkdown: frontmatter in yaml, markdown text and R code as chunks or inline.
-1. Create a Github repo. Either for your username or as a project r3
-1. Create an Rmarkdown website, with site.yml
-1. Create a pull request. update website glossary by adding a line to a csv
-Project management tools in Github: Issues, Project board (who/what/when; Kanban style)
+1. Create a Github repository (or "repo").
+1. Synchronize local files (using `git commit` & `git push` plus `git pull`) with a Github repository.
+1. Use RStudio's Git pane.
+1. Branch and Fork repos.
+1. Handle file merge conflicts.
+1. Contribute file changes to any public Github repo with `pull request`.
+1. Manage projects in Github with Issues and Project boards. Understand how to reference Issues (e.g. `#2`) in Github commit messages as well as mention other Github users (e.g. `@bbest`).
+1. Write markdown (e.g. `README.md`) to format text, and yaml (e.g. `_site.yml`) for configurations.
+1. Use the 3 components of an Rmarkdown: 1) frontmatter in yaml; 2) markdown text; and 3) R code as chunks or inline.
+1. Create an Rmarkdown website with a `_site.yml`.
 
 ## Prerequisites {-.prereq} 
 
-**R Skill Level**: Beginner - you've got the basics of R down.
+**R Skill Level**: Beginner - you've run a few commands in R, hopefully from RStudio.
 
 ## Background
 
@@ -51,13 +48,6 @@ The two main tools you'll learn about to start are:
 1. [**Git**](https://git-scm.com/) is a command-line version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).
 
 1. [**Github**](https://github.com/) is a website for storing your git versioned files remotely. It has many nice features to be able visualize differences between [images](https://help.github.com/articles/rendering-and-diffing-images/), [rendering](https://help.github.com/articles/mapping-geojson-files-on-github/) & [diffing](https://github.com/blog/1772-diffable-more-customizable-maps) map data files, [render text data files](https://help.github.com/articles/rendering-csv-and-tsv-data/), and [track changes in text](https://help.github.com/articles/rendering-differences-in-prose-documents/).
-
-Steps:
-
-1. Create Github login
-1. Create project website with Github Pages
-1. Edit `README.md` in Markdown
-1. Create HTML website content with R Markdown
 
 ### Github Workflows
 
@@ -139,6 +129,9 @@ git config –-global user.name USER
 
 # replace USER@SOMEWHERE.ORG with the email you used to register with Github
 git config –-global user.email USER@SOMEWHERE.ORG
+
+# use git merge (default) instead of git rebase to resolve git pull conflicts
+git config --global pull.rebase true
 
 # list your config to confirm user.* variables set
 git config --list
@@ -344,11 +337,259 @@ Click on the final **Create pull request**. Now you should be taken to [github.c
 
 The image above shows a **Merge pull request** since I have admin privileges on this repo. You wouldn't so would see it grayed out (or similar). 
 
-Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll update the [Roster](https://noaa-iea.github.io/r3-train/roster.html).
+Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll re-render [roster.Rmd](https://github.com/noaa-iea/r3-train/blob/master/roster.Rmd) to [roster.html](https://noaa-iea.github.io/r3-train/roster.html).
+
+## **Sandbox** an Rmarkdown website with `branch` & `merge`
+
+Next, you'll up your Git skills by isolating development of your code in a new `branch`, which is like a **Sandbox** separate from the _main_ branch, while converting your website from a simple Rmarkdown to an **Rmarkdown website** for sharing a common navigation menu across created Rmarkdown web pages.
+
+In RStudio's **Git** pane click on the **New Branch** button and enter a **Branch Name** like "rmd-website":
+
+`r img(src='figs/rstudio_new-branch.png', width=500)`
+
+Click **Create**. You should now see your new branch. Notice how when you click on the dropdown of branches you see both LOCAL and REMOTE: ORIGIN (as in on Github) versions.
+
+`r img(src='figs/rstudio_new-branch-created.png', width=500)`
+
+Following guidance from [10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html), create a `_site.yml` by going to RStudio's menu **File** -> **New File** -> **Text File** and paste the following:
+
+```yaml
+name: "R<sup>3</sup>"
+navbar:
+  title: "R<sup>3</sup> Exercises"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Collaborate"
+      href: collaborate.html
+output_dir: "."
+```
+
+**Save** this file as `_site.yml`. Next create overwrite your `index.Rmd` with this simpler content:
+
+```markdown
+---
+title: "Welcome"
+---
+
+Hello, Website!
+```
+
+Add another page `collaborate.Rmd`:
+
+```markdown
+---
+title: "Collaborate"
+---
+
+Like branches of a tree.
+```
+
+Finally, render the website by running the following in your R Console:
+
+```r
+rmarkdown::render_site()
+```
+
+You might need to install the package `rmarkdown`, which you can do from RStudio's **Packages** pane, **Install** button and typing "rmarkdown".
+
+Once complete, you should see that you're working from the new branch selected in your RStudio Git pane, then click on the file to be presented with options:
+
+`r img(src='figs/rstudio_new-rmd-website-files.png', width=600)`
+
+Select **View in Web Browser** to open your new website locally:
+
+`r img(src='figs/rmd-website-new.png', width=600)`
+
+Now you're ready to **Commit** and **Push** your changes. Once you've done that, please visit `https://USER.github.io/r3-exercises`. Notice that it's still the old default Rmarkdown page. Now visit `https://github.com/USER/r3-exercises` and at first it looks like the changes are not showing up, but now you simply need to select the `rmd-website` **branch** to see those files in their own little sandbox:
+
+`r img(src='figs/github_rmd-website-show-branch.png', width=400)`
+
+Returning to RStudio, you're ready to `git merge` the changes in the `rmd-website` branch to the `main` branch. In RStudio's **Git** pane switch back to the `main` branch:
+
+`r img(src='figs/rstudio_switch-to-main-branch.png', width=400)`
+
+You'll probably see a warning like this:
+
+`r img(src='figs/rstudio_warning-file-missing.png', width=300)`
+
+That's OK. It's just Rstudio saying that it doesn't see this file in your filesystem anymore since we just switched to the `main` branch's snapshot of files. Click **Yes** and proceed with closing any other files with a similar prompt.
+
+RStudio doesn't provide a user interface to run the `git merge` command so you'll have to do this in RStudio's **Terminal** pane:
+
+`r img(src='figs/rstudio_git-merge-branch.png', width=400)`
+
+by entering:
+
+```bash
+git merge rmd-website
+```
+
+You've now merged your LOCAL changes from the `rmd-website` branch to the `main` branch, and see in the **Git** pane that "Your branch is ahead of 'origin/main' by 1 commit." This means that you're ready to `git push` them to the ORIGIN on Github by running good ol' **Push**.
+
+Now at last you should see these file changes showing up at `https://github.com/USER/r3-exercises`.
+
+It might take a minute or so before they show up on your website at `https://USER.github.io/r3-exercises`. This is because Github Pages were originally designed to render static webpages with some templating capability (e.g. comman navigation menu) using Jekyll. To speed up rendering and disable Jekyll create an empty text file called `.nojekyll`. On a Mac, you can run this command in **Terminal**:
+
+```
+touch .nojekyll
+```
+
+Be sure to **Commit** and **Push** these changes to Github.
+
+## Create an Issue to resolve a file conflict
+
+Next we're going to play with some of the [Github Project management](https://github.com/features/project-management/) features while learning how to resolve file conflicts when `git` has a conflict automatically merging competing commits.
+
+Let's visit your Github repo `https://github.com/USER/r3-exercises` and click on **Issues**:
+
+`r img(src='figs/github_issues.png', width=400)`
+
+Click on the green **New issue** button and enter a title and comment like:
+
+- Title: "resolve a file conflict"
+- Comment:
+
+```markdown
+Reference:
+
+* [22.4 Dealing with conflicts | Happy Git and GitHub for the useR](https://happygitwithr.com/git-branches.html#dealing-with-conflicts)
+```
+
+`r img(src='figs/github_new-issue.png', width=600)`
+
+When you switch the comment from **Write** to **Preview**, you'll see how the **markdown** source gets formatted into html with a single item bulleted list and link. Now you're ready to **Submit new issue**.
+
+Ok, let's create file conflict by editing the same line in two different places: 1) the Github website through your web browser, 2) your local machine through RStudio.
 
 
+In your web browser, go to the **Code** tab of your Github repo at `https://github.com/USER/r3-exercises`. Click on `index.Rmd` and click the pencil icon to change it to:
+
+```markdown
+---
+title: "Welcome"
+---
+
+Hello, Github!
+```
+
+Scroll down and notice enter a message under the **Commit changes** header of "edit from Github":
+
+`r img(src='figs/github_edit-from-Github.png', width=600)`
+
+Click on the green **Commit changes** button. Since you're already on Github, you don't need to **Push**.
+
+Now go to RStudio, open the `index.Rmd` and change it to:
+
+```markdown
+---
+title: "Welcome"
+---
+
+Hello, RStudio!
+```
+
+Be sure to **Commit** those changes with the message "edit from RStudio".
+
+Next, **Pull** changes from Github. Now you'll get a long and messy message about a conflict like:
+
+```
+>>> /usr/bin/git pull
+From https://github.com/bbest/r3-exercises
+   719143f..17f3524  main       -> origin/main
+First, rewinding head to replay your work on top of it...
+Applying: edit from RStudio
+Using index info to reconstruct a base tree...
+M	index.Rmd
+Falling back to patching base and 3-way merge...
+Auto-merging index.Rmd
+CONFLICT (content): Merge conflict in index.Rmd
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 edit from RStudio
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+```
+
+Close that. Now in the **Git Commit** dialog window, you'll see:
+
+`r img(src='figs/rstudio_git-conflict.png', width=600)`
+
+The orange `U` refers to an Unresolved conflict. We now need to "manually resolve this conflict". The conflicted portions are compared above and below the `=======`. The conflict begins with `<<<<<<< HEAD` referring to the most recent commit from the ORIGIN on  Github, versus ending with `>>>>>>> edit from RStudio` as the most recent LOCAL commit. Let's change the entire contents of this file to:
+
+```markdown
+---
+title: "Welcome"
+---
+
+Hello, everyone!
+```
+
+Then in the **Git** pane mark `index.Rmd` as Staged, **Commit** and enter the message "resolved file conflict; fixes #1":
+
+`r img(src='figs/rstudio_git-commit-cnflict-resolved-ref-issue.png', width=600)`
+
+**Commit** this change and notice that we're still "detached":
+
+```
+[detached HEAD 216c243] resolved file conflict #1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+ 
+Next, we need to associate the detached HEAD with a new temporary branch and reset the main branch with it before pushing changes back to Github. Please run the following commands in the RStudio **Terminal**:
+
+```bash
+# associate detached HEAD with new branch temp
+git checkout -b temp
+
+# reset master branch with temp branch as starting point
+git checkout -B main temp
+
+# delete temp branch
+git branch -d temp
+
+# update Github with local main
+git push origin main
+```
+
+For more details, see [git - How can I reconcile detached HEAD with master/origin? - Stack Overflow](https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin#answer-5772882).
+
+Now visit `https://github.com/USER/r3-exercises/issues/1`. You'll notice that your commit message automatically associated with that issue by simply including `#1` and closed it by prefixing the number with `fixes`.
+
+The point is to be able to associate specific line by line file changes with fixing **bugs** and implementing **new features** of our code.
 
 
+## Organize Issues in a Github Project
+
+Let's create a couple **Issues** with the following titles to cue up next week's session:
+
+- `read a csv and output a table`
+- `read a wide csv and output a long table`
+
+You should then see these at `https://github.com/USER/r3-exercises/issues`:
+
+`r img(src='figs/github_plus-two-issues.png', width=600)`
+
+
+Now visit the **Projects** tab, so `https://github.com/USER/r3-exercises/projects`:
+
+`r img(src='figs/github_projects.png', width=600)`
+
+And click the **Create new project** button.
+
+`r img(src='figs/github_new-project.png', width=600)`
+
+Choose the **Automated kanban** style and a title like "management" before clicking **Create project**. You'll next be presented with options to drag existing issues over into any of the columns: **To do**, **In progress** or **Done**:
+
+`r img(src='figs/github_new-project-init.png', width=600)`
+
+Drag the two issues over into **In progress** in the order of priority top to bottom:
+
+`r img(src='figs/github_new-project-issues-dragged.png', width=600)`
+
+A Project board helps answer the question, "What do I need to work on next?"
 
 
 

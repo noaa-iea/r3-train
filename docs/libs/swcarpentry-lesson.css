@@ -175,6 +175,15 @@
   margin-top: 0px !important
 }
 
+img {
+  border:2px solid #fff;
+  color:white;
+  font-size:50px;
+  -moz-box-shadow: 10px 10px 50px #ccc;
+  -webkit-box-shadow: 10px 10px 50px #ccc;
+  box-shadow: 10px 10px 50px #ccc;
+}
+
 .callout h2:before {
   font-family: 'Glyphicons Halflings';
   content: "";
