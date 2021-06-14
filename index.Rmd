@@ -1,8 +1,10 @@
 ---
 pagetitle: "Home | R3"
-editor_options: 
-  markdown: 
-    wrap: 72
+output:
+  html_document:
+    code_folding: null
+    number_sections: false
+    pandoc_args: null
 ---
 
 ```{r setup, include=FALSE}

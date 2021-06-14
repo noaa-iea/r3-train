@@ -1,5 +1,10 @@
 ---
 pagetitle: "Setup | R3"
+output:
+  html_document:
+    code_folding: null
+    number_sections: false
+    pandoc_args: null
 ---
 
 ```{r setup, include=FALSE}
@@ -8,20 +13,34 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Setup Accounts
 
-You will need a couple accounts to perform the exercises. They're very easy to setup:
+You will need a couple accounts to perform the exercises. They're very
+easy to setup:
 
-1.  [**Github**](https://github.com/) for collaborating with versioned code repositories and use to serve websites.
-2.  [**Google**](https://support.google.com/accounts/answer/27441?hl=en) to contribute towards notes in Google Docs and use Google Sheets. You don't need a gmail account and can even use your existing email to setup a Google account.
+1.  [**Github**](https://github.com/) for collaborating with versioned
+    code repositories and use to serve websites.
+2.  [**Google**](https://support.google.com/accounts/answer/27441?hl=en)
+    to contribute towards notes in Google Docs and use Google Sheets.
+    You don't need a gmail account and can even use your existing email
+    to setup a Google account.
 
 ## Install Software
 
-This training will require the following software installed on your machine:
+This training will require the following software installed on your
+machine:
 
-1.  [**Webex**](https://www.webex.com/downloads.html) for connecting to the live webinar.
+1.  [**Webex**](https://www.webex.com/downloads.html) for connecting to
+    the live webinar.
 2.  [**R**](https://cran.r-project.org) scientific programming language
-3.  [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download) integrated development environment
+3.  [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download)
+    integrated development environment
 4.  [**Git**](https://git-scm.com/) version control
 
-Please download the appropriate stable release for your operating system. I highly recommend getting the newest versions for all the latest features.
+Please download the appropriate stable release for your operating
+system. I highly recommend getting the newest versions for all the
+latest features.
 
-**Option**. For those of you without install privileges on your machine, e.g. a government issued laptop, you can use [**rstudio.cloud**](https://rstudio.cloud) for free (up to 15 hours per month; see [pricing](https://rstudio.cloud/plans/compare) for more), which provides you with R + RStudio + git through your web browser.
+**Option**. For those of you without install privileges on your machine,
+e.g. a government issued laptop, you can use
+[**rstudio.cloud**](https://rstudio.cloud) for free (up to 15 hours per
+month; see [pricing](https://rstudio.cloud/plans/compare) for more),
+which provides you with R + RStudio + git through your web browser.

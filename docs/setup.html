@@ -33,7 +33,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
@@ -222,9 +221,6 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
 
 
 
@@ -348,30 +344,22 @@ div.tocify {
 
 <div id="header">
 
-<div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
-
 
 
 
 </div>
 
 
-<div id="setup-accounts" class="section level2" number="0.1">
-<h2 number="2.1"><span class="header-section-number">2.1</span> Setup Accounts</h2>
+<div id="setup-accounts" class="section level2">
+<h2>Setup Accounts</h2>
 <p>You will need a couple accounts to perform the exercises. They’re very easy to setup:</p>
 <ol style="list-style-type: decimal">
 <li><a href="https://github.com/"><strong>Github</strong></a> for collaborating with versioned code repositories and use to serve websites.</li>
 <li><a href="https://support.google.com/accounts/answer/27441?hl=en"><strong>Google</strong></a> to contribute towards notes in Google Docs and use Google Sheets. You don’t need a gmail account and can even use your existing email to setup a Google account.</li>
 </ol>
 </div>
-<div id="install-software" class="section level2" number="0.2">
-<h2 number="2.2"><span class="header-section-number">2.2</span> Install Software</h2>
+<div id="install-software" class="section level2">
+<h2>Install Software</h2>
 <p>This training will require the following software installed on your machine:</p>
 <ol style="list-style-type: decimal">
 <li><a href="https://www.webex.com/downloads.html"><strong>Webex</strong></a> for connecting to the live webinar.</li>
@@ -418,11 +406,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 <script>
 $(document).ready(function ()  {
@@ -434,7 +417,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {

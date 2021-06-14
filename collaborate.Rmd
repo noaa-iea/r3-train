@@ -344,7 +344,7 @@ Click on the final **Create pull request**. Now you should be taken to [github.c
 
 The image above shows a **Merge pull request** since I have admin privileges on this repo. You wouldn't so would see it grayed out (or similar). 
 
-Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll update the [roster.csv](https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv).
+Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll update the [Roster](https://noaa-iea.github.io/r3-train/roster.html).
 
 
 

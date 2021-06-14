@@ -1,5 +1,10 @@
 ---
 title: "Resources"
+output:
+  html_document:
+    code_folding: null
+    number_sections: false
+    pandoc_args: null
 ---
 
 ```{r setup, include=FALSE}
