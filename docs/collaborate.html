@@ -608,12 +608,35 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 </ul>
 <p>For easily referencing the website, I recommend returning to the Github repo <code>https://github.com/USER/r3-exercises</code>, clicking the upper right <strong>About</strong> cog and adding it to the <strong>Website</strong> entry:</p>
 <p><img src="figs/github_about-website.png" width="500"/></p>
-<p>You should now have a handy link to get to your website:</p>
-<p><img src="figs/github_about-website-saved.png" width="500"/></p>
+<p>You should now see a handy link to get to your website similar to this:</p>
+<p><img src="figs/github_about-website-saved.png" width="300"/></p>
 </div>
 <div id="contribute-website-with-fork-pull-request" class="section level2" number="1.8">
 <h2 number="1.8"><span class="header-section-number">1.8</span> <strong>Contribute</strong> website with <code>fork</code> &amp; <code>pull request</code></h2>
-<p>So far you’ve been using the <strong>Simple</strong> workflow with <code>git push</code> and <code>git pull</code>. Next, you’ll learn how to contribute towards a repo for which you don’t have write permissions. The task is to suggest a revision</p>
+<p>So far you’ve been using the <strong>Simple</strong> workflow with <code>git push</code> and <code>git pull</code>. Next, you’ll learn how to contribute towards a repo for which you don’t have write permissions.</p>
+<p>The task is to suggest a revision with your information to <a href="https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv">roster.csv</a>, which is used to generate the course <a href="https://noaa-iea.github.io/r3-train/roster.html">Roster</a>.</p>
+<p>To do so, please visit <a href="https://github.com/noaa-iea/r3-train">github.com/noaa-iea/r3-train</a> and in the upper right, click <strong>Fork</strong>:</p>
+<p><img src="figs/github_fork-repo.png" width="300"/></p>
+<p>Next, choose your Github USER name as the owner:</p>
+<p><img src="figs/github_fork-repo-owner.png" width="300"/></p>
+<p>Notice how the URL changed from <code>github.com/noaa-iea/r3-train</code> to <code>github.com/USER/r3-train</code>:</p>
+<p><img src="figs/github_fork-repo-done.png" width="300"/></p>
+<p>You now have <em>write</em> permissions on this repo. Please proceed with previous steps above to <strong>Create Github RStudio Project</strong>, except this time using <code>https://github.com/USER/r3-train.git</code> as the URL. Be sure to replace USER with your Github username.</p>
+<p>Once you have the r3-train RStudio Project open, please open from the <strong>Files</strong> pane <code>data/roster.csv</code> by clicking on it and <strong>View File</strong>:</p>
+<p><img src="figs/rstudio_edit-roster-csv.png" width="700"/></p>
+<p>Enter your information at the end of the file instead of:</p>
+<pre><code>USER,FIRST LAST,https://USER.github.io/r3-exercises</code></pre>
+<p>Save the changes and in the <strong>Git</strong> pane tick the <strong>Staged</strong> box next to <code>data/roster.csv</code> showing a blue <code>M</code> for Modified. Click on <strong>Commit</strong> and enter a message like “+ USER” except swapping your Github username. <strong>Push</strong> the changes.</p>
+<p>In your browser return to <code>https://github.com/USER/r3-train</code>. You’ll notice that this branch is “1 commit ahead of noaa-iea:master”. Click on <strong>Contribute</strong>:</p>
+<p><img src="figs/github_contribute-pull-request.png" width="700"/></p>
+<p>Then click on <strong>Open pull request</strong>. You should be taken to a screen asking for confirmation:</p>
+<p><img src="figs/github_create-pull-request.png" width="700"/></p>
+<p>Click on <strong>Create pull request</strong>. Normally, you’d like a comment explaining what this pull request is for:</p>
+<p><img src="figs/github_create-pull-request-issue.png" width="700"/></p>
+<p>Click on the final <strong>Create pull request</strong>. Now you should be taken to <a href="https://github.com/noaa-iea/r3-train">github.com/noaa-iea/r3-train</a> (not your USER forked copy) and under the <strong>Pull requests</strong> see yours:</p>
+<p><img src="figs/github_pull-request-issue-admin-merge-option.png" width="700"/></p>
+<p>The image above shows a <strong>Merge pull request</strong> since I have admin privileges on this repo. You wouldn’t so would see it grayed out (or similar).</p>
+<p>Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on <strong>Merge pull request</strong>. Then I’ll update the <a href="https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv">roster.csv</a>.</p>
 </div>
 </div>
 
@@ -668,7 +691,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {

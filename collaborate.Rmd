@@ -290,13 +290,67 @@ For easily referencing the website, I recommend returning to the Github repo `ht
 
 `r img(src='figs/github_about-website.png', width=500)`
 
-You should now have a handy link to get to your website:
+You should now see a handy link to get to your website similar to this:
 
-`r img(src='figs/github_about-website-saved.png', width=500)`
+`r img(src='figs/github_about-website-saved.png', width=300)`
 
 ## **Contribute** website with `fork` & `pull request`
 
-So far you've been using the **Simple** workflow with `git push` and `git pull`. Next, you'll learn how to contribute towards a repo for which you don't have write permissions. The task is to suggest a revision
+So far you've been using the **Simple** workflow with `git push` and `git pull`. Next, you'll learn how to contribute towards a repo for which you don't have write permissions.
+
+The task is to suggest a revision with your information to [roster.csv](https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv), which is used to generate the course [Roster](https://noaa-iea.github.io/r3-train/roster.html).
+
+To do so, please visit [github.com/noaa-iea/r3-train](https://github.com/noaa-iea/r3-train) and in the upper right, click **Fork**:
+
+`r img(src='figs/github_fork-repo.png', width=300)`
+
+Next, choose your Github USER name as the owner:
+
+`r img(src='figs/github_fork-repo-owner.png', width=300)`
+
+Notice how the URL changed from `github.com/noaa-iea/r3-train` to `github.com/USER/r3-train`:
+
+`r img(src='figs/github_fork-repo-done.png', width=300)`
+
+You now have _write_ permissions on this repo. Please proceed with previous steps above to **Create Github RStudio Project**, except this time using `https://github.com/USER/r3-train.git` as the URL. Be sure to replace USER with your Github username.
+
+Once you have the r3-train RStudio Project open, please open from the **Files** pane `data/roster.csv` by clicking on it and **View File**:
+
+`r img(src='figs/rstudio_edit-roster-csv.png', width=700)`
+
+Enter your information at the end of the file instead of:
+
+```
+USER,FIRST LAST,https://USER.github.io/r3-exercises
+```
+
+Save the changes and in the **Git** pane tick the **Staged** box next to `data/roster.csv` showing a blue `M` for Modified. Click on **Commit** and enter a message like "+ USER" except swapping your Github username. **Push** the changes.
+
+In your browser return to `https://github.com/USER/r3-train`. You'll notice that this branch is "1 commit ahead of noaa-iea:master". Click on **Contribute**:
+
+`r img(src='figs/github_contribute-pull-request.png', width=700)`
+
+Then click on **Open pull request**. You should be taken to a screen asking for confirmation:
+
+`r img(src='figs/github_create-pull-request.png', width=700)`
+
+Click on **Create pull request**. Normally, you'd like a comment explaining what this pull request is for:
+
+`r img(src='figs/github_create-pull-request-issue.png', width=700)`
+
+Click on the final **Create pull request**. Now you should be taken to [github.com/noaa-iea/r3-train](https://github.com/noaa-iea/r3-train) (not your USER forked copy) and under the **Pull requests** see yours:
+
+`r img(src='figs/github_pull-request-issue-admin-merge-option.png', width=700)`
+
+The image above shows a **Merge pull request** since I have admin privileges on this repo. You wouldn't so would see it grayed out (or similar). 
+
+Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll update the [roster.csv](https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv).
+
+
+
+
+
+
 
 
 

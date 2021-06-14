@@ -19,6 +19,7 @@ output:
     theme: "default"
     type: "inverse"
     toc: true
+    toc_depth: 4
     toc_float: true
     code_folding: "show"
     number_sections: true
