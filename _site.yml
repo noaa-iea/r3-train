@@ -11,6 +11,8 @@ navbar:
       href: setup.html
     - text: "Resources"
       href: resources.html
+    - text: "Roster"
+      href: roster.html
 output_dir: "docs"
 output:
   html_document:

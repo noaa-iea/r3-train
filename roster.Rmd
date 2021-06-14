@@ -1,0 +1,25 @@
+---
+pagetitle: "Home | R3"
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    code_folding: "hide"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+```
+
+```{r}
+librarian::shelf(
+  dplyr, DT, glue, readr)
+
+read_csv("data/roster.csv") %>% 
+  mutate(
+    user      = glue("<a href='https://github.com/{github_username}'>@{github_username}</a>"),
+    exercises = glue("<a href='{exercises_website}'>{basename(exercises_website)}</a>")) %>% 
+  select(user, name = full_name, exercises) %>% 
+  datatable(escape=F)
+```
+

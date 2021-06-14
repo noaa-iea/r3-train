@@ -338,6 +338,9 @@ div.tocify {
 <li>
   <a href="resources.html">Resources</a>
 </li>
+<li>
+  <a href="roster.html">Roster</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -381,8 +384,10 @@ div.tocify {
 <h2 class="unnumbered prereq">Prerequisites</h2>
 <p><strong>R Skill Level</strong>: Beginner - you’ve got the basics of R down.</p>
 </div>
-<div id="what-are-git-github" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> What are Git &amp; Github?</h2>
+<div id="background" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Background</h2>
+<div id="what-are-git-github" class="section level3" number="1.1.1">
+<h3 number="1.1.1"><span class="header-section-number">1.1.1</span> What are Git &amp; Github?</h3>
 <p>The two main tools you’ll learn about to start are:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://git-scm.com/"><strong>Git</strong></a> is a command-line version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).</p></li>
@@ -396,33 +401,15 @@ div.tocify {
 <li>Create HTML website content with R Markdown</li>
 </ol>
 </div>
-<div id="setup-github-git" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Setup Github &amp; Git</h2>
-<ol style="list-style-type: decimal">
-<li><p>Create <strong>Github</strong> account at <a href="http://github.com" class="uri">http://github.com</a>, if you don’t already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in <code>.edu</code>, you can request free private repositories via <a href="https://education.github.com/">GitHub Education</a> discount.</p></li>
-<li><p>Configure <strong>git</strong> with global commands. Open up the Bash version of Git and type the following:</p></li>
-</ol>
-<pre class="bash"><code># display your version of git
-git --version
-
-# replace USER with your Github user account
-git config –-global user.name USER
-
-# replace USER@SOMEWHERE.ORG with the email you used to register with Github
-git config –-global user.email USER@SOMEWHERE.ORG
-
-# list your config to confirm user.* variables set
-git config --list</code></pre>
-</div>
-<div id="github-workflows" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Github Workflows</h2>
+<div id="github-workflows" class="section level3" number="1.1.2">
+<h3 number="1.1.2"><span class="header-section-number">1.1.2</span> Github Workflows</h3>
 <p>There are a variety of ways to interact with a Github repository, or <strong>REPO</strong> for short, which is a collection of files, possibly organized within folders. On Github every repo is associated with an <strong>OWNER</strong>, which can be a Github organization or a Github user. Repos are consistently found at <strong>github.com/OWNER/REPO</strong>.</p>
 <p>If you have <em>write</em> permissions to the repo, then you can <code>git push</code> changes to it directly. These changes are always first packaged as a set of file differences by a <code>git commit</code> that requires a message.</p>
 <p>If you do not have <em>write</em> permissions to the repo, then you need to <code>Github fork</code> that repo into your own user-writable space (user or organization). After you make changes to the files in your user-writable repo (with <code>git commit</code> and <code>git push</code>), you can then request those changes be pulled into the original repo with a <code>Github pull request</code>.</p>
 <p>Furthermore, you can <code>git branch</code> a snapshot of the repo files into a <em>sandbox</em> for continuing to make changes, such as to fix a <em>bug</em> or implement a new <em>feature</em>. This branch won’t affect the <em>main</em> branch until you’re ready to <code>git merge</code> those changes, so it isolates development.</p>
 <p>These aspects give rise to different <em>workflows</em> with increasing complexity that we’ll incrementally try out with exercises, so you can become comfortable managing your own code, contributing to other open-source projects, and working on a set of code without trampling on other people’s work.</p>
-<div id="simple-push-pull" class="section level3" number="1.3.1">
-<h3 number="1.3.1"><span class="header-section-number">1.3.1</span> <strong>Simple</strong>: <code>push</code> &amp; <code>pull</code></h3>
+<div id="simple-push-pull" class="section level4" number="1.1.2.1">
+<h4 number="1.1.2.1"><span class="header-section-number">1.1.2.1</span> <strong>Simple</strong>: <code>push</code> &amp; <code>pull</code></h4>
 <p>The simplest workflow for tracking file changes is to simply <code>git push</code> changes into your Github repo, assuming you have <em>write</em> permissions to that repo. If you’re working with anyone else or editing on more than one computer, then you’ll want to <code>git pull</code> changes at the beginning of each session to capture changes and minimize potential <em>conflicts</em> before proceeding with any edits and subsequent <code>git commit</code> and <code>git push</code> commands.</p>
 <p>The exact steps can be described in the table below. After the <code>Github create</code> repo step, you <code>git clone</code> it to get a copy of it onto your machine (with the hidden <code>.git</code> folder containing the configuration). Then you make changes on files and package differences with <code>git commit</code>, which requires a message every time and can happen offline. You’ll need to be online to then run <code>git push</code> to publish those changes back to the Github repo. Then before subsequent changes, you’ll want to update your machine with a <code>git pull</code>.<br />
 </p>
@@ -451,8 +438,8 @@ git config --list</code></pre>
 </tbody>
 </table>
 </div>
-<div id="contribute-fork-pull-request" class="section level3" number="1.3.2">
-<h3 number="1.3.2"><span class="header-section-number">1.3.2</span> <strong>Contribute</strong>: <code>fork</code> &amp; <code>pull request</code></h3>
+<div id="contribute-fork-pull-request" class="section level4" number="1.1.2.2">
+<h4 number="1.1.2.2"><span class="header-section-number">1.1.2.2</span> <strong>Contribute</strong>: <code>fork</code> &amp; <code>pull request</code></h4>
 <p>If you don’t have <em>write</em> access to a Github repo, such as with any open-source project, then you can <code>Github fork</code> somebody else’s repo into your own user-writable space (i.e. OWNER being a Github user or organization) where you have write permissions. There you can make changes (using <code>git commit</code> and <code>git push</code>). When you’re ready to submit changes to the original repo, you make a <code>pull request</code> queuing these changes up for the owner(s) of the original repo to review and accept with a <code>merge</code>, reject or ignore. Github facilitates the conversation that may follow, including the ability to update the <code>pull request</code> before performing the final <code>merge</code>.</p>
 <table>
 <colgroup>
@@ -496,211 +483,137 @@ git config --list</code></pre>
 </tbody>
 </table>
 </div>
-<div id="sandbox-branch-merge" class="section level3" number="1.3.3">
-<h3 number="1.3.3"><span class="header-section-number">1.3.3</span> <strong>Sandbox</strong>: <code>branch</code> &amp; <code>merge</code><br />
-</h3>
+<div id="sandbox-branch-merge" class="section level4" number="1.1.2.3">
+<h4 number="1.1.2.3"><span class="header-section-number">1.1.2.3</span> <strong>Sandbox</strong>: <code>branch</code> &amp; <code>merge</code></h4>
 <p>Even if you’re able to <em>write</em> directly to the repo, you may be collaborating with others and not want to step on their proverbial coding toes. By performing a <code>git branch</code>, you’re taking a snapshot of the files and isolating them into your own <em>sandbox</em>. Subsequent changes to the files in the Github repo (with <code>git commit</code> and <code>git push</code>) do not then affect the <em>main</em> branch until you (or another admin of the repo) run a <code>git merge</code> to fold these changes into the <em>main</em> branch.</p>
 <p>[ TODO: table ]</p>
 <p>[ TODO: see <a href="https://guides.github.com/activities/forking/">Forking Projects · GitHub Guides</a> ]</p>
 </div>
-<div id="pro-branch-pull-request-merge" class="section level3" number="1.3.4">
-<h3 number="1.3.4"><span class="header-section-number">1.3.4</span> <strong>Pro</strong>: <code>branch</code>, <code>pull request</code> &amp; <code>merge</code><br />
-</h3>
+<div id="pro-branch-pull-request-merge" class="section level4" number="1.1.2.4">
+<h4 number="1.1.2.4"><span class="header-section-number">1.1.2.4</span> <strong>Pro</strong>: <code>branch</code>, <code>pull request</code> &amp; <code>merge</code></h4>
 <p>Extending the <strong>Sandbox</strong> workflow to full “professional” status, even if you have the administrative ability on the repo to perform a <code>git merge</code> you may wish to advertise your proposed to other contributors with a <code>pull request</code>. This then allows others to review and discuss changes before an admin then performs the final <code>git merge</code>. This is the recommended workflow described in <a href="https://guides.github.com/introduction/flow/">Understanding the GitHub flow · GitHub Guides</a>. We’ll get there by degrees with exercises in this lesson.</p>
 <p>[ TODO: table]</p>
 </div>
 </div>
-<div id="create-repository-r3-exercises" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Create Repository <code>r3-exercises</code></h2>
-<p>Now you will create a Github repository for a project.</p>
+</div>
+<div id="setup-github-git" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Setup Github &amp; Git</h2>
 <ol style="list-style-type: decimal">
-<li><p><a href="https://help.github.com/articles/create-a-repo/">Create a repository</a> called <code>r3-exercises</code>.</p>
+<li><p>Create <strong>Github</strong> account at <a href="http://github.com" class="uri">http://github.com</a>, if you don’t already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in <code>.edu</code>, you can request free private repositories via <a href="https://education.github.com/">GitHub Education</a> discount.</p></li>
+<li><p>Configure <strong>git</strong> with global commands to tell it who you are. Open the Terminal in RStudio and type the following. Be sure to replace <code>USER</code> and <code>USER@SOMEWHERE.ORG</code> with yours (e.g. mine is <code>bbest</code> and <code>ben@ecoquants.com</code>):</p></li>
+</ol>
+<pre class="bash"><code># display your version of git
+git --version
+
+# replace USER with your Github user account
+git config –-global user.name USER
+
+# replace USER@SOMEWHERE.ORG with the email you used to register with Github
+git config –-global user.email USER@SOMEWHERE.ORG
+
+# list your config to confirm user.* variables set
+git config --list</code></pre>
+</div>
+<div id="create-github-repository" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Create Github Repository</h2>
+<p>Now you will create a Github repository. This will be the source code of an Rmarkdown website that will house your work completing all the exercises for this course.</p>
+<ol style="list-style-type: decimal">
+<li><p>With your web browser, sign into <a href="https://github.com">Github.com</a> and visit your Github user page (i.e. <code>https://github.com/USER</code>) and <a href="https://help.github.com/articles/create-a-repo/">Create a repository</a> called <code>r3-exercises</code>.</p>
 <p><img src="figs/github_repo-create.png" width="200"/></p>
-<p>Please be sure to tick the box to <strong>Initialize this repository with a README</strong>. Otherwise defaults are fine.</p>
-<p><img src="figs/github_create-my-project.png" width="600"/></p></li>
-<li><p><a href="https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/">Create a branch</a> called <code>gh-pages</code>.</p>
-<p><img src="figs/github_create-branch_gh-pages.png" width="200"/></p>
-<p>Per <a href="https://pages.github.com">pages.github.com</a>, since this will be a project site only web files in the <code>gh-pages</code> branch will show up at <code>http://USER.github.io/REPO</code>. For a user (or organization) site, the REPO must be named <code>USER.github.io</code> (or <code>ORG.github.io</code>) and then the default <code>master</code> branch will contain the web files for the website <code>http://USER.github.io</code> (or <code>http://ORG.github.io</code>). See also <a href="https://help.github.com/articles/user-organization-and-project-pages/">User, Organization, and Project Pages - Github Help</a>.</p></li>
-<li><p><a href="https://help.github.com/articles/setting-the-default-branch/">Set the default branch</a> to <code>gh-pages</code>, NOT the default <code>master</code>.</p>
-<p><img src="figs/github_default-branch_gh-pages.png" width="600"/></p></li>
-<li><p><a href="https://help.github.com/articles/viewing-branches-in-your-repository/#deleting-branches">Delete the branch</a> <code>master</code>, which will not be used.</p></li>
+<p>Please tick the box to <strong>Add a README file</strong>. I optionally included “Exercises from <a href="https://noaa-iea.github.io/r3-train" class="uri">https://noaa-iea.github.io/r3-train</a>” in the <strong>Description</strong>. Otherwise the defaults are fine.</p>
+<p><img src="figs/github_create_r3-exercises.png" width="600"/></p></li>
 </ol>
-<div id="edit-readme.md-in-markdown" class="section level3" number="1.4.1">
-<h3 number="1.4.1"><span class="header-section-number">1.4.1</span> Edit <code>README.md</code> in Markdown</h3>
-<p><a href="https://help.github.com/articles/create-a-repo/#commit-your-first-change">Commit your first change</a> by editing the <code>README.md</code> which is in <strong>markdown</strong>, simple syntax for conversion to HTML. Now update the contents of the <code>README.md</code> with the following, having a link and a numbered list:</p>
-<pre><code># nps-demo
-
-Wrangling data with R.
-
-## Introduction
-
-This repository demonstrates **software** and _formats_:
-
-1. **Git**
-1. **Github**
-1. _Markdown_
-1. _Rmarkdown_
-
-## Conclusion
-
-![](https://octodex.github.com/images/labtocat.png)</code></pre>
-<p>Now click on the <span class="octicon octicon-eye"></span> Preview changes to see the markdown rendered as HTML:</p>
-<p><img src="figs/github_preview_README-md.png" width="500"/></p>
-<p>Notice the syntax for:</p>
-<ul>
-<li><strong>numbered list</strong> gets automatically sequenced: <code>1.</code>, <code>1.</code></li>
-<li><strong>headers</strong> get rendered at multiple levels: <code>#</code>, <code>##</code></li>
-<li><strong>link</strong>: <code>[](http://...)</code></li>
-<li><strong>image</strong>: <code>![](http://...)</code></li>
-<li><em>italics</em>: <code>_word_</code></li>
-<li><strong>bold</strong>: <code>**word**</code></li>
-</ul>
-<p>See <a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown · GitHub Guides</a> and add some more personalized content to the README of your own, like a bulleted list or blockquote.</p>
+<p>You should now see this repo at <code>https://github.com/USER/r3-exercises</code>.</p>
+<p><img src="figs/github_initial_r3-exercises.png" width="600"/></p>
 </div>
+<div id="readme.md" class="section level2 unnumbered callout">
+<h2 class="unnumbered callout"><code>README.md</code></h2>
+<p>Notice that the only file in the repo so far is the <code>README.md</code>, which is in <em><strong>markdown</strong></em> format (<code>.md</code>) and its contents are displayed directly below, which is the special case for any <code>README.md</code> file in a Github folder. Clicking on the pencil icon to edit, reveals the source for this file:</p>
+<pre class="md"><code># r3-exercises
+Exercises from https://noaa-iea.github.io/r3-train</code></pre>
+<p>Clicking on the <strong>Preview</strong> tab shows the formatted result. Note how the <code>#</code> is used to create a header and the link is automatically generated:</p>
+<p><img src="figs/github_readme.md-preview.png" width="400"/></p>
+<p>More on markdown in a bit.</p>
 </div>
-<div id="create-index.html" class="section level2" number="1.5">
-<h2 number="1.5"><span class="header-section-number">1.5</span> Create <code>index.html</code></h2>
-<p>By default <code>index.html</code> is served up. Go ahead and create a new file named <code>index.html</code> with the following <a href="http://www.w3schools.com/html/html_basic.asp">basic HTML</a>:</p>
-<pre class="html"><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;body&gt;
-
-&lt;h1&gt;My First Heading&lt;/h1&gt;
-
-&lt;p&gt;My first paragraph.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<p>You’ll be prompted to clone this repository into a folder on your local machine.</p>
-<p>See <a href="https://help.github.com/desktop/guides/">GitHub Desktop User Guides</a> for more. You could also do this from the Bash Shell for Git with the command <code>git clone https://github.com/USER/REPO.git</code>, replacing USER with your Github username and REPO with my_project. Or you can use the Github Desktop App menu File -&gt; Clone Repository…</p>
-</div>
-<div id="create-rstudio-project-with-git-repository" class="section level2" number="1.6">
-<h2 number="1.6"><span class="header-section-number">1.6</span> Create RStudio Project with Git Repository</h2>
-<p>Next, you will <a href="https://help.github.com/articles/fetching-a-remote">clone the repository</a> onto your local machine using RStudio. I recommend creating it in a folder <code>github</code> under your user or Documents folder.</p>
-<p>Open RStudio and under the menu File -&gt; New Project… -&gt; Version Control -&gt; git and enter the URL with the <code>.git</code> extension (also available from the repository’s Clone button):</p>
-<p><img src="figs/rstudio_new-project-git.png" width="300"/></p>
-<p>If it all works correctly then you should see the files downloaded and showing up in the Files pane of RStudio. If RStudio is configured correctly to work with Git, then you should also see a Git pane.</p>
-</div>
-<div id="create-index.rmd-in-rmarkdown" class="section level2" number="1.7">
-<h2 number="1.7"><span class="header-section-number">1.7</span> Create <code>index.Rmd</code> in Rmarkdown</h2>
-<p>Back in RStudio, let’s create a new Rmarkdown file, which allows us to weave markdown text with chunks of R code to be evaluated and output content like tables and plots.</p>
-<p>File -&gt; New File -&gt; Rmarkdown… -&gt; Document of output format HTML, OK.</p>
-<p><img src="figs/rstudio_new-rmd-doc-html.png" width="300"/></p>
-<p>You can give it a Title of “My Project”. After you click OK, most importantly File -&gt; Save as <code>index</code> (which will get named with the filename extension <code>index.Rmd</code>).</p>
-<p>Some initial text is already provided for you. Let’s go ahead and “Knit HTML”.</p>
-<p>Notice how the markdown is rendered similar to as before + <strong>R code chunks</strong> are surrounded by 3 backticks and <code>{r LABEL}</code>. These are evaluated and return the output text in the case of <code>summary(cars)</code> and the output plot in the case of <code>plot(pressure)</code>.</p>
-<p>Notice how the code <code>plot(pressure)</code> is not shown in the HTML output because of the R code chunk option <code>echo=FALSE</code>.</p>
-<p>Before we continue exploring Rmarkdown, visit the Git pane, check all modified (M) or untracked (?) files, click Commit, enter a message like “added index” and click the “Commit” button. Then Push (up green arrow) to push the locally committed changes on your lapto up to the Github repository online. This will update <a href="https://github.com/USER/nps-demo" class="uri">https://github.com/USER/nps-demo</a>, and now you can also see your project website with a default <code>index.html</code> viewable at <a href="http://USER.github.io/nps-demo" class="uri">http://USER.github.io/nps-demo</a></p>
-<p>For more on Rmarkdown:</p>
-<ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">rmarkdown cheatsheet.pdf</a></li>
-<li><a href="http://rmarkdown.rstudio.com">rmarkdown.rstudio.com</a></li>
-<li><a href="http://kbroman.org/knitr_knutshell/">knitr in a knutshell - Karl Broman</a></li>
-</ul>
-<p>A more advanced topic worth mentioning is dealing <a href="http://r-pkgs.had.co.nz/git.html#git-pull">merge conflicts</a></p>
-</div>
-<div id="share-your-website-with-a-pull-request" class="section level2" number="1.8">
-<h2 number="1.8"><span class="header-section-number">1.8</span> Share your website with a Pull Request</h2>
-<div id="fork-pull-request" class="section level3" number="1.8.1">
-<h3 number="1.8.1"><span class="header-section-number">1.8.1</span> Fork &amp; Pull Request</h3>
-</div>
-<div id="fork-pull-request-your-people-entry" class="section level3" number="1.8.2">
-<h3 number="1.8.2"><span class="header-section-number">1.8.2</span> Fork &amp; Pull Request Your People Entry</h3>
-<p>As an exercise for you to try out this fork &amp; pull request model, you will add yourself to the <a href="http://remi-daigle.github.io/2016-04-15-UCSB/people/"><strong><i class="fa fa-users"></i> people</strong></a> directory for this workshop which looks like this: <!--`<img src="img/2016-04-15-UCSB_people.png" width="200"/>`{=html}--></p>
-</div>
-</div>
-<div id="branch-and-merge" class="section level2" number="1.9">
-<h2 number="1.9"><span class="header-section-number">1.9</span> Branch and Merge</h2>
-<p>As a third use case, let’s look at how you might develop in a sandbox.</p>
-</div>
-<div id="exercise-intertidal-sites-dataset" class="section level2" number="1.10">
-<h2 number="1.10"><span class="header-section-number">1.10</span> Exercise: Intertidal Sites Dataset</h2>
-<p>Gil Rilov shared the following dataset for us to play with:</p>
-<ul>
-<li><a href="https://drive.google.com/open?id=0Bw_eQvipWCW_NkxHVk9sZ0ZPTU85QkRjRDdvT0FoSHZvUldR">Israel sites fall 2015-16.xlsx</a></li>
-</ul>
-<p>Please download and open this dataset. Your task is to investigate this dataset and prepare it for submission to OBIS.</p>
-<div id="task-provide-excel-cell-ranges-for-how-you-would-divide-data-into-tables" class="section level3" number="1.10.1">
-<h3 number="1.10.1"><span class="header-section-number">1.10.1</span> Task: Provide Excel cell ranges for how you would divide data into tables?</h3>
-<p>For reading and wrangling data in R, please see cheat sheets and resources mentioned in:</p>
-<ul>
-<li><a href="http://bit.ly/r-wrangle-for-ioos">Data Wrangling in the R Tidyverse - Google Slides</a></li>
-</ul>
-</div>
-</div>
-<div id="challenge-analytical-steps" class="section level2 unnumbered challenge">
-<h2 class="unnumbered challenge">Challenge: analytical steps?</h2>
-<p>Outline a sequence of analytical steps needed to arrive at the answer.</p>
-<!-- ### Answers {.solution} -->
-<details>
-<summary>
-<b>Answers</b>
-</summary>
+<div id="create-rstudio-project" class="section level2" number="1.4">
+<h2 number="1.4"><span class="header-section-number">1.4</span> Create RStudio Project</h2>
+<p>Next, you’ll use RStudio to initialize this project in two important ways:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Sum</strong> the area of water (<code>AWATER</code>) and land (<code>ALAND</code>) per region.</li>
-<li><strong>Divide</strong> the area of water (<code>AWATER</code>) by the area of land (<code>ALAND</code>) per region to arrive at percent water.</li>
-<li>Show <strong>table</strong> of regions sorted by percent water.</li>
-<li>Show <strong>map</strong> of regions by percent water with a color ramp and legend.</li>
+<li><p>You’ll let RStudio run <code>git clone</code> to copy the git repository onto your machine containing the <code>README.md</code> and importantly a hidden folder <code>.git/</code> which contains all file history and the configuration on where to synchronize files, i.e. Github.</p></li>
+<li><p>By creating an <strong>RStudio Project</strong>, you’ll create an <code>r3-exercises.Rproj</code> file. This will be an executable that you can double-click on from Windows Explorer or Mac Finder that will open RStudio and set the working directory to that containing folder. This assures that others who similarly open the project will start with the same working directory, so relative paths to other files in the repo will work regardless of where that repo lives on an individual machine. This is important for making your R code portable for others to use.</p></li>
 </ol>
-</details>
+<p>From <strong>RStudio</strong> menu <strong>File</strong> -&gt; <strong>New Project…</strong></p>
+<p><img src="figs/rstudio_new-project.png" width="500"/></p>
+<p>Choose <strong>Version Control</strong> -&gt; <strong>git</strong> and enter the <strong>Repository URL</strong> with the <code>.git</code> extension.</p>
+<p><img src="figs/rstudio_clone-repo.png" width="500"/></p>
+<p>This <strong>Repository URL</strong> is also easily copied into your clipboard from your web <strong>browser</strong> by clicking on the green Code button of your new repository (i.e. <code>https://github.com/USER/r3-exercises</code>):</p>
+<p><img src="figs/github_code-clone.png" width="400"/></p>
+<p>Then paste (Ctrl + V) into the <strong>Repository URL</strong> field of the form.</p>
+<p>I chose to Create the project as a subdirectory of <code>~/github/bbest</code> which means my home directory (<code>~</code>) and subfolder <code>bbest</code> of folder <code>github</code>, but you can create it wherever makes sense on your computer. Be sure to swap any instance of USER <code>bbest</code> with your Github username.</p>
+<p>If it all works correctly then you should see the files downloaded and showing up in the <strong>Files</strong> pane of RStudio. If RStudio is configured correctly to work with <strong>Git</strong>, then you should also see a Git pane.</p>
+<p><img src="figs/rstudio_init.png" width="600"/></p>
 </div>
-<div id="callout" class="section level2 unnumbered callout">
-<h2 class="unnumbered callout">Callout</h2>
-<p>Test this new:</p>
+<div id="gitignore" class="section level2 unnumbered callout">
+<h2 class="unnumbered callout"><code>.gitignore</code></h2>
+<p>Besides the desired <strong>RStudio Project</strong> file <code>r3-exercises.Rproj</code>, you should also see the <code>.gitignore</code>. This file describes files that <code>git</code> should ignore and so not prompt for asking. If you open the file in RStudio, you see it’s a simple text file listing hidden files (i.e. those starting with a <code>.</code> and not normally shown in Windows Explorer or Mac Finder) that RStudio uses.</p>
+<pre><code>.Rproj.user
+.Rhistory
+.RData
+.Ruserdata</code></pre>
+</div>
+<div id="simple-commit-push" class="section level2" number="1.5">
+<h2 number="1.5"><span class="header-section-number">1.5</span> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code></h2>
+<p>Note that in the <strong>Git</strong> pane, the yellow box question marks under <strong>Status</strong> next to <code>.gitignore</code> and <code>r3-exercises.Rproj</code> indicate these files are not known to the version control system (and asking should they be?). Ticking the boxes under <strong>Staged</strong> changes the <strong>Status</strong> to a turquoise <code>A</code> for added:</p>
+<p><img src="figs/rstudio_git-add-files.png" width="300"/></p>
+<p>Now click the <strong>Commit</strong> button in the Git pane to open the Review Changes dialog window. Every commit requires a message.</p>
+<p><img src="figs/rstudio_git-commit.png" width="500"/></p>
+<p>Click the <strong>Commit</strong> button in the Review Changes dialog window. You should see something like:</p>
+<p><img src="figs/rstudio_git-committed.png" width="500"/></p>
+<p>This is confirmation that these <code>2</code> files were changed with <code>17</code> new lines and the hash <code>8367334</code> uniquely identifies this commit. <strong>Close</strong> this dialog. Note how now “Your branch is ahead of ‘orgin/main’ by 1 commit”:</p>
+<p><img src="figs/rstudio_git-ahead-1-commit.png" width="500"/></p>
+<p>The previous <code>git commit</code> operation happened only on the local machine. The “origin” is Github and “main” referring to the main branch. Next, you need to <strong>Push</strong> these changes by clicking on the button in the upper right. You should get confirmation like:</p>
+<p><img src="figs/rstudio_git-pushed.png" width="500"/></p>
+<p>You should now see these two new files showing up in your repo at <code>https://github.com/USER/r3-exercises</code>. These files are displayed with the filename, most recent commit message associated with any changes and the time since last update.</p>
+<p><img src="figs/github_2-new-files.png" width="500"/></p>
+</div>
+<div id="create-index.rmd" class="section level2" number="1.6">
+<h2 number="1.6"><span class="header-section-number">1.6</span> Create <code>index.Rmd</code></h2>
+<p>Next we’ll create an Rmarkdown file and render it to html. By calling it <code>index.Rmd</code> and rendering to <code>index.html</code>, this will become the default web page of the repository since web servers serve <code>index.html</code> as the default for the folder.</p>
+<p>Rmarkdown files weave markdown text with chunks of R code to be evaluated and output content like tables and plots.</p>
+<p>In the RStudio menu choose <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Rmarkdown…</strong>. Give it a Title like “R3 Exercises” and go with Default Output Format HTML.</p>
+<p><img src="figs/rstudio_new-rmd-doc-html.png" width="500"/></p>
+<p>After you click OK, <strong>File</strong> -&gt; <strong>Save as</strong> (or Ctrl + S) <code>index</code> (which will get named with the filename extension <code>index.Rmd</code>).</p>
+<p><img src="figs/rstudio_new-rmd-source.png" width="600"/></p>
+<p>Some initial text is already provided for you. Let’s go ahead and render to html by clicking the <strong>Knit</strong> button (highlighted with a pink box above).</p>
+<p><img src="figs/rstudio_new-rmd-rendered.png" width="600"/></p>
+<p>The <strong>Viewer</strong> pane now shows the rendered html. Also notice the unversioned files. Let’s get these onto our Github repo by going into the <strong>Git</strong> pane like previously, ticking the <strong>Staged</strong> boxes, clicking <strong>Commit</strong>, adding a message like “+ index”:</p>
+<p><img src="figs/rstudio_git-add-index.png" width="500"/></p>
+<p>Click on <strong>Commit</strong> in the dialog. Close the Git Commit window and then click on <strong>Push</strong> so your branch is not ahead of the origin Github.</p>
+<p>You should now see these two new index.* files showing up in your repo at <code>https://github.com/USER/r3-exercises</code>.</p>
+<p>We’ll get back to Rmarkdown, but first let’s get this website served up.</p>
+</div>
+<div id="setup-github-pages-website" class="section level2" number="1.7">
+<h2 number="1.7"><span class="header-section-number">1.7</span> Setup Github Pages website</h2>
+<p><a href="https://pages.github.com">Github Pages</a> allows you to serve up simple websites from your Github repo. Let’s turn on this feature by visiting the <strong>Settings</strong> tab in <code>https://github.com/USER/r3-exercises</code>. Then click the <strong>Pages</strong> menu from the left navbar, choose Branch: <strong>main</strong>, folder <strong>/ (root)</strong>:</p>
+<p><img src="figs/github_settings-pages.png" width="700"/></p>
+<p>Click <strong>Save</strong>. You should now see that the site is “ready to be published”:</p>
+<p><img src="figs/github_settings-pages-saved.png" width="700"/></p>
+<p>You should now be able to visit the website URL:</p>
 <ul>
-<li>callout class</li>
+<li><code>https://USER.github.io/r3-exercises</code></li>
 </ul>
-</div>
-<div id="key-points" class="section level2 keypoints" number="1.11">
-<h2 class="keypoints" number="1.11"><span class="header-section-number">1.11</span> Key Points</h2>
-<ol style="list-style-type: decimal">
-<li>Test</li>
-<li>Baby</li>
-<li>one</li>
-</ol>
-</div>
-<div id="continued-reading" class="section level2" number="1.12">
-<h2 number="1.12"><span class="header-section-number">1.12</span> Continued Reading</h2>
-<div id="git-github-rstudio" class="section level3" number="1.12.1">
-<h3 number="1.12.1"><span class="header-section-number">1.12.1</span> Git, Github &amp; RStudio</h3>
+<p>Notice how the URL is a slight rearrangement of your Github repo URL:</p>
 <ul>
-<li><p><a href="http://swcarpentry.github.io/git-novice/">Version Control with Git</a></p></li>
-<li><p><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></p></li>
-<li><p><a href="https://guides.github.com/">GitHub Guides</a></p></li>
-<li><p><a href="https://r-pkgs.org/git.html">Chapter 18 Git and GitHub | R Packages</a></p></li>
-<li><p><a href="https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/">How to Use Git/GitHub with R</a></p></li>
-<li><p><a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">Version Control with Git and SVN – RStudio Support</a></p></li>
-<li><p><a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">Using RStudio Projects – RStudio Support</a></p></li>
-<li><p><a href="https://guides.github.com/">GitHub Guides</a></p>
-<ul>
-<li><a href="https://guides.github.com/introduction/flow/">Understanding the GitHub flow · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/activities/hello-world/">Hello World · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/features/pages/">Getting Started with GitHub Pages · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/introduction/git-handbook/">Git Handbook · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/activities/forking/">Forking Projects · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/features/issues/">Mastering Issues · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/features/wikis/">Documenting your projects on GitHub · GitHub Guides</a></li>
-<li><a href="https://guides.github.com/introduction/flow/">Understanding the GitHub flow · GitHub Guides</a></li>
-</ul></li>
+<li><code>https://github.com/USER/r3-exercises</code></li>
 </ul>
+<p>For easily referencing the website, I recommend returning to the Github repo <code>https://github.com/USER/r3-exercises</code>, clicking the upper right <strong>About</strong> cog and adding it to the <strong>Website</strong> entry:</p>
+<p><img src="figs/github_about-website.png" width="500"/></p>
+<p>You should now have a handy link to get to your website:</p>
+<p><img src="figs/github_about-website-saved.png" width="500"/></p>
 </div>
-<div id="rmarkdown" class="section level3" number="1.12.2">
-<h3 number="1.12.2"><span class="header-section-number">1.12.2</span> Rmarkdown</h3>
-<ul>
-<li><a href="https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.141207218.1461543799.1623615738-155442495.1623419383">Lesson 1 | Rmarkdown</a></li>
-<li><a href="https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/">Getting started with R Markdown - RStudio</a></li>
-<li><a href="https://www.rstudio.com/resources/webinars/reproducible-reporting/">Reproducible Reporting - RStudio</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
-</ul>
-<div id="rmarkdown-websites" class="section level4" number="1.12.2.1">
-<h4 number="1.12.2.1"><span class="header-section-number">1.12.2.1</span> Rmarkdown websites</h4>
-<ul>
-<li><a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide</a></li>
-<li><a href="https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html">Creating websites in R</a></li>
-<li><a href="https://jules32.github.io/rmarkdown-website-tutorial/">Making free websites with RStudio’s R Markdown</a></li>
-</ul>
-</div>
-</div>
+<div id="contribute-website-with-fork-pull-request" class="section level2" number="1.8">
+<h2 number="1.8"><span class="header-section-number">1.8</span> <strong>Contribute</strong> website with <code>fork</code> &amp; <code>pull request</code></h2>
+<p>So far you’ve been using the <strong>Simple</strong> workflow with <code>git push</code> and <code>git pull</code>. Next, you’ll learn how to contribute towards a repo for which you don’t have write permissions. The task is to suggest a revision</p>
 </div>
 </div>
 
