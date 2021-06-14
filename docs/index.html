@@ -29,9 +29,15 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +63,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
 
 
 
@@ -215,7 +222,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -225,6 +298,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -245,17 +328,30 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="setup.html">Setup</a>
+  <a href="collaborate.html">Collaborate</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="setup.html">Setup</a>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
 <div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
 
@@ -267,14 +363,14 @@ $(document).ready(function () {
 <h1 class="unnumbered">Overview</h1>
 <p>This website is the starting point for the free 8-week webinar training series on <strong>Reproducible Reporting with R</strong> (R<sup>3</sup>) for <strong><em>marine ecological indicators</em></strong>, sponsored by the Working Group on the Northwest Atlantic Regional Sea (<a href="https://www.ices.dk/community/groups/Pages/WGNARS.aspx">WGNARS</a>) and open to all.</p>
 <p>Materials will be populated into the Schedule below and menu above. Please consult the <a href="./setup.html"><strong>Setup</strong></a> to have accounts created and software installed.</p>
-<div id="webinar" class="section level2">
-<h2>Webinar</h2>
+<div id="webinar" class="section level2" number="0.1">
+<h2 number="2.1"><span class="header-section-number">2.1</span> Webinar</h2>
 <p>Please join the WebEx meeting here Mondays 2-3:30 pm Eastern time:</p>
 <p><a href="https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID=m48bc0a9e0d4ff76970e2ba6df1a1a574">Webex: Open Sci Short Course, hosted by NEFSC</a></p>
 <p>The first hour will be a presentation and the last half hour for discussion and exercise completion time. All webinars will be <strong><em>recorded</em></strong> and posted to this website for future reference.</p>
 </div>
-<div id="schedule" class="section level2">
-<h2>Schedule</h2>
+<div id="schedule" class="section level2" number="0.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> Schedule</h2>
 <ol style="list-style-type: decimal">
 <li>June 14: <strong>Collaborate</strong><br />
 Use Github to share and version code, as well as handle basic project management with issues and project boards. The RStudio development environment will be introduced to interface with git and Github. Use of Github Pages to host knitted Rmarkdown documents will enable sharing of online reports.<br />
@@ -313,6 +409,8 @@ An R package is a documented set of functions that can act as building blocks fo
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -344,7 +442,38 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -4,7 +4,27 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Collaborate"
+      href: collaborate.html
+  right:
     - text: "Setup"
       href: setup.html
+    - text: "Resources"
+      href: resources.html
 output_dir: "docs"
-exclude: ["_old-bookdown"]
+output:
+  html_document:
+    theme: "default"
+    type: "inverse"
+    toc: true
+    toc_float: true
+    code_folding: "show"
+    number_sections: true
+    anchor_sections: true
+    pandoc_args: [
+      "--number-sections",
+      "--number-offset=2"]
+    highlight: "default"
+    # include:
+    #   after_body: libs/after_body.html
+    css: libs/swcarpentry-lesson.css

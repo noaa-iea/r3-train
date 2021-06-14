@@ -1,0 +1,357 @@
+---
+output:
+  html_document:
+    pandoc_args: [
+      "--number-offset=0"]
+---
+
+# Collaborate
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+shelf(
+  htmltools, mitchelloharawild/icons)
+
+# icons::download_fontawesome()
+# devtools::load_all("~/github/bbest/icons")
+# icons::download_octicons()
+```
+
+## Learning Objectives {- .objectives}
+
+
+1. Version files locally
+1. Synchronize files with a Github repo
+1. Use RStudio Git pane: rev
+1. Handle conflicts: use Terminal 
+1. Branching
+1. Write markdown to format text, yaml to write configurations
+1. starting with README.md
+1. Use the 3 components of an Rmarkdown: frontmatter in yaml, markdown text and R code as chunks or inline.
+1. Create a Github repo. Either for your username or as a project r3
+1. Create an Rmarkdown website, with site.yml
+1. Create a pull request. update website glossary by adding a line to a csv
+Project management tools in Github: Issues, Project board (who/what/when; Kanban style)
+
+## Prerequisites {-.prereq} 
+
+**R Skill Level**: Beginner - you've got the basics of R down.
+
+## What are Git & Github?
+
+The two main tools you'll learn about to start are:
+
+1. [**Git**](https://git-scm.com/) is a command-line version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).
+
+1. [**Github**](https://github.com/) is a website for storing your git versioned files remotely. It has many nice features to be able visualize differences between [images](https://help.github.com/articles/rendering-and-diffing-images/), [rendering](https://help.github.com/articles/mapping-geojson-files-on-github/) & [diffing](https://github.com/blog/1772-diffable-more-customizable-maps) map data files, [render text data files](https://help.github.com/articles/rendering-csv-and-tsv-data/), and [track changes in text](https://help.github.com/articles/rendering-differences-in-prose-documents/).
+
+Steps:
+
+1. Create Github login
+1. Create project website with Github Pages
+1. Edit `README.md` in Markdown
+1. Create HTML website content with R Markdown
+
+## Setup Github & Git
+
+1. Create **Github** account at <http://github.com>, if you don't already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in `.edu`, you can request free private repositories via [GitHub Education](https://education.github.com/) discount.
+
+1. Configure **git** with global commands. Open up the Bash version of Git and type the following:
+
+```bash
+# display your version of git
+git --version
+
+# replace USER with your Github user account
+git config –-global user.name USER
+
+# replace USER@SOMEWHERE.ORG with the email you used to register with Github
+git config –-global user.email USER@SOMEWHERE.ORG
+
+# list your config to confirm user.* variables set
+git config --list
+```
+
+## Github Workflows
+
+There are a variety of ways to interact with a Github repository, or **REPO** for short, which is a collection of files, possibly organized within folders. On Github every repo is associated with an **OWNER**, which can be a Github organization or a Github user. Repos are consistently found at **github.com/OWNER/REPO**.
+
+If you have _write_ permissions to the repo, then you can `git push` changes to it directly. These changes are always first packaged as a set of file differences by a `git commit` that requires a message.
+
+If you do not have _write_ permissions to the repo, then you need to `Github fork` that repo into your own user-writable space (user or organization). After you make changes to the files in your user-writable repo (with `git commit` and `git push`), you can then request those changes be pulled into the original repo with a `Github pull request`.
+
+Furthermore, you can `git branch` a snapshot of the repo files into a _sandbox_ for continuing to make changes, such as to fix a _bug_ or implement a new _feature_. This branch won't affect the _main_ branch until you're ready to `git merge` those changes, so it isolates development.
+
+These aspects give rise to different _workflows_ with increasing complexity that we'll incrementally try out with exercises, so you can become comfortable managing your own code, contributing to other open-source projects, and working on a set of code without trampling on other people's work.
+
+```{r icons, echo=F}
+icon_down   <- icons::fontawesome$solid$`arrow-down`
+icon_up     <- icons::fontawesome$solid$`arrow-up`
+icon_right  <- icons::fontawesome$solid$`arrow-right`
+icon_cloud  <- icons::fontawesome$solid$cloud
+icon_plus   <- icons::octicons$plus
+icon_pc     <- icons::octicons$device_desktop
+icon_dl     <- icons::octicons$download
+icon_ul     <- icons::octicons$upload
+icon_commit <- icons::octicons$git_commit
+icon_pull   <- icons::fontawesome$solid$`cloud-download-alt`
+icon_push   <- icons::fontawesome$solid$`cloud-upload-alt`
+icon_merge  <- icons::octicons$git_merge
+icon_fork   <- icons::octicons$repo_forked
+icon_pr     <- icons::octicons$git_pull_request
+icon_clone  <- icons::octicons$repo_clone
+```
+
+### **Simple**: `push` & `pull`
+
+The simplest workflow for tracking file changes is to simply `git push` changes into your Github repo, assuming you have _write_ permissions to that repo. If you're working with anyone else or editing on more than one computer, then you'll want to `git pull` changes at the beginning of each session to capture changes and minimize potential _conflicts_ before proceeding with any edits and subsequent `git commit` and `git push` commands.
+
+The exact steps can be described in the table below. After the `Github create` repo step, you `git clone` it to get a copy of it onto your machine (with the hidden `.git` folder containing the configuration). Then you make changes on files and package differences with `git commit`, which requires a message every time and can happen offline. You'll need to be online to then run `git push` to publish those changes back to the Github repo. Then before subsequent changes, you'll want to update your machine with a `git pull`.\
+    
+repo location                          | initialize `r icon_down`                                                                                       | edit `r icon_up`                                                                                                                                   | update `r icon_down`
+---------------------------------------|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------:
+`r icon_cloud` `github.com/OWNER/REPO` |  [**create**](https://help.github.com/articles/create-a-repo/) `r icon_plus`                                   |                                                                                                                                                    |
+`r icon_pc` `~/github/REPO`            |  [**clone**](https://help.github.com/articles/fetching-a-remote) `r icon_dl` `r HTML("&nbsp;")` `r icon_right` | [**commit**](http://git-scm.com/docs/git-commit) `r icon_commit`,  [**push**](https://help.github.com/articles/pushing-to-a-remote/) `r icon_push` | [**pull**](https://help.github.com/articles/fetching-a-remote/#pull) `r icon_pull`
+  
+### **Contribute**: `fork` & `pull request`
+
+If you don't have _write_ access to a Github repo, such as with any open-source project, then you can `Github fork` somebody else's repo into your own user-writable space (i.e. OWNER being a Github user or organization) where you have write permissions. There you can make changes (using `git commit` and `git push`). When you're ready to submit changes to the original repo, you make a `pull request` queuing these changes up for the owner(s) of the original repo to review and accept with a `merge`, reject or ignore. Github facilitates the conversation that may follow, including the ability to update the `pull request` before performing the final `merge`.
+
+repo location                          | `USER` permission | initialize `r icon_down`                                                                      | edit `r icon_up`                                                                                                                                   | update `r icon_down`
+---------------------------------------|:-----------------:|:---------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+`r icon_cloud` `github.com/OTHER/REPO` | read only         |                                                                                               | [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`                                                                | 
+`r icon_cloud` `github.com/OWNER/REPO` | read + write      | [**fork**](https://help.github.com/articles/fork-a-repo) `r icon_fork`                        | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`                                                          | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`, [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`
+`r icon_pc`    `~/github/REPO`         | read + write      | [**clone**](https://help.github.com/articles/fetching-a-remote) `r icon_clone` `r HTML("&nbsp;")` `r icon_right` | [**commit**](http://git-scm.com/docs/git-commit) `r icon_commit`,  [**push**](https://help.github.com/articles/pushing-to-a-remote/) `r icon_push` | [**pull**](https://help.github.com/articles/fetching-a-remote/#pull) `r icon_pull`
+
+### **Sandbox**: `branch` & `merge`
+
+Even if you're able to _write_ directly to the repo, you may be collaborating with others and not want to step on their proverbial coding toes. By performing a `git branch`, you're taking a snapshot of the files and isolating them into your own _sandbox_. Subsequent changes to the files in the Github repo (with `git commit` and `git push`) do not then affect the _main_ branch until you (or another admin of the repo) run a `git merge` to fold these changes into the _main_ branch.
+
+[ TODO: table ]
+
+[ TODO: see [Forking Projects · GitHub Guides](https://guides.github.com/activities/forking/) ]
+
+### **Pro**: `branch`, `pull request` & `merge`
+
+Extending the **Sandbox** workflow to full "professional" status, even if you have the administrative ability on the repo to perform a `git merge` you may wish to advertise your proposed to other contributors with a `pull request`. This then allows others to review and discuss changes before an admin then performs the final `git merge`. This is the recommended workflow described in [Understanding the GitHub flow · GitHub Guides](https://guides.github.com/introduction/flow/). We'll get there by degrees with exercises in this lesson.
+
+[ TODO: table]
+
+## Create Repository `r3-exercises`
+
+Now you will create a Github repository. This will be the source code of an Rmarkdown website that will house your work completing all the exercises for this course.
+
+1. [Create a repository](https://help.github.com/articles/create-a-repo/) called `r3-exercises`.
+
+    `r img(src='figs/github_repo-create.png', width=200)`
+    
+    Please be sure to tick the box to **Initialize this repository with a README**. Otherwise defaults are fine.
+    
+    `r img(src='figs/github_create-my-project.png', width=600)`
+
+1. [Create a branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/) called `gh-pages`.
+
+    `r img(src='figs/github_create-branch_gh-pages.png', width=200)`
+    
+    Per [pages.github.com](https://pages.github.com), since this will be a project site only web files in the `gh-pages` branch will show up at `http://USER.github.io/REPO`. For a user (or organization) site, the REPO must be named `USER.github.io` (or `ORG.github.io`) and then the default `master` branch will contain the web files for the website `http://USER.github.io` (or `http://ORG.github.io`). See also [User, Organization, and Project Pages - Github Help](https://help.github.com/articles/user-organization-and-project-pages/).
+    
+1. [Set the default branch](https://help.github.com/articles/setting-the-default-branch/) to `gh-pages`, NOT the default `master`.
+
+    `r img(src='figs/github_default-branch_gh-pages.png', width=600)`
+    
+1. [Delete the branch](https://help.github.com/articles/viewing-branches-in-your-repository/#deleting-branches) `master`, which will not be used.
+
+### Edit `README.md` in Markdown
+
+[Commit your first change](https://help.github.com/articles/create-a-repo/#commit-your-first-change) by editing the `README.md` which is in **markdown**, simple syntax for conversion to HTML. Now update the contents of the `README.md` with the following, having a link and a numbered list:
+  
+```
+# nps-demo
+
+Wrangling data with R.
+
+## Introduction
+
+This repository demonstrates **software** and _formats_:
+
+1. **Git**
+1. **Github**
+1. _Markdown_
+1. _Rmarkdown_
+
+## Conclusion
+
+![](https://octodex.github.com/images/labtocat.png)
+```
+    
+Now click on the <span class="octicon octicon-eye"></span> Preview changes to see the markdown rendered as HTML:
+    
+`r img(src='figs/github_preview_README-md.png', width=500)`
+    
+Notice the syntax for:
+
+- **numbered list** gets automatically sequenced: `1.`, `1.`
+- **headers** get rendered at multiple levels: `#`, `##`
+- **link**: `[](http://...)`
+- **image**: `![](http://...)`
+- _italics_: `_word_` 
+- **bold**: `**word**`
+
+See [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/) and add some more personalized content to the README of your own, like a bulleted list or blockquote.
+
+## Create `index.html`
+
+By default `index.html` is served up. Go ahead and create a new file named `index.html` with the following [basic HTML](http://www.w3schools.com/html/html_basic.asp):
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+</body>
+</html>
+```
+
+You'll be prompted to clone this repository into a folder on your local machine.
+  
+See [GitHub Desktop User Guides](https://help.github.com/desktop/guides/) for more. You could also do this from the Bash Shell for Git with the command `git clone https://github.com/USER/REPO.git`, replacing USER with your Github username and REPO with my_project. Or you can use the Github Desktop App menu File -> Clone Repository...
+
+## Create RStudio Project with Git Repository
+
+Next, you will [clone the repository](https://help.github.com/articles/fetching-a-remote) onto your local machine using RStudio. I recommend creating it in a folder `github` under your user or Documents folder.
+
+Open RStudio and under the menu File -> New Project... -> Version Control -> git and enter the URL with the `.git` extension (also available from the repository's Clone button):
+
+`r img(src='figs/rstudio_new-project-git.png', width=300)`
+
+If it all works correctly then you should see the files downloaded and showing up in the Files pane of RStudio. If RStudio is configured correctly to work with Git, then you should also see a Git pane.
+
+## Create `index.Rmd` in Rmarkdown
+
+Back in RStudio, let's create a new Rmarkdown file, which allows us to weave markdown text with chunks of R code to be evaluated and output content like tables and plots.
+
+File -> New File -> Rmarkdown... -> Document of output format HTML, OK.
+
+`r img(src='figs/rstudio_new-rmd-doc-html.png', width=300)`
+
+You can give it a Title of "My Project". After you click OK, most importantly File -> Save as `index` (which will get named with the filename extension `index.Rmd`).
+
+Some initial text is already provided for you. Let's go ahead and "Knit HTML".
+
+Notice how the markdown is rendered similar to as before + **R code chunks** are surrounded by 3 backticks and `{r LABEL}`. These are evaluated and return the output text in the case of `summary(cars)` and the output plot in the case of `plot(pressure)`.
+
+Notice how the code `plot(pressure)` is not shown in the HTML output because of the R code chunk option `echo=FALSE`.
+
+Before we continue exploring Rmarkdown, visit the Git pane, check all modified (M) or untracked (?) files, click Commit, enter a message like "added index" and click the "Commit" button. Then Push (up green arrow) to push the locally committed changes on your lapto up to the Github repository online. This will update <https://github.com/USER/nps-demo>, and now you can also see your project website with a default `index.html` viewable at <http://USER.github.io/nps-demo>
+
+For more on Rmarkdown:
+
+- [rmarkdown cheatsheet.pdf](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+- [rmarkdown.rstudio.com](http://rmarkdown.rstudio.com)
+- [knitr in a knutshell - Karl Broman](http://kbroman.org/knitr_knutshell/)
+
+A more advanced topic worth mentioning is dealing [merge conflicts](http://r-pkgs.had.co.nz/git.html#git-pull)
+
+
+## Share your website with a Pull Request
+
+### Fork & Pull Request
+
+
+### Fork & Pull Request Your People Entry
+
+As an exercise for you to try out this fork & pull request model, you will add yourself to the [**<i class="fa fa-users"></i> people**](http://remi-daigle.github.io/2016-04-15-UCSB/people/) directory for this workshop which looks like this:
+<!--`r img(src='img/2016-04-15-UCSB_people.png', width=200)`-->
+
+## Branch and Merge
+
+As a third use case, let's look at how you might develop in a sandbox.
+
+## Exercise: Intertidal Sites Dataset
+
+Gil Rilov shared the following dataset for us to play with:
+
+- [Israel sites fall 2015-16.xlsx](
+https://drive.google.com/open?id=0Bw_eQvipWCW_NkxHVk9sZ0ZPTU85QkRjRDdvT0FoSHZvUldR)
+
+Please download and open this dataset. Your task is to investigate this dataset and prepare it for submission to OBIS.
+
+### Task: Provide Excel cell ranges for how you would divide data into tables?
+
+For reading and wrangling data in R, please see cheat sheets and resources mentioned in:
+
+- [Data Wrangling in the R Tidyverse - Google Slides](http://bit.ly/r-wrangle-for-ioos)
+
+
+## Challenge: analytical steps? {- .challenge}
+
+Outline a sequence of analytical steps needed to arrive at the answer.
+
+<!-- ### Answers {.solution} -->
+
+<details><summary><b>Answers</b></summary>
+
+1. **Sum** the area of water (`AWATER`) and land (`ALAND`) per region.
+1. **Divide** the area of water (`AWATER`) by the area of land  (`ALAND`) per region to arrive at percent water.
+1. Show **table** of regions sorted by percent water.
+1. Show **map** of regions by percent water with a color ramp and legend.
+
+</details>
+
+## Callout {- .callout}
+
+Test this new:
+
+- callout class
+
+
+## Key Points {.keypoints}
+
+1. Test
+1. Baby
+1. one
+
+## Continued Reading
+
+### Git, Github & RStudio
+
+* [Version Control with Git](http://swcarpentry.github.io/git-novice/)
+* [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+* [GitHub Guides](https://guides.github.com/)
+* [Chapter 18 Git and GitHub | R Packages](https://r-pkgs.org/git.html)
+* [How to Use Git/GitHub with R](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/)
+* [Version Control with Git and SVN – RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+* [Using RStudio Projects – RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
+
+* [GitHub Guides](https://guides.github.com/)
+  * [Understanding the GitHub flow · GitHub Guides](https://guides.github.com/introduction/flow/)
+  * [Hello World · GitHub Guides](https://guides.github.com/activities/hello-world/)
+  * [Getting Started with GitHub Pages · GitHub Guides](https://guides.github.com/features/pages/)
+  * [Git Handbook · GitHub Guides](https://guides.github.com/introduction/git-handbook/)
+  * [Forking Projects · GitHub Guides](https://guides.github.com/activities/forking/)
+  * [Mastering Issues · GitHub Guides](https://guides.github.com/features/issues/)
+  * [Documenting your projects on GitHub · GitHub Guides](https://guides.github.com/features/wikis/)
+  * [Understanding the GitHub flow · GitHub Guides](https://guides.github.com/introduction/flow/)
+
+### Rmarkdown
+
+* [Lesson 1 | Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.141207218.1461543799.1623615738-155442495.1623419383)
+* [Getting started with R Markdown - RStudio](https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/)
+* [Reproducible Reporting - RStudio](https://www.rstudio.com/resources/webinars/reproducible-reporting/)
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+#### Rmarkdown websites
+
+* [10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+* [Creating websites in R](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html)
+* [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/)
