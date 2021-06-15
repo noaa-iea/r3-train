@@ -43,7 +43,7 @@ discussion and exercise completion time. All webinars will be
     development environment will be introduced to interface with git and
     Github. Use of Github Pages to host knitted Rmarkdown documents will
     enable sharing of online reports.\
-    [Slides](https://docs.google.com/presentation/d/1AXuQhSfQ3w-3Hv7BV6PT3yLsPqxJcY52UXTlQr1ytoM/edit#slide=id.p), [Lesson](./collaborate.html) \
+    [Video](https://youtu.be/KHaIlNxNjNA), [Slides](https://docs.google.com/presentation/d/1AXuQhSfQ3w-3Hv7BV6PT3yLsPqxJcY52UXTlQr1ytoM/edit#slide=id.p), [Lesson](./collaborate.html) \
     \
 2.  June 21: **Manipulate**\
     Use the latest "tidyverse" of R packages (readr, dplyr, tidyr,
