@@ -16,6 +16,7 @@ librarian::shelf(
   dplyr, DT, glue, readr)
 
 read_csv("data/roster.csv") %>% 
+  arrange(github_username) %>% 
   mutate(
     user      = glue("<a href='https://github.com/{github_username}'>@{github_username}</a>"),
     exercises = glue("<a href='{exercises_website}'>{basename(exercises_website)}</a>")) %>% 
