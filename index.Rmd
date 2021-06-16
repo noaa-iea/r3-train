@@ -37,6 +37,8 @@ discussion and exercise completion time. All webinars will be
 
 ## Schedule
 
+<!-- TODO: as bootstrap cards with icons -->
+
 1.  June 14: **Collaborate**\
     Use Github to share and version code, as well as handle basic
     project management with issues and project boards. The RStudio

@@ -7,5 +7,6 @@ For some reason, RStudio's Build pane Build Website button keeps trying to rende
 
 ```r
 rmarkdown::render_site(".")
+fs::file_touch("docs/.nojekyll") # git config core.fileMode false
 ```
 
