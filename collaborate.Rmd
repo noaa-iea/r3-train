@@ -43,11 +43,19 @@ shelf(
 
 ### What are Git & Github?
 
-The two main tools you'll learn about to start are:
+The two main version control tools are:
 
 1. [**Git**](https://git-scm.com/) is a command-line version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).
 
 1. [**Github**](https://github.com/) is a website for storing your git versioned files remotely. It has many nice features to be able visualize differences between [images](https://help.github.com/articles/rendering-and-diffing-images/), [rendering](https://help.github.com/articles/mapping-geojson-files-on-github/) & [diffing](https://github.com/blog/1772-diffable-more-customizable-maps) map data files, [render text data files](https://help.github.com/articles/rendering-csv-and-tsv-data/), and [track changes in text](https://help.github.com/articles/rendering-differences-in-prose-documents/).
+
+### What are R & RStudio?
+
+The two main programming tools you'll be using are:
+
+1.  [**R**](https://cran.r-project.org) is the scientific programming language.
+
+1.  [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download) is the integrated development environment (IDE) that provides a robust coding environment to write and execute R code. I recommend reviewing the 2-page [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf) (also available in the RStudio interface through the menu **Help** -> **Cheat Sheets** -> **RStudio IDE Cheat Sheet**) for getting a quick grasp of the panes and keyboard shortcuts.
 
 ### Github Workflows
 
