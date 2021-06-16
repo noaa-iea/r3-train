@@ -20,7 +20,7 @@ navbar:
       href: roster.html
     - text: "Repo"
       icon: "fab fa-github"
-      href: https://github.com/noaa-iea/r3-train.html
+      href: https://github.com/noaa-iea/r3-train
 output_dir: "docs"
 output:
   html_document:
