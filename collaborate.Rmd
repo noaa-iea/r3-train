@@ -39,7 +39,7 @@ shelf(
 
 **R Skill Level**: Beginner - you've run a few commands in R, hopefully from RStudio.
 
-## Background
+## Background: Software & Github Workflows
 
 ### What are Git & Github?
 
@@ -85,6 +85,7 @@ icon_merge  <- icons::octicons$git_merge
 icon_fork   <- icons::octicons$repo_forked
 icon_pr     <- icons::octicons$git_pull_request
 icon_clone  <- icons::octicons$repo_clone
+icon_branch <- icons::octicons$git_branch
 ```
 
 #### **Simple**: `push` & `pull`
@@ -102,25 +103,31 @@ repo location                          | initialize `r icon_down`               
 
 If you don't have _write_ access to a Github repo, such as with any open-source project, then you can `Github fork` somebody else's repo into your own user-writable space (i.e. OWNER being a Github user or organization) where you have write permissions. There you can make changes (using `git commit` and `git push`). When you're ready to submit changes to the original repo, you make a `pull request` queuing these changes up for the owner(s) of the original repo to review and accept with a `merge`, reject or ignore. Github facilitates the conversation that may follow, including the ability to update the `pull request` before performing the final `merge`.
 
-repo location                          | `USER` permission | initialize `r icon_down`                                                                      | edit `r icon_up`                                                                                                                                   | update `r icon_down`
----------------------------------------|:-----------------:|:---------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
-`r icon_cloud` `github.com/OTHER/REPO` | read only         |                                                                                               | [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`                                                                | 
-`r icon_cloud` `github.com/OWNER/REPO` | read + write      | [**fork**](https://help.github.com/articles/fork-a-repo) `r icon_fork`                        | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`                                                          | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`, [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`
+repo location                          | `USER` permission | initialize `r icon_down`                                                                                         | edit `r icon_up`                                                                                                                                   | update `r icon_down`
+---------------------------------------|:-----------------:|:----------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+`r icon_cloud` `github.com/OTHER/REPO` | read only         |                                                                                                                  | [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`                                                                | 
+`r icon_cloud` `github.com/OWNER/REPO` | read + write      | [**fork**](https://help.github.com/articles/fork-a-repo) `r icon_fork`                                           | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`                                                          | [**pull request**](https://help.github.com/articles/creating-a-pull-request/) `r icon_pr`, [**merge**](https://help.github.com/articles/merging-a-pull-request) `r icon_merge`
 `r icon_pc`    `~/github/REPO`         | read + write      | [**clone**](https://help.github.com/articles/fetching-a-remote) `r icon_clone` `r HTML("&nbsp;")` `r icon_right` | [**commit**](http://git-scm.com/docs/git-commit) `r icon_commit`,  [**push**](https://help.github.com/articles/pushing-to-a-remote/) `r icon_push` | [**pull**](https://help.github.com/articles/fetching-a-remote/#pull) `r icon_pull`
 
 #### **Sandbox**: `branch` & `merge`
 
-Even if you're able to _write_ directly to the repo, you may be collaborating with others and not want to step on their proverbial coding toes. By performing a `git branch`, you're taking a snapshot of the files and isolating them into your own _sandbox_. Subsequent changes to the files in the Github repo (with `git commit` and `git push`) do not then affect the _main_ branch until you (or another admin of the repo) run a `git merge` to fold these changes into the _main_ branch.
+Even if you're able to _write_ directly to the repo, you may be collaborating with others and not want to step on their proverbial coding toes. By performing a `git branch`, you're taking a snapshot of the files and isolating them into your own _sandbox_. For instance let's say you're working on a new feature, then you might call your branch generically _new-feature_. Subsequent changes to the files in the Github repo (with `git commit` and `git push`) do not then affect the _main_ branch until a `git merge` is executed to fold these changes of _new-feature_ into the _main_ branch.
 
-[ TODO: table ]
+repo location                                                | `USER` permission | initialize `r icon_down`                                                                                               | edit `r icon_up`                                                                                                                                                              | update `r icon_down`
+-------------------------------------------------------------|:-----------------:|:----------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------:
+`r icon_cloud` `github.com/OWNER/REPO` branch: _main_        | read + write      |                                                                                                                        |                                                                                                                                                                               | 
+`r icon_pc`    `~/github/REPO` branch: _main_                | read + write      | [**clone**](https://help.github.com/articles/fetching-a-remote) `r icon_clone`                                         | [**merge**](https://www.atlassian.com/git/tutorials/using-branches/git-merge) `r icon_merge`, [**push**](https://help.github.com/articles/pushing-to-a-remote/) `r icon_push` |
+`r icon_pc`    `~/github/REPO` branch: _new-feature_         | read + write      | [**branch**](https://www.atlassian.com/git/tutorials/using-branches) `r icon_branch` `r HTML("&nbsp;")` `r icon_right` | [**commit**](http://git-scm.com/docs/git-commit) `r icon_commit`                                                                                                              | [**pull**](https://help.github.com/articles/fetching-a-remote/#pull) `r icon_pull`
 
-[ TODO: see [Forking Projects · GitHub Guides](https://guides.github.com/activities/forking/) ]
+The scenario above shows the `branch` and `merge` happening locally, but you can also execute these on Github. The RStudio IDE provides the ability to create a new branch locally, but then to perform the `git merge` you need to do this in its Terminal.
 
 #### **Pro**: `branch`, `pull request` & `merge`
 
-Extending the **Sandbox** workflow to full "professional" status, even if you have the administrative ability on the repo to perform a `git merge` you may wish to advertise your proposed to other contributors with a `pull request`. This then allows others to review and discuss changes before an admin then performs the final `git merge`. This is the recommended workflow described in [Understanding the GitHub flow · GitHub Guides](https://guides.github.com/introduction/flow/). We'll get there by degrees with exercises in this lesson.
+Extending the **Sandbox** workflow to full "professional" status, even if you have the administrative ability on the repo to perform a `git merge` you may wish to first advertise your proposed file changes to other contributors with a `pull request`. This then allows others to review and discuss changes before an admin then performs the final `git merge`. This is the recommended workflow described in [Understanding the GitHub flow · GitHub Guides](https://guides.github.com/introduction/flow/):
 
-[ TODO: table]
+`r img(src='figs/github_flow.png', width=600)`
+
+We want go over this entire workflow in this lesson, but it simply combines all the techniques above.
 
 ## Setup Github & Git & RStudio
 
