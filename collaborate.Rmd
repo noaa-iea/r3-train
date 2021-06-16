@@ -114,29 +114,51 @@ Extending the **Sandbox** workflow to full "professional" status, even if you ha
 
 [ TODO: table]
 
-## Setup Github & Git
+## Setup Github & Git & RStudio
 
 1. Create **Github** account at <http://github.com>, if you don't already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in `.edu`, you can request free private repositories via [GitHub Education](https://education.github.com/) discount.
 
+1. Install the latest software, per [Setup](./setup.html):
+    
+    1.  [**R**](https://cran.r-project.org) scientific programming language
+    1.  [**RStudio**](https://www.rstudio.com/products/rstudio/download/#download)
+        integrated development environment
+    1.  [**Git**](https://git-scm.com/) version control\
+    \
+    
 1. Configure **git** with global commands to tell it who you are. Open the Terminal in RStudio and type the following. Be sure to replace `USER` and `USER@SOMEWHERE.ORG` with yours (e.g. mine is `bbest` and `ben@ecoquants.com`):
+    
+    ```bash
+    # display your version of git
+    git --version
+    
+    # display the path to git on Mac/Linux
+    which git
+    
+    # display the path to git on Windows
+    where git
 
-```bash
-# display your version of git
-git --version
-
-# replace USER with your Github user account
-git config –-global user.name USER
-
-# replace USER@SOMEWHERE.ORG with the email you used to register with Github
-git config –-global user.email USER@SOMEWHERE.ORG
-
-# use git merge (default) instead of git rebase to resolve git pull conflicts
-git config --global pull.rebase true
-
-# list your config to confirm user.* variables set
-git config --list
-```
-
+    # replace USER with your Github user account
+    git config –-global user.name USER
+    
+    # replace USER@SOMEWHERE.ORG with the email you used to register with Github
+    git config –-global user.email USER@SOMEWHERE.ORG
+    
+    # use git merge (default) instead of git rebase to resolve git pull conflicts
+    git config --global pull.rebase true
+    
+    # list your config to confirm user.* variables set
+    git config --list
+    ```
+    
+1. Tell **RStudio** where to find **Git**. In the RStudio menu, go to **Tools** -> **Global Options** and select the **Git/SVN** sidebar menu:
+    
+    `r img(src='figs/rstudio_setup-git.png', width=400)`
+    
+    Here you **Browse** and select the **Git executable** based on the path found from the above commands dependening on your operating system in the Terminal (`which git` on Mac/Linux; `where git` on Windows).
+    
+    If you run into any problems, please consult more thorough documentation in [Chapter 13 Detect Git from RStudio | Happy Git and GitHub for the useR](https://happygitwithr.com/rstudio-see-git.html#tell-rstudio-where-to-find-git). If you're still stuck, please email me ben@ecoquants.com or better yet look at existing [Issues · noaa-iea/r3-train](https://github.com/noaa-iea/r3-train/issues) and from there **Create a new issue** describing the problem, any error messages and the operating system with version numbers of software being used.
+    
 ## Create Github Repository
 
 Now you will create a Github repository. This will be the source code of an Rmarkdown website that will house your work completing all the exercises for this course.

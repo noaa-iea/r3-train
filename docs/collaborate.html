@@ -488,14 +488,27 @@ div.tocify {
 </div>
 </div>
 </div>
-<div id="setup-github-git" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Setup Github &amp; Git</h2>
+<div id="setup-github-git-rstudio" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> Setup Github &amp; Git &amp; RStudio</h2>
 <ol style="list-style-type: decimal">
 <li><p>Create <strong>Github</strong> account at <a href="http://github.com" class="uri">http://github.com</a>, if you don’t already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in <code>.edu</code>, you can request free private repositories via <a href="https://education.github.com/">GitHub Education</a> discount.</p></li>
-<li><p>Configure <strong>git</strong> with global commands to tell it who you are. Open the Terminal in RStudio and type the following. Be sure to replace <code>USER</code> and <code>USER@SOMEWHERE.ORG</code> with yours (e.g. mine is <code>bbest</code> and <code>ben@ecoquants.com</code>):</p></li>
-</ol>
+<li><p>Install the latest software, per <a href="./setup.html">Setup</a>:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://cran.r-project.org"><strong>R</strong></a> scientific programming language</li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/#download"><strong>RStudio</strong></a> integrated development environment</li>
+<li><a href="https://git-scm.com/"><strong>Git</strong></a> version control<br />
+<br />
+</li>
+</ol></li>
+<li><p>Configure <strong>git</strong> with global commands to tell it who you are. Open the Terminal in RStudio and type the following. Be sure to replace <code>USER</code> and <code>USER@SOMEWHERE.ORG</code> with yours (e.g. mine is <code>bbest</code> and <code>ben@ecoquants.com</code>):</p>
 <pre class="bash"><code># display your version of git
 git --version
+
+# display the path to git on Mac/Linux
+which git
+
+# display the path to git on Windows
+where git
 
 # replace USER with your Github user account
 git config –-global user.name USER
@@ -507,7 +520,12 @@ git config –-global user.email USER@SOMEWHERE.ORG
 git config --global pull.rebase true
 
 # list your config to confirm user.* variables set
-git config --list</code></pre>
+git config --list</code></pre></li>
+<li><p>Tell <strong>RStudio</strong> where to find <strong>Git</strong>. In the RStudio menu, go to <strong>Tools</strong> -&gt; <strong>Global Options</strong> and select the <strong>Git/SVN</strong> sidebar menu:</p>
+<p><img src="figs/rstudio_setup-git.png" width="400"/></p>
+<p>Here you <strong>Browse</strong> and select the <strong>Git executable</strong> based on the path found from the above commands dependening on your operating system in the Terminal (<code>which git</code> on Mac/Linux; <code>where git</code> on Windows).</p>
+<p>If you run into any problems, please consult more thorough documentation in <a href="https://happygitwithr.com/rstudio-see-git.html#tell-rstudio-where-to-find-git">Chapter 13 Detect Git from RStudio | Happy Git and GitHub for the useR</a>. If you’re still stuck, please email me <a href="mailto:ben@ecoquants.com" class="email">ben@ecoquants.com</a> or better yet look at existing <a href="https://github.com/noaa-iea/r3-train/issues">Issues · noaa-iea/r3-train</a> and from there <strong>Create a new issue</strong> describing the problem, any error messages and the operating system with version numbers of software being used.</p></li>
+</ol>
 </div>
 <div id="create-github-repository" class="section level2" number="1.3">
 <h2 number="1.3"><span class="header-section-number">1.3</span> Create Github Repository</h2>
