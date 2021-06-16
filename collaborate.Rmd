@@ -203,7 +203,7 @@ Clicking on the **Preview** tab shows the formatted result. Note how the `#` is 
 
 `r img(src='figs/github_readme.md-preview.png', width=400)`
 
-More on markdown in a bit.
+For more on formatting text with markdown within Github, check out [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/).
 
 ## Create RStudio Project
 
@@ -628,7 +628,33 @@ Drag the two issues over into **In progress** in the order of priority top to bo
 
 A Project board helps answer the question, "What do I need to work on next?"
 
+## Further Reading
 
+### Git & Github
+
+* [GitHub Guides](https://guides.github.com/)
+* [Version Control with Git](http://swcarpentry.github.io/git-novice/)
+* [How to Use Git/GitHub with R](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/)
+
+### RStudio with Git & Github
+
+* [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+* [Chapter 18 Git and GitHub | R Packages](https://r-pkgs.org/git.html)
+* [Version Control with Git and SVN – RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
+* [Using RStudio Projects – RStudio Support](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
+### Rmarkdown
+
+* [Lesson 1 | Rmarkdown](https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.141207218.1461543799.1623615738-155442495.1623419383)
+* [Getting started with R Markdown - RStudio](https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/)
+* [Reproducible Reporting - RStudio](https://www.rstudio.com/resources/webinars/reproducible-reporting/)
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+#### Rmarkdown websites
+
+* [10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+* [Creating websites in R](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html)
+* [Making free websites with RStudio’s R Markdown](https://jules32.github.io/rmarkdown-website-tutorial/)
 
 
 
