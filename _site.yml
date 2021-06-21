@@ -5,9 +5,9 @@ navbar:
     - text: "Collaborate"
       icon: "fab fa-github"
       href: collaborate.html
-    # - text: "Manipulate"
-    #   icon: "fas fa-wrench"
-    #   href: manipulate.html
+    - text: "Manipulate"
+      icon: "fas fa-wrench"
+      href: manipulate.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"

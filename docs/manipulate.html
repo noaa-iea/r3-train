@@ -11,7 +11,7 @@
 
 
 
-<title>manipulate.knit</title>
+<title>Manipulate</title>
 
 <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -333,6 +333,13 @@ div.tocify {
     Collaborate
   </a>
 </li>
+<li>
+  <a href="manipulate.html">
+    <span class="fas fa-wrench"></span>
+     
+    Manipulate
+  </a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -388,10 +395,265 @@ div.tocify {
 <h1 number="2"><span class="header-section-number">2</span> Manipulate</h1>
 <div id="learning-objectives" class="section level2 unnumbered objectives">
 <h2 class="unnumbered objectives">Learning Objectives</h2>
+<ol style="list-style-type: decimal">
+<li><p><strong>Pipe</strong> commands with <code>%&gt;%</code> from <code>dplyr</code> for feeding the output of the function on the left as the first input argument to the function on the right.</p></li>
+<li><p><strong>Read</strong> online table.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Download</strong> a tabular file, in commonly used comma-separated value (<strong>*.csv</strong>) format, from the URL of a dataset on an <strong>ERDDAP</strong> server.</p></li>
+<li><p><strong>Read</strong> a CSV file into a <code>data.frame()</code> using base R <code>utils::read.csv()</code>.</p></li>
+</ol></li>
+<li><p><strong>Show</strong> the table.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Show</strong> the <code>data.frame</code> in the R console. Convert the <code>data.frame</code> to a tidyverse <code>tibble()</code> and show it again, now with a more informative summary.</p></li>
+<li><p><strong>Render</strong> the table into HTML with <code>DT::datatable()</code>.</p></li>
+</ol></li>
+<li><p><strong>Wrangle</strong> with <code>dplyr</code>, <code>tidyr</code> and <code>purrr</code>.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Select</strong> columns of information with <code>select()</code>, optionally using select operators like <code>starts_with()</code>.</p></li>
+<li><p><strong>Filter</strong> rows of information based on values in columns with <code>filter()</code>.</p></li>
+<li><p><strong>Mutate</strong> a new column with <code>mutate()</code>, possibly derived from other column(s).</p></li>
+<li><p><strong>Summarize</strong> all rows with <code>summarize()</code>. Precede this with <code>group_by()</code> to summarize based on rows with common values of a given column.</p></li>
+<li><p><strong>Nest</strong> tables inside of table cells. Use this to build a model object into another cell using <code>purrr::map()</code>.</p></li>
+</ol></li>
+</ol>
+</div>
+<div id="tips-for-using-rstudio" class="section level2 unnumbered">
+<h2 class="unnumbered">Tips for using RStudio</h2>
+<ol style="list-style-type: decimal">
+<li><p>Always launch RStudio from an <code>*.Rproj</code> file so it sets the working directory.</p></li>
+<li><p>Use the <a href="https://rstudio.github.io/visual-markdown-editing/#/">Visual Markdown Editor</a> (version 1.4+; see menu RStudio &gt; About RStudio to check your version) to easily create Markdown in your Rmarkdown document.</p></li>
+</ol>
+</div>
+<div id="read-online-table" class="section level2" number="1.1">
+<h2 number="2.1"><span class="header-section-number">2.1</span> Read online table</h2>
+<p>In this first set of exercises we’ll read marine ecological indicators from <a href="https://www.integratedecosystemassessment.noaa.gov/regions/california-current">California Current - Home | Integrated Ecosystem Assessment</a> (IEA). These datasets are also being served by an <strong>ERDDAP</strong> server (which is “a data server that gives you a simple, consistent way to download subsets of scientific datasets in common file formats and make graphs and maps.”).</p>
+<div id="create-manipulate.rmd-in-r3-exercises" class="section level3" number="1.1.1">
+<h3 number="2.1.1"><span class="header-section-number">2.1.1</span> Create <code>manipulate.Rmd</code> in r3-exercises</h3>
+<p>Open your Rstudio project for the r3-exercises by double-clicking on the <code>r3-exercises.Rproj</code> file (from Windows Explorer in Windows; Finder in Mac). This will set the working directory in the R Console to the same folder.</p>
+<p>In RStudio menu, <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>R Markdown…</strong> I suggest giving it a title of “Manipulate” and saving it as <code>manipulate.Rmd</code>. Let’s delete everything <strong><em>after</em></strong> the first R chunk, which is surrounded by <em>fenced backticks</em>:</p>
+<p><code>```{r setup, include=FALSE}</code></p>
+<p><code>knitr::opts_chunk$set(echo = TRUE)</code></p>
+<p><code>```</code></p>
+<p>And create a new heading and subheading:</p>
+<pre class="md"><code>## Read online table
+
+### Download table (`*.csv`)</code></pre>
+</div>
+<div id="get-url-to-csv" class="section level3" number="1.1.2">
+<h3 number="2.1.2"><span class="header-section-number">2.1.2</span> Get URL to CSV</h3>
+<p>Please visit the ERDDAP server <a href="oceanview.pfeg.noaa.gov/erddap">oceanview.pfeg.noaa.gov/erddap</a> and please do a <em>Full Text Search for Datasets</em> using “cciea” in the text box before clicking <strong>Search</strong>. These are all the California Current IEA datasets.</p>
+<p>From the listing of datasets, please click on <a href="https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.html"><strong>data</strong></a> for the “CCIEA Anthropogenic Drivers” dataset.</p>
+<p>Note the filtering options for <code>time</code> and other variables like <code>consumption_fish (Millions of metric tons)</code> and <code>cps_landings_coastwide (1000s metric tons)</code>. Set the time filter from being only the most recent time to the entire range of available time from <code>1945-01-01</code> to <code>2020-01-01</code>.</p>
+<p>Scroll to the bottom and <strong>Submit</strong> with the default <code>.htmlTable</code> view. You get an web table of the data. Notice the many missing values in earlier years.</p>
+<p>Go back in your browser to change the the <strong>File type</strong> to <code>.csv</code>. Now instead of clicking Submit, click on <strong>Just generate the URL</strong>. Although the generated URL lists all variables to include, the default is to do that, so we can strip off everything after the <code>.csv</code>, starting with the query parameters <code>?</code> .</p>
+</div>
+<div id="download-csv" class="section level3" number="1.1.3">
+<h3 number="2.1.3"><span class="header-section-number">2.1.3</span> Download CSV</h3>
+<p>Let’s use this URL to download a new file in a new R Chunk (RStudio menu <strong>Code</strong> -&gt; <strong>Insert Chunk</strong>). Paste the following inside your R Chunk:</p>
+<pre class="r"><code># set variables
+csv_url  &lt;- &quot;https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv&quot;
+dir_data &lt;- &quot;data&quot;
+
+# derived variables
+csv &lt;- file.path(dir_data, basename(csv_url))
+
+# create directory
+dir.create(dir_data)
+
+# download file
+download.file(csv_url, csv)</code></pre>
+<p>Then click the green Play button to execute the commands in the R Console. After the last command you should see something like:</p>
+<pre><code>trying URL &#39;https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv&#39;
+downloaded 53 KB</code></pre>
+</div>
+<div id="read-table-read.csv" class="section level3" number="1.1.4">
+<h3 number="2.1.4"><span class="header-section-number">2.1.4</span> Read table <code>read.csv()</code></h3>
+<p>Now open the file by going into the <strong>Files</strong> RStudio pane, <strong>More</strong> -&gt; <strong>Show Folder in New Window</strong>. Then double click on <code>data/cciea_AC.csv</code> to open in your Spreadsheet program (like Microsoft Excel or Apple Pages or LibreOffice Calc). Mine looks like this:</p>
+<p><img src="figs/manipulate/cciea_AC_xls.png" width="600"/></p>
+<p>Let’s try to read in the csv by adding a new subsection in your Rmarkdown file:</p>
+<pre class="md"><code>### Read table `read.csv()`</code></pre>
+<p>Then create a new R Chunk and add the following lines to the R chunk:</p>
+<pre class="r"><code># attempt to read csv
+d &lt;- read.csv(csv)
+
+# show the data frame
+d</code></pre>
+<p>Note how the presence of the 2nd line with units makes the values character <code>&lt;chr&gt;</code> data type:</p>
+<p><img src="figs/manipulate/cciea_AC_read.csv.png" width="600"/></p>
+<p>But we want numeric values. So we could manually delete that second line of units or look at the <strong>help</strong> documentation for this function (<code>?read.csv</code> in Console pane; or <code>F1</code> key with cursor on the function in the code editor pane). Notice the <code>skip</code> argument, which we can implement like so:</p>
+<pre class="r"><code># read csv by skipping first two lines, so no header
+d &lt;- read.csv(csv, skip = 2, header = FALSE)
+d
+
+# update data frame to original column names
+names(d) &lt;- names(read.csv(csv))
+d</code></pre>
+<p>You can run above one line at a time with <strong>Code</strong> -&gt; <strong>Run Selected Lines</strong> (note the keyboard shortcut, which depends on your operating system). This will allow you to see how the data.frame <code>d</code> evolves. When running the w</p>
+</div>
+<div id="show-table-dtdatatable" class="section level3" number="1.1.5">
+<h3 number="2.1.5"><span class="header-section-number">2.1.5</span> Show table <code>DT::datatable()</code></h3>
+<p>Next, let’s render your Rmarkdown to html by clicking on <strong>Knit</strong> button (with the blue ball of yarn). Notice how all those times of outputting <code>d</code> show the full dataset with each line prefixed by a comment. There are many prettier ways to show tables in Rmarkdown. We’ll use the <code>DT</code> R package to start.</p>
+<p>You’ll need to install the R package if you don’t already have it. Check by searching for it in the <strong>Packages</strong> pane and <strong>Install</strong> if missing.</p>
+<p>Let’s start by commenting the previous instances of d (lines 36, 40, 44 for me) by prefixing with a <code>#</code>. Then try adding this subsection:</p>
+<pre class="md"><code>### Show table `DT::datatable()`</code></pre>
+<p>And in a new R chunk:</p>
+<pre class="r"><code># show table
+DT::datatable(d)</code></pre>
+<p>Then <strong>Knit</strong> again to see the updated table display, which defaults to paging through results, showing alternating gray backgrounds and providing search and sort abilities. Check out the function help (<code>?DT::datatable</code> in R Console; or <code>F1</code> with cursor over function in editor) and R package website <a href="https://rstudio.github.io/DT">DT</a> for more.</p>
+<p>Also note how we can call a function explicitly with the R package like <code>DT::datatable(d)</code> or load the library and use the function without the explicit R package referencing:</p>
+<pre class="r"><code>library(DT)
+datatable(d)</code></pre>
+</div>
+</div>
+<div id="wrangle-data" class="section level2" number="1.2">
+<h2 number="2.2"><span class="header-section-number">2.2</span> Wrangle data</h2>
+<p>Now that we’ve learned how to read a basic data table, let’s “wrangle” with <code>dplyr</code>, <code>tidyr</code> and <code>purrr</code>:</p>
+<div class="figure">
+<img src="https://d33wubrfki0l68.cloudfront.net/e3f9e555d0035731c04642ceb58a03fb84b98a7d/4f070/diagrams/data-science-wrangle.png" alt="" />
+<p class="caption">Data “wrangling” loosely encompasses the <strong>Import</strong>, <strong>Tidy</strong> and <strong>Transform</strong> steps. Source: <a href="https://r4ds.had.co.nz/wrangle-intro.html">9 Introduction | R for Data Science</a></p>
+</div>
+<p>Let’s create a new section and subsection in your Rmd:</p>
+<pre class="md"><code>## Wrangle data
+
+### Manipulate with `dplyr`</code></pre>
+<div id="install-r-packages" class="section level3" number="1.2.1">
+<h3 number="2.2.1"><span class="header-section-number">2.2.1</span> Install R packages</h3>
+<p>Be sure you have the R packages <code>dplyr</code>, <code>tidyr</code> and <code>purrr</code> installed via the <strong>Packages</strong> pane. <strong>Search</strong> (magnifying glass) for them and if missing, use the <strong>Install</strong> button.</p>
+</div>
+<div id="manipulate-with-dplyr" class="section level3" number="1.2.2">
+<h3 number="2.2.2"><span class="header-section-number">2.2.2</span> Manipulate with <code>dplyr</code></h3>
+<p>There’s a few things we’ll want to do next to make this data.frame more usable:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Convert</strong> the <code>data.frame</code> to a <code>tibble</code>, which provides a more useful summary in the default output of the R Console to include only the first 10 rows of data and the data types for each column.</p></li>
+<li><p><strong>Transform</strong> the <code>time</code> column to an actual <code>as.Date()</code> column using dplyr’s <code>mutate()</code>.</p></li>
+<li><p><strong>Column</strong> select with dplyr’s <code>select()</code> to those starting with “total_fisheries_revenue” using <code>starts_with()</code>.</p></li>
+<li><p><strong>Row</strong> select with dplyr’s <code>filter()</code> to those starting within the last 40 years, i.e. <code>time &gt;= as.Date("1981-01-01")</code>.</p></li>
+</ol>
+<p>Create a new R Chunk (RStudio menu <strong>Code</strong> -&gt; <strong>Insert Chunk</strong>) and insert within the fenced code block the following:</p>
+<pre class="r"><code>library(DT)
+library(dplyr)
+
+d &lt;- d %&gt;% 
+  # tibble
+  tibble() %&gt;% 
+  # mutate time
+  mutate(
+    time = as.Date(substr(time, 1, 10))) %&gt;% 
+  # select columns
+  select(
+    time, 
+    starts_with(&quot;total_fisheries_revenue&quot;)) %&gt;% 
+  # filter rows
+  filter(
+    time &gt;= as.Date(&quot;1981-01-01&quot;))
+
+datatable(d)</code></pre>
+<p>Next, <strong>Run</strong> the the chunk with the green Play button. <strong>Knit</strong> your document to see the update output table.</p>
+</div>
+<div id="tidy-with-tidyr" class="section level3" number="1.2.3">
+<h3 number="2.2.3"><span class="header-section-number">2.2.3</span> Tidy with <code>tidyr</code></h3>
+<p>Now, we’re ready to “tidy” up our data per the definition in the <a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf">Data Import Cheatsheet</a>:</p>
+<p><img src="figs/manipulate/tidy_rule.png" width="300"/></p>
+<p>We’ll see how this transformation of the data structure from <strong>wide</strong> to <strong>long</strong> is especially useful in the next section when we want to summarize fisheries revenue by region.</p>
+<p>Add a new subsection in your Rmd:</p>
+<pre class="md"><code>### Tidy with `tidyr`</code></pre>
+<p>And a new R Chunk:</p>
+<pre class="r"><code>library(tidyr)
+
+d &lt;- d %&gt;% 
+  pivot_longer(-time)
+
+datatable(d)</code></pre>
+</div>
+<div id="summarize-with-dplyr" class="section level3" number="1.2.4">
+<h3 number="2.2.4"><span class="header-section-number">2.2.4</span> Summarize with <code>dplyr</code></h3>
+<p>Now that we have the data in <strong>long</strong> format, we can:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Mutate</strong> a new <code>region</code> from the original full column <code>name</code> by using stringr’s <code>str_replace()</code> function.</p></li>
+<li><p><strong>Select</strong> for just the columns of interest (we no longer need <code>name</code>).</p></li>
+<li><p><strong>Summarize</strong> by <code>region</code>, which we want to first <code>group_by()</code>, then <code>summarize()</code> the <code>mean()</code> of <code>value</code> to a new column <code>avg_revenue</code>).</p></li>
+<li><p><strong>Format</strong> the <code>avg_revenue</code> as a currency with DT’s <code>formatCurrency()</code>).</p></li>
+</ol>
+<p>Add a new subsection in your Rmd:</p>
+<pre class="md"><code>### Summarize with `dplyr`</code></pre>
+<p>And a new R Chunk:</p>
+<pre class="r"><code>library(stringr)
+
+d &lt;- d %&gt;% 
+  mutate(
+    region = str_replace(name, &quot;total_fisheries_revenue_&quot;, &quot;&quot;)) %&gt;% 
+  select(time, region, value)
+datatable(d)
+
+d_sum &lt;- d %&gt;% 
+  group_by(region) %&gt;% 
+  summarize(
+    avg_revenue = mean(value))
+datatable(d_sum) %&gt;% 
+  formatCurrency(&quot;avg_revenue&quot;)</code></pre>
+</div>
+<div id="apply-functions-with-purrr-on-a-nested-tibble" class="section level3" number="1.2.5">
+<h3 number="2.2.5"><span class="header-section-number">2.2.5</span> Apply functions with <code>purrr</code> on a <code>nest</code>’ed <code>tibble</code></h3>
+<p>One of the major innovations of a <code>tibble</code> is the ability to store nearly any object in the cell of a table as a <strong>list column</strong>. This could be an entire table, a fitted model, plot, etc. Let’s try out these features driven by the question: <strong>What’s the trend over time for fishing revenue by region?</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The creation of tables within cells is most commonly done with tidyr’s <code>nest()</code> function based on a grouping of values in a column, i.e. dplyr’s <code>group_by()</code>.</p></li>
+<li><p>The <code>purrr</code> R package provides functions to operate on list objects, in this case the nested data. and application of functions on these data with purrr’s <code>map</code> function. We can feed the <code>data</code> object into an anonymous function where we fit the linear model <code>lm()</code> and return a list object. To then extract the coefficient from the model <code>coef(summary())</code>, we want to return a type of <strong>double</strong> (not another list object), so we use the <code>map_dbl()</code> function.</p></li>
+</ol>
+<p>Add a new subsection in your Rmd:</p>
+<pre class="md"><code>### Apply functions with `purrr` on a `nest`&#39;ed `tibble`</code></pre>
+<p>And a new R Chunk:</p>
+<pre class="r"><code>library(purrr)
+
+n &lt;- d %&gt;% 
+  group_by(region) %&gt;% 
+  nest(
+    data = c(time, value))
+n
+
+n &lt;- n %&gt;% 
+  mutate(
+    lm    = map(data, function(d){
+      lm(value ~ time, d) } ),
+    trend = map_dbl(lm, function(m){
+      coef(summary(m))[&quot;time&quot;,&quot;Estimate&quot;] }))
+n
+n %&gt;% 
+  select(region, trend) %&gt;% 
+  datatable()</code></pre>
+</div>
+</div>
+<div id="rmarkdown-output-options" class="section level2" number="1.3">
+<h2 number="2.3"><span class="header-section-number">2.3</span> Rmarkdown output options</h2>
+<p>If you’d like to render your Rmarkdown into HTML with a table of contents (<code>toc</code>), showing up to 3rd level headings (i.e. <code>### Heading</code>; use <code>toc_depth: 3</code>) and have a floating menu (<code>toc_float</code>), along with the ability to Show (or Hide) your Code Chunks (<code>code_folding</code>), then replace this default front matter yaml:</p>
+<pre class="yaml"><code>output: html_document</code></pre>
+<p>with:</p>
+<pre class="yaml"><code>output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: &quot;show&quot;</code></pre>
+</div>
+<div id="further-reading" class="section level2 unnumbered">
+<h2 class="unnumbered">Further Reading</h2>
+<div id="cheatsheets" class="section level3 unnumbered">
+<h3 class="unnumbered">Cheatsheets</h3>
+<p><a href="https://www.rstudio.com/resources/cheatsheets">RStudio Cheatsheets</a> (most also available via RStudio menu <strong>Help</strong> &gt; <strong>Cheat Sheets</strong>):</p>
 <ul>
-<li><p>Encourage you to type the commands rather than simply copy/paste.</p></li>
-<li><p>Use the Visual Markdown Editor (version 1.4+; see menu RStudio &gt; About RStudio to check your version).</p></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio IDE</a>: RStudio interface</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf">Data Import</a>: <code>readr</code>, <code>tidyr</code></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf">Data Transformation</a>: <code>dplyr</code></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf">Apply functions with <code>purrr</code></a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf">Dates and Times Cheatsheet</a>: <code>lubridate</code></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/strings.pdf">Work with Strings Cheatsheet</a>: <code>stringr</code></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/regex.pdf">Regular Expressions Cheatsheet</a>: <code>stringr</code> + regex</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/tidyeval.pdf">Tidy Evaluation with rlang</a>: advanced topics on how to use non-standard evaluation (i.e. unquoted strings referencing columns or other variables), especially for creating functions to handle tidy data</li>
 </ul>
+</div>
+</div>
+<div id="further-learning-objectives" class="section level2 unnumbered">
+<h2 class="unnumbered">Further Learning Objectives</h2>
+<p>For another day…</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Pipe</strong> commands with <code>%&gt;%</code> from <code>dplyr</code> for feeding the output of the function on the left as the first input argument to the function on the right.<br />
 </p></li>
@@ -429,15 +691,8 @@ See <a href="https://github.com/rstudio/cheatsheets/raw/master/tidyeval.pdf">Tid
 <li><p><strong>Pivot</strong> tables between wide and long formats. How would you summarize by group without a long format? A: it would be a painful for loop.</p></li>
 <li><p><strong>Relational database</strong> concepts with sqlite. And using <code>tbl(con, "table")</code>, <code>sql_show()</code> and <code>collect()</code>. Migrate from CSV to sqlite to PostgreSQL to PostGIS to BigQuery. Dplyr as the middle layer (and dbplyr). See db.rstudio.com for more, especially on previewing SQL results with <code>conn</code>. Compare dplyr commands to SQL.</p>
 <p>See <a href="https://db.rstudio.com">Databases using R</a>.</p></li>
-<li></li>
 <li><p><strong>Compare</strong> all of the above tidyverse operations with <strong>base R</strong> functions and note the readability (i.e. cognitive load) for understanding the analyses.</p></li>
 </ol>
-</div>
-<div id="asdf" class="section level2" number="1.1">
-<h2 number="2.1"><span class="header-section-number">2.1</span> asdf</h2>
-</div>
-<div id="further-reading" class="section level2" number="1.2">
-<h2 number="2.2"><span class="header-section-number">2.2</span> Further Reading</h2>
 </div>
 </div>
 
