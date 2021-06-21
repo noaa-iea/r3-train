@@ -1,0 +1,87 @@
+---
+output:
+  html_document:
+    pandoc_args: [
+      "--number-offset=1"]
+---
+
+# Manipulate
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+shelf(
+  htmltools, mitchelloharawild/icons)
+
+# icons::download_fontawesome()
+# devtools::load_all("~/github/bbest/icons")
+# icons::download_octicons()
+```
+
+## Learning Objectives {.unnumbered .objectives}
+
+-   Encourage you to type the commands rather than simply copy/paste.
+
+-   Use the Visual Markdown Editor (version 1.4+; see menu RStudio \> About RStudio to check your version).
+
+1.  **Pipe** commands with `%>%` from `dplyr` for feeding the output of the function on the left as the first input argument to the function on the right.\
+
+2.  **Read** online table.\
+
+    1.  **Download** a tabular file, in commonly used comma-separated value (**\*.csv**) format, from the URL of a dataset on an **ERDDAP** server.
+
+    2.  **Read** a CSV file into a `data.frame()` using base R `utils::read.csv()` and compare with the tidyverse R function `readr::read_csv()`. Understand the difference in how characters are handled as **factors** versus **character**.
+
+    3.  **APIs**, or application programming languages, provide a consistent way to query an online resource (with query parameters in a GET URL or longer forms with a POST from a form) and return information (typically as JSON), on reading csv directly from URL and using `rerddap` R package to access ERDDAP, which is an **API** that you could directly read with `httr` R package. For building your own API, see [`plumber`](https://www.rplumber.io) (and [REST APIs with Plumber Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/plumber.pdf)).\
+
+3.  **Show** the table.
+
+    1.  **Show** the `data.frame` in the R console. Display a `summary()`. Convert the `data.frame` to a tidyverse `tibble()` and show it again, now with a more informative summary. `View()` the table in RStudio.
+
+    2.  **Render** the table into HTML with `DT::datatable()`. Render the Rmarkdown document to `pdf` and `docx` to see the shortcomings of this htmlwidget in these formats. Use `knitr::kable()` for simple tables and the `huxtable` R package for these non-HTML formats.\
+
+4.  **Manipulate** with `dplyr`.
+
+    See [Data Transformation Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf).
+
+    1.  **Select** columns of information with `select()`, optionally using select operators like `starts_with()`, `ends_with()` and `everything()`. Use `rename()` to only rename existing columns.
+
+    2.  **Filter** rows of information based on values in columns with `filter()`. **Slice** data based on row numbers.
+
+    3.  **Arrange** rows by values in one or more columns with `arrange()`. Arrange in ascending (default) or descending (`desc()`) order. Use **factors** to customize the sort order.
+
+    4.  **Pull** values with `pull()` into a single `vector` (versus the default `data.frame` output).
+
+    5.  **Mutate** a new column with `mutate()`, possibly derived from other column(s). Use `glue::glue()` to combine character columns, `stringr` R package to manipulate character strings, and `lubridate` R package for dates.\
+        \
+        See [Dates and Times Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf), [Work with Strings Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf), [Regular Expressions Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/regex.pdf).
+
+    6.  **Summarize** all rows with `summarize()`. Precede this with `group_by()` to summarize based on rows with common values of a given column.
+
+    7.  **Join** two tables on a common column with `left_join()` (all from left; matching from right) or `inner_join()` (matching from left and right). Get unmatched values with `anti_join()`.
+
+5.  **Nest** tables **Unnest**. Get climatology by group as data, save linear model in cell, plot in cell. List column concept. Purrr `purrr::map()` function.
+
+    See [Data Import Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf), [Apply Functions Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf) .
+
+6.  Create a function to use an argument.\
+    See [Tidy Evaluation with rlang Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/tidyeval.pdf)
+
+7.  **Pivot** tables between wide and long formats. How would you summarize by group without a long format? A: it would be a painful for loop.
+
+8.  **Relational database** concepts with sqlite. And using `tbl(con, "table")`, `sql_show()` and `collect()`. Migrate from CSV to sqlite to PostgreSQL to PostGIS to BigQuery. Dplyr as the middle layer (and dbplyr). See db.rstudio.com for more, especially on previewing SQL results with `conn`. Compare dplyr commands to SQL.
+
+    See [Databases using R](https://db.rstudio.com).
+
+9.  
+
+10. **Compare** all of the above tidyverse operations with **base R** functions and note the readability (i.e. cognitive load) for understanding the analyses.
+
+## asdf
+
+## Further Reading
+
