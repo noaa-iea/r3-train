@@ -25,21 +25,23 @@ shelf(
 
 ## Learning Objectives {.unnumbered .objectives}
 
-1.  **Pipe** commands with `%>%` from `dplyr` for feeding the output of the function on the left as the first input argument to the function on the right.
-
-2.  **Read** online table.
+1.  **Read** online table.
 
     1.  **Download** a tabular file, in commonly used comma-separated value (**\*.csv**) format, from the URL of a dataset on an **ERDDAP** server.
 
     2.  **Read** a CSV file into a `data.frame()` using base R `utils::read.csv()`.
 
-3.  **Show** the table.
+1.  **Show** the table.
 
-    1.  **Show** the `data.frame` in the R console. Convert the `data.frame` to a tidyverse `tibble()` and show it again, now with a more informative summary.
+    1.  **Show** the `data.frame` in the R console.
 
     2.  **Render** the table into HTML with `DT::datatable()`.
 
-4.  **Wrangle** with `dplyr`, `tidyr` and `purrr`.
+1.  **Wrangle** with `tibble`, `dplyr`, `tidyr` and `purrr`.
+
+    1. **Convert** the `data.frame` to a tidyverse `tibble()` and show it again, now with a more informative summary.
+    
+    1.  **Pipe** commands with `%>%` from `dplyr` for feeding the output of the function on the left as the first input argument to the function on the right.
 
     1.  **Select** columns of information with `select()`, optionally using select operators like `starts_with()`.
 
@@ -49,7 +51,7 @@ shelf(
 
     4.  **Summarize** all rows with `summarize()`. Precede this with `group_by()` to summarize based on rows with common values of a given column.
 
-    5.  **Nest** tables inside of table cells. Use this to build a model object into another cell using `purrr::map()`.
+    5.  **Nest** tables inside of tables with a `tibble` and tidyr's `nest()`. Build a linear model object (`lm()`) into another **list column** per grouping using `purrr::map()`. Extract values from this model object as double with `purrr::map_dbl()`.
 
 ## Tips for using RStudio {.unnumbered}
 

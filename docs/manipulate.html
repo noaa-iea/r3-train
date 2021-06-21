@@ -396,7 +396,6 @@ div.tocify {
 <div id="learning-objectives" class="section level2 unnumbered objectives">
 <h2 class="unnumbered objectives">Learning Objectives</h2>
 <ol style="list-style-type: decimal">
-<li><p><strong>Pipe</strong> commands with <code>%&gt;%</code> from <code>dplyr</code> for feeding the output of the function on the left as the first input argument to the function on the right.</p></li>
 <li><p><strong>Read</strong> online table.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Download</strong> a tabular file, in commonly used comma-separated value (<strong>*.csv</strong>) format, from the URL of a dataset on an <strong>ERDDAP</strong> server.</p></li>
@@ -404,16 +403,18 @@ div.tocify {
 </ol></li>
 <li><p><strong>Show</strong> the table.</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Show</strong> the <code>data.frame</code> in the R console. Convert the <code>data.frame</code> to a tidyverse <code>tibble()</code> and show it again, now with a more informative summary.</p></li>
+<li><p><strong>Show</strong> the <code>data.frame</code> in the R console.</p></li>
 <li><p><strong>Render</strong> the table into HTML with <code>DT::datatable()</code>.</p></li>
 </ol></li>
-<li><p><strong>Wrangle</strong> with <code>dplyr</code>, <code>tidyr</code> and <code>purrr</code>.</p>
+<li><p><strong>Wrangle</strong> with <code>tibble</code>, <code>dplyr</code>, <code>tidyr</code> and <code>purrr</code>.</p>
 <ol style="list-style-type: decimal">
+<li><p><strong>Convert</strong> the <code>data.frame</code> to a tidyverse <code>tibble()</code> and show it again, now with a more informative summary.</p></li>
+<li><p><strong>Pipe</strong> commands with <code>%&gt;%</code> from <code>dplyr</code> for feeding the output of the function on the left as the first input argument to the function on the right.</p></li>
 <li><p><strong>Select</strong> columns of information with <code>select()</code>, optionally using select operators like <code>starts_with()</code>.</p></li>
 <li><p><strong>Filter</strong> rows of information based on values in columns with <code>filter()</code>.</p></li>
 <li><p><strong>Mutate</strong> a new column with <code>mutate()</code>, possibly derived from other column(s).</p></li>
 <li><p><strong>Summarize</strong> all rows with <code>summarize()</code>. Precede this with <code>group_by()</code> to summarize based on rows with common values of a given column.</p></li>
-<li><p><strong>Nest</strong> tables inside of table cells. Use this to build a model object into another cell using <code>purrr::map()</code>.</p></li>
+<li><p><strong>Nest</strong> tables inside of tables with a <code>tibble</code> and tidyr’s <code>nest()</code>. Build a linear model object (<code>lm()</code>) into another <strong>list column</strong> per grouping using <code>purrr::map()</code>. Extract values from this model object as double with <code>purrr::map_dbl()</code>.</p></li>
 </ol></li>
 </ol>
 </div>
