@@ -2,9 +2,9 @@
 pagetitle: "Home | R3"
 output:
   html_document:
+    toc: false
     code_folding: null
     number_sections: false
-    pandoc_args: null
 ---
 
 ```{r setup, include=FALSE}

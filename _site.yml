@@ -32,9 +32,6 @@ output:
     code_folding: "show"
     number_sections: true
     anchor_sections: true
-    pandoc_args: [
-      "--number-sections",
-      "--number-offset=2"]
     highlight: "default"
     # include:
     #   after_body: libs/after_body.html
