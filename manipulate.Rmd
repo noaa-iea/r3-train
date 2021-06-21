@@ -83,7 +83,7 @@ And create a new heading and subheading:
 
 ### Get URL to CSV
 
-Please visit the ERDDAP server [oceanview.pfeg.noaa.gov/erddap](oceanview.pfeg.noaa.gov/erddap) and please do a *Full Text Search for Datasets* using "cciea" in the text box before clicking **Search**. These are all the California Current IEA datasets.
+Please visit the ERDDAP server [https://oceanview.pfeg.noaa.gov/erddap](oceanview.pfeg.noaa.gov/erddap) and please do a *Full Text Search for Datasets* using "cciea" in the text box before clicking **Search**. These are all the California Current IEA datasets.
 
 From the listing of datasets, please click on [**data**](https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.html) for the "CCIEA Anthropogenic Drivers" dataset.
 
