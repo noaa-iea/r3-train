@@ -358,6 +358,8 @@ output:
     code_folding: "show"
 ```
 
+For details, see [3.1 HTML document | R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/html-document.html).
+
 ## Further Reading {.unnumbered}
 
 ### Cheatsheets {.unnumbered}
