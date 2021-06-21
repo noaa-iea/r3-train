@@ -11,9 +11,9 @@
 
 
 
-<title>Welcome</title>
+<title>Home | R3</title>
 
-<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -29,9 +29,16 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +64,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
 
 
 
@@ -218,6 +226,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -225,6 +296,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -237,19 +318,54 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">R<sup>3</sup> Exercises</a>
+      <a class="navbar-brand" href="index.html">R<sup>3</sup></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="collaborate.html">
+    <span class="fab fa-github"></span>
+     
+    Collaborate
+  </a>
 </li>
 <li>
-  <a href="collaborate.html">Collaborate</a>
+  <a href="manipulate.html">
+    <span class="fas fa-wrench"></span>
+     
+    Manipulate
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="setup.html">
+    <span class="fas fa-cogs"></span>
+     
+    Setup
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fas fa-book"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="roster.html">
+    <span class="fas fa-user-friends"></span>
+     
+    Roster
+  </a>
+</li>
+<li>
+  <a href="https://github.com/noaa-iea/r3-train">
+    <span class="fab fa-github"></span>
+     
+    Repo
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -259,15 +375,65 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Welcome</h1>
 
 </div>
 
 
-<p>Hello, Website!</p>
+<div id="overview" class="section level1 unnumbered">
+<h1 class="unnumbered">Overview</h1>
+<p>This website is the starting point for the free 8-week webinar training series on <strong>Reproducible Reporting with R</strong> (R<sup>3</sup>) for <strong><em>marine ecological indicators</em></strong>, sponsored by the Working Group on the Northwest Atlantic Regional Sea (<a href="https://www.ices.dk/community/groups/Pages/WGNARS.aspx">WGNARS</a>) and open to all.</p>
+<p>Materials will be populated into the Schedule below and menu above. Please consult the <a href="./setup.html"><strong>Setup</strong></a> to have accounts created and software installed.</p>
+<div id="webinar" class="section level2">
+<h2>Webinar</h2>
+<p>Please join the WebEx meeting here Mondays 2-3:30 pm Eastern time:</p>
+<p><a href="https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID=m48bc0a9e0d4ff76970e2ba6df1a1a574">Webex: Open Sci Short Course, hosted by NEFSC</a></p>
+<p>The first hour will be a presentation and the last half hour for discussion and exercise completion time. All webinars will be <strong><em>recorded</em></strong> and posted to this website for future reference.</p>
+</div>
+<div id="schedule" class="section level2">
+<h2>Schedule</h2>
+<!-- TODO: as bootstrap cards with icons -->
+<ol style="list-style-type: decimal">
+<li>June 14: <strong>Collaborate</strong><br />
+Use Github to share and version code, as well as handle basic project management with issues and project boards. The RStudio development environment will be introduced to interface with git and Github. Use of Github Pages to host knitted Rmarkdown documents will enable sharing of online reports.<br />
+<a href="https://youtu.be/KHaIlNxNjNA">Video</a>, <a href="https://docs.google.com/presentation/d/1AXuQhSfQ3w-3Hv7BV6PT3yLsPqxJcY52UXTlQr1ytoM/edit#slide=id.p">Slides</a>, <a href="./collaborate.html">Lesson</a><br />
+<br />
+</li>
+<li>June 21: <strong>Manipulate</strong><br />
+Use the latest “tidyverse” of R packages (readr, dplyr, tidyr, stringr, lubridate) for wrangling data and sequencing operations with the pipe (%&gt;%) operator.<br />
+<a href="https://docs.google.com/presentation/d/1lilrIzlD5Y2vPEax4fao8GqS-TsxSzNMfyGPgKr7TlM/edit?usp=sharing">Slides</a>, <a href="./manipulate.html">Lesson</a><br />
+<br />
+</li>
+<li>June 28: <strong>Visualize</strong><br />
+Use principles of the “grammar of graphics” to develop static plots in the R package ggplot2. Make these interactive with plotly. Develop dedicated time series plots with dygraphs.<br />
+<br />
+</li>
+<li>July 12: <strong>Map</strong><br />
+Read and write vector data (points, lines, polygons) using the spatial features sf R package in conjuction with dplyr to wrangle and summarize. Use the raster R package for gridded data. Generate interactive maps with leaflet.<br />
+<br />
+</li>
+<li>July 19: <strong>Report</strong><br />
+Dive into Rmarkdown for for knitting formatted text (markdown) with chunks of evaluated R code into html, pdf and docx formats. Use Rmarkdown for single page reports, bookdown for reports with chapters, flexdashboard for dashboards and Rmarkdown websites for simple websites with shared navigation. Automatically render with Github Actions.<br />
+<br />
+</li>
+<li>July 26: <strong>Infographics</strong><br />
+Use a custom infographiq Javascript library to intelligently link icons of ecosystems to pop-up windows containing data figures, which could be static images or interactive visualizations.<br />
+<br />
+</li>
+<li>August 2: <strong>Applications</strong><br />
+Use the Shiny framework to develop online interactive applications accepting user input to render outputs from arbitrary R functions. Server requirements differentiating from simpler Rmarkdown renderings will be reviewed as well as use of Crosstalk to gain similar functionality with Rmarkdown with simple data.<br />
+<br />
+</li>
+<li>August 9: <strong>Packages</strong><br />
+An R package is a documented set of functions that can act as building blocks for data ingestion, analysis, visualization and reporting. We’ll go over the basics of creating an R package and documenting functions within.<br />
+</li>
+</ol>
+</div>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -300,6 +466,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
