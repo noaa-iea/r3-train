@@ -51,7 +51,7 @@ shelf(
 
     4.  **Summarize** all rows with `summarize()`. Precede this with `group_by()` to summarize based on rows with common values of a given column.
 
-    5.  **Nest** tables inside of tables with a `tibble` and tidyr's `nest()`. Build a linear model object (`lm()`) into another **list column** per grouping using `purrr::map()`. Extract values from this model object as double with `purrr::map_dbl()`.
+    5.  **Nest** tables inside of tables with a `tibble` and tidyr's `nest()`. Build a linear model object (`lm()`) into another **list column** per grouping using purrr's `map()`. Extract values from this model object as double with `map_dbl()`.
 
 ## Tips for using RStudio {.unnumbered}
 
