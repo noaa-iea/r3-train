@@ -1,33 +1,9 @@
-name: "R3"
+name: "R<sup>3</sup>"
 navbar:
-  title: "R<sup>3</sup>"
+  title: "R<sup>3</sup> Exercises"
   left:
     - text: "Home"
       href: index.html
     - text: "Collaborate"
       href: collaborate.html
-  right:
-    - text: "Setup"
-      href: setup.html
-    - text: "Resources"
-      href: resources.html
-    - text: "Roster"
-      href: roster.html
-output_dir: "docs"
-output:
-  html_document:
-    theme: "default"
-    type: "inverse"
-    toc: true
-    toc_depth: 4
-    toc_float: true
-    code_folding: "show"
-    number_sections: true
-    anchor_sections: true
-    pandoc_args: [
-      "--number-sections",
-      "--number-offset=2"]
-    highlight: "default"
-    # include:
-    #   after_body: libs/after_body.html
-    css: libs/swcarpentry-lesson.css
+output_dir: "."
