@@ -204,7 +204,7 @@ Clicking on the **Preview** tab shows the formatted result. Note how the `#` is 
 
 For more on formatting text with markdown within Github, check out [Mastering Markdown · GitHub Guides](https://guides.github.com/features/mastering-markdown/).
 
-## Create RStudio Project in *r3-exercises*
+## Create RStudio Project
 
 Next, you'll use RStudio to initialize this project in two important ways:
 
@@ -267,7 +267,7 @@ You should now see these two new files showing up in your repo at `https://githu
 
 `r img(src='figs/github_2-new-files.png', width=500)`
 
-## Create `index.Rmd` in *r3-exercises*
+## Create `index.Rmd`
 
 Next we'll create an Rmarkdown file and render it to html. By calling it `index.Rmd` and rendering to `index.html`, this will become the default web page of the repository since web servers serve `index.html` as the default for the folder.
 
@@ -295,7 +295,7 @@ You should now see these two new index.\* files showing up in your repo at `http
 
 We'll get back to Rmarkdown, but first let's get this website served up.
 
-## Setup Github Pages website for *r3-exercises*
+## Setup Github Pages website
 
 [Github Pages](https://pages.github.com) allows you to serve up simple websites from your Github repo. Let's turn on this feature by visiting the **Settings** tab in `https://github.com/USER/r3-exercises`. Then click the **Pages** menu from the left navbar, choose Branch: **main**, folder **/ (root)**:
 
@@ -339,7 +339,7 @@ Notice how the URL changed from `github.com/noaa-iea/r3-train` to `github.com/US
 
 `r img(src='figs/github_fork-repo-done.png', width=300)`
 
-You now have *write* permissions on this repo. Please proceed with previous steps above to **Create Github RStudio Project**, except this time using `https://github.com/USER/r3-train.git` as the URL. Be sure to replace USER with your Github username.
+You now have *write* permissions on this repo. Please proceed with previous steps above to **Create Github RStudio Project**, except this time using `https://github.com/USER/r3-train.git` as the URL. Be sure to replace USER with your Github username. Also be sure to `clone` your *r3-train* repository into it's own dedicated folder, NOT inside \_your *r3-exercises* folder or any other existing git repo.
 
 Once you have the r3-train RStudio Project open, please open from the **Files** pane `data/roster.csv` by clicking on it and **View File**:
 
@@ -371,11 +371,11 @@ The image above shows a **Merge pull request** since I have admin privileges on 
 
 Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on **Merge pull request**. Then I'll re-render [roster.Rmd](https://github.com/noaa-iea/r3-train/blob/master/roster.Rmd) to [roster.html](https://noaa-iea.github.io/r3-train/roster.html).
 
-## **Sandbox** *r3-exercises* with Rmd website with `branch` & `merge`
+## **Sandbox** *r3-exercises* for Rmd website with `branch` & `merge`
 
 Next, you'll up your Git skills by isolating development of your code in a new `branch`, which is like a **Sandbox** separate from the *main* branch, while converting your website from a simple Rmarkdown to an **Rmarkdown website** for sharing a common navigation menu across created Rmarkdown web pages.
 
-Please switch back to your **r3-exercises** RStudio project where your website is hosted. (We're done working with your forked copy of the r3-train project.) Notice that in the upper right of RStudio you get **Project shortcuts** to quickly navigate to them. Or you could always double-click on the `*.Rproj` file from your file explorer application (Windows Explorer or Mac Finder).
+Please switch back to your ***r3-exercises*** RStudio project where your website is hosted. (We're done working with your forked copy of the *r3-train* project.) Notice that in the upper right of RStudio you get **Project shortcuts** to quickly navigate to them. Or you could always double-click on the `*.Rproj` file from your file explorer application (Windows Explorer or Mac Finder).
 
 In RStudio's **Git** pane click on the **New Branch** button and enter a **Branch Name** like "rmd-website":
 
