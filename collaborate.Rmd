@@ -1,4 +1,5 @@
 ---
+pagetitle: Collaborate
 output:
   html_document:
     pandoc_args: [
@@ -323,9 +324,9 @@ You should now see a handy link to get to your website similar to this:
 
 ## **Contribute** to *r3-train* with `fork` & `pull request`
 
-So far you've been using the **Simple** workflow with `git push` and `git pull`. Next, you'll learn how to contribute towards a repo for which you don't have write permissions.
+So far you've been using the **Simple** workflow with `git push` and `git pull` on your *USER/r3-exercises* repo. Next, you'll learn how to contribute towards a repo for which you don't have write permissions.
 
-The task is to suggest a revision with your information to [roster.csv](https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv), which is used to generate the course [Roster](https://noaa-iea.github.io/r3-train/roster.html).
+You don't have write permissions to the *noaa-iea/r3-train* repo where these training materials are stored. The task is to **contribute** to this repo with a single line of your information in [`data/roster.csv`](https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv), which gets used to generate the course [Roster](https://noaa-iea.github.io/r3-train/roster.html).
 
 To do so, please visit [github.com/noaa-iea/r3-train](https://github.com/noaa-iea/r3-train) and in the upper right, click **Fork**:
 
