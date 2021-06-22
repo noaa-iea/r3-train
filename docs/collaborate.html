@@ -598,8 +598,8 @@ git config --list</code></pre></li>
 <p>If you run into any problems, please consult more thorough documentation in <a href="https://happygitwithr.com/rstudio-see-git.html#tell-rstudio-where-to-find-git">Chapter 13 Detect Git from RStudio | Happy Git and GitHub for the useR</a>. If you’re still stuck, please email me <a href="mailto:ben@ecoquants.com" class="email">ben@ecoquants.com</a> or better yet look at existing <a href="https://github.com/noaa-iea/r3-train/issues">Issues · noaa-iea/r3-train</a> and from there <strong>Create a new issue</strong> describing the problem, any error messages and the operating system with version numbers of software being used.</p></li>
 </ol>
 </div>
-<div id="create-github-repository" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Create Github Repository</h2>
+<div id="create-github-repository-r3-exercises" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> Create Github Repository <em>r3-exercises</em></h2>
 <p>Now you will create a Github repository. This will be the source code of an Rmarkdown website that will house your work completing all the exercises for this course.</p>
 <ol style="list-style-type: decimal">
 <li><p>With your web browser, sign into <a href="https://github.com">Github.com</a> and visit your Github user page (i.e. <code>https://github.com/USER</code>) and <a href="https://help.github.com/articles/create-a-repo/">Create a repository</a> called <code>r3-exercises</code>.</p>
@@ -619,8 +619,8 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p><img src="figs/github_readme.md-preview.png" width="400"/></p>
 <p>For more on formatting text with markdown within Github, check out <a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown · GitHub Guides</a>.</p>
 </div>
-<div id="create-rstudio-project" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Create RStudio Project</h2>
+<div id="create-rstudio-project-in-r3-exercises" class="section level2" number="1.4">
+<h2 number="1.4"><span class="header-section-number">1.4</span> Create RStudio Project in <em>r3-exercises</em></h2>
 <p>Next, you’ll use RStudio to initialize this project in two important ways:</p>
 <ol style="list-style-type: decimal">
 <li><p>You’ll let RStudio run <code>git clone</code> to copy the git repository onto your machine containing the <code>README.md</code> and importantly a hidden folder <code>.git/</code> which contains all file history and the configuration on where to synchronize files, i.e. Github.</p></li>
@@ -645,8 +645,8 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 .RData
 .Ruserdata</code></pre>
 </div>
-<div id="simple-commit-push" class="section level2" number="1.5">
-<h2 number="1.5"><span class="header-section-number">1.5</span> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code></h2>
+<div id="simple-commit-push-of-r3-exercises" class="section level2" number="1.5">
+<h2 number="1.5"><span class="header-section-number">1.5</span> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code> of <em>r3-exercises</em></h2>
 <p>Note that in the <strong>Git</strong> pane, the yellow box question marks under <strong>Status</strong> next to <code>.gitignore</code> and <code>r3-exercises.Rproj</code> indicate these files are not known to the version control system (and asking should they be?). Ticking the boxes under <strong>Staged</strong> changes the <strong>Status</strong> to a turquoise <code>A</code> for added:</p>
 <p><img src="figs/rstudio_git-add-files.png" width="300"/></p>
 <p>Now click the <strong>Commit</strong> button in the Git pane to open the Review Changes dialog window. Every commit requires a message.</p>
@@ -660,8 +660,8 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>You should now see these two new files showing up in your repo at <code>https://github.com/USER/r3-exercises</code>. These files are displayed with the filename, most recent commit message associated with any changes and the time since last update.</p>
 <p><img src="figs/github_2-new-files.png" width="500"/></p>
 </div>
-<div id="create-index.rmd" class="section level2" number="1.6">
-<h2 number="1.6"><span class="header-section-number">1.6</span> Create <code>index.Rmd</code></h2>
+<div id="create-index.rmd-in-r3-exercises" class="section level2" number="1.6">
+<h2 number="1.6"><span class="header-section-number">1.6</span> Create <code>index.Rmd</code> in <em>r3-exercises</em></h2>
 <p>Next we’ll create an Rmarkdown file and render it to html. By calling it <code>index.Rmd</code> and rendering to <code>index.html</code>, this will become the default web page of the repository since web servers serve <code>index.html</code> as the default for the folder.</p>
 <p>Rmarkdown files weave markdown text with chunks of R code to be evaluated and output content like tables and plots.</p>
 <p>In the RStudio menu choose <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Rmarkdown…</strong>. Give it a Title like “R3 Exercises” and go with Default Output Format HTML.</p>
@@ -676,8 +676,8 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>You should now see these two new index.* files showing up in your repo at <code>https://github.com/USER/r3-exercises</code>.</p>
 <p>We’ll get back to Rmarkdown, but first let’s get this website served up.</p>
 </div>
-<div id="setup-github-pages-website" class="section level2" number="1.7">
-<h2 number="1.7"><span class="header-section-number">1.7</span> Setup Github Pages website</h2>
+<div id="setup-github-pages-website-for-r3-exercises" class="section level2" number="1.7">
+<h2 number="1.7"><span class="header-section-number">1.7</span> Setup Github Pages website for <em>r3-exercises</em></h2>
 <p><a href="https://pages.github.com">Github Pages</a> allows you to serve up simple websites from your Github repo. Let’s turn on this feature by visiting the <strong>Settings</strong> tab in <code>https://github.com/USER/r3-exercises</code>. Then click the <strong>Pages</strong> menu from the left navbar, choose Branch: <strong>main</strong>, folder <strong>/ (root)</strong>:</p>
 <p><img src="figs/github_settings-pages.png" width="700"/></p>
 <p>Click <strong>Save</strong>. You should now see that the site is “ready to be published”:</p>
@@ -695,8 +695,8 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>You should now see a handy link to get to your website similar to this:</p>
 <p><img src="figs/github_about-website-saved.png" width="300"/></p>
 </div>
-<div id="contribute-website-with-fork-pull-request" class="section level2" number="1.8">
-<h2 number="1.8"><span class="header-section-number">1.8</span> <strong>Contribute</strong> website with <code>fork</code> &amp; <code>pull request</code></h2>
+<div id="contribute-to-r3-train-with-fork-pull-request" class="section level2" number="1.8">
+<h2 number="1.8"><span class="header-section-number">1.8</span> <strong>Contribute</strong> to <em>r3-train</em> with <code>fork</code> &amp; <code>pull request</code></h2>
 <p>So far you’ve been using the <strong>Simple</strong> workflow with <code>git push</code> and <code>git pull</code>. Next, you’ll learn how to contribute towards a repo for which you don’t have write permissions.</p>
 <p>The task is to suggest a revision with your information to <a href="https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv">roster.csv</a>, which is used to generate the course <a href="https://noaa-iea.github.io/r3-train/roster.html">Roster</a>.</p>
 <p>To do so, please visit <a href="https://github.com/noaa-iea/r3-train">github.com/noaa-iea/r3-train</a> and in the upper right, click <strong>Fork</strong>:</p>
@@ -722,9 +722,10 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>The image above shows a <strong>Merge pull request</strong> since I have admin privileges on this repo. You wouldn’t so would see it grayed out (or similar).</p>
 <p>Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on <strong>Merge pull request</strong>. Then I’ll re-render <a href="https://github.com/noaa-iea/r3-train/blob/master/roster.Rmd">roster.Rmd</a> to <a href="https://noaa-iea.github.io/r3-train/roster.html">roster.html</a>.</p>
 </div>
-<div id="sandbox-an-rmarkdown-website-with-branch-merge" class="section level2" number="1.9">
-<h2 number="1.9"><span class="header-section-number">1.9</span> <strong>Sandbox</strong> an Rmarkdown website with <code>branch</code> &amp; <code>merge</code></h2>
+<div id="sandbox-r3-exercises-with-rmd-website-with-branch-merge" class="section level2" number="1.9">
+<h2 number="1.9"><span class="header-section-number">1.9</span> <strong>Sandbox</strong> <em>r3-exercises</em> with Rmd website with <code>branch</code> &amp; <code>merge</code></h2>
 <p>Next, you’ll up your Git skills by isolating development of your code in a new <code>branch</code>, which is like a <strong>Sandbox</strong> separate from the <em>main</em> branch, while converting your website from a simple Rmarkdown to an <strong>Rmarkdown website</strong> for sharing a common navigation menu across created Rmarkdown web pages.</p>
+<p>Please switch back to your <strong>r3-exercises</strong> RStudio project where your website is hosted. (We’re done working with your forked copy of the r3-train project.) Notice that in the upper right of RStudio you get <strong>Project shortcuts</strong> to quickly navigate to them. Or you could always double-click on the <code>*.Rproj</code> file from your file explorer application (Windows Explorer or Mac Finder).</p>
 <p>In RStudio’s <strong>Git</strong> pane click on the <strong>New Branch</strong> button and enter a <strong>Branch Name</strong> like “rmd-website”:</p>
 <p><img src="figs/rstudio_new-branch.png" width="500"/></p>
 <p>Click <strong>Create</strong>. You should now see your new branch. Notice how when you click on the dropdown of branches you see both LOCAL and REMOTE: ORIGIN (as in on Github) versions.</p>
@@ -775,8 +776,8 @@ Like branches of a tree.</code></pre>
 <pre><code>touch .nojekyll</code></pre>
 <p>Be sure to <strong>Commit</strong> and <strong>Push</strong> these changes to Github.</p>
 </div>
-<div id="create-an-issue-to-resolve-a-file-conflict" class="section level2" number="1.10">
-<h2 number="1.10"><span class="header-section-number">1.10</span> Create an Issue to resolve a file conflict</h2>
+<div id="create-an-issue-in-r3-exercises-to-resolve-a-file-conflict" class="section level2" number="1.10">
+<h2 number="1.10"><span class="header-section-number">1.10</span> Create an Issue in <em>r3-exercises</em> to resolve a file conflict</h2>
 <p>Next we’re going to play with some of the <a href="https://github.com/features/project-management/">Github Project management</a> features while learning how to resolve file conflicts when <code>git</code> has a conflict automatically merging competing commits.</p>
 <p>Let’s visit your Github repo <code>https://github.com/USER/r3-exercises</code> and click on <strong>Issues</strong>:</p>
 <p><img src="figs/github_issues.png" width="400"/></p>
@@ -854,8 +855,8 @@ git push origin main</code></pre>
 <p>Now visit <code>https://github.com/USER/r3-exercises/issues/1</code>. You’ll notice that your commit message automatically associated with that issue by simply including <code>#1</code> and closed it by prefixing the number with <code>fixes</code>.</p>
 <p>The point is to be able to associate specific line by line file changes with fixing <strong>bugs</strong> and implementing <strong>new features</strong> of our code.</p>
 </div>
-<div id="organize-issues-in-a-github-project" class="section level2" number="1.11">
-<h2 number="1.11"><span class="header-section-number">1.11</span> Organize Issues in a Github Project</h2>
+<div id="organize-issues-in-r3-exercises-github-project" class="section level2" number="1.11">
+<h2 number="1.11"><span class="header-section-number">1.11</span> Organize Issues in <em>r3-exercises</em> Github Project</h2>
 <p>Let’s create a couple <strong>Issues</strong> with the following titles to cue up next week’s session:</p>
 <ul>
 <li><code>read a csv and output a table</code></li>
