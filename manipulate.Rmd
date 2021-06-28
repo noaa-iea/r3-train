@@ -99,7 +99,7 @@ Go back in your browser to change the the **File type** to `.csv`. Now instead o
 
 Let's use this URL to download a new file in a new R Chunk (RStudio menu **Code** -\> **Insert Chunk**). Paste the following inside your R Chunk:
 
-```{r, eval=F}
+```{r}
 # set variables
 csv_url  <- "https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv"
 dir_data <- "data"
@@ -108,7 +108,7 @@ dir_data <- "data"
 csv <- file.path(dir_data, basename(csv_url))
 
 # create directory
-dir.create(dir_data)
+dir.create(dir_data, showWarnings = F)
 
 # download file
 download.file(csv_url, csv)
@@ -133,7 +133,7 @@ Let's try to read in the csv by adding a new subsection in your Rmarkdown file:
 
 Then create a new R Chunk and add the following lines to the R chunk:
 
-```{r, eval=F}
+```{r, results='hide'}
 # attempt to read csv
 d <- read.csv(csv)
 
@@ -147,7 +147,7 @@ Note how the presence of the 2nd line with units makes the values character `<ch
 
 But we want numeric values. So we could manually delete that second line of units or look at the **help** documentation for this function (`?read.csv` in Console pane; or `F1` key with cursor on the function in the code editor pane). Notice the `skip` argument, which we can implement like so:
 
-```{r, eval=F}
+```{r, results='hide'}
 # read csv by skipping first two lines, so no header
 d <- read.csv(csv, skip = 2, header = FALSE)
 d
@@ -155,6 +155,9 @@ d
 # update data frame to original column names
 names(d) <- names(read.csv(csv))
 d
+
+# update for future reuse (NEW!)
+write.csv(d, csv, row.names = F)
 ```
 
 You can run above one line at a time with **Code** -\> **Run Selected Lines** (note the keyboard shortcut, which depends on your operating system). This will allow you to see how the data.frame `d` evolves. When running the w
@@ -173,7 +176,7 @@ Let's start by commenting the previous instances of d (lines 36, 40, 44 for me) 
 
 And in a new R chunk:
 
-```{r, eval=F}
+```{r}
 # show table
 DT::datatable(d)
 ```
@@ -182,7 +185,7 @@ Then **Knit** again to see the updated table display, which defaults to paging t
 
 Also note how we can call a function explicitly with the R package like `DT::datatable(d)` or load the library and use the function without the explicit R package referencing:
 
-```{r, eval=F}
+```{r, results='hide'}
 library(DT)
 datatable(d)
 ```
@@ -219,7 +222,7 @@ There's a few things we'll want to do next to make this data.frame more usable:
 
 Create a new R Chunk (RStudio menu **Code** -\> **Insert Chunk**) and insert within the fenced code block the following:
 
-``` {.r}
+```{r}
 library(DT)
 library(dplyr)
 
@@ -258,7 +261,7 @@ Add a new subsection in your Rmd:
 
 And a new R Chunk:
 
-```{r, eval=F}
+```{r}
 library(tidyr)
 
 d <- d %>% 
@@ -287,7 +290,7 @@ Add a new subsection in your Rmd:
 
 And a new R Chunk:
 
-```{r, eval=F}
+```{r}
 library(stringr)
 
 d <- d %>% 
@@ -320,7 +323,7 @@ Add a new subsection in your Rmd:
 
 And a new R Chunk:
 
-```{r, eval=F}
+```{r}
 library(purrr)
 
 n <- d %>% 

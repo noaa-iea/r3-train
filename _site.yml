@@ -8,6 +8,9 @@ navbar:
     - text: "Manipulate"
       icon: "fas fa-wrench"
       href: manipulate.html
+    - text: "Visualize"
+      icon: "fas fa-chart-bar"
+      href: visualize.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"

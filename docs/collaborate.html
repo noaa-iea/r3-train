@@ -13,7 +13,7 @@
 
 <title>Collaborate</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -338,6 +338,13 @@ div.tocify {
     <span class="fas fa-wrench"></span>
      
     Manipulate
+  </a>
+</li>
+<li>
+  <a href="visualize.html">
+    <span class="fas fa-chart-bar"></span>
+     
+    Visualize
   </a>
 </li>
       </ul>
@@ -956,6 +963,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

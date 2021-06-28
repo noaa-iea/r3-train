@@ -51,12 +51,14 @@ discussion and exercise completion time. All webinars will be
     Use the latest "tidyverse" of R packages (readr, dplyr, tidyr,
     stringr, lubridate) for wrangling data and sequencing operations
     with the pipe (%\>%) operator.\
+    [Video](https://youtu.be/KncPglQcyKU), 
     [Slides](https://docs.google.com/presentation/d/1lilrIzlD5Y2vPEax4fao8GqS-TsxSzNMfyGPgKr7TlM/edit?usp=sharing), [Lesson](./manipulate.html) \
     \
 3.  June 28: **Visualize**\
     Use principles of the "grammar of graphics" to develop static plots
     in the R package ggplot2. Make these interactive with plotly.
     Develop dedicated time series plots with dygraphs.\
+    [Slides](https://docs.google.com/presentation/d/1AS6beW02Upzv4vi5RgK_mwi0o740Q5l0kgCMsKOCmos/edit?usp=sharing), [Lesson](./visualize.html) \
     \
 4.  July 12: **Map**\
     Read and write vector data (points, lines, polygons) using the
