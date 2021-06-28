@@ -222,6 +222,7 @@ When you want to look at similar data one variable at a time, you can use `facet
 p_rgn +
   facet_wrap(vars(region))
 ```
+
 The example above is not a very good one since you'd typically show facets based on a variable not already plotted.
 
 ### Bar plot `+ geom_col()`
