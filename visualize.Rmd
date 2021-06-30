@@ -1,0 +1,360 @@
+---
+pagetitle: Visualize
+output:
+  html_document:
+    pandoc_args: [
+      "--number-offset=2"]
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+shelf(
+  htmltools, mitchelloharawild/icons)
+```
+
+# Visualize
+
+## Learning Objectives {.unnumbered .objectives}
+
+1. **Read** data table.
+
+    1. Get paths using `here::here()`.
+
+    2. Use `readr::read_csv()` instead of `read.csv()`. Read CSV directly from URL.
+
+1. **Plot** with `ggplot2` using **g**rammar of **g**raphics:
+
+    1. Starting with a simple line plot, feed the **data** as the first argument, set the **aesthetics** `aes(x = time, y = revenue)` and add geometry type of line `+ geom_line()`.
+
+    1. Add a smooth layer `+ geom_smooth()` for visualizing trend.
+    
+    1. Plot a histogram `geom_histogram()`.
+    
+    1. Plot a series of data using aesthetic of color `aes(color = region)`.
+    
+    1. Update labels `+ labs()`
+    
+    1. Generate multiple plots based on a variable with `+ facet_wrap()`.
+    
+    1. Show variation with a box plot `+ geom_boxplot()`.
+    
+    1. Show variation with a violin plot `+ geom_violin()`.
+    
+    1. Change the `theme()`, eg with `theme_classic()`.
+
+1. Create **interactive** online plots using htmlwidgets R libraries:
+
+    1. `plotly::ggplotly()` to convert existing ggplot object to interactive plotly visualization.
+    
+    1. `dygraphs` library for time series plots.
+
+## Read Data
+
+Open your `r3-exercises.Rproj` to launch RStudio into that project and set the working directory.
+
+Create a new Rmarkdown file (RStudio menu File > New file > Rmarkdown...) called `visualize.Rmd`. Insert headers like last time followed by Chunks of R code according to the examples provided below.
+
+I'll be copy/pasting during the demonstration but I encourage you to type out the text to enhance understanding.
+
+Picking up with the table we downloaded last time ([2.1.4 Read table `read.csv()`]( https://noaa-iea.github.io/r3-train/manipulate.html)), let's read the data directly from the URL and use readr's `read_csv()`:
+
+```{r}
+# libraries
+library(here)
+library(readr)
+library(DT)
+
+# variables
+url_ac <- "https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv"
+csv_ac <- here("data/cciea_AC.csv")
+
+# read data
+d_ac        <- read_csv(url_ac, col_names = F, skip = 2)
+names(d_ac) <- names(read_csv(url_ac))
+
+# show data
+datatable(d_ac)
+```
+
+Note the use of functions in libraries `here` and `readr` that you may need to install from the **Packages** pane in RStudio.
+
+There [`here::here()`](https://here.r-lib.org/) function starts the path based on looking for the `*.Rproj` file in the current working directory or higher level folder. In this case it should be the same folder as your current working directory so seems unnecessary, but it's good practice for other situations in which you start running Rmarkdown files stored in subfolders (in which case the evaluating R Chunks assume the working directory of the `.Rmd`).
+
+I prefer `readr::read_csv()` over `read.csv()` since columns of `character` type are not converted to type `factor` by default. It will also default to being read in as a `tibble` rather than just a `data.frame`.
+
+## Plot statically with `ggplot2`
+
+### Simple line plot `+ geom_line()`
+
+Let's start with a simple line plot of `total_fisheries_revenue_coastwide` (y axis) over `time` (x axis) using the _**grammar of graphics**_ principles by: 
+
+1. Feed the **data** as the first argument to `ggplot()`.
+1. Set up the **aesthetics** `aes()` as the second argument for specifying the dimensions of the plot (`x` and `y`).
+1. Add (`+`) the **geometry**, or plot type.
+
+From the [Data Visualization with ggplot2 Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf) (RStudio menu Help > Cheat Sheets), we have these aesthetics to plot based on the value being continuous
+
+`r img(src='figs/visualize/gg_line.png', width=400)`
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+# subset data
+d_coast <- d_ac %>% 
+  # select columns
+  select(time, total_fisheries_revenue_coastwide) %>% 
+  # filter rows
+  filter(!is.na(total_fisheries_revenue_coastwide))
+datatable(d_coast)
+
+# ggplot object
+p_coast <- d_coast %>% 
+  # setup aesthetics
+  ggplot(aes(x = time, y = total_fisheries_revenue_coastwide)) +
+  # add geometry
+  geom_line()
+
+# show plot
+p_coast
+```
+
+### Trend line `+ geom_smooth()`
+
+Add a smooth layer based on a linear model (`method = "lm"`).
+
+`r img(src='figs/visualize/gg_smooth.png', width=400)`
+
+```{r}
+p_coast + 
+  geom_smooth(method = "lm")
+```
+
+Try changing the `method` argument by looking at the help documentation `?geom_smooth`.
+
+### Distribution of values `+ geom_histogram()`
+
+What if you want to look at a distribution of the values? For instance, you might simulate future revenues by drawing from this distribution, in which case you would want to use `geom_histogram()`.
+
+`r img(src='figs/visualize/gg_hist.png', width=400)`
+
+```{r}
+d_coast %>% 
+  # setup aesthetics
+  ggplot(aes(x = total_fisheries_revenue_coastwide)) +
+  # add geometry
+  geom_histogram()
+```
+
+Try changing the `binwidth` parameter.
+
+### Series line plot `aes(color = region)`
+
+Next, let's also show the other regional values (`CA`, `OR` and `WA`; not `coastwide`) in the plot as a series with different colors. To do this, we'll want to **tidy** the data into _long_ format so we can have a column for `total_fisheries_revenue` and another `region` column to supply as the `group` and `color` aesthetics based on aesthetics we see are available for `geom_line()`:
+
+`r img(src='figs/visualize/gg_line.png', width=400)`
+
+```{r}
+library(stringr)
+library(tidyr)
+
+d_rgn <- d_ac %>% 
+  # select columns
+  select(
+    time, 
+    starts_with("total_fisheries_revenue")) %>% 
+  # exclude column
+  select(-total_fisheries_revenue_coastwide) %>% 
+  # pivot longer
+  pivot_longer(-time) %>% 
+  # mutate region by stripping other
+  mutate(
+    region = name %>% 
+      str_replace("total_fisheries_revenue_", "") %>% 
+      str_to_upper()) %>% 
+  # filter for not NA
+  filter(!is.na(value)) %>% 
+  # select columns
+  select(time, region, value)
+  
+# create plot object
+p_rgn <- ggplot(
+  d_rgn,
+  # aesthetics
+  aes(
+    x     = time, 
+    y     = value,
+    group = region,
+    color = region)) +
+  # geometry
+  geom_line()
+
+# show plot
+p_rgn
+```
+
+### Update labels `+ labs()`
+
+Next, let's update the labels for the title, x and y axes, and the color legend:
+
+```{r}
+p_rgn <- p_rgn +
+  labs(
+    title  = "Fisheries Revenue",
+    x      = "Year",
+    y      = "Millions $ (year 2015)",
+    color  = "Region")
+p_rgn
+```
+
+### Multiple plots with `facet_wrap()`
+
+When you want to look at similar data one variable at a time, you can use `facet_wrap()` to display based on this variable.
+
+`r img(src='figs/visualize/gg_facet.png', width=400)`
+
+```{r}
+p_rgn +
+  facet_wrap(vars(region))
+```
+
+The example above is not a very good one since you'd typically show facets based on a variable not already plotted.
+
+### Bar plot `+ geom_col()`
+
+Another common visualization is a bar plot. How many variables does `geom_bar()` use versus `geom_col()`?
+
+`r img(src='figs/visualize/gg_bar.png', width=400)`
+
+`r img(src='figs/visualize/gg_col.png', width=400)`
+
+```{r}
+library(glue)
+library(lubridate)
+
+yr_max <- year(max(d_rgn$time))
+
+d_rgn %>% 
+  # filter by most recent time
+  filter(year(time) == yr_max) %>% 
+  # setup aesthetics
+  ggplot(aes(x = region, y = value, fill = region)) +
+  # add geometry
+  geom_col() +
+  # add labels
+  labs(
+    title  = glue("Fisheries Revenue for {yr_max}"),
+    x      = "Region",
+    y      = "Millions $ (year 2015)",
+    fill   = "Region")
+```
+Try using `color` instead of `fill` within the aesthetic `aes()`. What's the difference?
+
+### Variation of series with `+ geom_boxplot()`
+
+```{r}
+d_rgn %>% 
+  # setup aesthetics
+  ggplot(aes(x = region, y = value, fill = region)) +
+  # add geometry
+  geom_boxplot() +
+  # add labels
+  labs(
+    title  = "Fisheries Revenue Variability",
+    x      = "Region",
+    y      = "Millions $ (year 2015)") +
+  # drop legend since redundant with x axis
+  theme(
+    legend.position = "none")
+```
+
+### Variation of series with `+ geom_violin()`
+
+```{r}
+p_rgn_violin <- d_rgn %>% 
+  # setup aesthetics
+  ggplot(aes(x = region, y = value, fill = region)) +
+  # add geometry
+  geom_violin() +
+  # add labels
+  labs(
+    title  = "Fisheries Revenue Variability",
+    x      = "Region",
+    y      = "Millions $ (year 2015)") +
+  # drop legend since redundant with x axis
+  theme(
+    legend.position = "none")
+p_rgn_violin
+```
+
+### Change Theme `theme()`
+
+We've already manipulated the `theme()` in dropping the legend. You can create your own theme or use some of the existing.
+
+```{r}
+p_rgn_violin +
+  theme_classic()
+```
+
+## Plot interactively with `plotly` or `dygraphs`
+
+### Make ggplot interactive with `plotly::ggplotly()`
+
+When rendering to HTML, you can render most `ggplot` objects interactively with [`plotly::ggplotly()`](https://plotly.com/ggplot2). The `plotly` library is an R [htmlwidget](http://www.htmlwidgets.org) providing simple R functions to render interactive JavaScript visualizations.
+
+```{r}
+plotly::ggplotly(p_rgn)
+```
+
+**Interactivity**. Notice how now you can see a tooltip on hover of the data for any point of data. You can also use plotly's toolbar to zoom in/out, turn any series on/off by clicking on item in legend, and download a png.
+
+### Create interactive time series with `dygraphs::dygraph()`
+
+Another htmlwidget plotting library written more specifically for time series data is [`dygraphs`](https://rstudio.github.io/dygraphs). Unlike the ggplot2 data input, a series is expected in _wide_ (not tidy _long_) format. So we use tidyr's `pivot_wider()` first.
+
+```{r}
+library(dygraphs)
+
+d_rgn_wide <- d_rgn %>% 
+  mutate(
+    Year = year(time)) %>% 
+  select(Year, region, value) %>% 
+  pivot_wider(
+    names_from  = region,
+    values_from = value)
+datatable(d_rgn_wide)
+
+d_rgn_wide %>% 
+  dygraph() %>% 
+  dyRangeSelector()
+```
+
+
+
+## Further Reading {-}
+
+Introductory `ggplot2` topics not yet covered above are:
+
+1. Other plot types: scatter, area, polar, ....
+
+1. Changing scales of axes, color, shape and size with `scale_*()` functions.
+
+1. Transforming coordinate system, eg `coord_flip()` to swap x and y axes for different orientation.
+
+1. Adding text annotations.
+
+1. Changing margins.
+
+1. Summarization methods with `stat_*()` functions.
+
+Here are further resources:
+
+- [Learning ggplot2 | ggplot2](https://ggplot2.tidyverse.org/#learning-ggplot2)
+- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/index.html): online book by Hadley Wickham
+- [3. Data visualisation | R for Data Science](https://r4ds.had.co.nz/data-visualisation.html?q=ggplo#data-visualisation): chapter from online book by Hadley Wickham and Garrett Grolemund
+- [R Graphics Cookbook, 2nd edition](https://r-graphics.org/)
