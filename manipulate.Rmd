@@ -102,6 +102,8 @@ Let's use this URL to download a new file in a new R Chunk (RStudio menu **Code*
 ```{r}
 # set variables
 csv_url  <- "https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv"
+# if ERDDAP server down (Error in download.file) with URL above, use this:
+#    csv_url <- "https://raw.githubusercontent.com/noaa-iea/r3-train/master/data/cciea_AC.csv"
 dir_data <- "data"
 
 # derived variables
@@ -111,7 +113,8 @@ csv <- file.path(dir_data, basename(csv_url))
 dir.create(dir_data, showWarnings = F)
 
 # download file
-download.file(csv_url, csv)
+if (!file.exists(csv))
+  download.file(csv_url, csv)
 ```
 
 Then click the green Play button to execute the commands in the R Console. After the last command you should see something like:

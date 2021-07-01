@@ -3,7 +3,7 @@ navbar:
   title: "R<sup>3</sup>"
   left:
     - text: "Collaborate"
-      icon: "fab fa-github"
+      icon: "fa fa-users"
       href: collaborate.html
     - text: "Manipulate"
       icon: "fas fa-wrench"
@@ -38,4 +38,6 @@ output:
     highlight: "default"
     # include:
     #   after_body: libs/after_body.html
+    includes:
+       in_header: libs/google-analytics_gtag.html
     css: libs/swcarpentry-lesson.css
