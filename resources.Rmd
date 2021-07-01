@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Getting Started with R & RStudio
 
-* [Getting Started with R – RStudio Support](https://support.rstudio.com/hc/en-us/articles/201141096-Getting-Started-with-R)
-* [Getting started with R and RStudio](https://ourcodingclub.github.io/tutorials/intro-to-r/)
+* [Getting Started with R | RStudio Support](https://support.rstudio.com/hc/en-us/articles/201141096-Getting-Started-with-R)
+* [Getting started with R and RStudio | ourcodingclub](https://ourcodingclub.github.io/tutorials/intro-to-r/)
 * [Beginner - Learn | RStudio Education](https://education.rstudio.com/learn/beginner/)
 * [Chapter 1 Getting Started with Data in R | Statistical Inference via Data Science](https://moderndive.netlify.app/1-getting-started.html) _A ModernDive into R and the Tidyverse_
 * [A Gentle Introduction to Tidy Statistics in R - RStudio](https://www.rstudio.com/resources/webinars/a-gentle-introduction-to-tidy-statistics-in-r/)
@@ -31,6 +31,9 @@ knitr::opts_chunk$set(echo = TRUE)
   * [Tidy Your Data](https://rstudio.cloud/learn/primers/4)
   * [Iterate](https://rstudio.cloud/learn/primers/5)
   * [Write Functions](https://rstudio.cloud/learn/primers/6)
+* [Introduction to R | Data Carpentry](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
+* [Data Analysis and Visualization in R for Ecologists | Data Carpentry](https://datacarpentry.org/R-ecology-lesson/)
+* [Chapter 2 R basics and workflows | UBC STAT 545](https://stat545.com/r-basics.html)
 
 ## Cheatsheets
 

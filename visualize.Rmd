@@ -253,6 +253,7 @@ d_rgn %>%
     y      = "Millions $ (year 2015)",
     fill   = "Region")
 ```
+
 Try using `color` instead of `fill` within the aesthetic `aes()`. What's the difference?
 
 ### Variation of series with `+ geom_boxplot()`
