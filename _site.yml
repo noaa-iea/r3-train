@@ -11,6 +11,9 @@ navbar:
     - text: "Visualize"
       icon: "fas fa-chart-bar"
       href: visualize.html
+    - text: "Map"
+      icon: "fas fa-map"
+      href: map.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"
