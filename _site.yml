@@ -14,6 +14,9 @@ navbar:
     - text: "Map"
       icon: "fas fa-map"
       href: map.html
+    - text: "Report"
+      icon: "fas fa-book"
+      href: report.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"
