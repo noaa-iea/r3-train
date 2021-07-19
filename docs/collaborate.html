@@ -1,306 +1,122 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="" xml:lang="">
 <head>
 
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Collaborate | Collaborate</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Collaborate | Collaborate" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Collaborate | Collaborate" />
+  
+  
+  
 
 
 
 
-<title>Collaborate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
 
 <script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="site_libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="site_libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
 <link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF7V8KERR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8XF7V8KERR');
-</script>
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-pre code {
-  padding: 0;
-}
-</style>
 
 
 <style type="text/css">
-.dropdown-submenu {
-  position: relative;
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
-
-
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
 @media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-
 
 
 </head>
@@ -308,109 +124,65 @@ div.tocify {
 <body>
 
 
-<div class="container-fluid main-container">
 
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
+    <div class="book-summary">
+      <nav role="navigation">
 
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">R<sup>3</sup></a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="collaborate.html">
-    <span class="fa fa-users"></span>
-     
-    Collaborate
-  </a>
-</li>
-<li>
-  <a href="manipulate.html">
-    <span class="fas fa-wrench"></span>
-     
-    Manipulate
-  </a>
-</li>
-<li>
-  <a href="visualize.html">
-    <span class="fas fa-chart-bar"></span>
-     
-    Visualize
-  </a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="setup.html">
-    <span class="fas fa-cogs"></span>
-     
-    Setup
-  </a>
-</li>
-<li>
-  <a href="resources.html">
-    <span class="fas fa-book"></span>
-     
-    Resources
-  </a>
-</li>
-<li>
-  <a href="roster.html">
-    <span class="fas fa-user-friends"></span>
-     
-    Roster
-  </a>
-</li>
-<li>
-  <a href="https://github.com/noaa-iea/r3-train">
-    <span class="fab fa-github"></span>
-     
-    Repo
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div id="header">
-
-<div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<ul class="summary">
+<li class="chapter" data-level="1" data-path=""><a href="#collaborate"><i class="fa fa-check"></i><b>1</b> Collaborate</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1.1" data-path=""><a href="#background-software-github-workflows"><i class="fa fa-check"></i><b>1.1</b> Background: Software &amp; Github Workflows</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#what-are-git-github"><i class="fa fa-check"></i><b>1.1.1</b> What are Git &amp; Github?</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#what-are-r-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> What are R &amp; RStudio?</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#github-workflows"><i class="fa fa-check"></i><b>1.1.3</b> Github Workflows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#setup-github-git-rstudio"><i class="fa fa-check"></i><b>1.2</b> Setup Github &amp; Git &amp; RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#create-github-repository-r3-exercises"><i class="fa fa-check"></i><b>1.3</b> Create Github Repository <em>r3-exercises</em></a></li>
+<li><a href="#readme.md"><code>README.md</code></a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#create-rstudio-project"><i class="fa fa-check"></i><b>1.4</b> Create RStudio Project</a></li>
+<li><a href="#gitignore"><code>.gitignore</code></a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#simple-commit-push-of-r3-exercises"><i class="fa fa-check"></i><b>1.5</b> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code> of <em>r3-exercises</em></a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#create-index.rmd"><i class="fa fa-check"></i><b>1.6</b> Create <code>index.Rmd</code></a></li>
+<li class="chapter" data-level="1.7" data-path=""><a href="#setup-github-pages-website"><i class="fa fa-check"></i><b>1.7</b> Setup Github Pages website</a></li>
+<li class="chapter" data-level="1.8" data-path=""><a href="#contribute-to-r3-train-with-fork-pull-request"><i class="fa fa-check"></i><b>1.8</b> <strong>Contribute</strong> to <em>r3-train</em> with <code>fork</code> &amp; <code>pull request</code></a></li>
+<li class="chapter" data-level="1.9" data-path=""><a href="#sandbox-r3-exercises-for-rmd-website-with-branch-merge"><i class="fa fa-check"></i><b>1.9</b> <strong>Sandbox</strong> <em>r3-exercises</em> for Rmd website with <code>branch</code> &amp; <code>merge</code></a></li>
+<li class="chapter" data-level="1.10" data-path=""><a href="#create-an-issue-in-r3-exercises-to-resolve-a-file-conflict"><i class="fa fa-check"></i><b>1.10</b> Create an Issue in <em>r3-exercises</em> to resolve a file conflict</a></li>
+<li class="chapter" data-level="1.11" data-path=""><a href="#organize-issues-in-r3-exercises-github-project"><i class="fa fa-check"></i><b>1.11</b> Organize Issues in <em>r3-exercises</em> Github Project</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#further-reading"><i class="fa fa-check"></i>Further Reading</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#git-github"><i class="fa fa-check"></i>Git &amp; Github</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#rstudio-with-git-github"><i class="fa fa-check"></i>RStudio with Git &amp; Github</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#rmarkdown"><i class="fa fa-check"></i>Rmarkdown</a></li>
+</ul></li>
+</ul></li>
 </ul>
-</div>
 
+      </nav>
+    </div>
 
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
 
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
 
-</div>
-
-
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
 <div id="collaborate" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Collaborate</h1>
+<h1><span class="header-section-number">1</span> Collaborate</h1>
 <div id="learning-objectives" class="section level2 unnumbered objectives">
-<h2 class="unnumbered objectives">Learning Objectives</h2>
+<h2>Learning Objectives</h2>
 <ol style="list-style-type: decimal">
 <li>Create a Github repository (or “repo”).</li>
 <li>Synchronize local files (using <code>git commit</code> &amp; <code>git push</code> plus <code>git pull</code>) with a Github repository.</li>
@@ -425,13 +197,13 @@ div.tocify {
 </ol>
 </div>
 <div id="prerequisites" class="section level2 unnumbered prereq">
-<h2 class="unnumbered prereq">Prerequisites</h2>
+<h2>Prerequisites</h2>
 <p><strong>R Skill Level</strong>: Beginner - you’ve run a few commands in R, hopefully from RStudio.</p>
 </div>
 <div id="background-software-github-workflows" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> Background: Software &amp; Github Workflows</h2>
+<h2><span class="header-section-number">1.1</span> Background: Software &amp; Github Workflows</h2>
 <div id="what-are-git-github" class="section level3" number="1.1.1">
-<h3 number="1.1.1"><span class="header-section-number">1.1.1</span> What are Git &amp; Github?</h3>
+<h3><span class="header-section-number">1.1.1</span> What are Git &amp; Github?</h3>
 <p>The two main version control tools are:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://git-scm.com/"><strong>Git</strong></a> is a command-line version control system that lets you track changes to files over time. These files can be any kind of file (eg doc, pdf, xls), but free text differences are most easily visible (eg txt, csv, md). This facilitates a playground for collaboration, without fear of experimentation (you can always rollback changes).</p></li>
@@ -439,7 +211,7 @@ div.tocify {
 </ol>
 </div>
 <div id="what-are-r-rstudio" class="section level3" number="1.1.2">
-<h3 number="1.1.2"><span class="header-section-number">1.1.2</span> What are R &amp; RStudio?</h3>
+<h3><span class="header-section-number">1.1.2</span> What are R &amp; RStudio?</h3>
 <p>The two main programming tools you’ll be using are:</p>
 <ol style="list-style-type: decimal">
 <li><p><a href="https://cran.r-project.org"><strong>R</strong></a> is the scientific programming language.</p></li>
@@ -447,14 +219,14 @@ div.tocify {
 </ol>
 </div>
 <div id="github-workflows" class="section level3" number="1.1.3">
-<h3 number="1.1.3"><span class="header-section-number">1.1.3</span> Github Workflows</h3>
+<h3><span class="header-section-number">1.1.3</span> Github Workflows</h3>
 <p>There are a variety of ways to interact with a Github repository, or <strong>REPO</strong> for short, which is a collection of files, possibly organized within folders. On Github every repo is associated with an <strong>OWNER</strong>, which can be a Github organization or a Github user. Repos are consistently found at <strong>github.com/OWNER/REPO</strong>.</p>
 <p>If you have <em>write</em> permissions to the repo, then you can <code>git push</code> changes to it directly. These changes are always first packaged as a set of file differences by a <code>git commit</code> that requires a message.</p>
 <p>If you do not have <em>write</em> permissions to the repo, then you need to <code>Github fork</code> that repo into your own user-writable space (user or organization). After you make changes to the files in your user-writable repo (with <code>git commit</code> and <code>git push</code>), you can then request those changes be pulled into the original repo with a <code>Github pull request</code>.</p>
 <p>Furthermore, you can <code>git branch</code> a snapshot of the repo files into a <em>sandbox</em> for continuing to make changes, such as to fix a <em>bug</em> or implement a new <em>feature</em>. This branch won’t affect the <em>main</em> branch until you’re ready to <code>git merge</code> those changes, so it isolates development.</p>
 <p>These aspects give rise to different <em>workflows</em> with increasing complexity that we’ll incrementally try out with exercises, so you can become comfortable managing your own code, contributing to other open-source projects, and working on a set of code without trampling on other people’s work.</p>
 <div id="simple-push-pull" class="section level4" number="1.1.3.1">
-<h4 number="1.1.3.1"><span class="header-section-number">1.1.3.1</span> <strong>Simple</strong>: <code>push</code> &amp; <code>pull</code></h4>
+<h4><span class="header-section-number">1.1.3.1</span> <strong>Simple</strong>: <code>push</code> &amp; <code>pull</code></h4>
 <p>The simplest workflow for tracking file changes is to simply <code>git push</code> changes into your Github repo, assuming you have <em>write</em> permissions to that repo. If you’re working with anyone else or editing on more than one computer, then you’ll want to <code>git pull</code> changes at the beginning of each session to capture changes and minimize potential <em>conflicts</em> before proceeding with any edits and subsequent <code>git commit</code> and <code>git push</code> commands.</p>
 <p>The exact steps can be described in the table below. After the <code>Github create</code> repo step, you <code>git clone</code> it to get a copy of it onto your machine (with the hidden <code>.git</code> folder containing the configuration). Then you make changes on files and package differences with <code>git commit</code>, which requires a message every time and can happen offline. You’ll need to be online to then run <code>git push</code> to publish those changes back to the Github repo. Then before subsequent changes, you’ll want to update your machine with a <code>git pull</code>.<br />
 </p>
@@ -484,7 +256,7 @@ div.tocify {
 </table>
 </div>
 <div id="contribute-fork-pull-request" class="section level4" number="1.1.3.2">
-<h4 number="1.1.3.2"><span class="header-section-number">1.1.3.2</span> <strong>Contribute</strong>: <code>fork</code> &amp; <code>pull request</code></h4>
+<h4><span class="header-section-number">1.1.3.2</span> <strong>Contribute</strong>: <code>fork</code> &amp; <code>pull request</code></h4>
 <p>If you don’t have <em>write</em> access to a Github repo, such as with any open-source project, then you can <code>Github fork</code> somebody else’s repo into your own user-writable space (i.e. OWNER being a Github user or organization) where you have write permissions. There you can make changes (using <code>git commit</code> and <code>git push</code>). When you’re ready to submit changes to the original repo, you make a <code>pull request</code> queuing these changes up for the owner(s) of the original repo to review and accept with a <code>merge</code>, reject or ignore. Github facilitates the conversation that may follow, including the ability to update the <code>pull request</code> before performing the final <code>merge</code>.</p>
 <table>
 <colgroup>
@@ -529,7 +301,7 @@ div.tocify {
 </table>
 </div>
 <div id="sandbox-branch-merge" class="section level4" number="1.1.3.3">
-<h4 number="1.1.3.3"><span class="header-section-number">1.1.3.3</span> <strong>Sandbox</strong>: <code>branch</code> &amp; <code>merge</code></h4>
+<h4><span class="header-section-number">1.1.3.3</span> <strong>Sandbox</strong>: <code>branch</code> &amp; <code>merge</code></h4>
 <p>Even if you’re able to <em>write</em> directly to the repo, you may be collaborating with others and not want to step on their proverbial coding toes. By performing a <code>git branch</code>, you’re taking a snapshot of the files and isolating them into your own <em>sandbox</em>. For instance let’s say you’re working on a new feature, then you might call your branch generically <em>new-feature</em>. Subsequent changes to the files in the Github repo (with <code>git commit</code> and <code>git push</code>) do not then affect the <em>main</em> branch until a <code>git merge</code> is executed to fold these changes of <em>new-feature</em> into the <em>main</em> branch.</p>
 <table>
 <thead>
@@ -568,7 +340,7 @@ div.tocify {
 <p>The scenario above shows the <code>branch</code> and <code>merge</code> happening locally, but you can also execute these on Github. The RStudio IDE provides the ability to create a new branch locally, but then to perform the <code>git merge</code> you need to do this in its Terminal.</p>
 </div>
 <div id="pro-branch-pull-request-merge" class="section level4" number="1.1.3.4">
-<h4 number="1.1.3.4"><span class="header-section-number">1.1.3.4</span> <strong>Pro</strong>: <code>branch</code>, <code>pull request</code> &amp; <code>merge</code></h4>
+<h4><span class="header-section-number">1.1.3.4</span> <strong>Pro</strong>: <code>branch</code>, <code>pull request</code> &amp; <code>merge</code></h4>
 <p>Extending the <strong>Sandbox</strong> workflow to full “professional” status, even if you have the administrative ability on the repo to perform a <code>git merge</code> you may wish to first advertise your proposed file changes to other contributors with a <code>pull request</code>. This then allows others to review and discuss changes before an admin then performs the final <code>git merge</code>. This is the recommended workflow described in <a href="https://guides.github.com/introduction/flow/">Understanding the GitHub flow · GitHub Guides</a>:</p>
 <p><img src="figs/github_flow.png" width="600"/></p>
 <p>We want go over this entire workflow in this lesson, but it simply combines all the techniques above.</p>
@@ -576,7 +348,7 @@ div.tocify {
 </div>
 </div>
 <div id="setup-github-git-rstudio" class="section level2" number="1.2">
-<h2 number="1.2"><span class="header-section-number">1.2</span> Setup Github &amp; Git &amp; RStudio</h2>
+<h2><span class="header-section-number">1.2</span> Setup Github &amp; Git &amp; RStudio</h2>
 <ol style="list-style-type: decimal">
 <li><p>Create <strong>Github</strong> account at <a href="http://github.com" class="uri">http://github.com</a>, if you don’t already have one. For username, I recommend all lower-case letters, short as you can. If you use an email ending in <code>.edu</code>, you can request free private repositories via <a href="https://education.github.com/">GitHub Education</a> discount.</p></li>
 <li><p>Install the latest software, per <a href="./setup.html">Setup</a>:</p>
@@ -588,26 +360,26 @@ div.tocify {
 </li>
 </ol></li>
 <li><p>Configure <strong>git</strong> with global commands to tell it who you are. Open the Terminal in RStudio and type the following. Be sure to replace <code>USER</code> and <code>USER@SOMEWHERE.ORG</code> with yours (e.g. mine is <code>bbest</code> and <code>ben@ecoquants.com</code>):</p>
-<pre class="bash"><code># display your version of git
-git --version
-
-# display the path to git on Mac/Linux
-which git
-
-# display the path to git on Windows
-where git
-
-# replace USER with your Github user account
-git config –-global user.name USER
-
-# replace USER@SOMEWHERE.ORG with the email you used to register with Github
-git config –-global user.email USER@SOMEWHERE.ORG
-
-# use git merge (default) instead of git rebase to resolve git pull conflicts
-git config --global pull.rebase true
-
-# list your config to confirm user.* variables set
-git config --list</code></pre></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># display your version of git</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># display the path to git on Mac/Linux</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> git</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># display the path to git on Windows</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">where</span> git</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># replace USER with your Github user account</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –-global user.name USER</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># replace USER@SOMEWHERE.ORG with the email you used to register with Github</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config –-global user.email USER@SOMEWHERE.ORG</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># use git merge (default) instead of git rebase to resolve git pull conflicts</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> pull.rebase true</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># list your config to confirm user.* variables set</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span></code></pre></div></li>
 <li><p>Tell <strong>RStudio</strong> where to find <strong>Git</strong>. In the RStudio menu, go to <strong>Tools</strong> -&gt; <strong>Global Options</strong> and select the <strong>Git/SVN</strong> sidebar menu:</p>
 <p><img src="figs/rstudio_setup-git.png" width="400"/></p>
 <p>Here you <strong>Browse</strong> and select the <strong>Git executable</strong> based on the path found from the above commands dependening on your operating system in the Terminal (<code>which git</code> on Mac/Linux; <code>where git</code> on Windows).</p>
@@ -615,7 +387,7 @@ git config --list</code></pre></li>
 </ol>
 </div>
 <div id="create-github-repository-r3-exercises" class="section level2" number="1.3">
-<h2 number="1.3"><span class="header-section-number">1.3</span> Create Github Repository <em>r3-exercises</em></h2>
+<h2><span class="header-section-number">1.3</span> Create Github Repository <em>r3-exercises</em></h2>
 <p>Now you will create a Github repository. This will be the source code of an Rmarkdown website that will house your work completing all the exercises for this course.</p>
 <ol style="list-style-type: decimal">
 <li><p>With your web browser, sign into <a href="https://github.com">Github.com</a> and visit your Github user page (i.e. <code>https://github.com/USER</code>) and <a href="https://help.github.com/articles/create-a-repo/">Create a repository</a> called <code>r3-exercises</code>.</p>
@@ -627,16 +399,16 @@ git config --list</code></pre></li>
 <p><img src="figs/github_initial_r3-exercises.png" width="600"/></p>
 </div>
 <div id="readme.md" class="section level2 unnumbered callout">
-<h2 class="unnumbered callout"><code>README.md</code></h2>
+<h2><code>README.md</code></h2>
 <p>Notice that the only file in the repo so far is the <code>README.md</code>, which is in <strong><em>markdown</em></strong> format (<code>.md</code>) and its contents are displayed directly below, which is the special case for any <code>README.md</code> file in a Github folder. Clicking on the pencil icon to edit, reveals the source for this file:</p>
-<pre class="md"><code># r3-exercises
-Exercises from https://noaa-iea.github.io/r3-train</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># r3-exercises</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Exercises from https://noaa-iea.github.io/r3-train</span></code></pre></div>
 <p>Clicking on the <strong>Preview</strong> tab shows the formatted result. Note how the <code>#</code> is used to create a header and the link is automatically generated:</p>
 <p><img src="figs/github_readme.md-preview.png" width="400"/></p>
 <p>For more on formatting text with markdown within Github, check out <a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown · GitHub Guides</a>.</p>
 </div>
 <div id="create-rstudio-project" class="section level2" number="1.4">
-<h2 number="1.4"><span class="header-section-number">1.4</span> Create RStudio Project</h2>
+<h2><span class="header-section-number">1.4</span> Create RStudio Project</h2>
 <p>Next, you’ll use RStudio to initialize this project in two important ways:</p>
 <ol style="list-style-type: decimal">
 <li><p>You’ll let RStudio run <code>git clone</code> to copy the git repository onto your machine containing the <code>README.md</code> and importantly a hidden folder <code>.git/</code> which contains all file history and the configuration on where to synchronize files, i.e. Github.</p></li>
@@ -654,7 +426,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p><img src="figs/rstudio_init.png" width="600"/></p>
 </div>
 <div id="gitignore" class="section level2 unnumbered callout">
-<h2 class="unnumbered callout"><code>.gitignore</code></h2>
+<h2><code>.gitignore</code></h2>
 <p>Besides the desired <strong>RStudio Project</strong> file <code>r3-exercises.Rproj</code>, you should also see the <code>.gitignore</code>. This file describes files that <code>git</code> should ignore and so not prompt for asking. If you open the file in RStudio, you see it’s a simple text file listing hidden files (i.e. those starting with a <code>.</code> and not normally shown in Windows Explorer or Mac Finder) that RStudio uses.</p>
 <pre><code>.Rproj.user
 .Rhistory
@@ -662,7 +434,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 .Ruserdata</code></pre>
 </div>
 <div id="simple-commit-push-of-r3-exercises" class="section level2" number="1.5">
-<h2 number="1.5"><span class="header-section-number">1.5</span> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code> of <em>r3-exercises</em></h2>
+<h2><span class="header-section-number">1.5</span> <strong>Simple</strong> <code>commit</code> &amp; <code>push</code> of <em>r3-exercises</em></h2>
 <p>Note that in the <strong>Git</strong> pane, the yellow box question marks under <strong>Status</strong> next to <code>.gitignore</code> and <code>r3-exercises.Rproj</code> indicate these files are not known to the version control system (and asking should they be?). Ticking the boxes under <strong>Staged</strong> changes the <strong>Status</strong> to a turquoise <code>A</code> for added:</p>
 <p><img src="figs/rstudio_git-add-files.png" width="300"/></p>
 <p>Now click the <strong>Commit</strong> button in the Git pane to open the Review Changes dialog window. Every commit requires a message.</p>
@@ -677,7 +449,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p><img src="figs/github_2-new-files.png" width="500"/></p>
 </div>
 <div id="create-index.rmd" class="section level2" number="1.6">
-<h2 number="1.6"><span class="header-section-number">1.6</span> Create <code>index.Rmd</code></h2>
+<h2><span class="header-section-number">1.6</span> Create <code>index.Rmd</code></h2>
 <p>Next we’ll create an Rmarkdown file and render it to html. By calling it <code>index.Rmd</code> and rendering to <code>index.html</code>, this will become the default web page of the repository since web servers serve <code>index.html</code> as the default for the folder.</p>
 <p>Rmarkdown files weave markdown text with chunks of R code to be evaluated and output content like tables and plots.</p>
 <p>In the RStudio menu choose <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Rmarkdown…</strong>. Give it a Title like “R3 Exercises” and go with Default Output Format HTML.</p>
@@ -693,7 +465,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>We’ll get back to Rmarkdown, but first let’s get this website served up.</p>
 </div>
 <div id="setup-github-pages-website" class="section level2" number="1.7">
-<h2 number="1.7"><span class="header-section-number">1.7</span> Setup Github Pages website</h2>
+<h2><span class="header-section-number">1.7</span> Setup Github Pages website</h2>
 <p><a href="https://pages.github.com">Github Pages</a> allows you to serve up simple websites from your Github repo. Let’s turn on this feature by visiting the <strong>Settings</strong> tab in <code>https://github.com/USER/r3-exercises</code>. Then click the <strong>Pages</strong> menu from the left navbar, choose Branch: <strong>main</strong>, folder <strong>/ (root)</strong>:</p>
 <p><img src="figs/github_settings-pages.png" width="700"/></p>
 <p>Click <strong>Save</strong>. You should now see that the site is “ready to be published”:</p>
@@ -712,7 +484,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p><img src="figs/github_about-website-saved.png" width="300"/></p>
 </div>
 <div id="contribute-to-r3-train-with-fork-pull-request" class="section level2" number="1.8">
-<h2 number="1.8"><span class="header-section-number">1.8</span> <strong>Contribute</strong> to <em>r3-train</em> with <code>fork</code> &amp; <code>pull request</code></h2>
+<h2><span class="header-section-number">1.8</span> <strong>Contribute</strong> to <em>r3-train</em> with <code>fork</code> &amp; <code>pull request</code></h2>
 <p>So far you’ve been using the <strong>Simple</strong> workflow with <code>git push</code> and <code>git pull</code> on your <em>USER/r3-exercises</em> repo. Next, you’ll learn how to contribute towards a repo for which you don’t have write permissions.</p>
 <p>You don’t have write permissions to the <em>noaa-iea/r3-train</em> repo where these training materials are stored. The task is to <strong>contribute</strong> to this repo with a single line of your information in <a href="https://github.com/noaa-iea/r3-train/blob/master/data/roster.csv"><code>data/roster.csv</code></a>, which gets used to generate the course <a href="https://noaa-iea.github.io/r3-train/roster.html">Roster</a>.</p>
 <p>To do so, please visit <a href="https://github.com/noaa-iea/r3-train">github.com/noaa-iea/r3-train</a> and in the upper right, click <strong>Fork</strong>:</p>
@@ -739,7 +511,7 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>Good job! Nothing left for you to do except wait for me (as admin of this repo) to click on <strong>Merge pull request</strong>. Then I’ll re-render <a href="https://github.com/noaa-iea/r3-train/blob/master/roster.Rmd">roster.Rmd</a> to <a href="https://noaa-iea.github.io/r3-train/roster.html">roster.html</a>.</p>
 </div>
 <div id="sandbox-r3-exercises-for-rmd-website-with-branch-merge" class="section level2" number="1.9">
-<h2 number="1.9"><span class="header-section-number">1.9</span> <strong>Sandbox</strong> <em>r3-exercises</em> for Rmd website with <code>branch</code> &amp; <code>merge</code></h2>
+<h2><span class="header-section-number">1.9</span> <strong>Sandbox</strong> <em>r3-exercises</em> for Rmd website with <code>branch</code> &amp; <code>merge</code></h2>
 <p>Next, you’ll up your Git skills by isolating development of your code in a new <code>branch</code>, which is like a <strong>Sandbox</strong> separate from the <em>main</em> branch, while converting your website from a simple Rmarkdown to an <strong>Rmarkdown website</strong> for sharing a common navigation menu across created Rmarkdown web pages.</p>
 <p>Please switch back to your <strong><em>r3-exercises</em></strong> RStudio project where your website is hosted. (We’re done working with your forked copy of the <em>r3-train</em> project.) Notice that in the upper right of RStudio you get <strong>Project shortcuts</strong> to quickly navigate to them. Or you could always double-click on the <code>*.Rproj</code> file from your file explorer application (Windows Explorer or Mac Finder).</p>
 <p>In RStudio’s <strong>Git</strong> pane click on the <strong>New Branch</strong> button and enter a <strong>Branch Name</strong> like “rmd-website”:</p>
@@ -747,29 +519,29 @@ Exercises from https://noaa-iea.github.io/r3-train</code></pre>
 <p>Click <strong>Create</strong>. You should now see your new branch. Notice how when you click on the dropdown of branches you see both LOCAL and REMOTE: ORIGIN (as in on Github) versions.</p>
 <p><img src="figs/rstudio_new-branch-created.png" width="500"/></p>
 <p>Following guidance from <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide</a>, create a <code>_site.yml</code> by going to RStudio’s menu <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Text File</strong> and paste the following:</p>
-<pre class="yaml"><code>name: &quot;R&lt;sup&gt;3&lt;/sup&gt;&quot;
-navbar:
-  title: &quot;R&lt;sup&gt;3&lt;/sup&gt; Exercises&quot;
-  left:
-    - text: &quot;Home&quot;
-      href: index.html
-    - text: &quot;Collaborate&quot;
-      href: collaborate.html
-output_dir: &quot;.&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;R&lt;sup&gt;3&lt;/sup&gt;&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;R&lt;sup&gt;3&lt;/sup&gt; Exercises&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">left</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Home&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> index.html</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Collaborate&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">href</span><span class="kw">:</span><span class="at"> collaborate.html</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">output_dir</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;.&quot;</span></span></code></pre></div>
 <p><strong>Save</strong> this file as <code>_site.yml</code>. Next create overwrite your <code>index.Rmd</code> with this simpler content:</p>
-<pre class="markdown"><code>---
-title: &quot;Welcome&quot;
----
-
-Hello, Website!</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Welcome&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>Hello, Website!</span></code></pre></div>
 <p>Add another page <code>collaborate.Rmd</code>:</p>
-<pre class="markdown"><code>---
-title: &quot;Collaborate&quot;
----
-
-Like branches of a tree.</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Collaborate&quot;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>Like branches of a tree.</span></code></pre></div>
 <p>Finally, render the website by running the following in your R Console:</p>
-<pre class="r"><code>rmarkdown::render_site()</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render_site</span>()</span></code></pre></div>
 <p>You might need to install the package <code>rmarkdown</code>, which you can do from RStudio’s <strong>Packages</strong> pane, <strong>Install</strong> button and typing “rmarkdown”.</p>
 <p>Once complete, you should see that you’re working from the new branch selected in your RStudio Git pane, then click on the file to be presented with options:</p>
 <p><img src="figs/rstudio_new-rmd-website-files.png" width="600"/></p>
@@ -785,7 +557,7 @@ Like branches of a tree.</code></pre>
 <p>RStudio doesn’t provide a user interface to run the <code>git merge</code> command so you’ll have to do this in RStudio’s <strong>Terminal</strong> pane:</p>
 <p><img src="figs/rstudio_git-merge-branch.png" width="400"/></p>
 <p>by entering:</p>
-<pre class="bash"><code>git merge rmd-website</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge rmd-website</span></code></pre></div>
 <p>You’ve now merged your LOCAL changes from the <code>rmd-website</code> branch to the <code>main</code> branch, and see in the <strong>Git</strong> pane that “Your branch is ahead of ‘origin/main’ by 1 commit.” This means that you’re ready to <code>git push</code> them to the ORIGIN on Github by running good ol’ <strong>Push</strong>.</p>
 <p>Now at last you should see these file changes showing up at <code>https://github.com/USER/r3-exercises</code>.</p>
 <p>It might take a minute or so before they show up on your website at <code>https://USER.github.io/r3-exercises</code>. This is because Github Pages were originally designed to render static webpages with some templating capability (e.g. comman navigation menu) using Jekyll. To speed up rendering and disable Jekyll create an empty text file called <code>.nojekyll</code>. On a Mac, you can run this command in <strong>Terminal</strong>:</p>
@@ -793,7 +565,7 @@ Like branches of a tree.</code></pre>
 <p>Be sure to <strong>Commit</strong> and <strong>Push</strong> these changes to Github.</p>
 </div>
 <div id="create-an-issue-in-r3-exercises-to-resolve-a-file-conflict" class="section level2" number="1.10">
-<h2 number="1.10"><span class="header-section-number">1.10</span> Create an Issue in <em>r3-exercises</em> to resolve a file conflict</h2>
+<h2><span class="header-section-number">1.10</span> Create an Issue in <em>r3-exercises</em> to resolve a file conflict</h2>
 <p>Next we’re going to play with some of the <a href="https://github.com/features/project-management/">Github Project management</a> features while learning how to resolve file conflicts when <code>git</code> has a conflict automatically merging competing commits.</p>
 <p>Let’s visit your Github repo <code>https://github.com/USER/r3-exercises</code> and click on <strong>Issues</strong>:</p>
 <p><img src="figs/github_issues.png" width="400"/></p>
@@ -802,27 +574,27 @@ Like branches of a tree.</code></pre>
 <li>Title: “resolve a file conflict”</li>
 <li>Comment:</li>
 </ul>
-<pre class="markdown"><code>Reference:
-
-* [22.4 Dealing with conflicts | Happy Git and GitHub for the useR](https://happygitwithr.com/git-branches.html#dealing-with-conflicts)</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">Reference:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">22.4 Dealing with conflicts | Happy Git and GitHub for the useR</span><span class="co">](https://happygitwithr.com/git-branches.html#dealing-with-conflicts)</span></span></code></pre></div>
 <p><img src="figs/github_new-issue.png" width="600"/></p>
 <p>When you switch the comment from <strong>Write</strong> to <strong>Preview</strong>, you’ll see how the <strong>markdown</strong> source gets formatted into html with a single item bulleted list and link. Now you’re ready to <strong>Submit new issue</strong>.</p>
 <p>Ok, let’s create file conflict by editing the same line in two different places: 1) the Github website through your web browser, 2) your local machine through RStudio.</p>
 <p>In your web browser, go to the <strong>Code</strong> tab of your Github repo at <code>https://github.com/USER/r3-exercises</code>. Click on <code>index.Rmd</code> and click the pencil icon to change it to:</p>
-<pre class="markdown"><code>---
-title: &quot;Welcome&quot;
----
-
-Hello, Github!</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Welcome&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>Hello, Github!</span></code></pre></div>
 <p>Scroll down and notice enter a message under the <strong>Commit changes</strong> header of “edit from Github”:</p>
 <p><img src="figs/github_edit-from-Github.png" width="600"/></p>
 <p>Click on the green <strong>Commit changes</strong> button. Since you’re already on Github, you don’t need to <strong>Push</strong>.</p>
 <p>Now go to RStudio, open the <code>index.Rmd</code> and change it to:</p>
-<pre class="markdown"><code>---
-title: &quot;Welcome&quot;
----
-
-Hello, RStudio!</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Welcome&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>Hello, RStudio!</span></code></pre></div>
 <p>Be sure to <strong>Commit</strong> those changes with the message “edit from RStudio”.</p>
 <p>Next, <strong>Pull</strong> changes from Github. Now you’ll get a long and messy message about a conflict like:</p>
 <pre><code>&gt;&gt;&gt; /usr/bin/git pull
@@ -845,34 +617,34 @@ To abort and get back to the state before &quot;git rebase&quot;, run &quot;git 
 <p>Close that. Now in the <strong>Git Commit</strong> dialog window, you’ll see:</p>
 <p><img src="figs/rstudio_git-conflict.png" width="600"/></p>
 <p>The orange <code>U</code> refers to an Unresolved conflict. We now need to “manually resolve this conflict”. The conflicted portions are compared above and below the <code>=======</code>. The conflict begins with <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> referring to the most recent commit from the ORIGIN on Github, versus ending with <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; edit from RStudio</code> as the most recent LOCAL commit. Let’s change the entire contents of this file to:</p>
-<pre class="markdown"><code>---
-title: &quot;Welcome&quot;
----
-
-Hello, everyone!</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Welcome&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>Hello, everyone!</span></code></pre></div>
 <p>Then in the <strong>Git</strong> pane mark <code>index.Rmd</code> as Staged, <strong>Commit</strong> and enter the message “resolved file conflict; fixes #1”:</p>
 <p><img src="figs/rstudio_git-commit-cnflict-resolved-ref-issue.png" width="600"/></p>
 <p><strong>Commit</strong> this change and notice that we’re still “detached”:</p>
 <pre><code>[detached HEAD 216c243] resolved file conflict #1
  1 file changed, 1 insertion(+), 1 deletion(-)</code></pre>
 <p>Next, we need to associate the detached HEAD with a new temporary branch and reset the main branch with it before pushing changes back to Github. Please run the following commands in the RStudio <strong>Terminal</strong>:</p>
-<pre class="bash"><code># associate detached HEAD with new branch temp
-git checkout -b temp
-
-# reset master branch with temp branch as starting point
-git checkout -B main temp
-
-# delete temp branch
-git branch -d temp
-
-# update Github with local main
-git push origin main</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># associate detached HEAD with new branch temp</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> temp</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># reset master branch with temp branch as starting point</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-B</span> main temp</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># delete temp branch</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> temp</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># update Github with local main</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div>
 <p>For more details, see <a href="https://stackoverflow.com/questions/5772192/how-can-i-reconcile-detached-head-with-master-origin#answer-5772882">git - How can I reconcile detached HEAD with master/origin? - Stack Overflow</a>.</p>
 <p>Now visit <code>https://github.com/USER/r3-exercises/issues/1</code>. You’ll notice that your commit message automatically associated with that issue by simply including <code>#1</code> and closed it by prefixing the number with <code>fixes</code>.</p>
 <p>The point is to be able to associate specific line by line file changes with fixing <strong>bugs</strong> and implementing <strong>new features</strong> of our code.</p>
 </div>
 <div id="organize-issues-in-r3-exercises-github-project" class="section level2" number="1.11">
-<h2 number="1.11"><span class="header-section-number">1.11</span> Organize Issues in <em>r3-exercises</em> Github Project</h2>
+<h2><span class="header-section-number">1.11</span> Organize Issues in <em>r3-exercises</em> Github Project</h2>
 <p>Let’s create a couple <strong>Issues</strong> with the following titles to cue up next week’s session:</p>
 <ul>
 <li><code>read a csv and output a table</code></li>
@@ -891,9 +663,9 @@ git push origin main</code></pre>
 <p>A Project board helps answer the question, “What do I need to work on next?”</p>
 </div>
 <div id="further-reading" class="section level2 unnumbered">
-<h2 class="unnumbered">Further Reading</h2>
+<h2>Further Reading</h2>
 <div id="git-github" class="section level3 unnumbered">
-<h3 class="unnumbered">Git &amp; Github</h3>
+<h3>Git &amp; Github</h3>
 <ul>
 <li><a href="https://guides.github.com/">GitHub Guides</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/">Version Control with Git</a></li>
@@ -901,7 +673,7 @@ git push origin main</code></pre>
 </ul>
 </div>
 <div id="rstudio-with-git-github" class="section level3 unnumbered">
-<h3 class="unnumbered">RStudio with Git &amp; Github</h3>
+<h3>RStudio with Git &amp; Github</h3>
 <ul>
 <li><a href="https://happygitwithr.com/">Happy Git and GitHub for the useR</a></li>
 <li><a href="https://r-pkgs.org/git.html">Chapter 18 Git and GitHub | R Packages</a></li>
@@ -910,7 +682,7 @@ git push origin main</code></pre>
 </ul>
 </div>
 <div id="rmarkdown" class="section level3 unnumbered">
-<h3 class="unnumbered">Rmarkdown</h3>
+<h3>Rmarkdown</h3>
 <ul>
 <li><a href="https://rmarkdown.rstudio.com/lesson-1.html?_ga=2.141207218.1461543799.1623615738-155442495.1623419383">Lesson 1 | Rmarkdown</a></li>
 <li><a href="https://www.rstudio.com/resources/webinars/getting-started-with-r-markdown/">Getting started with R Markdown - RStudio</a></li>
@@ -918,7 +690,7 @@ git push origin main</code></pre>
 <li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
 </ul>
 <div id="rmarkdown-websites" class="section level4 unnumbered">
-<h4 class="unnumbered">Rmarkdown websites</h4>
+<h4>Rmarkdown websites</h4>
 <ul>
 <li><a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">10.5 rmarkdown’s site generator | R Markdown: The Definitive Guide</a></li>
 <li><a href="https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html">Creating websites in R</a></li>
@@ -928,87 +700,64 @@ git push origin main</code></pre>
 </div>
 </div>
 </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
 
 
-
-</div>
-</div>
-
-</div>
-
+    </div>
+  </div>
+<script src="site_libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="site_libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
 });
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
-
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
 </script>
 
 </body>
+
 </html>

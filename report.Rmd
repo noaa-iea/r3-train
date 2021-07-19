@@ -1,0 +1,60 @@
+---
+pagetitle: Report
+output:
+  html_document:
+    pandoc_args: [
+      "--number-offset=3"]
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F)
+
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+shelf(
+  htmltools, mitchelloharawild/icons)
+```
+
+# Report
+
+## Learning Objectives {.unnumbered .objectives}
+
+Dive into Rmarkdown for for knitting formatted text (markdown) with chunks of evaluated R code into html, pdf and docx formats. Use Rmarkdown for single page reports, bookdown for reports with chapters, flexdashboard for dashboards and Rmarkdown websites for simple websites with shared navigation. Automatically render with Github Actions.
+
+- Rmarkdown basics
+  - YAML as frontmatter of Rmd, `_site.yml` for [Rmd website](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+  - Rmarkdown Cheatsheets
+  - RStudio's Visual Markdown Editor
+  - R code as chunks or inline
+  - Navigate: toc sidebar, chunk dropdown, knit gear options, insert chunk
+  - Equations
+  - Tables
+  - References with [citr](https://github.com/crsh/citr)
+  - pandoc: docx for track changes editing, pdf (tinytex) for archive
+  - html options: toc floating, code hide/show
+  - [bslib](https://rstudio.github.io/bslib/)
+- Product [formats](https://rmarkdown.rstudio.com/formats.html)
+  - [**website**](https://bbest.github.io/r3-exercises/report-website/report-website/)
+    - source: [report-website](https://github.com/bbest/r3-exercises/tree/main/report-website)
+    - format: [Rmd website](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+    - techniques: 
+      - [Parameterized reports](https://bookdown.org/yihui/rmarkdown/params-declare.html)
+      - [Render automatically with Github Action](https://github.com/r-lib/actions/tree/master/examples)
+  - [**dashboard**](https://bbest.github.io/r3-exercises/report-website/report-dashboard/)
+    - source: [report-website](https://github.com/bbest/r3-exercises/tree/main/report-dashboard)
+    - format: [`flexdashboard`](https://pkgs.rstudio.com/flexdashboard/)
+    - technique: [`knitr::knit_expand()`](https://bookdown.org/yihui/rmarkdown-cookbook/knit-expand.html)
+  - [**book**](https://bbest.github.io/r3-exercises/report-website/report-book/)
+    - source: [report-book](https://github.com/bbest/r3-exercises/tree/main/report-book)
+    - format: [`bookdown`](https://bookdown.org)
+  - [**slides**](https://bbest.github.io/r3-exercises/report-website/report-slides.html)
+    - source: [report-slides.Rmd](https://github.com/bbest/r3-exercises/blob/main/report-slides.Rmd)
+    - format: [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan-format.html)
+  - [**article**](https://bbest.github.io/r3-exercises/report-website/report-article/report-article.pdf)
+    - source: [report-article](https://github.com/bbest/r3-exercises/tree/main/report-article)
+    - format: [`rticles`](https://bookdown.org/yihui/rmarkdown/journals.html)
+

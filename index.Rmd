@@ -74,6 +74,7 @@ discussion and exercise completion time. All webinars will be
     chapters, flexdashboard for dashboards and Rmarkdown websites for
     simple websites with shared navigation. Automatically render with
     Github Actions.\
+    [Slides](https://docs.google.com/presentation/d/15I1i1bw1lyKeFYA1p2d98fvhR8DjD9J66zBUCC7c2g8), [Lesson](./report.html) \
     \
 6.  July 26: **Infographics**\
     Use a custom infographiq Javascript library to intelligently link
