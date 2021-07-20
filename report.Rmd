@@ -38,23 +38,33 @@ Dive into Rmarkdown for for knitting formatted text (markdown) with chunks of ev
   - html options: toc floating, code hide/show
   - [bslib](https://rstudio.github.io/bslib/)
 - Product [formats](https://rmarkdown.rstudio.com/formats.html)
-  - [**website**](https://bbest.github.io/r3-exercises/report-website/report-website/)
+  - [**website**](https://bbest.github.io/r3-exercises/report-website/)
     - source: [report-website](https://github.com/bbest/r3-exercises/tree/main/report-website)
     - format: [Rmd website](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
     - techniques: 
       - [Parameterized reports](https://bookdown.org/yihui/rmarkdown/params-declare.html)
       - [Render automatically with Github Action](https://github.com/r-lib/actions/tree/master/examples)
-  - [**dashboard**](https://bbest.github.io/r3-exercises/report-website/report-dashboard/)
+  - [**dashboard**](https://bbest.github.io/r3-exercises/report-dashboard/)
     - source: [report-website](https://github.com/bbest/r3-exercises/tree/main/report-dashboard)
     - format: [`flexdashboard`](https://pkgs.rstudio.com/flexdashboard/)
     - technique: [`knitr::knit_expand()`](https://bookdown.org/yihui/rmarkdown-cookbook/knit-expand.html)
-  - [**book**](https://bbest.github.io/r3-exercises/report-website/report-book/)
+  - [**book**](https://bbest.github.io/r3-exercises/report-book/)
     - source: [report-book](https://github.com/bbest/r3-exercises/tree/main/report-book)
     - format: [`bookdown`](https://bookdown.org)
-  - [**slides**](https://bbest.github.io/r3-exercises/report-website/report-slides.html)
+  - [**slides**](https://bbest.github.io/r3-exercises/report-slides.html)
     - source: [report-slides.Rmd](https://github.com/bbest/r3-exercises/blob/main/report-slides.Rmd)
     - format: [`xaringan`](https://bookdown.org/yihui/rmarkdown/xaringan-format.html)
-  - [**article**](https://bbest.github.io/r3-exercises/report-website/report-article/report-article.pdf)
+  - [**article**](https://bbest.github.io/r3-exercises/report-article/report-article.pdf)
     - source: [report-article](https://github.com/bbest/r3-exercises/tree/main/report-article)
     - format: [`rticles`](https://bookdown.org/yihui/rmarkdown/journals.html)
+
+
+## Rmd Website
+
+### Parameterize Rmd
+
+### Automatic generation with Github Action
+
+## Flexdashboard
+
 
