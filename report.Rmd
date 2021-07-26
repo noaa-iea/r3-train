@@ -61,10 +61,44 @@ Dive into Rmarkdown for for knitting formatted text (markdown) with chunks of ev
 
 ## Rmd Website
 
+## Source: 
+
+* [Alaska Marine Ecosystem Status Reports](https://apps-afsc.fisheries.noaa.gov/refm/reem/ecoweb/Index.php?ID=9)
+* [REEM Ecosystem Considerations and Assessment](https://apps-afsc.fisheries.noaa.gov/refm/reem/ecoweb/dataWindow.php?Data=NPI)
+
 ### Parameterize Rmd
+
+* [15.1 Declaring parameters | R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/params-declare.html)
+* [17.4 Parameterized reports | R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/parameterized-reports.html)
+* [Parameters](https://rmarkdown.rstudio.com/lesson-6.html)
 
 ### Automatic generation with Github Action
 
+* [bbest/gh-actions-demo: Demonstration of using Github Actions to update your Rmarkdown analysis](https://github.com/bbest/gh-actions-demo)
+* [Automatically Update your Report with Github Actions](https://bbest.github.io/gh-actions-demo/#22)
+* [gh-action-test-rmd/render-rmarkdown.yaml at main · bbest/gh-action-test-rmd](https://github.com/bbest/gh-action-test-rmd/blob/main/.github/workflows/render-rmarkdown.yaml)
+* [Events that trigger workflows - GitHub Docs](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#schedule)
+* [actions/README.md at master · r-lib/actions](https://github.com/r-lib/actions/blob/master/examples/README.md)
+
 ## Flexdashboard
 
+
+
+Another example [source](https://github.com/BenioffOceanInitiative/ship-cards): [table of ships](https://benioffoceaninitiative.github.io/ship-cards/) to [ship detail](https://benioffoceaninitiative.github.io/ship-cards/ship/CARNIVAL%20IMAGINATION.html).
+
+
+### Synchronize time selection in dygraphs
+
+* [Synchronization](https://rstudio.github.io/dygraphs/gallery-synchronization.html)
+
+
+
+## Organizing with _child documents
+
+
+## Further Resources  {.unnumbered}
+
+* [Formats](https://rmarkdown.rstudio.com/formats.html)
+* [R Markdown Format for Flexible Dashboards • flexdashboard](https://pkgs.rstudio.com/flexdashboard/index.html)
+* [Reproducible Research in R](https://monashdatafluency.github.io/r-rep-res/)
 

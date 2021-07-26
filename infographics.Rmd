@@ -128,15 +128,27 @@ When I google "thermometer icon filetype:svg" and click Images (direct [link](ht
 
 ![](figs/infographics/thermometer.svg){width="100"}
 
-Now open Inkscape
+Now open the `inkscape_example.svg` in Inkscape. (I right-clicked on the file and in Mac used the Open With menu.) Then delete the red circle. Then drag and drop the thermometer svg file onto the Inkscape Canvas. Use the
+
+<https://marinebon.org/infographiq/image-creation.html#inkscape_XML>
 
 ## Link icon to modal with table (`.csv`)
 
-## To incorporate {.unnumbered}
+Setup the `thermometer` to link to the `modals/sst.html` by swapping out icon = `chartexample4` with the following last line of this table:
 
--   Open SVG as text
++----------------------+---------------+--------------------------------------+----------------------------------+--------------+-----------+
+| svg                  | icon          | title                                | link                             | section      | not_modal |
++======================+===============+======================================+==================================+==============+===========+
+| inkscape_example.svg | chartexample1 | Google Charts Example                | modals/modal_google_charts.html  | Category 1   | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+--------------+-----------+
+| inkscape_example.svg | chartexample2 | Google Charts Example with Trend Bar | modals/modal_google_charts2.html | Category 1   | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+--------------+-----------+
+| inkscape_example.svg | chartexample3 | Highcharts Example                   | modals/modal_highcharts.html     | Category 1   | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+--------------+-----------+
+| inkscape_example.svg | thermometer   | SST                                  | modals/sst.html                  | Category 2   | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+--------------+-----------+
 
-## Next steps for infographiq {.unnumbered}
+##  {.unnumbered}
 
 ## Further Resources {.unnumbered}
 
