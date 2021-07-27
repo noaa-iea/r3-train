@@ -80,7 +80,7 @@ discussion and exercise completion time. All webinars will be
     Use a custom infographiq Javascript library to intelligently link
     icons of ecosystem elements to pop-up windows containing data figures, which
     could be static images or interactive visualizations.\
-    [Slides](https://docs.google.com/presentation/d/11UFk-6k7oKJcnziBbkNYSz5Miq8SVUEiY5UmI3nWUDA/edit#slide=id.p), [Lesson](./infographics.html) \
+    [Video](https://youtu.be/wQn05c8CHhs), [Slides](https://docs.google.com/presentation/d/11UFk-6k7oKJcnziBbkNYSz5Miq8SVUEiY5UmI3nWUDA/edit#slide=id.p), [Lesson](./infographics.html) \
     \
 7.  August 2: **Applications**\
     Use the Shiny framework to develop online interactive applications
