@@ -3,7 +3,7 @@ pagetitle: Infographics
 output:
   html_document:
     pandoc_args: [
-      "--number-offset=4"]
+      "--number-offset=5"]
 editor_options: 
   chunk_output_type: console
 ---
@@ -136,14 +136,17 @@ Now open the `inkscape_example.svg` in Inkscape. (I right-clicked on the file an
 
 Setup the `thermometer` to link to the `modals/sst.html` by swapping out icon = `chartexample4` with the following last line of this table:
 
++----------------------+---------------+--------------------------------------+----------------------------------+------------+-----------+
 | svg                  | icon          | title                                | link                             | section    | not_modal |
-|----------------------|---------------|--------------------------------------|----------------------------------|------------|-----------|
++======================+===============+======================================+==================================+============+===========+
 | inkscape_example.svg | chartexample1 | Google Charts Example                | modals/modal_google_charts.html  | Category 1 | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+------------+-----------+
 | inkscape_example.svg | chartexample2 | Google Charts Example with Trend Bar | modals/modal_google_charts2.html | Category 1 | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+------------+-----------+
 | inkscape_example.svg | chartexample3 | Highcharts Example                   | modals/modal_highcharts.html     | Category 1 | F         |
++----------------------+---------------+--------------------------------------+----------------------------------+------------+-----------+
 | inkscape_example.svg | thermometer   | SST                                  | modals/sst.html                  | Category 2 | F         |
-
-##  {.unnumbered}
++----------------------+---------------+--------------------------------------+----------------------------------+------------+-----------+
 
 ## Further Resources {.unnumbered}
 

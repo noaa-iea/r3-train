@@ -88,6 +88,7 @@ discussion and exercise completion time. All webinars will be
     Server requirements differentiating from simpler Rmarkdown
     renderings will be reviewed as well as use of Crosstalk to gain
     similar functionality with Rmarkdown with simple data.\
+    [Slides](https://docs.google.com/presentation/d/19XTk3sT9InpVlltTBa3TUm50Uv8gE_v0_3wjuNxx8WA/edit?usp=sharing), [Lesson](./applications.html) \
     \
 8.  August 9: **Packages**\
     An R package is a documented set of functions that can act as

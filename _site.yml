@@ -20,6 +20,9 @@ navbar:
     - text: "Infographics"
       icon: "fas fa-info-circle"
       href: infographics.html
+    - text: "Applications"
+      icon: "fas fa-rocket"
+      href: applications.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"

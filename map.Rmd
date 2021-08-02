@@ -3,7 +3,7 @@ pagetitle: Spatial
 output:
   html_document:
     pandoc_args: [
-      "--number-offset=2"]
+      "--number-offset=3"]
 editor_options: 
   chunk_output_type: console
 ---

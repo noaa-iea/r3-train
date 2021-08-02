@@ -377,6 +377,13 @@ div.tocify {
     Infographics
   </a>
 </li>
+<li>
+  <a href="applications.html">
+    <span class="fas fa-rocket"></span>
+     
+    Applications
+  </a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -429,27 +436,27 @@ div.tocify {
 
 
 <div id="infographics" class="section level1" number="1">
-<h1 number="5"><span class="header-section-number">5</span> Infographics</h1>
+<h1 number="6"><span class="header-section-number">6</span> Infographics</h1>
 <div id="learning-objectives" class="section level2 unnumbered objectives">
 <h2 class="unnumbered objectives">Learning Objectives</h2>
 <p>Use a custom infographiq Javascript library to intelligently link icons of ecosystem elements to pop-up windows containing data figures, which could be static images or interactive visualizations.</p>
 </div>
 <div id="install-software" class="section level2" number="1.1">
-<h2 number="5.1"><span class="header-section-number">5.1</span> Install software</h2>
+<h2 number="6.1"><span class="header-section-number">6.1</span> Install software</h2>
 <div id="inkscape" class="section level3" number="1.1.1">
-<h3 number="5.1.1"><span class="header-section-number">5.1.1</span> InkScape</h3>
+<h3 number="6.1.1"><span class="header-section-number">6.1.1</span> InkScape</h3>
 <p><a href="https://inkscape.org"><strong>InkScape</strong></a> is a design tool that is excellent at editing SVG files, which is also its native storage format. It is similar to <a href="https://www.adobe.com/products/illustrator.html">Adobe Illustrator</a>, except free. Please download it at <a href="https://inkscape.org/release"><strong>inkscape.org/release</strong></a>.</p>
 <p>(<em>The current version 1.1 for MacOS is 118 MB, so it may take some time to download depending on your connection speed.</em>)</p>
 </div>
 <div id="infographiqr" class="section level3" number="1.1.2">
-<h3 number="5.1.2"><span class="header-section-number">5.1.2</span> <code>infographiqR</code></h3>
+<h3 number="6.1.2"><span class="header-section-number">6.1.2</span> <code>infographiqR</code></h3>
 <p>In order to use the infographiq template, you will need to install the following <code>infographiqR</code> R package:</p>
 <pre class="r"><code>remotes::install_github(&quot;marinebon/infographiqR&quot;)</code></pre>
 <p>Please close and restart all instances of RStudio before proceeding in order to load the <code>infographiqR</code> template project option.</p>
 </div>
 </div>
 <div id="create-infographiq-project" class="section level2" number="1.2">
-<h2 number="5.2"><span class="header-section-number">5.2</span> Create infographiq project</h2>
+<h2 number="6.2"><span class="header-section-number">6.2</span> Create infographiq project</h2>
 <p>Please open <strong>RStudio</strong> by double-clicking on your <code>r3-exercises.Rproj</code> file to set your working directory. In the menu <strong>File</strong> -&gt; <strong>New Project</strong>…, <strong>New Directory</strong>, then <strong>Infographiq Project Template</strong>:</p>
 <p><img src="figs/infographics/new-iq-prj_template.png" width="500" /></p>
 <p>If you don’t see this option, then you presumably need to install <code>infographiqR</code> AND restart RStudio per the previous step.</p>
@@ -458,7 +465,7 @@ div.tocify {
 <p>RStudio should open to a new session with the <strong>Source</strong> and <strong>Files</strong> panes looking like so:</p>
 <p><img src="figs/infographics/new-iq-prj_ide.png" width="500" /></p>
 <div id="notice-report-techniques-of-index.rmd" class="section level3" number="1.2.1">
-<h3 number="5.2.1"><span class="header-section-number">5.2.1</span> Notice Report techniques of <code>index.Rmd</code></h3>
+<h3 number="6.2.1"><span class="header-section-number">6.2.1</span> Notice Report techniques of <code>index.Rmd</code></h3>
 <p>Do you notice two <a href="../report.html">Report</a> techniques in <code>index.Rmd</code> that we discussed last week?</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Parameters</strong> <code>params</code> in the frontmatter to specify the infographic’s two key inputs: 1) <code>svg</code> of the scalable vector graphic illustration; and 2) <code>csv</code> table matching the icon with the modal window content to open.</p></li>
@@ -467,13 +474,13 @@ div.tocify {
 <p>The combination of both techniques above allows multiple Rmds to use the same <code>_svg-html_child.Rmd</code> and specify different <code>params</code> for rendering different illustrations altogether.</p>
 </div>
 <div id="knit-the-index" class="section level3" number="1.2.2">
-<h3 number="5.2.2"><span class="header-section-number">5.2.2</span> Knit the index</h3>
+<h3 number="6.2.2"><span class="header-section-number">6.2.2</span> Knit the index</h3>
 <p>Knit the index. You should see in the <strong>Viewer</strong> pane the rendered document.</p>
 <p><img src="figs/infographics/new-iq-prj_knit.png" width="400" /></p>
 <p>The icons demonstrate different functionality…</p>
 </div>
 <div id="view-with-local-web-server" class="section level3" number="1.2.3">
-<h3 number="5.2.3"><span class="header-section-number">5.2.3</span> View with local web server</h3>
+<h3 number="6.2.3"><span class="header-section-number">6.2.3</span> View with local web server</h3>
 <p>Within the top of the <strong>Viewer</strong> pane, you can normally click the icon <strong>Show in new window</strong> <img src="figs/infographics/rstudio-viewer-new-window.png" width="29" /> to open the knitted web page into a full browser window, but when you try this you’ll get the unsatisfying result that the imagery disappears. This is because the reading of local files is not supported by <code>d3</code>’s <code>fetch()</code> function used to read the SVG, which is visible for instance if you open Google Chrome browser’s View -&gt; Developer -&gt; JavaScript Console:</p>
 <p><img src="figs/infographics/need-web-server_d3-error.png" width="600" /></p>
 <p>Per the <code>d3</code> guru Mike Bostock in this <a href="https://github.com/d3/d3-fetch/issues/23#issuecomment-423691132">issue</a>, we need a web server to load these files in a standard browser. Thankfully we can easily do this with the <code>servr</code> package. Be sure to specify the same directory as where you created the <code>infographiq-project</code>, which if you are working from that project after ticking <em>Open in a new session</em> in previous step should be <code>"."</code>, i.e. the current working directory.</p>
@@ -487,13 +494,13 @@ servr::httd()    # one-liner to run web server</code></pre>
 </div>
 </div>
 <div id="link-to-a-modal-with-image" class="section level2" number="1.3">
-<h2 number="5.3"><span class="header-section-number">5.3</span> Link to a modal with image</h2>
+<h2 number="6.3"><span class="header-section-number">6.3</span> Link to a modal with image</h2>
 <p>Let’s start editing this <code>infographiq</code> template website by replacing the red circle with a <strong><em>thermometer</em></strong> <u><strong><em>icon</em></strong></u> and have it open a static figure of <strong><em>temperature</em></strong> <u><strong><em>indicator</em></strong></u> over time as the indicator.</p>
 <p>Start by opening a File Explorer (on Windows; or Finder on Mac) by going to RStudio’s <strong>File</strong> pane and clicking the gear icon <strong>More</strong> -&gt; <strong>Show Folder in New Window</strong>:</p>
 <p><img src="figs/infographics/rstudio-files-more-open-folder.png" width="400" /></p>
 <p>This should open File Explorer on Windows or Finder on Mac to your infographics. This may help you open files (try right-clicking to select the preferred application).</p>
 <div id="create-modalssst.html" class="section level3" number="1.3.1">
-<h3 number="5.3.1"><span class="header-section-number">5.3.1</span> Create modals/sst.<code>html</code></h3>
+<h3 number="6.3.1"><span class="header-section-number">6.3.1</span> Create modals/sst.<code>html</code></h3>
 <p>Let’s create a simple web page with an image using Rmarkdown by going to File -&gt; New File -&gt; Rmarkdown… . File -&gt; Save to <code>modals/sst.Rmd</code> and overwrite the entirety of the file with the following contents:</p>
 <pre class="rmd"><code>---
 pagetitle: &quot;SST&quot;
@@ -504,7 +511,7 @@ output: html_document
 <p>Knit this file to see the simple web page with an image. Next, let’s add a suitable icon to the illustration and link the modal content with this page.</p>
 </div>
 <div id="add-temperature.svg-icon" class="section level3" number="1.3.2">
-<h3 number="5.3.2"><span class="header-section-number">5.3.2</span> Add temperature<code>.svg</code> icon</h3>
+<h3 number="6.3.2"><span class="header-section-number">6.3.2</span> Add temperature<code>.svg</code> icon</h3>
 <p>When I google “thermometer icon filetype:svg” and click Images (direct <a href="https://www.google.com/search?tbm=isch&amp;q=thermometer+icon&amp;tbs=ift:svg">link</a>), I like the second <a href="https://www.svgrepo.com/svg/865/thermometer">thermometer</a>, which is usable under Creative Commons License, so please download this file. I save id to my <code>infographiq-project/icons/asdf</code>.</p>
 <p><img src="figs/infographics/thermometer.svg" width="100" /></p>
 <p>Now open the <code>inkscape_example.svg</code> in Inkscape. (I right-clicked on the file and in Mac used the Open With menu.) Then delete the red circle. Then drag and drop the thermometer svg file onto the Inkscape Canvas. Use the</p>
@@ -512,13 +519,13 @@ output: html_document
 </div>
 </div>
 <div id="link-icon-to-modal-with-table-.csv" class="section level2" number="1.4">
-<h2 number="5.4"><span class="header-section-number">5.4</span> Link icon to modal with table (<code>.csv</code>)</h2>
+<h2 number="6.4"><span class="header-section-number">6.4</span> Link icon to modal with table (<code>.csv</code>)</h2>
 <p>Setup the <code>thermometer</code> to link to the <code>modals/sst.html</code> by swapping out icon = <code>chartexample4</code> with the following last line of this table:</p>
 <table>
 <colgroup>
 <col width="16%" />
-<col width="12%" />
-<col width="27%" />
+<col width="11%" />
+<col width="28%" />
 <col width="25%" />
 <col width="9%" />
 <col width="9%" />
@@ -568,9 +575,6 @@ output: html_document
 </tr>
 </tbody>
 </table>
-</div>
-<div id="section" class="section level2 unnumbered">
-<h2 class="unnumbered"></h2>
 </div>
 <div id="further-resources" class="section level2 unnumbered">
 <h2 class="unnumbered">Further Resources</h2>
