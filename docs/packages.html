@@ -591,7 +591,7 @@ hello &lt;- function(name = &quot;World&quot;) {
 <p>Let’s open the newly <code>created data-raw/DATASET.R</code> and add a test dataset by replacing its contents with the following:</p>
 <pre class="r"><code># create data object, such as a dataframe of exponential growth
 df_exp &lt;- data.frame(
-  x = 1:10
+  x = 1:10,
   y = (1:10)^2)
 
 # store object in data/*.rda
@@ -645,7 +645,11 @@ df_exp
     dygraphs::dyRangeSelector()
 }</code></pre>
 <p>Next run <strong>Code</strong> -&gt; <strong>Insert Roxygen Skeleton</strong> and replace with the following:</p>
-<pre class="r"><code>#&#39; @param d data frame with two columns
+<pre class="r"><code>#&#39; Time series plot
+#&#39;
+#&#39; Plot time series interactively.
+#&#39;
+#&#39; @param d data frame with two columns
 #&#39;
 #&#39; @return interactive dygraph plot
 #&#39; @import dygraphs

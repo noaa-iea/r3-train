@@ -245,7 +245,7 @@ Let's open the newly `created data-raw/DATASET.R` and add a test dataset by repl
 ```{r}
 # create data object, such as a dataframe of exponential growth
 df_exp <- data.frame(
-  x = 1:10
+  x = 1:10,
   y = (1:10)^2)
 
 # store object in data/*.rda
@@ -326,6 +326,10 @@ ts_plot <- function(d){
 Next run **Code** -\> **Insert Roxygen Skeleton** and replace with the following:
 
 ```{r}
+#' Time series plot
+#'
+#' Plot time series interactively.
+#'
 #' @param d data frame with two columns
 #'
 #' @return interactive dygraph plot
