@@ -94,5 +94,6 @@ discussion and exercise completion time. All webinars will be
     An R package is a documented set of functions that can act as
     building blocks for data ingestion, analysis, visualization and
     reporting. We'll go over the basics of creating an R package and
-    documenting functions within.
+    documenting functions within.\
+    [Slides](https://docs.google.com/presentation/d/1Jt4xZP7twPoykHzyblMMRVGxgt9weUN1111OOKdkPU8/edit?usp=sharing), [Lesson](./packages.html) \
     \
