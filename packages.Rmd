@@ -363,9 +363,33 @@ devtools::document()
 
 Let's add the following to your `vignettes/mypkg.Rmd`:
 
-```` ## HelloThis is my first package. Let's start with hello.```{r}person <- "Hadley"hello(person)```## DataWe loaded this data:```{r}df_exp``` ````
+````
 
-```` ## PlotAnd created this plotting function:```{r}ts_plot(df_exp)``` ````
+## Hello
+
+This is my first package. Let's start with hello.
+
+```{r}`r ''`
+person <- "Hadley"
+hello(person)
+```
+
+## Data
+
+We loaded this data:
+
+```{r}`r ''`
+df_exp
+```
+
+## Plot
+
+And created this plotting function:
+
+```{r}`r ''`
+ts_plot(df_exp)
+```
+````
 
 Before you can Knit this vignette you'll need to install the package locally so `library(mypkg)` can work from the `setup` R chunk:
 

@@ -672,8 +672,31 @@ devtools::document()</code></pre>
 <div id="finish-vignette" class="section level3" number="1.5.2">
 <h3 number="7.5.2"><span class="header-section-number">7.5.2</span> Finish vignette</h3>
 <p>Let’s add the following to your <code>vignettes/mypkg.Rmd</code>:</p>
-<p><code>## HelloThis is my first package. Let's start with hello.```{r}person &lt;- "Hadley"hello(person)```## DataWe loaded this data:```{r}df_exp```</code></p>
-<p><code>## PlotAnd created this plotting function:```{r}ts_plot(df_exp)```</code></p>
+<pre><code>
+## Hello
+
+This is my first package. Let&#39;s start with hello.
+
+```{r}
+person &lt;- &quot;Hadley&quot;
+hello(person)
+```
+
+## Data
+
+We loaded this data:
+
+```{r}
+df_exp
+```
+
+## Plot
+
+And created this plotting function:
+
+```{r}
+ts_plot(df_exp)
+```</code></pre>
 <p>Before you can Knit this vignette you’ll need to install the package locally so <code>library(mypkg)</code> can work from the <code>setup</code> R chunk:</p>
 <pre class="r"><code>devtools::install()</code></pre>
 <p>Now you can <strong>Knit</strong> the vignette. But to install the whole package with the vignette you’ll need to run:</p>
