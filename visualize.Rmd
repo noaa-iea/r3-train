@@ -71,11 +71,17 @@ library(DT)
 
 # variables
 url_ac <- "https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_AC.csv"
+# if ERDDAP server down (Error in download.file) with URL above, use this:
+#    url_ac <- "https://raw.githubusercontent.com/noaa-iea/r3-train/master/data/cciea_AC.csv"
 csv_ac <- here("data/cciea_AC.csv")
 
+# download data
+if (!file.exists(csv_ac))
+  download.file(url_ac, csv_ac)
+
 # read data
-d_ac        <- read_csv(url_ac, col_names = F, skip = 2)
-names(d_ac) <- names(read_csv(url_ac))
+d_ac        <- read_csv(csv_ac, col_names = F, skip = 2)
+names(d_ac) <- names(read_csv(csv_ac))
 
 # show data
 datatable(d_ac)
@@ -253,6 +259,7 @@ d_rgn %>%
     y      = "Millions $ (year 2015)",
     fill   = "Region")
 ```
+
 Try using `color` instead of `fill` within the aesthetic `aes()`. What's the difference?
 
 ### Variation of series with `+ geom_boxplot()`

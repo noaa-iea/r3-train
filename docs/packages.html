@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Packages</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF7V8KERR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8XF7V8KERR');
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">R<sup>3</sup></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="collaborate.html">
+    <span class="fa fa-users"></span>
+     
+    Collaborate
+  </a>
+</li>
+<li>
+  <a href="manipulate.html">
+    <span class="fas fa-wrench"></span>
+     
+    Manipulate
+  </a>
+</li>
+<li>
+  <a href="visualize.html">
+    <span class="fas fa-chart-bar"></span>
+     
+    Visualize
+  </a>
+</li>
+<li>
+  <a href="map.html">
+    <span class="fas fa-map"></span>
+     
+    Map
+  </a>
+</li>
+<li>
+  <a href="report.html">
+    <span class="fas fa-book"></span>
+     
+    Report
+  </a>
+</li>
+<li>
+  <a href="infographics.html">
+    <span class="fas fa-info-circle"></span>
+     
+    Infographics
+  </a>
+</li>
+<li>
+  <a href="apps.html">
+    <span class="fas fa-rocket"></span>
+     
+    Applications
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="setup.html">
+    <span class="fas fa-cogs"></span>
+     
+    Setup
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fas fa-search"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="roster.html">
+    <span class="fas fa-user-friends"></span>
+     
+    Roster
+  </a>
+</li>
+<li>
+  <a href="https://github.com/noaa-iea/r3-train">
+    <span class="fab fa-github"></span>
+     
+    Repo
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<div id="applications" class="section level1" number="1">
+<h1 number="7"><span class="header-section-number">7</span> Applications</h1>
+<div id="learning-objectives" class="section level2 unnumbered objectives">
+<h2 class="unnumbered objectives">Learning Objectives</h2>
+<p>An R package is a documented set of functions that can act as building blocks for data ingestion, analysis, visualization and reporting. We’ll go over the basics of creating an R package and documenting functions within.</p>
+</div>
+<div id="install-r-packages" class="section level2" number="1.1">
+<h2 number="7.1"><span class="header-section-number">7.1</span> Install R packages</h2>
+<p>Ensure you have the R packages used to help build R packages.</p>
+<pre class="r"><code>librarian::shelf(
+  devtools, pkgdown, roxygen2, usethis)</code></pre>
+</div>
+<div id="create-your-first-r-package-web-app" class="section level2" number="1.2">
+<h2 number="7.2"><span class="header-section-number">7.2</span> Create your first R package web app</h2>
+<p>Similar to other examples, let’s create a simple R package from within your <strong><em>r3-exercises</em></strong> RStudio project starting from the provided default by going to <strong>File</strong> -&gt; <strong>New Project…</strong> -&gt; <strong>New Directory</strong> -&gt; <strong>R Package</strong>… and name it <strong><em>mypkg</em></strong>.</p>
+<p><img src="figs/packages/new-r-pkg.png" width="400" /></p>
+<p>By ticking <strong>Open in a new session</strong> before Create Project, another instance of RStudio will open in addition to your existing one (i.e. the <strong><em>r3-exercises</em></strong> project).</p>
+<p>Notice the file structure in your RStudio <strong>Files</strong> pane:</p>
+<ul>
+<li><p><strong>DESCRIPTION</strong><br />
+name, author, version, package dependencies</p></li>
+<li><p><strong>NAMESPACE</strong><br />
+functions to import and export</p></li>
+<li><p><strong>R/</strong><br />
+folder containing R files</p>
+<ul>
+<li><strong>hello.R</strong><br />
+specific functions defined in R files</li>
+</ul></li>
+<li><p><strong>man/</strong><br />
+folder containing manual files with documentation</p>
+<ul>
+<li><strong>hello.Rd</strong><br />
+documentation in Latex style<br />
+(which gets auto-generated by inline R comments with roxygen2)</li>
+</ul></li>
+</ul>
+<p>Open each file to get a sense of its contents and style of tet.</p>
+</div>
+<div id="load-the-package" class="section level2 unnumbered">
+<h2 class="unnumbered">Load the Package</h2>
+<p>Before you can use the single <code>hello()</code> function in this package, you’ll need to load it first. There are a few options for how to load this, which is summarized in the <a href="https://github.com/rstudio/cheatsheets/raw/master/package-development.pdf">Package Development with devtools Cheatsheet</a>:</p>
+<p><img src="figs/packages/load-pkg.png" width="500" /></p>
+<p>Although a daunting diagram at first blush, it’s very informative with the different pathways to going from source code to functions in the package being loaded into memory and available. Let’s start with the most direct path from <strong>Source</strong> to <strong>In memory</strong> within your <strong><em>mypkg</em></strong> RStudio instance, which is what you most commonly use as you develop an R package:</p>
+<pre class="r"><code>devtools::load_all()</code></pre>
+<p>Looking at the help (<code>?devtools::load_all</code>), we see the first argument is the path which defaults to your current working directory (<code>"."</code>; see with <code>getwd()</code>). Now test it out:</p>
+<pre class="r"><code># run function
+hello()
+
+# look at the help documentation for the function
+?hello</code></pre>
+</div>
+<div id="document-functions-in-r" class="section level2" number="1.3">
+<h2 number="7.3"><span class="header-section-number">7.3</span> Document functions in R/</h2>
+<p>The original R format for documentation <code>*.Rd</code> is in Latex format that has a lot of extra syntax and is also easy to mismatch the function’s arguments and logic as it gets developed in a separate <code>*.R</code> file. Entrez <code>roxygen2</code> to the rescue (that is run with <code>devtools::document()</code>), which allows you to easily document the function directly above its R definition with special commenting.</p>
+<p>Open the R/hello.R file, place your cursor inside the <code>hello()</code> function and go to RStudio’s menu <strong>Code</strong> -&gt; <strong>Insert Roxygen Skeleton</strong>. You should see the new special comments populate above the function:</p>
+<pre class="r"><code>#&#39; Title
+#&#39;
+#&#39; @return
+#&#39; @export
+#&#39;
+#&#39; @examples
+hello &lt;- function() {
+  print(&quot;Hello, world!&quot;)
+}</code></pre>
+<p>To mimic the original documentation, replace the defaults to look like so:</p>
+<pre class="r"><code>#&#39; Hello, World!
+#&#39;
+#&#39; Prints &#39;Hello, World!&#39;
+#&#39;
+#&#39; @return a string
+#&#39; @export
+#&#39;
+#&#39; @examples
+#&#39; hello()
+hello &lt;- function() {
+  print(&quot;Hello, world!&quot;)
+}</code></pre>
+<p>Now to update the documentation using <code>roxygen2</code>, you’ll need to first <strong><em>delete</em></strong> these files which will hereafter be written only by <code>roxygen2</code>:</p>
+<ul>
+<li><p>NAMESPACE</p></li>
+<li><p>man/hello.Rd</p></li>
+</ul>
+<pre class="r"><code># document functions in the package
+devtools::document()
+# ℹ Updating mypkg documentation
+# First time using roxygen2. Upgrading automatically...
+# ℹ Loading mypkg
+# Writing NAMESPACE
+# Writing hello.Rd</code></pre>
+<p>Now reload the package and look at the help:</p>
+<pre class="r"><code># reload the function
+devtools::load_all()
+
+# look at the help documentation for the function
+?hello</code></pre>
+<div id="add-argument" class="section level3" number="1.3.1">
+<h3 number="7.3.1"><span class="header-section-number">7.3.1</span> Add argument</h3>
+<p>Next, let’s add an argument to make the function flexible to greet anyone:</p>
+<pre class="r"><code>#&#39; Hello, World!
+#&#39;
+#&#39; Prints &#39;Hello, {name}!&#39;
+#&#39;
+#&#39; @param name who to greet; defaults to &quot;World&quot;
+#&#39;
+#&#39; @return a string
+#&#39; @export
+#&#39;
+#&#39; @examples
+#&#39; hello()
+#&#39; hello(&quot;Ben&quot;)
+hello &lt;- function(name = &quot;World&quot;) {
+  print(glue::glue(&quot;Hello, {name}!&quot;))
+}</code></pre>
+<p>To get above, we:</p>
+<ul>
+<li><p>Added <code>name</code> as an argument to the function with the default value of <code>"World"</code>.</p></li>
+<li><p>Constructed the string with the <code>glue::glue()</code> function to use the argument.</p></li>
+<li><p>Ran <strong>Code</strong> -&gt; <strong>Insert Roxygen Skeleton</strong> again to detect the new argument in the function and add the special <code>roxygen2</code> comment with <code>@param name</code>.</p></li>
+</ul>
+</div>
+<div id="add-dependency" class="section level3" number="1.3.2">
+<h3 number="7.3.2"><span class="header-section-number">7.3.2</span> Add dependency</h3>
+<p>You’ll notice that we’re now using the package <code>glue</code> and its core function <code>glue</code>, but we haven’t declared that within the dependencies of the package. To do so you’ll want to add the following line (such as above <code>@export</code> line):</p>
+<pre class="r"><code>#&#39; @importFrom glue glue</code></pre>
+<p>This imports the function glue from the package glue. To simply import the entire package for use with this function you could have alternatively used:</p>
+<pre class="r"><code>#&#39; @import glue</code></pre>
+<p>As always, to then update the documentation:</p>
+<pre class="r"><code>devtools::document()</code></pre>
+<p>Note the new line added to the NAMESPACE file:</p>
+<p><code>importFrom(glue,glue)</code></p>
+<p>If you want to ensure the dependent package gets installed when yours is installed, then run the following in the R console:</p>
+<pre class="r"><code>usethis::use_package(&quot;glue&quot;)
+# ✓ Setting active project to &#39;/Users/bbest/github/bbest/r3-exercises/mypkg&#39;
+# ✓ Adding &#39;glue&#39; to Imports field in DESCRIPTION
+# • Refer to functions with `glue::fun()`</code></pre>
+<p>Note that this command updates the <code>DESCRIPTION</code> file with the following to alert that installation of the <code>glue</code> package is also needed:</p>
+<pre class="yaml"><code>Imports: 
+    glue</code></pre>
+<p>For more detailed nuances, check out <a href="https://kbroman.org/pkg_primer/pages/depends.html">Connecting to other packages</a>.</p>
+</div>
+</div>
+<div id="add-data" class="section level2" number="1.4">
+<h2 number="7.4"><span class="header-section-number">7.4</span> Add data</h2>
+<p>Besides functions, you can also make data available in your R package. This is especially helpful for lookup tables and sample datasets to be used as examples to run your functions.</p>
+<p>Let’s setup the reproducible code to create our dataset in a special folder data-raw:</p>
+<pre class="r"><code>usethis::use_data_raw()
+# ✓ Creating &#39;data-raw/&#39;
+# ✓ Adding &#39;^data-raw$&#39; to &#39;.Rbuildignore&#39;
+# ✓ Writing &#39;data-raw/DATASET.R&#39;
+# • Modify &#39;data-raw/DATASET.R&#39;
+# • Finish the data preparation script in &#39;data-raw/DATASET.R&#39;
+# • Use `usethis::use_data()` to add prepared data to package</code></pre>
+<p>Let’s open the newly <code>created data-raw/DATASET.R</code> and add a test dataset by replacing its contents with the following:</p>
+<pre class="r"><code># create data object, such as a dataframe of exponential growth
+df_exp &lt;- data.frame(
+  x = 1:10,
+  y = (1:10)^2)
+
+# store object in data/*.rda
+usethis::use_data(df_exp, overwrite = TRUE)</code></pre>
+<p>Now <strong>Source</strong> this file. You should see:</p>
+<p><code>✓ Saving 'df_exp' to 'data/df_exp.rda' • Document your data (see 'https://r-pkgs.org/data.html')</code></p>
+<p>Borrowing from <a href="https://r-pkgs.org/data.html#documenting-data">14.1.1 Documenting datasets | R Packages</a>, let’s create a <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>R Script</strong> and save it in <code>R/data.R</code>.</p>
+<pre class="r"><code>#&#39; Data frame of exponential data
+#&#39;
+#&#39; A simple data frame of y ~ x^2
+#&#39;
+#&#39; @format A data frame with 10 rows and 2 variables:
+#&#39; \describe{
+#&#39;   \item{x}{1 to 10}
+#&#39;   \item{y}{(1 to 10)^2}
+#&#39;   ...
+#&#39; }
+#&#39; @source \url{https://noaa-iea.github.io/r3-train/packages.html}
+&quot;df_exp&quot;</code></pre>
+<p>Finally, update the documentation:</p>
+<pre class="r"><code># update documentation
+devtools::document()</code></pre>
+<p>And test it out:</p>
+<pre class="r"><code># reload the package
+devtools::load_all()
+
+# show dataset
+df_exp
+
+# get dataset documentation
+?df_exp</code></pre>
+</div>
+<div id="add-vignette" class="section level2" number="1.5">
+<h2 number="7.5"><span class="header-section-number">7.5</span> Add vignette</h2>
+<p>Help documentation is good for documenting individual functions, but what if you want to show how functions interact or interactive visualizations. This is the role of vignettes, which are standalone documents to explain how functions interact and perhaps different case studies for using the R package.</p>
+<p>Let’s start by using a special name for the vignette of the package name <code>"mypkg"</code> (so that later it will be published on the website with a Getting Started link).</p>
+<pre class="r"><code>usethis::use_vignette(&quot;mypkg&quot;)
+# ✓ Adding &#39;knitr&#39; to Suggests field in DESCRIPTION
+# ✓ Setting VignetteBuilder field in DESCRIPTION to &#39;knitr&#39;
+# ✓ Adding &#39;inst/doc&#39; to &#39;.gitignore&#39;
+# ✓ Creating &#39;vignettes/&#39;
+# ✓ Adding &#39;*.html&#39;, &#39;*.R&#39; to &#39;vignettes/.gitignore&#39;
+# ✓ Adding &#39;rmarkdown&#39; to Suggests field in DESCRIPTION
+# ✓ Writing &#39;vignettes/mypkg.Rmd&#39;
+# • Modify &#39;vignettes/mypkg.Rmd&#39;</code></pre>
+<div id="add-plotting-function" class="section level3" number="1.5.1">
+<h3 number="7.5.1"><span class="header-section-number">7.5.1</span> Add plotting function</h3>
+<p>Before we get further into the vignette let’s create a function that shows an interactive plot so we can demonstrate something a bit more interesting by going to <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>R Script</strong> and save it in <code>R/plot.R</code>.</p>
+<pre class="r"><code>ts_plot &lt;- function(d){
+  dygraphs::dygraph(d) %&gt;%
+    dygraphs::dyRangeSelector()
+}</code></pre>
+<p>Next run <strong>Code</strong> -&gt; <strong>Insert Roxygen Skeleton</strong> and replace with the following:</p>
+<pre class="r"><code>#&#39; Time series plot
+#&#39;
+#&#39; Plot time series interactively.
+#&#39;
+#&#39; @param d data frame with two columns
+#&#39;
+#&#39; @return interactive dygraph plot
+#&#39; @import dygraphs
+#&#39; @export
+#&#39;
+#&#39; @examples
+#&#39; ts_plot(df_exp)</code></pre>
+<p>Note that we’re using the example dataset we previously created in the example and added the explicit <code>@import dygraphs</code>. To require the <code>dygraphs</code> R package to be installed let’s also run:</p>
+<pre class="r"><code>usethis::use_package(&quot;dygraphs&quot;)</code></pre>
+<p>We’re also using the pipe operator <code>%&gt;%</code> and there’s a special way to import that:</p>
+<pre class="r"><code># import pipe operator %&gt;%
+usethis::use_pipe()
+# ✓ Adding &#39;magrittr&#39; to Imports field in DESCRIPTION
+# ✓ Writing &#39;R/utils-pipe.R&#39;
+# • Run `devtools::document()` to update &#39;NAMESPACE&#39;
+
+# update documentation
+devtools::document()</code></pre>
+</div>
+<div id="finish-vignette" class="section level3" number="1.5.2">
+<h3 number="7.5.2"><span class="header-section-number">7.5.2</span> Finish vignette</h3>
+<p>Let’s add the following to your <code>vignettes/mypkg.Rmd</code>:</p>
+<pre><code>
+## Hello
+
+This is my first package. Let&#39;s start with hello.
+
+```{r}
+person &lt;- &quot;Hadley&quot;
+hello(person)
+```
+
+## Data
+
+We loaded this data:
+
+```{r}
+df_exp
+```
+
+## Plot
+
+And created this plotting function:
+
+```{r}
+ts_plot(df_exp)
+```</code></pre>
+<p>Before you can Knit this vignette you’ll need to install the package locally so <code>library(mypkg)</code> can work from the <code>setup</code> R chunk:</p>
+<pre class="r"><code>devtools::install()</code></pre>
+<p>Now you can <strong>Knit</strong> the vignette. But to install the whole package with the vignette you’ll need to run:</p>
+<pre class="r"><code>devtools::install(build_vignettes = T)</code></pre>
+<p>Now you can test the end user experience:</p>
+<pre class="r"><code>library(mypkg)
+
+vignette(&quot;mypkg&quot;)</code></pre>
+</div>
+</div>
+<div id="build-website" class="section level2" number="1.6">
+<h2 number="7.6"><span class="header-section-number">7.6</span> Build website</h2>
+<p>Next, let’s build a website for your R package:</p>
+<pre class="r"><code>pkgdown::build_site()
+# -- Installing package into temporary library ----------------------------------------
+# == Building pkgdown site =======================================================
+# Reading from: &#39;/Users/bbest/github/bbest/r3-exercises/mypkg&#39;
+# Writing to:   &#39;/Users/bbest/github/bbest/r3-exercises/mypkg/docs&#39;
+# -- Initialising site -----------------------------------------------------------
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/bootstrap-toc.css&#39; to &#39;bootstrap-toc.css&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/bootstrap-toc.js&#39; to &#39;bootstrap-toc.js&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/docsearch.css&#39; to &#39;docsearch.css&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/docsearch.js&#39; to &#39;docsearch.js&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/link.svg&#39; to &#39;link.svg&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/pkgdown.css&#39; to &#39;pkgdown.css&#39;
+# Copying &#39;../../../../../../Library/Frameworks/R.framework/Versions/4.1/Resources/library/pkgdown/assets/pkgdown.js&#39; to &#39;pkgdown.js&#39;
+# Writing &#39;404.html&#39;
+# -- Building home ---------------------------------------------------------------
+# Writing &#39;authors.html&#39;
+# -- Building function reference -------------------------------------------------
+# Writing &#39;reference/index.html&#39;
+# Reading &#39;man/df_exp.Rd&#39;
+# Writing &#39;reference/df_exp.html&#39;
+# Reading &#39;man/hello.Rd&#39;
+# Writing &#39;reference/hello.html&#39;
+# Reading &#39;man/pipe.Rd&#39;
+# Writing &#39;reference/pipe.html&#39;
+# Reading &#39;man/ts_plot.Rd&#39;
+# Writing &#39;reference/ts_plot.html&#39;
+# -- Building articles -----------------------------------------------------------
+# Writing &#39;articles/index.html&#39;
+# Reading &#39;vignettes/mypkg.Rmd&#39;
+# Writing &#39;articles/mypkg.html&#39;
+# == DONE ========================================================================
+# -- Previewing site ------------------------------------------------------------------</code></pre>
+<p>Note how the website is populated into the <code>docs/</code> folder. The home page (<code>docs/index.html</code>) is quite plain, so let’s add the README to populate that:</p>
+<pre class="r"><code>usethis::use_readme_rmd()
+# ✓ Setting active project to &#39;/Users/bbest/github/bbest/r3-exercises/mypkg&#39;
+# ✓ Writing &#39;README.Rmd&#39;
+# ✓ Adding &#39;^README\\.Rmd$&#39; to &#39;.Rbuildignore&#39;
+# • Modify &#39;README.Rmd&#39;
+# ✓ Creating &#39;.git/hooks/&#39;
+# ✓ Writing &#39;.git/hooks/pre-commit&#39;</code></pre>
+<p>You should update the <code>install_github</code> line according to your Github <code>USER</code> name (e.g. <strong><em><code>bbest</code></em></strong> for me) and indicate the package is in a subdirectory.</p>
+<pre class="r"><code>remotes::install_github(&quot;USER/r3-exercises&quot;, subdir=&quot;mypkg&quot;)</code></pre>
+<p>Now push the website to Github for sharing with the world by going to your <strong><em>r3-exercises</em></strong> RStudio project and in the <strong>Git</strong> pane <strong>Commit</strong> the new <code>mypkg</code> folder and <strong>Push</strong> to Github. You should then see the documentation at your <code>USER</code> r3-exercises website:</p>
+<p><code>https://USER.github.io/r3-exercises/mypkg/docs</code></p>
+</div>
+<div id="further-resources" class="section level2 unnumbered">
+<h2 class="unnumbered">Further Resources</h2>
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/package-development.pdf">Package Development with devtools cheatsheet</a></li>
+<li><a href="https://r-pkgs.org/">R Packages book</a></li>
+<li><a href="https://kbroman.org/pkg_primer/">R package primer</a><br />
+</li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

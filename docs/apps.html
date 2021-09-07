@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Applications</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="site_libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="site_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="site_libs/ionrangeslider-2.1.2/css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="site_libs/ionrangeslider-2.1.2/css/ion.rangeSlider.skinShiny.css" rel="stylesheet" />
+<script src="site_libs/ionrangeslider-2.1.2/js/ion.rangeSlider.min.js"></script>
+<script src="site_libs/strftime-0.9.2/strftime-min.js"></script>
+<link href="site_libs/leaflet-easybutton-1.3.1/easy-button.css" rel="stylesheet" />
+<script src="site_libs/leaflet-easybutton-1.3.1/easy-button.js"></script>
+<script src="site_libs/leaflet-easybutton-1.3.1/EasyButton-binding.js"></script>
+<link href="site_libs/leaflet-locationfilter2-0.1.1/locationfilter.css" rel="stylesheet" />
+<script src="site_libs/leaflet-locationfilter2-0.1.1/locationfilter.js"></script>
+<script src="site_libs/leaflet-locationfilter2-0.1.1/locationfilter-bindings.js"></script>
+<link href="site_libs/ionicons-2.0.1/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.18/datatables.js"></script>
+<link href="site_libs/dt-core-bootstrap-1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-bootstrap-1.10.20/css/dataTables.bootstrap.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-bootstrap-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/dt-core-bootstrap-1.10.20/js/dataTables.bootstrap.min.js"></script>
+<link href="site_libs/dt-ext-scroller-bootstrap-1.10.20/css/scroller.bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-scroller-bootstrap-1.10.20/js/dataTables.scroller.min.js"></script>
+<script src="site_libs/dt-ext-scroller-bootstrap-1.10.20/js/scroller.bootstrap.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF7V8KERR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8XF7V8KERR');
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">R<sup>3</sup></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="collaborate.html">
+    <span class="fa fa-users"></span>
+     
+    Collaborate
+  </a>
+</li>
+<li>
+  <a href="manipulate.html">
+    <span class="fas fa-wrench"></span>
+     
+    Manipulate
+  </a>
+</li>
+<li>
+  <a href="visualize.html">
+    <span class="fas fa-chart-bar"></span>
+     
+    Visualize
+  </a>
+</li>
+<li>
+  <a href="map.html">
+    <span class="fas fa-map"></span>
+     
+    Map
+  </a>
+</li>
+<li>
+  <a href="report.html">
+    <span class="fas fa-book"></span>
+     
+    Report
+  </a>
+</li>
+<li>
+  <a href="infographics.html">
+    <span class="fas fa-info-circle"></span>
+     
+    Infographics
+  </a>
+</li>
+<li>
+  <a href="apps.html">
+    <span class="fas fa-rocket"></span>
+     
+    Applications
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="setup.html">
+    <span class="fas fa-cogs"></span>
+     
+    Setup
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fas fa-search"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="roster.html">
+    <span class="fas fa-user-friends"></span>
+     
+    Roster
+  </a>
+</li>
+<li>
+  <a href="https://github.com/noaa-iea/r3-train">
+    <span class="fab fa-github"></span>
+     
+    Repo
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<div id="applications" class="section level1" number="1">
+<h1 number="7"><span class="header-section-number">7</span> Applications</h1>
+<div id="learning-objectives" class="section level2 unnumbered objectives">
+<h2 class="unnumbered objectives">Learning Objectives</h2>
+<p>Use the Shiny framework to develop online interactive applications accepting user input to render outputs from arbitrary R functions. Server requirements differentiating from simpler Rmarkdown renderings will be reviewed as well as use of Crosstalk to gain similar functionality with Rmarkdown with simple data.</p>
+</div>
+<div id="install-shiny-r-package" class="section level2" number="1.1">
+<h2 number="7.1"><span class="header-section-number">7.1</span> Install <code>shiny</code> R package</h2>
+<p>Ensure you have the <code>shiny</code> R package installed. Look in RStudio’s Packages pane and Install if not found when searching for “shiny”.</p>
+<p>A few other packages will get used so let’s use the librarian::shelf() command to install if needed:</p>
+<pre class="r"><code>librarian::shelf(
+  plotly, reactlog, shiny, shinydashboard)</code></pre>
+</div>
+<div id="create-your-first-shiny-web-app" class="section level2" number="1.2">
+<h2 number="7.2"><span class="header-section-number">7.2</span> Create your first Shiny web app</h2>
+<p>Similar to other examples, let’s create a simple Shiny app starting from the provided default by going to <strong>File</strong> -&gt; <strong>New File</strong> -&gt; <strong>Shiny Web App</strong>… and name it <strong><em>app-faithful</em></strong> (after <a href="https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/faithful">faithful</a>, the Old Faithful geyser eruption frequency dataset used in this default example):</p>
+<p><img src="figs/apps/new-shiny_app-faithful.png" width="400" /></p>
+<p>For now, let’s go with the default <strong>Single File</strong> option that puts the entire application in <code>app.R</code> rather than splitting it in two (<code>ui.R</code>/<code>server.R</code>). You should see the following contents in the new <code>app.R</code> file contents:</p>
+<pre class="r"><code>#
+# This is a Shiny web application. You can run the application by clicking
+# the &#39;Run App&#39; button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
+
+library(shiny)
+
+# Define UI for application that draws a histogram
+ui &lt;- fluidPage(
+
+    # Application title
+    titlePanel(&quot;Old Faithful Geyser Data&quot;),
+
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput(&quot;bins&quot;,
+                        &quot;Number of bins:&quot;,
+                        min = 1,
+                        max = 50,
+                        value = 30)
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+           plotOutput(&quot;distPlot&quot;)
+        )
+    )
+)
+
+# Define server logic required to draw a histogram
+server &lt;- function(input, output) {
+
+    output$distPlot &lt;- renderPlot({
+        # generate bins based on input$bins from ui.R
+        x    &lt;- faithful[, 2]
+        bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+
+        # draw the histogram with the specified number of bins
+        hist(x, breaks = bins, col = &#39;darkgray&#39;, border = &#39;white&#39;)
+    })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)</code></pre>
+<p>Let’s next <strong>Run App</strong>. Note that you can change the options by clicking on the down triangle next to the button, such as running the app in your default web browser (<strong><em>Run External</em></strong>), a pop-up window or in RStudio’s Viewer Pane.</p>
+<p><img src="figs/apps/shiny-run-app-options.png" width="200" /></p>
+<p>Now you can change the values in the slider on the left, then see the plot updated:</p>
+<p><img src="figs/apps/faithful-app.png" width="600" /></p>
+<p>In Shiny parlance, the histogram plot is <strong><em>reactive</em></strong> to the slider. Normally when creating web apps, this type of “reactivity” is quite complicated to code, but here by simply using <code>input$bins</code> in the plotting function for the <code>output$distPlot</code>, Shiny registers that this plot needs to be updated when the user changes the <code>input$bins</code> value.</p>
+<div id="run-in-showcase-mode" class="section level3" number="1.2.1">
+<h3 number="7.2.1"><span class="header-section-number">7.2.1</span> Run in showcase mode</h3>
+<p>This default example along with other are made available in the shiny package’s installed folder:</p>
+<pre class="r"><code># get path to &quot;examples&quot; under your installation of the Shiny R package
+dir_examples  &lt;- system.file(&quot;examples&quot;, package=&quot;shiny&quot;)
+
+# get all directories listed there
+dirs_examples &lt;- list.dirs(dir_examples, recursive = F)
+
+# show the folder name only, not the rest of the path preceding (ie dirname())
+basename(dirs_examples)</code></pre>
+<pre><code>##  [1] &quot;01_hello&quot;      &quot;02_text&quot;       &quot;03_reactivity&quot; &quot;04_mpg&quot;       
+##  [5] &quot;05_sliders&quot;    &quot;06_tabsets&quot;    &quot;07_widgets&quot;    &quot;08_html&quot;      
+##  [9] &quot;09_upload&quot;     &quot;10_download&quot;   &quot;11_timer&quot;</code></pre>
+<p>Another way to launch the shiny app is with the following:</p>
+<pre class="r"><code># set directory to 01_hello app, aka the simplest default faithful app
+dir_hello_app &lt;- file.path(dir_examples, &quot;01_hello&quot;)
+
+# run the app with display.mode = &quot;auto&quot;
+#   which under shiny R package uses &quot;showcase&quot; mode because of the DESCRIPTION  file there (see ?shiny::runApp)
+shiny::runApp(dir_hello_app)</code></pre>
+</div>
+</div>
+<div id="download-run-examples" class="section level2" number="1.3">
+<h2 number="7.3"><span class="header-section-number">7.3</span> Download &amp; run examples</h2>
+<p>Next, let’s go through examples together.</p>
+<p>Download <a href="https://github.com/bbest/shiny-intro/archive/master.zip">shiny-intro-master.zip</a> into your <code>r3-exercises/</code>, unzip it and rename the top-level folder to <code>apps/</code> so you can see the following application folders directly under <code>r3-exercises/apps/</code>:</p>
+<ul>
+<li><code>01_faithful</code>: default app from using RStudio, File &gt; New File &gt; Shiny Web App… <img src="figs/apps/screenshot-01_faithful.png" /></li>
+<li><code>02_quakes_mag</code>: swap to quakes dataset, adjust histogram by magnitude</li>
+<li><code>03_quakes_depth</code>: add depth slider, select box for variable to histogram</li>
+<li><code>04_quakes_map</code>: add leaflet map</li>
+<li><code>05_quakes_dashboard</code>: enhance user interface (ie “ui”) with <code>shinydashboard</code> <img src="figs/apps/screenshot-05_quakes_dashboard.png" /></li>
+</ul>
+<p>Numbered folders in this repository correspond with iterative development and enhancement of a Shiny app.</p>
+<p>The following sections in this Rmarkdown document demonstrate how you can develop output visualizations for use in a Shiny app, especially by defining input variables as a list (<code>input$*</code>).</p>
+<p>Knitting Rmarkdown documents and pushing to Github then allows the HTML to be viewable (using the <a href="https://pages.github.com">Github Pages</a> feature). In contrast, Github and most web hosting services can <strong><em>not</em></strong> host a Shiny app. Although the <a href="http://rstudio.github.io/leaflet">leaflet</a> and <a href="https://plot.ly/ggplot2">plotly</a> visualizations in this document are interactive in the web browser, they do not require the Shiny library or a Shiny server to be displayed. Rather, the HTML output can be easily hosted on the most basic web server or passed as an email attachment. The Shiny context allows for ultimate flexibility with user interactions, but may be overkill for basic visualization. Check out all the amazing <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a> and framework that works in the three contexts of: 1) RStudio, 2) Rmarkdown, and 3) Shiny.</p>
+<div id="faithful" class="section level3" number="1.3.1">
+<h3 number="7.3.1"><span class="header-section-number">7.3.1</span> <code>01_faithful</code></h3>
+<ul>
+<li><p>Code: <a href="https://github.com/bbest/shiny-intro/tree/master/01_faithful">01_faithful</a></p></li>
+<li><p>Run from GitHub:</p>
+<pre class="r"><code>shiny::runGitHub(&quot;bbest/shiny-intro&quot;, subdir=&quot;01_faithful&quot;)</code></pre></li>
+<li><p>Run locally:</p>
+<pre class="r"><code>shiny::runApp(&quot;01_faithful&quot;)</code></pre></li>
+</ul>
+<p>In order to quickly experiment with visualization, we could pull the code from within the rendering function of the Shiny app and set the input list values that would otherwise be set from the user interface…</p>
+<pre class="r"><code>input = list(bins = 30)
+
+x &lt;- faithful[, 2] 
+bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+    
+hist(x, breaks = bins, col = &#39;darkgray&#39;, border = &#39;white&#39;)</code></pre>
+<p><img src="apps_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="quakes_mag" class="section level3" number="1.3.2">
+<h3 number="7.3.2"><span class="header-section-number">7.3.2</span> <code>02_quakes_mag</code></h3>
+<pre class="r"><code>library(tidyverse)
+
+input &lt;- list(slider_mag = c(4, 6))
+
+d &lt;- quakes %&gt;%
+  filter(
+    mag &gt;= input$slider_mag[1],
+    mag &lt;= input$slider_mag[2])
+
+hist(d$mag, col = &#39;darkgray&#39;, border = &#39;white&#39;)</code></pre>
+<p><img src="apps_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<ul>
+<li><p>Code: <a href="https://github.com/bbest/shiny-intro/tree/master/02_quakes_mag">02_quakes_mag</a></p></li>
+<li><p>Run from GitHub:</p>
+<pre class="r"><code>shiny::runGitHub(&quot;bbest/shiny-intro&quot;, subdir=&quot;02_quakes_mag&quot;)</code></pre></li>
+<li><p>Run locally:</p>
+<pre class="r"><code>shiny::runApp(&quot;02_quakes_mag&quot;)</code></pre></li>
+</ul>
+</div>
+<div id="quakes_depth" class="section level3" number="1.3.3">
+<h3 number="7.3.3"><span class="header-section-number">7.3.3</span> <code>03_quakes_depth</code></h3>
+<pre class="r"><code>library(tidyverse)
+
+input &lt;- list(
+  select_var = &quot;depth&quot;, 
+  slider_mag = c(4, 5), 
+  slider_depth = c(0, 100))
+
+d &lt;- quakes %&gt;%
+  filter(
+    mag   &gt;= input$slider_mag[1],
+    mag   &lt;= input$slider_mag[2],
+    depth &gt;= input$slider_depth[1],
+    depth &lt;= input$slider_depth[2])
+
+hist(d[,input$select_var], col = &#39;darkgray&#39;, border = &#39;white&#39;)</code></pre>
+<p><img src="apps_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<ul>
+<li><p>Code: <a href="https://github.com/bbest/shiny-intro/tree/master/03_quakes_depth">03_quakes_depth</a></p></li>
+<li><p>Run from GitHub:</p>
+<pre class="r"><code>shiny::runGitHub(&quot;bbest/shiny-intro&quot;, subdir=&quot;03_quakes_depth&quot;)</code></pre></li>
+<li><p>Run locally:</p>
+<pre class="r"><code>shiny::runApp(&quot;03_quakes_depth&quot;)</code></pre></li>
+<li><p><a href="https://github.com/bbest/shiny-intro/tree/master/04_quakes_map">shiny-intro/04_quakes_map at master · bbest/shiny-intro</a></p></li>
+<li><p><a href="https://github.com/bbest/shiny-intro/tree/master/05_quakes_dashboard">shiny-intro/05_quakes_dashboard at master · bbest/shiny-intro</a></p></li>
+<li><p><a href="http://benbestphd.com/shiny-intro/crosstalk.html">Fiji earthquakes</a></p></li>
+</ul>
+</div>
+<div id="quakes_map" class="section level3" number="1.3.4">
+<h3 number="7.3.4"><span class="header-section-number">7.3.4</span> <code>04_quakes_map</code></h3>
+<ul>
+<li><a href="http://rstudio.github.io/leaflet/markers.html#icon-markers">Leaflet for R - Markers</a></li>
+</ul>
+<pre class="r"><code>library(leaflet)
+library(glue)
+
+leaflet(data = quakes[1:20,]) %&gt;% 
+  addTiles() %&gt;%
+  addCircleMarkers(
+    radius = ~mag, color = &quot;red&quot;, stroke = FALSE, fillOpacity = 0.5,
+    popup = ~glue(&quot;&lt;b&gt;mag&lt;/b&gt;: {mag}&lt;br&gt;depth: {depth} m&quot;), label = ~as.character(mag))</code></pre>
+<div id="htmlwidget-6a70570e18e4d46dc3f5" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a70570e18e4d46dc3f5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[-20.42,-20.62,-26,-17.97,-20.42,-19.68,-11.7,-28.11,-28.74,-17.47,-21.44,-12.26,-18.54,-21,-20.7,-15.94,-13.64,-17.83,-23.5,-22.63],[181.62,181.03,184.1,181.66,181.96,184.31,166.1,181.93,181.74,179.59,180.69,167,182.11,181.66,169.92,184.95,165.96,181.5,179.78,180.31],[4.8,4.2,5.4,4.1,4,4,4.8,4.4,4.7,4.3,4.4,4.6,4.4,4.4,6.1,4.3,6,4.5,4.4,4.4],null,null,{"interactive":true,"className":"","stroke":false,"color":"red","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":0.5},null,null,["<b>mag<\/b>: 4.8<br>depth: 562 m","<b>mag<\/b>: 4.2<br>depth: 650 m","<b>mag<\/b>: 5.4<br>depth: 42 m","<b>mag<\/b>: 4.1<br>depth: 626 m","<b>mag<\/b>: 4<br>depth: 649 m","<b>mag<\/b>: 4<br>depth: 195 m","<b>mag<\/b>: 4.8<br>depth: 82 m","<b>mag<\/b>: 4.4<br>depth: 194 m","<b>mag<\/b>: 4.7<br>depth: 211 m","<b>mag<\/b>: 4.3<br>depth: 622 m","<b>mag<\/b>: 4.4<br>depth: 583 m","<b>mag<\/b>: 4.6<br>depth: 249 m","<b>mag<\/b>: 4.4<br>depth: 554 m","<b>mag<\/b>: 4.4<br>depth: 600 m","<b>mag<\/b>: 6.1<br>depth: 139 m","<b>mag<\/b>: 4.3<br>depth: 306 m","<b>mag<\/b>: 6<br>depth: 50 m","<b>mag<\/b>: 4.5<br>depth: 590 m","<b>mag<\/b>: 4.4<br>depth: 570 m","<b>mag<\/b>: 4.4<br>depth: 598 m"],null,["4.8","4.2","5.4","4.1","4","4","4.8","4.4","4.7","4.3","4.4","4.6","4.4","4.4","6.1","4.3","6","4.5","4.4","4.4"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-28.74,-11.7],"lng":[165.96,184.95]}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><p>Code: <a href="https://github.com/bbest/shiny-intro/tree/master/04_quakes_map">04_quakes_map</a></p></li>
+<li><p>Run from GitHub:</p>
+<pre class="r"><code>shiny::runGitHub(&quot;bbest/shiny-intro&quot;, subdir=&quot;04_quakes_map&quot;)</code></pre></li>
+<li><p>Run locally:</p>
+<pre class="r"><code>shiny::runApp(&quot;04_quakes_map&quot;)</code></pre></li>
+</ul>
+</div>
+<div id="quakes_dashboard" class="section level3" number="1.3.5">
+<h3 number="7.3.5"><span class="header-section-number">7.3.5</span> <code>05_quakes_dashboard</code></h3>
+<p>Use:</p>
+<ul>
+<li><p><a href="http://rstudio.github.io/shinydashboard" class="uri">shinydashboard</a></p></li>
+<li><p><a href="https://github.com/tidyverse/ggplot2" class="uri">ggplot2</a></p></li>
+<li><p><a href="https://plot.ly/ggplot2" class="uri">plot.ly</a></p></li>
+</ul>
+<pre class="r"><code>library(tidyverse)
+library(glue)
+
+input &lt;- list(
+  select_var   = &quot;depth&quot;, 
+  slider_mag   = c(4, 5), 
+  slider_depth = c(0, 100))
+
+get_df &lt;- function(){
+  df &lt;- quakes %&gt;%
+    filter(
+      mag   &gt;= input$slider_mag[1],
+      mag   &lt;= input$slider_mag[2],
+      depth &gt;= input$slider_depth[1],
+      depth &lt;= input$slider_depth[2])
+  df$var &lt;- df[[input$select_var]]
+  df
+}
+
+df        &lt;- get_df()
+bin_width &lt;- min(c(7, length(unique(df$var))))
+    
+g &lt;- ggplot(df, aes(var)) + 
+  geom_histogram(binwidth=bin_width)
+
+plotly::ggplotly(g)</code></pre>
+<div id="htmlwidget-f1f028e8c70826d80226" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1f028e8c70826d80226">{"x":{"data":[{"orientation":"v","width":[7,7,7,7,7,7,7,7,7],"base":[0,0,0,0,0,0,0,0,0],"x":[42,49,56,63,70,77,84,91,98],"y":[32,31,19,28,29,17,16,12,15],"text":["count: 32<br />var: 42","count: 31<br />var: 49","count: 19<br />var: 56","count: 28<br />var: 63","count: 29<br />var: 70","count: 17<br />var: 77","count: 16<br />var: 84","count: 12<br />var: 91","count: 15<br />var: 98"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(89,89,89,1)","line":{"width":1.88976377952756,"color":"transparent"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[35.35,104.65],"tickmode":"array","ticktext":["40","60","80","100"],"tickvals":[40,60,80,100],"categoryorder":"array","categoryarray":["40","60","80","100"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"var","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-1.6,33.6],"tickmode":"array","ticktext":["0","10","20","30"],"tickvals":[0,10,20,30],"categoryorder":"array","categoryarray":["0","10","20","30"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"9d5c5a0e7fc6":{"x":{},"type":"bar"}},"cur_data":"9d5c5a0e7fc6","visdat":{"9d5c5a0e7fc6":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li><p>Code: <a href="https://github.com/bbest/shiny-intro/tree/master/05_quakes_dashboard">05_quakes_dashboard</a></p></li>
+<li><p>Run from GitHub:</p>
+<pre class="r"><code>shiny::runGitHub(&quot;bbest/shiny-intro&quot;, subdir=&quot;05_quakes_dashboard&quot;)</code></pre></li>
+<li><p>Run locally:</p>
+<pre class="r"><code>shiny::runApp(&quot;05_quakes_dashboard&quot;)</code></pre></li>
+<li><p>View app directly: <a href="https://bdbest.shinyapps.io/05_quakes_dashboard" class="uri">https://bdbest.shinyapps.io/05_quakes_dashboard</a></p>
+<p><a href="https://bdbest.shinyapps.io/05_quakes_dashboard"><img src="figs/apps/screenshot-05_quakes_dashboard.png" /></a></p></li>
+</ul>
+</div>
+</div>
+<div id="rmarkdown-using-crosstalk" class="section level2" number="1.4">
+<h2 number="7.4"><span class="header-section-number">7.4</span> Rmarkdown using Crosstalk</h2>
+<ul>
+<li><a href="https://rstudio.github.io/crosstalk" class="uri">https://rstudio.github.io/crosstalk</a></li>
+</ul>
+<pre class="r"><code>library(crosstalk)
+library(leaflet)
+library(DT)
+
+# Wrap data frame in SharedData
+sd &lt;- SharedData$new(quakes[sample(nrow(quakes), 100),])
+
+# Create a filter input
+filter_slider(&quot;mag&quot;, &quot;Magnitude&quot;, sd, column=~mag, step=0.1, width=250)</code></pre>
+<div class="form-group crosstalk-input crosstalk-input-slider js-range-slider" id="mag" style="width: 250px;">
+<label class="control-label" for="mag">Magnitude</label>
+<input data-type="double" data-min="4" data-max="5.7" data-from="4" data-to="5.7" data-step="0.1" data-grid="true" data-grid-num="8.5" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="5.88235294117647" data-drag-interval="true" data-data-type="number"/>
+<script type="application/json" data-for="mag">{
+  "values": [4, 4, 4, 4, 4, 4.1, 4.1, 4.1, 4.1, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.8, 4.8, 4.8, 4.8, 4.8, 4.9, 4.9, 4.9, 4.9, 4.9, 4.9, 4.9, 4.9, 4.9, 5, 5, 5, 5, 5, 5, 5.1, 5.1, 5.1, 5.1, 5.2, 5.2, 5.2, 5.3, 5.3, 5.4, 5.4, 5.4, 5.4, 5.5, 5.5, 5.7],
+  "keys": ["900", "919", "483", "433", "775", "485", "39", "67", "242", "369", "968", "265", "499", "779", "565", "619", "344", "452", "809", "591", "182", "582", "774", "740", "909", "963", "212", "705", "880", "685", "125", "480", "144", "467", "682", "695", "804", "725", "694", "798", "872", "235", "241", "578", "57", "131", "560", "674", "246", "527", "577", "540", "197", "193", "741", "425", "258", "401", "732", "929", "288", "100", "432", "554", "854", "165", "552", "661", "434", "754", "489", "807", "983", "608", "662", "315", "927", "325", "783", "110", "291", "745", "334", "981", "771", "385", "335", "657", "746", "812", "844", "765", "787", "25", "936", "928", "459", "531", "449", "151"],
+  "group": ["SharedDatabed2d12f"]
+}</script>
+</div>
+<pre class="r"><code># Use SharedData like a dataframe with Crosstalk-enabled widgets
+bscols(
+  leaflet(sd) %&gt;% 
+    addTiles() %&gt;% 
+    addMarkers(),
+  datatable(
+    sd, extensions=&quot;Scroller&quot;, style=&quot;bootstrap&quot;, class=&quot;compact&quot;, width=&quot;100%&quot;,
+    options=list(deferRender=TRUE, scrollY=300, scroller=TRUE)))</code></pre>
+<div class="container-fluid crosstalk-bscols">
+<div class="fluid-row">
+<div class="col-xs-6">
+<div id="htmlwidget-e3f212834ea86fa755b5" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e3f212834ea86fa755b5">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addSelect","args":["SharedDatabed2d12f"]},{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[-18.07,-15.83,-27.54,-24.04,-19.66,-17.9,-16.31,-36.95,-24.09,-18.11,-20.64,-20.9,-21.07,-21.4,-19.41,-21.08,-20.24,-17.66,-24.03,-15.77,-17.82,-20.95,-32.6,-18.1,-19.33,-18.78,-20.74,-25.06,-15.35,-24.6,-35.48,-20.14,-10.8,-13.7,-20.57,-20.45,-19.18,-22.7,-18.48,-31.24,-25.04,-19.6,-29.91,-30.8,-15.44,-14.12,-17.74,-28.22,-31.03,-21.63,-25.28,-21.11,-17.56,-11.38,-19.17,-21.57,-15.61,-23.84,-20.04,-20.33,-19.3,-26.02,-23.85,-12.57,-19.34,-19.19,-20.08,-18.55,-20.49,-25.81,-23.49,-22.7,-17.59,-12.25,-20.16,-29.33,-20.82,-17.87,-17.43,-23.34,-21.6,-21.13,-23.53,-13.56,-30.01,-24.36,-26.16,-24.57,-20.63,-25.23,-23.33,-19.34,-21.6,-16.17,-19.45,-21.48,-12.93,-14.86,-23.28,-12.49],[181.54,182.51,182.5,184.85,180.28,181.3,168.08,177.81,179.68,181.67,169.66,182.02,181.13,180.74,183.05,181.3,185.1,181.4,180.22,167.01,181.27,181.06,180.9,181.63,186.16,186.72,181.53,182.8,186.4,183.5,179.9,181.6,165.8,166.75,181.33,182.1,169.33,183.3,181.49,180.6,180.97,185.2,181.43,182.16,167.18,166.64,181.31,183.6,181.59,180.77,181.17,181.5,181.59,167.05,169.53,185.62,167.5,180.13,182.01,168.71,183,181.2,182.53,166.72,186.59,182.3,182.74,182.23,181.69,182.54,179.07,181,180.98,166.6,184.27,182.72,181.67,182,185.43,184.5,180.5,185.32,179.99,166.49,180.8,182.84,178.47,179.92,181.61,179.86,180.26,182.62,169.9,184.1,184.48,183.78,169.52,167.32,184.61,166.36],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"ctKey":["619","369","344","783","25","485","725","110","452","246","754","809","489","968","265","807","771","39","499","531","900","591","425","880","936","854","694","919","685","182","165","67","779","765","582","798","258","483","291","125","565","480","144","401","527","787","577","983","746","774","740","449","540","872","909","608","467","235","385","552","745","732","197","963","812","662","241","433","578","929","335","57","657","334","682","928","981","193","131","151","775","288","459","560","661","242","434","100","741","695","432","674","844","212","705","315","804","927","554","325"],"ctGroup":"SharedDatabed2d12f"}]}],"limits":{"lat":[-36.95,-10.8],"lng":[165.8,186.72]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="col-xs-6">
+<div id="htmlwidget-dc96acb5a4420afc451d" style="width:100%;height:500px;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dc96acb5a4420afc451d">{"x":{"crosstalkOptions":{"key":["619","369","344","783","25","485","725","110","452","246","754","809","489","968","265","807","771","39","499","531","900","591","425","880","936","854","694","919","685","182","165","67","779","765","582","798","258","483","291","125","565","480","144","401","527","787","577","983","746","774","740","449","540","872","909","608","467","235","385","552","745","732","197","963","812","662","241","433","578","929","335","57","657","334","682","928","981","193","131","151","775","288","459","560","661","242","434","100","741","695","432","674","844","212","705","315","804","927","554","325"],"group":"SharedDatabed2d12f"},"style":"bootstrap","filter":"none","extensions":["Scroller"],"data":[["619","369","344","783","25","485","725","110","452","246","754","809","489","968","265","807","771","39","499","531","900","591","425","880","936","854","694","919","685","182","165","67","779","765","582","798","258","483","291","125","565","480","144","401","527","787","577","983","746","774","740","449","540","872","909","608","467","235","385","552","745","732","197","963","812","662","241","433","578","929","335","57","657","334","682","928","981","193","131","151","775","288","459","560","661","242","434","100","741","695","432","674","844","212","705","315","804","927","554","325"],[-18.07,-15.83,-27.54,-24.04,-19.66,-17.9,-16.31,-36.95,-24.09,-18.11,-20.64,-20.9,-21.07,-21.4,-19.41,-21.08,-20.24,-17.66,-24.03,-15.77,-17.82,-20.95,-32.6,-18.1,-19.33,-18.78,-20.74,-25.06,-15.35,-24.6,-35.48,-20.14,-10.8,-13.7,-20.57,-20.45,-19.18,-22.7,-18.48,-31.24,-25.04,-19.6,-29.91,-30.8,-15.44,-14.12,-17.74,-28.22,-31.03,-21.63,-25.28,-21.11,-17.56,-11.38,-19.17,-21.57,-15.61,-23.84,-20.04,-20.33,-19.3,-26.02,-23.85,-12.57,-19.34,-19.19,-20.08,-18.55,-20.49,-25.81,-23.49,-22.7,-17.59,-12.25,-20.16,-29.33,-20.82,-17.87,-17.43,-23.34,-21.6,-21.13,-23.53,-13.56,-30.01,-24.36,-26.16,-24.57,-20.63,-25.23,-23.33,-19.34,-21.6,-16.17,-19.45,-21.48,-12.93,-14.86,-23.28,-12.49],[181.54,182.51,182.5,184.85,180.28,181.3,168.08,177.81,179.68,181.67,169.66,182.02,181.13,180.74,183.05,181.3,185.1,181.4,180.22,167.01,181.27,181.06,180.9,181.63,186.16,186.72,181.53,182.8,186.4,183.5,179.9,181.6,165.8,166.75,181.33,182.1,169.33,183.3,181.49,180.6,180.97,185.2,181.43,182.16,167.18,166.64,181.31,183.6,181.59,180.77,181.17,181.5,181.59,167.05,169.53,185.62,167.5,180.13,182.01,168.71,183,181.2,182.53,166.72,186.59,182.3,182.74,182.23,181.69,182.54,179.07,181,180.98,166.6,184.27,182.72,181.67,182,185.43,184.5,180.5,185.32,179.99,166.49,180.8,182.84,178.47,179.92,181.61,179.86,180.26,182.62,169.9,184.1,184.48,183.78,169.52,167.32,184.61,166.36],[546,423,68,70,431,593,204,146,538,597,89,402,594,613,300,557,86,585,508,64,538,611,57,592,44,68,598,133,98,67,59,587,175,46,605,500,254,180,641,328,393,125,205,41,140,63,575,75,57,592,367,538,543,133,268,66,135,525,605,40,302,361,204,137,56,390,298,563,559,201,544,445,548,219,210,57,577,569,189,56,595,123,538,83,286,148,537,484,599,476,530,573,43,338,246,200,663,137,76,74],[4.3,4.2,4.3,5,5.4,4.1,4.5,5,4.3,4.6,4.9,4.3,4.9,4.2,4.2,4.9,5.1,4.1,4.2,5.5,4,4.3,4.7,4.4,5.4,4.8,4.5,4,4.4,4.3,4.8,4.1,4.2,5.3,4.3,4.5,4.7,4,5,4.4,4.2,4.4,4.4,4.7,4.6,5.3,4.6,4.9,5.2,4.3,4.3,5.5,4.6,4.5,4.3,4.9,4.4,4.5,5.1,4.8,5,4.7,4.6,4.3,5.2,4.9,4.5,4,4.5,4.7,5.1,4.5,5.1,5,4.4,5.4,5,4.6,4.5,5.7,4,4.7,5.4,4.5,4.8,4.1,4.8,4.7,4.6,4.4,4.7,4.5,5.2,4.3,4.3,4.9,4.4,4.9,4.7,4.9],[28,21,12,48,57,13,16,35,21,28,42,18,43,20,16,78,61,17,23,73,33,20,44,28,110,48,36,14,17,25,35,13,12,71,18,37,35,13,49,18,21,13,34,24,44,69,42,49,49,21,25,104,34,32,21,38,21,15,49,38,65,32,27,20,49,48,33,17,24,40,58,17,79,28,27,61,67,12,22,106,22,36,87,25,43,16,33,33,30,29,22,32,56,13,15,54,30,22,36,55]],"container":"<table class=\"table table-condensed\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lat<\/th>\n      <th>long<\/th>\n      <th>depth<\/th>\n      <th>mag<\/th>\n      <th>stations<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"deferRender":true,"scrollY":300,"scroller":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+<div id="further-resources" class="section level2 unnumbered">
+<h2 class="unnumbered">Further Resources</h2>
+<ul>
+<li><a href="https://shiny.rstudio.com/articles/cheatsheet.html">Shiny Cheatsheet</a></li>
+<li><a href="https://shiny.rstudio.com/tutorial/">Shiny Tutorial</a></li>
+<li><a href="https://www.rstudio.com/resources/webinars/introduction-to-shiny/">Introduction to Shiny - RStudio</a></li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

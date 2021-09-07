@@ -3,7 +3,7 @@ navbar:
   title: "R<sup>3</sup>"
   left:
     - text: "Collaborate"
-      icon: "fab fa-github"
+      icon: "fa fa-users"
       href: collaborate.html
     - text: "Manipulate"
       icon: "fas fa-wrench"
@@ -11,12 +11,24 @@ navbar:
     - text: "Visualize"
       icon: "fas fa-chart-bar"
       href: visualize.html
+    - text: "Map"
+      icon: "fas fa-map"
+      href: map.html
+    - text: "Report"
+      icon: "fas fa-book"
+      href: report.html
+    - text: "Infographics"
+      icon: "fas fa-info-circle"
+      href: infographics.html
+    - text: "Applications"
+      icon: "fas fa-rocket"
+      href: apps.html
   right:
     - text: "Setup"
       icon: "fas fa-cogs"
       href: setup.html
     - text: "Resources"
-      icon: "fas fa-book"
+      icon: "fas fa-search"
       href: resources.html
     - text: "Roster"
       icon: "fas fa-user-friends"
@@ -38,4 +50,6 @@ output:
     highlight: "default"
     # include:
     #   after_body: libs/after_body.html
+    includes:
+       in_header: libs/google-analytics_gtag.html
     css: libs/swcarpentry-lesson.css

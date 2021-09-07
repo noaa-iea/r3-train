@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Infographics</title>
+
+<script src="site_libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8XF7V8KERR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8XF7V8KERR');
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="libs/swcarpentry-lesson.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">R<sup>3</sup></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="collaborate.html">
+    <span class="fa fa-users"></span>
+     
+    Collaborate
+  </a>
+</li>
+<li>
+  <a href="manipulate.html">
+    <span class="fas fa-wrench"></span>
+     
+    Manipulate
+  </a>
+</li>
+<li>
+  <a href="visualize.html">
+    <span class="fas fa-chart-bar"></span>
+     
+    Visualize
+  </a>
+</li>
+<li>
+  <a href="map.html">
+    <span class="fas fa-map"></span>
+     
+    Map
+  </a>
+</li>
+<li>
+  <a href="report.html">
+    <span class="fas fa-book"></span>
+     
+    Report
+  </a>
+</li>
+<li>
+  <a href="infographics.html">
+    <span class="fas fa-info-circle"></span>
+     
+    Infographics
+  </a>
+</li>
+<li>
+  <a href="applications.html">
+    <span class="fas fa-rocket"></span>
+     
+    Applications
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="setup.html">
+    <span class="fas fa-cogs"></span>
+     
+    Setup
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fas fa-search"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="roster.html">
+    <span class="fas fa-user-friends"></span>
+     
+    Roster
+  </a>
+</li>
+<li>
+  <a href="https://github.com/noaa-iea/r3-train">
+    <span class="fab fa-github"></span>
+     
+    Repo
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<div id="infographics" class="section level1" number="1">
+<h1 number="6"><span class="header-section-number">6</span> Infographics</h1>
+<div id="learning-objectives" class="section level2 unnumbered objectives">
+<h2 class="unnumbered objectives">Learning Objectives</h2>
+<p>Use a custom infographiq Javascript library to intelligently link icons of ecosystem elements to pop-up windows containing data figures, which could be static images or interactive visualizations.</p>
+</div>
+<div id="install-software" class="section level2" number="1.1">
+<h2 number="6.1"><span class="header-section-number">6.1</span> Install software</h2>
+<div id="inkscape" class="section level3" number="1.1.1">
+<h3 number="6.1.1"><span class="header-section-number">6.1.1</span> InkScape</h3>
+<p><a href="https://inkscape.org"><strong>InkScape</strong></a> is a design tool that is excellent at editing SVG files, which is also its native storage format. It is similar to <a href="https://www.adobe.com/products/illustrator.html">Adobe Illustrator</a>, except free. Please download it at <a href="https://inkscape.org/release"><strong>inkscape.org/release</strong></a>.</p>
+<p>(<em>The current version 1.1 for MacOS is 118 MB, so it may take some time to download depending on your connection speed.</em>)</p>
+</div>
+<div id="infographiqr" class="section level3" number="1.1.2">
+<h3 number="6.1.2"><span class="header-section-number">6.1.2</span> <code>infographiqR</code></h3>
+<p>In order to use the infographiq template, you will need to install the following <code>infographiqR</code> R package:</p>
+<pre class="r"><code>remotes::install_github(&quot;marinebon/infographiqR&quot;)</code></pre>
+<p>Please close and restart all instances of RStudio before proceeding in order to load the <code>infographiqR</code> template project option.</p>
+</div>
+</div>
+<div id="create-infographiq-project" class="section level2" number="1.2">
+<h2 number="6.2"><span class="header-section-number">6.2</span> Create infographiq project</h2>
+<p>Please open <strong>RStudio</strong> by double-clicking on your <code>r3-exercises.Rproj</code> file to set your working directory. In the menu <strong>File</strong> -&gt; <strong>New Project</strong>…, <strong>New Directory</strong>, then <strong>Infographiq Project Template</strong>:</p>
+<p><img src="figs/infographics/new-iq-prj_template.png" width="500" /></p>
+<p>If you don’t see this option, then you presumably need to install <code>infographiqR</code> AND restart RStudio per the previous step.</p>
+<p>Then: 1) specify a <strong>directory</strong> like <code>infographiq-project</code> inside your r3-exercises folder; and 2) tick <strong>Open in a new session</strong>; before clicking <strong>Create Project</strong>:</p>
+<p><img src="figs/infographics/new-iq-prj_path.png" width="500" /></p>
+<p>RStudio should open to a new session with the <strong>Source</strong> and <strong>Files</strong> panes looking like so:</p>
+<p><img src="figs/infographics/new-iq-prj_ide.png" width="500" /></p>
+<div id="notice-report-techniques-of-index.rmd" class="section level3" number="1.2.1">
+<h3 number="6.2.1"><span class="header-section-number">6.2.1</span> Notice Report techniques of <code>index.Rmd</code></h3>
+<p>Do you notice two <a href="../report.html">Report</a> techniques in <code>index.Rmd</code> that we discussed last week?</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Parameters</strong> <code>params</code> in the frontmatter to specify the infographic’s two key inputs: 1) <code>svg</code> of the scalable vector graphic illustration; and 2) <code>csv</code> table matching the icon with the modal window content to open.</p></li>
+<li><p><strong>Child</strong> chunk is used to render the <code>svg</code>. Open <code>_svg-html_child.Rmd</code> to see the parameters used inline with HTML code (which is valid markdown) to load the needed JavaScript then run the main <a href="https://marinebon.org/infographiqJS/"><code>infographiqJS</code></a> <code>link_svg()</code> function.</p></li>
+</ol>
+<p>The combination of both techniques above allows multiple Rmds to use the same <code>_svg-html_child.Rmd</code> and specify different <code>params</code> for rendering different illustrations altogether.</p>
+</div>
+<div id="knit-the-index" class="section level3" number="1.2.2">
+<h3 number="6.2.2"><span class="header-section-number">6.2.2</span> Knit the index</h3>
+<p>Knit the index. You should see in the <strong>Viewer</strong> pane the rendered document.</p>
+<p><img src="figs/infographics/new-iq-prj_knit.png" width="400" /></p>
+<p>The icons demonstrate different functionality…</p>
+</div>
+<div id="view-with-local-web-server" class="section level3" number="1.2.3">
+<h3 number="6.2.3"><span class="header-section-number">6.2.3</span> View with local web server</h3>
+<p>Within the top of the <strong>Viewer</strong> pane, you can normally click the icon <strong>Show in new window</strong> <img src="figs/infographics/rstudio-viewer-new-window.png" width="29" /> to open the knitted web page into a full browser window, but when you try this you’ll get the unsatisfying result that the imagery disappears. This is because the reading of local files is not supported by <code>d3</code>’s <code>fetch()</code> function used to read the SVG, which is visible for instance if you open Google Chrome browser’s View -&gt; Developer -&gt; JavaScript Console:</p>
+<p><img src="figs/infographics/need-web-server_d3-error.png" width="600" /></p>
+<p>Per the <code>d3</code> guru Mike Bostock in this <a href="https://github.com/d3/d3-fetch/issues/23#issuecomment-423691132">issue</a>, we need a web server to load these files in a standard browser. Thankfully we can easily do this with the <code>servr</code> package. Be sure to specify the same directory as where you created the <code>infographiq-project</code>, which if you are working from that project after ticking <em>Open in a new session</em> in previous step should be <code>"."</code>, i.e. the current working directory.</p>
+<pre class="r"><code>shelf(servr)     # load package; install if needed
+getwd()          # check working directory
+httd(dir = &quot;.&quot;)  # run web server, aka http daemon
+
+servr::httd()    # one-liner to run web server</code></pre>
+<p>RStudio should again open the <code>index.html</code> (i.e. the default web page for a folder) in your <strong>Viewer</strong> pane, but now you can click the icon <strong>Show in new window</strong> <img src="figs/infographics/rstudio-viewer-new-window.png" width="29" /> to see it correctly in a full size web browser. The locally served web address for me is <code>http://127.0.0.1:4321/</code> but might be different for you.</p>
+<p>Open the files</p>
+</div>
+</div>
+<div id="link-to-a-modal-with-image" class="section level2" number="1.3">
+<h2 number="6.3"><span class="header-section-number">6.3</span> Link to a modal with image</h2>
+<p>Let’s start editing this <code>infographiq</code> template website by replacing the red circle with a <strong><em>thermometer</em></strong> <u><strong><em>icon</em></strong></u> and have it open a static figure of <strong><em>temperature</em></strong> <u><strong><em>indicator</em></strong></u> over time as the indicator.</p>
+<p>Start by opening a File Explorer (on Windows; or Finder on Mac) by going to RStudio’s <strong>File</strong> pane and clicking the gear icon <strong>More</strong> -&gt; <strong>Show Folder in New Window</strong>:</p>
+<p><img src="figs/infographics/rstudio-files-more-open-folder.png" width="400" /></p>
+<p>This should open File Explorer on Windows or Finder on Mac to your infographics. This may help you open files (try right-clicking to select the preferred application).</p>
+<div id="create-modalssst.html" class="section level3" number="1.3.1">
+<h3 number="6.3.1"><span class="header-section-number">6.3.1</span> Create modals/sst.<code>html</code></h3>
+<p>Let’s create a simple web page with an image using Rmarkdown by going to File -&gt; New File -&gt; Rmarkdown… . File -&gt; Save to <code>modals/sst.Rmd</code> and overwrite the entirety of the file with the following contents:</p>
+<pre class="rmd"><code>---
+pagetitle: &quot;SST&quot;
+output: html_document
+---
+
+![For details, see [28 Long-term Sea Surface Temperature | Technical Documentation, State of the Ecosystem Report](https://noaa-edab.github.io/tech-doc/long-term-sea-surface-temperature.html)](https://raw.githubusercontent.com/NOAA-EDAB/ecodata/master/docs/LTL_MAB_files/figure-html/long-term-sst-1.png)</code></pre>
+<p>Knit this file to see the simple web page with an image. Next, let’s add a suitable icon to the illustration and link the modal content with this page.</p>
+</div>
+<div id="add-temperature.svg-icon" class="section level3" number="1.3.2">
+<h3 number="6.3.2"><span class="header-section-number">6.3.2</span> Add temperature<code>.svg</code> icon</h3>
+<p>When I google “thermometer icon filetype:svg” and click Images (direct <a href="https://www.google.com/search?tbm=isch&amp;q=thermometer+icon&amp;tbs=ift:svg">link</a>), I like the second <a href="https://www.svgrepo.com/svg/865/thermometer">thermometer</a>, which is usable under Creative Commons License, so please download this file. I save id to my <code>infographiq-project/icons/asdf</code>.</p>
+<p><img src="figs/infographics/thermometer.svg" width="100" /></p>
+<p>Now open the <code>inkscape_example.svg</code> in Inkscape. (I right-clicked on the file and in Mac used the Open With menu.) Then delete the red circle. Then drag and drop the thermometer svg file onto the Inkscape Canvas. Use the</p>
+<p><a href="https://marinebon.org/infographiq/image-creation.html#inkscape_XML" class="uri">https://marinebon.org/infographiq/image-creation.html#inkscape_XML</a></p>
+</div>
+</div>
+<div id="link-icon-to-modal-with-table-.csv" class="section level2" number="1.4">
+<h2 number="6.4"><span class="header-section-number">6.4</span> Link icon to modal with table (<code>.csv</code>)</h2>
+<p>Setup the <code>thermometer</code> to link to the <code>modals/sst.html</code> by swapping out icon = <code>chartexample4</code> with the following last line of this table:</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="11%" />
+<col width="28%" />
+<col width="25%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>svg</th>
+<th>icon</th>
+<th>title</th>
+<th>link</th>
+<th>section</th>
+<th>not_modal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>inkscape_example.svg</td>
+<td>chartexample1</td>
+<td>Google Charts Example</td>
+<td>modals/modal_google_charts.html</td>
+<td>Category 1</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>inkscape_example.svg</td>
+<td>chartexample2</td>
+<td>Google Charts Example with Trend Bar</td>
+<td>modals/modal_google_charts2.html</td>
+<td>Category 1</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>inkscape_example.svg</td>
+<td>chartexample3</td>
+<td>Highcharts Example</td>
+<td>modals/modal_highcharts.html</td>
+<td>Category 1</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td>inkscape_example.svg</td>
+<td>thermometer</td>
+<td>SST</td>
+<td>modals/sst.html</td>
+<td>Category 2</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="further-resources" class="section level2 unnumbered">
+<h2 class="unnumbered">Further Resources</h2>
+<ul>
+<li><a href="https://marinebon.org/infographiq/">Infographiq guide</a>: online manual</li>
+<li><a href="https://drive.google.com/file/d/1qLmY0CWC0PDnRL7Y9Ks3hYU86p4tYoJZ/view?usp=sharing">Infographiq manuscript</a>: aka “Webenized Condition Report”, submitted to NOAA Sanctuary <a href="https://sanctuaries.noaa.gov/science/conservation/welcome.html">Conservation Series</a> on 2021-07-09</li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

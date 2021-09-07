@@ -58,13 +58,14 @@ discussion and exercise completion time. All webinars will be
     Use principles of the "grammar of graphics" to develop static plots
     in the R package ggplot2. Make these interactive with plotly.
     Develop dedicated time series plots with dygraphs.\
-    [Slides](https://docs.google.com/presentation/d/1AS6beW02Upzv4vi5RgK_mwi0o740Q5l0kgCMsKOCmos/edit?usp=sharing), [Lesson](./visualize.html) \
+    [Video](https://youtu.be/h8fR2czCRr0), [Slides](https://docs.google.com/presentation/d/1AS6beW02Upzv4vi5RgK_mwi0o740Q5l0kgCMsKOCmos/edit?usp=sharing), [Lesson](./visualize.html) \
     \
 4.  July 12: **Map**\
     Read and write vector data (points, lines, polygons) using the
     spatial features sf R package in conjuction with dplyr to wrangle
     and summarize. Use the raster R package for gridded data. Generate
     interactive maps with leaflet.\
+    [Video](https://youtu.be/tQ4gv8WLxrw), [Slides](https://docs.google.com/presentation/d/1ZHqQbGIPa1smv7oXAyu6oOzRWyQ2AFa7M9FC21J_shM/edit#slide=id.p4), [Lesson](./map.html) \
     \
 5.  July 19: **Report**\
     Dive into Rmarkdown for for knitting formatted text (markdown) with
@@ -73,11 +74,13 @@ discussion and exercise completion time. All webinars will be
     chapters, flexdashboard for dashboards and Rmarkdown websites for
     simple websites with shared navigation. Automatically render with
     Github Actions.\
+    [Video](https://youtu.be/kPoBnWY4xqg), [Slides](https://docs.google.com/presentation/d/15I1i1bw1lyKeFYA1p2d98fvhR8DjD9J66zBUCC7c2g8), [Lesson](./report.html) \
     \
 6.  July 26: **Infographics**\
     Use a custom infographiq Javascript library to intelligently link
-    icons of ecosystems to pop-up windows containing data figures, which
+    icons of ecosystem elements to pop-up windows containing data figures, which
     could be static images or interactive visualizations.\
+    [Video](https://youtu.be/wQn05c8CHhs), [Slides](https://docs.google.com/presentation/d/11UFk-6k7oKJcnziBbkNYSz5Miq8SVUEiY5UmI3nWUDA/edit#slide=id.p), [Lesson](./infographics.html) \
     \
 7.  August 2: **Applications**\
     Use the Shiny framework to develop online interactive applications
@@ -85,10 +88,12 @@ discussion and exercise completion time. All webinars will be
     Server requirements differentiating from simpler Rmarkdown
     renderings will be reviewed as well as use of Crosstalk to gain
     similar functionality with Rmarkdown with simple data.\
+    [Video](https://youtu.be/ELDb_KB81jk), [Slides](https://docs.google.com/presentation/d/19XTk3sT9InpVlltTBa3TUm50Uv8gE_v0_3wjuNxx8WA/edit?usp=sharing), [Lesson](./apps.html) \
     \
 8.  August 9: **Packages**\
     An R package is a documented set of functions that can act as
     building blocks for data ingestion, analysis, visualization and
     reporting. We'll go over the basics of creating an R package and
-    documenting functions within.
+    documenting functions within.\
+    [Slides](https://docs.google.com/presentation/d/1Jt4xZP7twPoykHzyblMMRVGxgt9weUN1111OOKdkPU8/edit?usp=sharing), [Lesson](./packages.html) \
     \
